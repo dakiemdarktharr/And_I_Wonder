@@ -1,4 +1,5 @@
 import { getOwnerSession, isSameOrigin, jsonError } from "@/lib/auth";
+import {storageFailureCode} from '@/lib/db';
 import {
   findCanonicalNote,
   getProgressSnapshot,
@@ -22,7 +23,7 @@ export async function GET(request: Request): Promise<Response> {
     return noStoreJson({ notes });
   } catch (error) {
     console.error("MongoDB progress read failed", error);
-    return noStoreJson({ error: "Progress storage is unavailable." }, 503);
+    return noStoreJson({ error: "Progress storage is unavailable.", code:storageFailureCode(error) }, 503);
   }
 }
 
