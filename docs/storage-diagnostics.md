@@ -1,6 +1,17 @@
 # Atlas connectivity investigation — 8 October 2026
 
-Status: unresolved. The learning site is available, but production storage returns `DB_TLS_FAILED`; successful persistence has not been verified.
+Status: production connectivity recovered on 8 October 2026. Both progress and note reads return HTTP 200. Owner-authorized save/reload verification is still pending.
+
+## Recovery verification
+
+After the user reconfirmed the active `0.0.0.0/0` entry, the existing deployment succeeded without another application or infrastructure change. Node 24, region `sin1`, and certificate validation remain unchanged. The exact underlying cause or propagation timing was not independently established.
+
+- `GET /api/progress`: HTTP 200 with an empty progress snapshot.
+- `GET /api/notes/Daily/2026-10/2026-10-07`: HTTP 200 with note, revision, and progress fields after database reads.
+- `GET /api/auth/login`: HTTP 302 to GitHub with the canonical production callback.
+- Unauthenticated `PATCH /api/progress`: HTTP 401, correctly denied before writes.
+
+The next verification is an actual GitHub owner sign-in, checkbox save, and page reload. Successful reads alone do not prove write permissions or the completed OAuth flow.
 
 ## Observations
 
@@ -14,9 +25,9 @@ Status: unresolved. The learning site is available, but production storage retur
 
 ## What follows from these observations
 
-The failure is reproducible on the Vercel-to-Atlas connection before password authentication, including without the application's SRV connection string. It is not evidence of a bad database password. Local connectivity succeeds, so the cluster was responding during the local test.
+During the incident, the failure was reproducible on the Vercel-to-Atlas connection before password authentication, including without the application's SRV connection string. It was not evidence of a bad database password. Local connectivity succeeded, so the cluster was responding during the local test.
 
-The user reports an active `0.0.0.0/0` entry. Atlas project scope and access-list configuration still need to be verified against the cluster actually used by production. If those are correct, further investigation needs Atlas network/service diagnostics. Current tools cannot inspect Atlas configuration, and Vercel log APIs returned 403.
+The user reports an active `0.0.0.0/0` entry. Tools could not inspect Atlas configuration, and Vercel log APIs returned 403. The successful production reads above supersede the earlier blocked status; no further network-setting change was made.
 
 Do not disable TLS verification, reset credentials, or declare storage fixed based only on an error-category change. After connectivity is repaired, verify production reads and an owner-authorized save/reload flow.
 
