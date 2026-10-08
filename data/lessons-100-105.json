@@ -1,0 +1,2830 @@
+[
+  {
+    "week": 100,
+    "title": {
+      "en": "Technical presentation and oral defense",
+      "vi": "Trình bày kỹ thuật và bảo vệ miệng"
+    },
+    "prerequisites": {
+      "en": "A completed, reproducible result with a prespecified metric and honest limitations.",
+      "vi": "Một kết quả tái lập hoàn chỉnh với metric đặt trước và giới hạn trung thực."
+    },
+    "objectives": [
+      {
+        "en": "Build a defensible 15-minute research story.",
+        "vi": "Xây mạch nghiên cứu có thể bảo vệ trong 15 phút."
+      },
+      {
+        "en": "Communicate estimates and uncertainty precisely.",
+        "vi": "Truyền đạt chính xác ước lượng và bất định."
+      },
+      {
+        "en": "Answer objections with evidence and boundaries.",
+        "vi": "Trả lời phản biện bằng bằng chứng và giới hạn."
+      },
+      {
+        "en": "Improve timing and clarity through measured revision.",
+        "vi": "Cải thiện thời gian và độ rõ bằng chỉnh sửa có đo lường."
+      }
+    ],
+    "foundations": {
+      "en": "A talk is an argument compressed under a time limit. A claim names its estimand, comparator, period, and uncertainty. Intervals crossing a reference value leave compatible effects on both sides; they neither prove equality nor give the probability a hypothesis is true. Questions should separate observed evidence, assumptions, and unknowns. Recording and specific feedback reveal structural defects that a script may conceal. Rehearse below the limit and record revisions so clearer delivery never silently strengthens the evidence.",
+      "vi": "Bài nói là lập luận nén trong giới hạn thời gian. Kết luận nêu estimand, đối chứng, kỳ và bất định. Khoảng cắt giá trị tham chiếu cho thấy tác động hai phía còn tương thích; chúng không chứng minh bằng nhau hay xác suất giả thuyết đúng. Câu hỏi cần tách bằng chứng quan sát, giả định và điều chưa biết. Bản ghi cùng phản hồi cụ thể phát hiện lỗi cấu trúc mà kịch bản che giấu. Diễn tập dưới giới hạn và ghi sửa đổi để cách nói rõ hơn không âm thầm tăng độ mạnh bằng chứng."
+    },
+    "diagram": {
+      "kind": "flow",
+      "title": {
+        "en": "From estimate to oral defense",
+        "vi": "Từ ước lượng đến bảo vệ miệng"
+      },
+      "labels": [
+        {
+          "en": "bounded result",
+          "vi": "kết quả có giới hạn"
+        },
+        {
+          "en": "uncertainty",
+          "vi": "bất định"
+        },
+        {
+          "en": "15-minute story",
+          "vi": "mạch 15 phút"
+        },
+        {
+          "en": "evidence-based answers",
+          "vi": "trả lời theo bằng chứng"
+        }
+      ],
+      "caption": {
+        "en": "A result becomes a talk when its uncertainty, claim boundary, and likely questions are made explicit.",
+        "vi": "Kết quả thành bài nói khi nêu rõ bất định, ranh giới kết luận và câu hỏi có thể gặp."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Build the one-sentence result",
+          "vi": "Xây dựng kết quả trong một câu"
+        },
+        "theory": {
+          "en": "A research talk compresses an argument: question, design, estimate, uncertainty, implication. State the target, comparator, sample period, and primary metric before interpretation. A claim must not exceed the population or period studied. Distinguish validation differences from future performance or causal effects. Keep secondary analyses after the primary result. Use verbs matching the design, such as measured, associated, or predicted. A listener should be able to repeat the central claim without making it stronger.",
+          "vi": "Bài nói nghiên cứu cô đọng một lập luận: câu hỏi, thiết kế, ước lượng, bất định, hàm ý. Nêu mục tiêu, đối chứng, thời kỳ mẫu và metric chính trước khi diễn giải. Kết luận không được rộng hơn tổng thể hay thời kỳ đã khảo sát. Phân biệt chênh lệch validation với hiệu suất tương lai hay nhân quả. Để phân tích phụ sau kết quả chính. Dùng động từ phù hợp như đo được, liên hệ, dự báo. Người nghe cần nhắc lại được kết luận trung tâm mà không làm nó mạnh hơn."
+        },
+        "workedExample": {
+          "en": "On 100 held-out dates, candidate MAE=.011 and zero-baseline MAE=.012. Relative reduction=(.012−.011)/.012=.0833, or 8.3%. A block-bootstrap 95% interval for improvement is [−.002,.004], which includes zero. Defensible wording: “MAE was 8.3% lower on this held-out period, but the interval includes no improvement.” It does not show profit or future gain.",
+          "vi": "Trên 100 ngày held-out, MAE mô hình=.011, baseline 0=.012. Mức giảm tương đối=(.012−.011)/.012=.0833, tức 8,3%. Khoảng bootstrap theo khối 95% cho cải thiện là [−.002;.004], chứa 0. Cách nói có thể bảo vệ: “MAE thấp hơn 8,3% trong kỳ held-out này, nhưng khoảng bao gồm trường hợp không cải thiện.” Kết quả không chứng minh lợi nhuận hay tăng ích tương lai."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Build the one-sentence result",
+            "vi": "Xây dựng kết quả trong một câu"
+          },
+          "caption": {
+            "en": "The point estimate is an 8.3% observed reduction, but its interval includes zero; state the period and uncertainty.",
+            "vi": "Ước lượng điểm giảm quan sát 8,3%, nhưng khoảng chứa 0; cần nêu thời kỳ và bất định."
+          },
+          "steps": [
+            {
+              "en": "Target: 100 held-out dates; comparator: zero forecast; metric: MAE.",
+              "vi": "Mục tiêu: 100 ngày held-out; đối chứng: dự báo 0; metric: MAE."
+            },
+            {
+              "en": "Absolute improvement=.012−.011=.001; relative=.001/.012=.0833=8.3%.",
+              "vi": "Cải thiện tuyệt đối=.012−.011=.001; tương đối=.001/.012=.0833=8,3%."
+            },
+            {
+              "en": "Interval [−.002,.004] includes zero; improvement is uncertain.",
+              "vi": "Khoảng [−.002;.004] chứa 0; cải thiện còn bất định."
+            },
+            {
+              "en": "This forecast metric does not prove future performance or profit.",
+              "vi": "Metric dự báo này không chứng minh hiệu suất tương lai hay lợi nhuận."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Write target, comparator, period and metric as four explicit phrases for the 100-date result.",
+            "vi": "Viết mục tiêu, đối chứng, thời kỳ và metric thành bốn cụm rõ ràng cho kết quả 100 ngày."
+          },
+          {
+            "en": "Compute absolute and relative MAE difference; justify dividing by baseline .012.",
+            "vi": "Tính chênh lệch MAE tuyệt đối và tương đối; giải thích mẫu số baseline .012."
+          },
+          {
+            "en": "Draft cautious, overstated, and corrected versions; mark unsupported words.",
+            "vi": "Soạn bản thận trọng, phóng đại, đã sửa; đánh dấu từ thiếu căn cứ."
+          },
+          {
+            "en": "Give the corrected claim in 30 seconds, then ask a listener to paraphrase it.",
+            "vi": "Trình bày kết luận đúng trong 30 giây, rồi nhờ người nghe diễn đạt lại."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w100d1",
+            "prompt": {
+              "en": "If MAE=.011 vs .012 and the improvement interval is [−.002,.004], write the result and name one unsupported claim.",
+              "vi": "MAE=.011 so với .012, khoảng cải thiện [−.002;.004]; viết kết quả và nêu một kết luận thiếu căn cứ."
+            },
+            "hint": {
+              "en": "Compute .001/.012 and check whether the interval contains zero.",
+              "vi": "Tính .001/.012 và kiểm tra khoảng có chứa 0 không."
+            },
+            "answer": {
+              "en": "Relative reduction=.001/.012=.0833=8.3%. The interval crosses zero, so say MAE was lower in this period but no improvement remains plausible. “It will make money” is unsupported because no returns, costs, or future period were evaluated.",
+              "vi": "Mức giảm tương đối=.001/.012=.0833=8,3%. Khoảng cắt 0 nên nói MAE thấp hơn trong kỳ này nhưng vẫn có thể không cải thiện. “Mô hình sẽ sinh lời” thiếu căn cứ vì chưa đánh giá lợi nhuận, chi phí hay kỳ tương lai."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Deliver a 90-second opening and claim card with metric, period, estimate, uncertainty and explicit non-claim.",
+          "vi": "Trình bày mở đầu 90 giây và thẻ kết luận gồm metric, kỳ, ước lượng, bất định và điều không kết luận."
+        }
+      },
+      {
+        "title": {
+          "en": "Show uncertainty honestly",
+          "vi": "Trình bày bất định trung thực"
+        },
+        "theory": {
+          "en": "An interval must identify the estimand, sampling unit, and method. For serial data, resample blocks or use another justified dependence-aware procedure; row-wise IID bootstrap may break temporal structure. A confidence interval crossing zero does not prove equality: effects on both sides remain compatible with the data and method. A p-value is not the probability a hypothesis is true. Plot the estimate, reference line, interval, sample size, units, and method, then explain how uncertainty affects a decision.",
+          "vi": "Khoảng cần nêu estimand, đơn vị lấy mẫu và phương pháp. Với dữ liệu chuỗi, lấy mẫu theo khối hoặc dùng thủ tục khác xử lý phụ thuộc có căn cứ; bootstrap IID từng hàng có thể phá cấu trúc thời gian. Khoảng tin cậy cắt 0 không chứng minh bằng nhau: tác động hai phía vẫn tương thích với dữ liệu và phương pháp. p-value không phải xác suất giả thuyết đúng. Vẽ ước lượng, đường tham chiếu, khoảng, cỡ mẫu, đơn vị và phương pháp, rồi giải thích bất định đổi quyết định ra sao."
+        },
+        "workedExample": {
+          "en": "Define Δ=MAE_baseline−MAE_candidate. With Δhat=.001 and SE=.0015, a normal interval is .001±1.96(.0015)=[−.00194,.00394]. Zero lies inside; the point estimate is positive but the sign is not established. This standard error is illustrative unless serial dependence was handled. Interval width .00588 is more informative than only reporting p>.05.",
+          "vi": "Định nghĩa Δ=MAE_baseline−MAE_candidate. Với Δhat=.001 và SE=.0015, khoảng chuẩn là .001±1,96(.0015)=[−.00194;.00394]. Khoảng chứa 0; ước lượng điểm dương nhưng chưa xác lập dấu. Sai số chuẩn chỉ minh họa nếu chưa xử lý phụ thuộc chuỗi. Độ rộng .00588 có thông tin hơn chỉ báo p>.05."
+        },
+        "visual": {
+          "kind": "xy",
+          "title": {
+            "en": "Show uncertainty honestly",
+            "vi": "Trình bày bất định trung thực"
+          },
+          "caption": {
+            "en": "Δ=.001 with interval [−.00194,.00394] includes zero, so its sign is not established.",
+            "vi": "Δ=.001 với khoảng [−.00194;.00394] chứa 0 nên chưa xác lập được dấu."
+          },
+          "xLabel": {
+            "en": "Improvement Δ (MAE units)",
+            "vi": "Cải thiện Δ (đơn vị MAE)"
+          },
+          "yLabel": {
+            "en": "Interval position",
+            "vi": "Vị trí khoảng"
+          },
+          "series": [
+            {
+              "name": {
+                "en": "95% interval",
+                "vi": "Khoảng 95%"
+              },
+              "mode": "line",
+              "points": [
+                [
+                  -0.00194,
+                  0
+                ],
+                [
+                  0.001,
+                  0.5
+                ],
+                [
+                  0.00394,
+                  0
+                ]
+              ]
+            },
+            {
+              "name": {
+                "en": "zero reference",
+                "vi": "Mốc 0"
+              },
+              "mode": "line",
+              "points": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0.6
+                ]
+              ]
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Recompute both endpoints from .001±1.96×.0015 and label MAE-difference units.",
+            "vi": "Tính hai đầu mút từ .001±1,96×.0015 và ghi đơn vị chênh lệch MAE."
+          },
+          {
+            "en": "Draw interval and zero line; annotate N=100 and block-bootstrap caveat.",
+            "vi": "Vẽ khoảng và đường 0; ghi N=100 cùng lưu ý bootstrap theo khối."
+          },
+          {
+            "en": "Compare interpretation for [−.00194,.00394] versus [.0002,.00394].",
+            "vi": "So sánh diễn giải [−.00194;.00394] với [.0002;.00394]."
+          },
+          {
+            "en": "Set practical margin ±.002 and state what interval would support equivalence.",
+            "vi": "Đặt biên thực tế ±.002 và nêu khoảng nào mới hỗ trợ tương đương."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w100d2",
+            "prompt": {
+              "en": "For Δhat=.001, SE=.0015, calculate the 95% interval. Does it establish positive improvement?",
+              "vi": "Với Δhat=.001, SE=.0015, tính khoảng 95%. Nó có xác lập cải thiện dương không?"
+            },
+            "hint": {
+              "en": "Use 1.96×.0015=.00294, then add and subtract from .001.",
+              "vi": "Dùng 1,96×.0015=.00294, rồi cộng và trừ với .001."
+            },
+            "answer": {
+              "en": "Endpoints are −.00194 and .00394, so zero is included and positive improvement is not established. This also does not prove equivalence: set a margin in advance and require the full interval to lie within it.",
+              "vi": "Hai đầu mút là −.00194 và .00394, nên khoảng chứa 0 và chưa xác lập cải thiện dương. Điều này cũng không chứng minh tương đương: cần định trước biên và yêu cầu cả khoảng nằm trong biên."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Create the interval figure and speaker notes naming estimand, method, resampling unit, caveat, and meaning.",
+          "vi": "Tạo hình khoảng và ghi chú nói rõ estimand, phương pháp, đơn vị lấy mẫu lại, lưu ý và ý nghĩa."
+        }
+      },
+      {
+        "title": {
+          "en": "Budget the 15-minute slide deck",
+          "vi": "Lập ngân sách bộ slide 15 phút"
+        },
+        "theory": {
+          "en": "Slides are an information budget, not a projected paper. Each should answer one audience question. Charts need units, baseline, period, and uncertainty; axes must not hide small effects. Keep primary evidence in the main talk and derivations in backup slides. Use consistent labels, readable type, and verbal descriptions so meaning is not encoded only in color or animation. Timing includes pauses and transitions. If Q&A must fit the same slot, reserve it before distributing the remaining minutes across slides.",
+          "vi": "Slide là ngân sách thông tin, không phải bài báo đem chiếu. Mỗi slide nên trả lời một câu hỏi. Biểu đồ cần đơn vị, baseline, thời kỳ, bất định; trục không được che hiệu ứng nhỏ. Giữ bằng chứng chính trong bài nói, suy dẫn ở slide dự phòng. Dùng nhãn nhất quán, chữ dễ đọc, mô tả hình bằng lời để ý nghĩa không chỉ dựa vào màu hay hoạt ảnh. Thời gian gồm khoảng dừng và chuyển. Nếu hỏi đáp nằm trong cùng slot, hãy dành trước rồi mới chia phút cho slide."
+        },
+        "workedExample": {
+          "en": "Eight slides take 1+2+2+2+2+2+2+2=15 minutes: question, design, baseline, estimate, uncertainty, robustness, limits, takeaway. Slide 4 compares MAE .011 vs .012 from zero; slide 5 shows [−.002,.004]. The plan leaves no Q&A inside a 15-minute slot. If three Q&A minutes are required, the talk must fit 12 minutes.",
+          "vi": "Tám slide dùng 1+2+2+2+2+2+2+2=15 phút: câu hỏi, thiết kế, baseline, ước lượng, bất định, độ bền, giới hạn, kết luận. Slide 4 so MAE .011 với .012 từ 0; slide 5 cho [−.002;.004]. Kế hoạch không còn hỏi đáp trong slot 15 phút. Nếu cần ba phút hỏi đáp, bài nói phải còn 12 phút."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Budget the 15-minute slide deck",
+            "vi": "Lập ngân sách bộ slide 15 phút"
+          },
+          "caption": {
+            "en": "The candidate MAE=.011 is below baseline=.012 on one zero-based scale; show the interval separately.",
+            "vi": "MAE mô hình=.011 thấp hơn baseline=.012 trên cùng trục từ 0; trình bày khoảng riêng."
+          },
+          "xLabel": {
+            "en": "Forecast method",
+            "vi": "Phương pháp dự báo"
+          },
+          "yLabel": {
+            "en": "MAE",
+            "vi": "MAE"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "zero baseline",
+                "vi": "baseline 0"
+              },
+              "value": 0.012
+            },
+            {
+              "label": {
+                "en": "candidate",
+                "vi": "mô hình"
+              },
+              "value": 0.011
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Sketch eight slides and verify the 1,2,2,2,2,2,2,2 minute allocation sums to 15.",
+            "vi": "Phác tám slide và xác minh phân bổ 1,2,2,2,2,2,2,2 phút tổng 15."
+          },
+          {
+            "en": "Plot .011 and .012 on a zero-based MAE axis with comparator and period labels.",
+            "vi": "Vẽ .011 và .012 trên trục MAE từ 0, ghi đối chứng và thời kỳ."
+          },
+          {
+            "en": "Put [−.002,.004] on separate uncertainty slide; move derivation into backup.",
+            "vi": "Đưa [−.002;.004] lên slide bất định riêng; chuyển suy dẫn vào dự phòng."
+          },
+          {
+            "en": "Reserve 3 minutes for Q&A; redesign talk to 12 minutes and rehearse the new allocation.",
+            "vi": "Dành 3 phút hỏi đáp; rút bài còn 12 phút và diễn tập phân bổ mới."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w100d3",
+            "prompt": {
+              "en": "Eight slide durations sum to 15 minutes. If the slot includes 3 minutes Q&A, how long may the talk last?",
+              "vi": "Thời lượng tám slide tổng 15 phút. Nếu slot gồm 3 phút hỏi đáp, bài nói được dài bao lâu?"
+            },
+            "hint": {
+              "en": "Reserve Q&A first, then subtract from total slot.",
+              "vi": "Dành hỏi đáp trước rồi trừ khỏi slot."
+            },
+            "answer": {
+              "en": "The talk may last 12 minutes. Reduce the slide budget by three while preserving question, main estimate, uncertainty, limitation, and takeaway; rehearse to verify rather than assuming the edited plan fits.",
+              "vi": "Bài nói được 12 phút. Giảm ngân sách slide ba phút nhưng giữ câu hỏi, ước lượng chính, bất định, giới hạn và kết luận; diễn tập để xác minh thay vì đoán vừa giờ."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Produce timed storyboard, accessible primary chart, and backup-slide inventory.",
+          "vi": "Tạo storyboard có thời gian, biểu đồ chính dễ tiếp cận và danh sách slide dự phòng."
+        }
+      },
+      {
+        "title": {
+          "en": "Answer the skeptical panel",
+          "vi": "Trả lời hội đồng phản biện"
+        },
+        "theory": {
+          "en": "Classify a question as definition, design, result, robustness, or implication. Answer directly, cite evidence, then state the boundary. If a value is unknown, say so and offer a test. A hypothetical calculation is not an empirical result. Concede a valid limitation and explain how it narrows the claim. Keep backup slides for split, metric, interval, and ablation. The aim is clarity, not winning an exchange. Replace an unsupported central claim rather than defending it because it is central.",
+          "vi": "Phân loại câu hỏi là định nghĩa, thiết kế, kết quả, độ bền hay hàm ý. Trả lời trực tiếp, dẫn bằng chứng rồi nêu giới hạn. Nếu chưa biết giá trị, hãy nói rõ và đề xuất kiểm tra. Phép tính giả định không phải kết quả thực nghiệm. Thừa nhận giới hạn hợp lệ và giải thích cách nó thu hẹp kết luận. Chuẩn bị slide dự phòng về split, metric, khoảng, ablation. Mục tiêu là rõ ràng, không phải thắng tranh luận. Thay kết luận trung tâm thiếu căn cứ thay vì bảo vệ nó."
+        },
+        "workedExample": {
+          "en": "Asked whether 8.3% lower MAE means profit, answer: “No; it is a one-period forecast-error comparison. Returns, costs, capacity, and live execution were not evaluated.” If asked why the interval crosses zero, name the block-bootstrap paired-MAE estimand and admit block-length sensitivity was not tested if that is true.",
+          "vi": "Khi hỏi MAE thấp hơn 8,3% có nghĩa là có lời không, trả lời: “Không; đây là so sánh lỗi dự báo một kỳ. Chưa đánh giá lợi nhuận, chi phí, công suất hay khớp lệnh thật.” Nếu hỏi vì sao khoảng cắt 0, nêu estimand MAE ghép cặp bootstrap khối và thừa nhận chưa kiểm tra độ nhạy độ dài khối nếu đúng vậy."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Answer the skeptical panel",
+            "vi": "Trả lời hội đồng phản biện"
+          },
+          "caption": {
+            "en": "A defensible answer separates the forecast metric from profit and names the unmeasured costs and returns.",
+            "vi": "Câu trả lời có căn cứ tách metric dự báo khỏi lợi nhuận và nêu chi phí/lợi nhuận chưa đo."
+          },
+          "steps": [
+            {
+              "en": "Direct answer: no, lower MAE alone does not demonstrate profit.",
+              "vi": "Trả lời trực tiếp: không, MAE thấp hơn không chứng minh có lời."
+            },
+            {
+              "en": "Evidence: .011 vs .012 on 100 dates; interval includes zero.",
+              "vi": "Bằng chứng: .011 so với .012 trên 100 ngày; khoảng chứa 0."
+            },
+            {
+              "en": "Boundary: returns, transaction costs, capacity, and execution were not tested.",
+              "vi": "Giới hạn: chưa thử lợi nhuận, chi phí, công suất và khớp lệnh."
+            },
+            {
+              "en": "Next test: predefine a net-return protocol on untouched chronological data.",
+              "vi": "Kiểm tra tiếp: định trước giao thức lợi nhuận ròng trên dữ liệu thời gian chưa đụng."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Write six panel questions: target, split, comparator, interval, costs, generalization.",
+            "vi": "Viết sáu câu hỏi hội đồng: mục tiêu, split, đối chứng, khoảng, chi phí, tổng quát hóa."
+          },
+          {
+            "en": "Answer in direct response→evidence→boundary form; mark claims absent from the report.",
+            "vi": "Trả lời theo trực tiếp→bằng chứng→giới hạn; đánh dấu kết luận không có trong báo cáo."
+          },
+          {
+            "en": "Prepare the interval calculation .001±1.96(.0015) and state the bootstrap unit.",
+            "vi": "Chuẩn bị phép tính khoảng .001±1,96(.0015) và nêu đơn vị bootstrap."
+          },
+          {
+            "en": "Run a mock panel with one follow-up per answer; rewrite any implication of profit or causality.",
+            "vi": "Mô phỏng hội đồng, một truy vấn mỗi câu; sửa mọi hàm ý lợi nhuận hay nhân quả."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w100d4",
+            "prompt": {
+              "en": "A reviewer says lower MAE proves profit. Answer in two sentences with evidence and boundary.",
+              "vi": "Người phản biện nói MAE thấp hơn chứng minh có lời. Trả lời hai câu với bằng chứng và giới hạn."
+            },
+            "hint": {
+              "en": "Separate forecast error from net returns; list outcomes and costs not evaluated.",
+              "vi": "Tách lỗi dự báo khỏi lợi nhuận ròng; liệt kê kết quả và chi phí chưa đánh giá."
+            },
+            "answer": {
+              "en": "“No. The observed MAE difference is a forecast-error metric on one held-out period. Returns, costs, capacity, and live execution were not evaluated, so it does not establish profit.” This directly answers and names absent evidence.",
+              "vi": "“Không. Chênh lệch MAE quan sát là metric lỗi dự báo trong một kỳ held-out. Chưa đánh giá lợi nhuận, chi phí, công suất hay khớp lệnh thật nên không chứng minh có lời.” Câu trả lời đáp trực tiếp và nêu bằng chứng thiếu."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Complete Q&A sheet with six responses, evidence locations, and explicit unknowns.",
+          "vi": "Hoàn thiện phiếu hỏi đáp sáu câu, vị trí bằng chứng và điều chưa biết."
+        }
+      },
+      {
+        "title": {
+          "en": "Timed rehearsal and revision",
+          "vi": "Diễn tập có thời gian và chỉnh sửa"
+        },
+        "theory": {
+          "en": "Rehearsal tests audience comprehension and timing, not just fluency. Record time per slide and note where listeners lose the argument. Feedback should be observable (“comparator appeared after result”), not vague taste. Score question, methods, estimate/uncertainty, scope, readability, time, and answers. Change one structural issue, rerun, and log it. A polished talk must not silently strengthen a claim. Leave transition margin; exact-limit timing is fragile.",
+          "vi": "Diễn tập kiểm tra người nghe hiểu và bài nói đúng giờ, không chỉ trôi chảy. Ghi thời gian từng slide và nơi người nghe mất mạch. Phản hồi nên quan sát được (“đối chứng xuất hiện sau kết quả”), không mơ hồ theo sở thích. Chấm câu hỏi, phương pháp, ước lượng/bất định, phạm vi, độ đọc, thời gian và trả lời. Sửa một lỗi cấu trúc, chạy lại và ghi log. Bài nói trau chuốt không được âm thầm mạnh hóa kết luận. Chừa đệm chuyển slide; sát giới hạn rất mong manh."
+        },
+        "workedExample": {
+          "en": "The first rehearsal is 16:20 and includes a nonessential 70-second software tour. Removing it gives 15:10; a further 25-second cut yields 14:45. The closing phrase “reliably improves” conflicts with an interval that crosses zero. Move the comparator before the estimate, replace that phrase with the observed-period result, then check both edits in the second recording.",
+          "vi": "Lần diễn tập đầu dài 16:20, có phần giới thiệu phần mềm 70 giây không thiết yếu. Bỏ phần đó còn 15:10; cắt thêm 25 giây còn 14:45. Cụm kết “cải thiện chắc chắn” mâu thuẫn với khoảng cắt 0. Đưa đối chứng lên trước ước lượng, thay cụm đó bằng kết quả trong kỳ quan sát, rồi kiểm tra cả hai sửa đổi trong bản ghi thứ hai."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Timed rehearsal and revision",
+            "vi": "Diễn tập có thời gian và chỉnh sửa"
+          },
+          "caption": {
+            "en": "16:20−1:10−0:25=14:45, leaving a small buffer; revise the certainty claim to match the interval.",
+            "vi": "16:20−1:10−0:25=14:45, còn đệm nhỏ; sửa mức chắc chắn cho khớp khoảng."
+          },
+          "steps": [
+            {
+              "en": "First run: 16:20.",
+              "vi": "Lần đầu: 16:20."
+            },
+            {
+              "en": "Remove 70-second tool tour: 16:20−1:10=15:10.",
+              "vi": "Bỏ phần công cụ 70 giây: 16:20−1:10=15:10."
+            },
+            {
+              "en": "Cut 25 more seconds: final rehearsal=14:45.",
+              "vi": "Cắt thêm 25 giây: lần diễn tập cuối=14:45."
+            },
+            {
+              "en": "Interval crosses zero, so replace “reliably improves” with a bounded observed-period claim.",
+              "vi": "Khoảng cắt 0 nên thay “cải thiện chắc chắn” bằng kết luận trong kỳ có giới hạn."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Record one full rehearsal and time all eight slides against the 15:00 limit.",
+            "vi": "Ghi một lần diễn tập đầy đủ và bấm giờ tám slide so với giới hạn 15:00."
+          },
+          {
+            "en": "Score seven rubric dimensions 1–4 and cite one concrete moment for every score.",
+            "vi": "Chấm bảy chiều rubric 1–4, dẫn khoảnh khắc cụ thể cho mỗi điểm."
+          },
+          {
+            "en": "Cut 70 seconds plus 25; move comparator earlier and rewrite the certainty claim.",
+            "vi": "Cắt 70 giây cùng 25 giây; đưa đối chứng lên trước và sửa kết luận chắc chắn."
+          },
+          {
+            "en": "Record again; verify duration, interval wording, claim scope, and remaining revision gap.",
+            "vi": "Ghi lại; xác minh thời lượng, cách nói khoảng, phạm vi kết luận và khoảng trống còn lại."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w100d5",
+            "prompt": {
+              "en": "A talk lasts 16:20; cut 70 seconds and then 25 more. What is the new duration?",
+              "vi": "Bài nói dài 16:20; cắt 70 giây rồi thêm 25 giây. Thời lượng mới là bao nhiêu?"
+            },
+            "hint": {
+              "en": "Subtract 1:10 and then 0:25.",
+              "vi": "Trừ 1:10 rồi trừ 0:25."
+            },
+            "answer": {
+              "en": "16:20−1:10=15:10; 15:10−0:25=14:45. Replace “reliably improves” because the interval includes zero. Say the observed MAE was lower by 8.3% in this period, with uncertainty including no improvement.",
+              "vi": "16:20−1:10=15:10; 15:10−0:25=14:45. Thay “cải thiện chắc chắn” vì khoảng chứa 0. Nói MAE quan sát thấp hơn 8,3% trong kỳ này, với bất định gồm cả không cải thiện."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Archive the timed deck, speaker notes, Q&A sheet, rubric, and revision log.",
+          "vi": "Lưu bộ slide bấm giờ, ghi chú nói, phiếu hỏi đáp, rubric và nhật ký sửa."
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 101,
+    "title": {
+      "en": "Research portfolio and applications",
+      "vi": "Hồ sơ nghiên cứu và ứng tuyển"
+    },
+    "prerequisites": {
+      "en": "A public research artifact with auditable results and a factual project record.",
+      "vi": "Sản phẩm nghiên cứu công khai có kết quả kiểm toán được và hồ sơ dự án đúng sự thật."
+    },
+    "objectives": [
+      {
+        "en": "Translate work into a concise, factual CV.",
+        "vi": "Chuyển công việc thành CV ngắn, trung thực."
+      },
+      {
+        "en": "Make one project reproducible for an external reviewer.",
+        "vi": "Làm một dự án tái lập được cho người xem ngoài."
+      },
+      {
+        "en": "Match evidence to fictional role requirements without inventing skills.",
+        "vi": "Ghép bằng chứng với yêu cầu vị trí giả định mà không bịa kỹ năng."
+      },
+      {
+        "en": "Practice technical and behavioral answers with explicit boundaries.",
+        "vi": "Luyện trả lời kỹ thuật/hành vi với giới hạn rõ ràng."
+      }
+    ],
+    "foundations": {
+      "en": "An application makes claims about past work; every number, role, and authorship statement should be verifiable. A portfolio lets an independent reader reproduce a representative result from a clean environment. A job description should be decomposed into tasks and evidence, not copied as keywords. Interview answers should show assumptions and calculation, then identify limits. Adjacent experience is useful when described precisely. Confidentiality, licensing, and credit are part of professional competence, not afterthoughts.",
+      "vi": "Ứng tuyển đưa ra kết luận về công việc đã làm; mọi con số, vai trò, tác giả phải kiểm chứng được. Portfolio cho người xem độc lập tái tạo kết quả đại diện trong môi trường sạch. Mô tả việc cần được tách thành nhiệm vụ và bằng chứng, không chép từ khóa. Câu trả lời phỏng vấn cần nêu giả định/phép tính rồi giới hạn. Kinh nghiệm gần có giá trị khi diễn đạt chính xác. Bảo mật, license và ghi công là năng lực chuyên nghiệp, không phải việc phụ."
+    },
+    "diagram": {
+      "kind": "flow",
+      "title": {
+        "en": "Evidence to application",
+        "vi": "Từ bằng chứng đến hồ sơ"
+      },
+      "labels": [
+        {
+          "en": "claim",
+          "vi": "kết luận"
+        },
+        {
+          "en": "artifact",
+          "vi": "sản phẩm"
+        },
+        {
+          "en": "role fit",
+          "vi": "phù hợp vị trí"
+        },
+        {
+          "en": "interview verification",
+          "vi": "xác minh phỏng vấn"
+        }
+      ],
+      "caption": {
+        "en": "A credible application traces each skill claim to an artifact or states the gap honestly.",
+        "vi": "Ứng tuyển đáng tin truy từng kỹ năng tới sản phẩm hoặc nêu trung thực khoảng trống."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Write evidence-based CV bullets",
+          "vi": "Viết gạch đầu dòng CV dựa trên bằng chứng"
+        },
+        "theory": {
+          "en": "A research CV is an evidence index. A strong bullet states what you did, the artifact or method, a measured outcome, and the scope. Use “implemented” only if you wrote or maintained the code; distinguish your contribution from a team result. Numbers need units and a denominator. A preprint is not peer reviewed unless it has been; a simulation is not deployment. Avoid skill bars and unsupported superlatives. Place the most relevant project near the top and make every technical claim traceable to a repository, report, or reproducible test.",
+          "vi": "CV nghiên cứu là mục lục dẫn tới bằng chứng. Dòng tốt nêu bạn làm gì, sản phẩm/phương pháp, kết quả đo và phạm vi. Chỉ dùng “triển khai” nếu bạn thật sự viết hoặc duy trì code; tách đóng góp cá nhân khỏi kết quả nhóm. Con số cần đơn vị và mẫu số. Preprint chưa phải phản biện kín; mô phỏng chưa phải triển khai thật. Tránh thanh kỹ năng và tính từ không căn cứ. Đặt dự án liên quan nhất lên đầu và để mọi phát biểu kỹ thuật truy được tới repo, báo cáo hay kiểm thử."
+        },
+        "workedExample": {
+          "en": "A project evaluated 2,500 rows with three expanding folds and one untouched 100-date holdout. Candidate MAE=.011 versus zero-baseline .012; a block-bootstrap interval includes zero. Honest bullet: “Implemented a chronological forecasting benchmark over 2,500 rows; candidate MAE=.011 vs .012 zero baseline on one 100-date holdout; documented interval uncertainty and no live-return claim.” It distinguishes implementation from proof of profitability.",
+          "vi": "Dự án đánh giá 2.500 hàng bằng ba fold mở rộng và một holdout 100 ngày chưa đụng. MAE mô hình=.011 so với baseline 0=.012; khoảng bootstrap khối chứa 0. Dòng trung thực: “Xây benchmark dự báo theo thời gian trên 2.500 hàng; MAE mô hình=.011 so với baseline 0=.012 trên một holdout 100 ngày; ghi nhận bất định khoảng và không kết luận lợi nhuận thật.” Câu này tách việc triển khai khỏi bằng chứng có lãi."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Write evidence-based CV bullets",
+            "vi": "Viết gạch đầu dòng CV dựa trên bằng chứng"
+          },
+          "caption": {
+            "en": "A factual CV bullet names the action, verifiable artifact, measured result, and limitation.",
+            "vi": "Một dòng CV trung thực nêu hành động, sản phẩm kiểm chứng, kết quả đo và giới hạn."
+          },
+          "steps": [
+            {
+              "en": "Action: built a chronological forecasting benchmark.",
+              "vi": "Hành động: xây benchmark dự báo theo thời gian."
+            },
+            {
+              "en": "Evidence: 2,500 rows, three expanding folds, reproducible scripts.",
+              "vi": "Bằng chứng: 2.500 hàng, ba fold mở rộng, script tái lập."
+            },
+            {
+              "en": "Result: MAE .011 vs .012 baseline on one 100-date holdout.",
+              "vi": "Kết quả: MAE .011 so với baseline .012 trên một holdout 100 ngày."
+            },
+            {
+              "en": "Limit: interval includes zero; no live-return claim.",
+              "vi": "Giới hạn: khoảng chứa 0; không kết luận lợi nhuận thật."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Rewrite three bullets to include your role, artifact, exact metric/unit, and evidence scope.",
+            "vi": "Viết lại ba dòng gồm vai trò, sản phẩm, metric/đơn vị và phạm vi bằng chứng."
+          },
+          {
+            "en": "Audit 2,500 rows, three folds, 100-date holdout, .011/.012; check every number against a result file.",
+            "vi": "Kiểm toán 2.500 hàng, ba fold, holdout 100 ngày, .011/.012; đối chiếu từng số với file kết quả."
+          },
+          {
+            "en": "Remove claims such as ‘state-of-the-art’ unless a defined comparison supports them; keep an edit log.",
+            "vi": "Bỏ cụm như ‘tốt nhất hiện nay’ nếu không có so sánh định nghĩa rõ; ghi log sửa."
+          },
+          {
+            "en": "Have a peer follow each bullet to its artifact; repair any broken evidence link.",
+            "vi": "Nhờ bạn học lần theo mỗi dòng tới sản phẩm; sửa mọi liên kết bằng chứng hỏng."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w101d1",
+            "prompt": {
+              "en": "Turn this into one CV bullet: built 2,500-row chronological benchmark; 3 folds; MAE .011 vs .012 on one 100-date holdout; interval crosses zero.",
+              "vi": "Viết thành một dòng CV: xây benchmark theo thời gian 2.500 hàng; 3 fold; MAE .011 so .012 trên holdout 100 ngày; khoảng cắt 0."
+            },
+            "hint": {
+              "en": "Lead with your action and keep the result scoped to the observed holdout.",
+              "vi": "Mở đầu bằng hành động và giới hạn kết quả trong holdout quan sát."
+            },
+            "answer": {
+              "en": "“Implemented a 2,500-row chronological forecasting benchmark with three expanding folds; candidate MAE=.011 vs .012 zero baseline on one 100-date holdout, with uncertainty including no improvement.” This avoids causal, future, and profit claims.",
+              "vi": "“Xây benchmark dự báo theo thời gian trên 2.500 hàng với ba fold mở rộng; MAE mô hình=.011 so baseline 0=.012 trên một holdout 100 ngày, bất định gồm cả không cải thiện.” Câu tránh kết luận nhân quả, tương lai và lợi nhuận."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Save a one-page research CV with artifact links and a number-to-source audit table.",
+          "vi": "Lưu CV nghiên cứu một trang có liên kết sản phẩm và bảng đối chiếu số với nguồn."
+        }
+      },
+      {
+        "title": {
+          "en": "Make the project portfolio auditable",
+          "vi": "Làm portfolio dự án kiểm toán được"
+        },
+        "theory": {
+          "en": "A portfolio is stronger when another person can reproduce one central result quickly. A repository should identify the question, environment, data rights, exact command, expected output, and known limitations. Keep raw private data out of public code. Separate source, configuration, result, and narrative; record hashes or versions so evidence is not silently replaced. A result table without provenance is difficult to trust. The reviewer should not need to infer which script generated a number or which claims are exploratory.",
+          "vi": "Portfolio mạnh hơn khi người khác tái lập nhanh được một kết quả trung tâm. Repo cần nêu câu hỏi, môi trường, quyền dữ liệu, lệnh chính xác, output mong đợi và giới hạn. Không đưa dữ liệu riêng tư vào code công khai. Tách source, cấu hình, kết quả và diễn giải; ghi hash/phiên bản để bằng chứng không bị thay thế âm thầm. Bảng kết quả thiếu provenance khó tạo niềm tin. Người xem không nên phải đoán script nào sinh ra con số hay kết luận nào chỉ mang tính khám phá."
+        },
+        "workedExample": {
+          "en": "For the benchmark, a README claims MAE=.011. Link it to results/holdout.json, config/benchmark.yaml, commit a17, and command `python -m benchmark --config config/benchmark.yaml`. A clean run should print `candidate_mae=0.011 baseline_mae=0.012 n=100`. Add a warning that the interval crosses zero and a license file. If the command cannot reproduce the expected output, the result is not ready to advertise.",
+          "vi": "Với benchmark, README nêu MAE=.011. Nối tới results/holdout.json, config/benchmark.yaml, commit a17 và lệnh `python -m benchmark --config config/benchmark.yaml`. Chạy sạch cần in `candidate_mae=0.011 baseline_mae=0.012 n=100`. Thêm cảnh báo khoảng cắt 0 và file license. Nếu lệnh không tái tạo output mong đợi, chưa nên quảng bá kết quả."
+        },
+        "visual": {
+          "kind": "matrix",
+          "title": {
+            "en": "Make the project portfolio auditable",
+            "vi": "Làm portfolio dự án kiểm toán được"
+          },
+          "caption": {
+            "en": "Each portfolio claim should map to a claim, source file, reproduction command, and limitation.",
+            "vi": "Mỗi kết luận trong portfolio cần nối tới phát biểu, file nguồn, lệnh tái lập và giới hạn."
+          },
+          "rows": [
+            "Claim",
+            "Artifact",
+            "Check",
+            "Limit"
+          ],
+          "columns": [
+            "Value"
+          ],
+          "values": [
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Clone into a clean folder; record runtime, environment, and exact command output.",
+            "vi": "Clone vào thư mục sạch; ghi runtime, môi trường và output lệnh chính xác."
+          },
+          {
+            "en": "Trace MAE .011 to JSON, config, commit a17, and the 100-date prediction file.",
+            "vi": "Truy MAE .011 tới JSON, config, commit a17 và file dự báo 100 ngày."
+          },
+          {
+            "en": "Remove any private/raw data; confirm the public synthetic fixture and declared license allow reuse.",
+            "vi": "Loại dữ liệu riêng/thô; xác nhận fixture tổng hợp và license công khai cho phép tái dùng."
+          },
+          {
+            "en": "Ask a peer to reproduce without oral help; log each ambiguity and fix README instructions.",
+            "vi": "Nhờ bạn học tái lập không được hướng dẫn miệng; ghi điểm mơ hồ và sửa README."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w101d2",
+            "prompt": {
+              "en": "README claims MAE=.011. Which files and command make this claim reproducible, and what caveat belongs next to it?",
+              "vi": "README nêu MAE=.011. File và lệnh nào tái lập được, và lưu ý nào cần đi kèm?"
+            },
+            "hint": {
+              "en": "Follow the claim from source data through config and commit to output.",
+              "vi": "Theo kết luận từ dữ liệu nguồn qua config/commit tới output."
+            },
+            "answer": {
+              "en": "Link results/holdout.json, config/benchmark.yaml, commit a17, and run `python -m benchmark --config config/benchmark.yaml`. Verify output candidate=.011, baseline=.012, n=100. State that the interval includes zero and does not establish profit.",
+              "vi": "Nối results/holdout.json, config/benchmark.yaml, commit a17 và chạy `python -m benchmark --config config/benchmark.yaml`. Xác minh output mô hình=.011, baseline=.012, n=100. Nêu khoảng chứa 0, không chứng minh có lời."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Publish an auditable README section, clean-run log, license notice, and data provenance note.",
+          "vi": "Công bố phần README kiểm toán được, log chạy sạch, license và ghi chú provenance dữ liệu."
+        }
+      },
+      {
+        "title": {
+          "en": "Match applications to fictional research roles",
+          "vi": "Ghép ứng tuyển với vị trí nghiên cứu giả định"
+        },
+        "theory": {
+          "en": "A job description is a set of required tasks, not a prompt to imitate keywords. Extract must-have skills, evidence expected, and unknowns. Map each requirement to a concrete artifact; label adjacent skills honestly and state gaps with a learning plan. Tailor the first paragraph and project order, but do not alter dates, authorship, performance, or degree status. For a research role, a careful negative result and a reproducible benchmark can be stronger evidence than an inflated “alpha” claim.",
+          "vi": "Mô tả công việc là tập nhiệm vụ cần làm, không phải danh sách từ khóa để bắt chước. Trích kỹ năng bắt buộc, bằng chứng cần và điều chưa biết. Ghép từng yêu cầu với sản phẩm cụ thể; nêu trung thực kỹ năng gần và khoảng trống kèm kế hoạch học. Có thể đổi đoạn đầu và thứ tự dự án, nhưng không sửa ngày tháng, tác giả, hiệu suất hay tình trạng bằng cấp. Với vị trí nghiên cứu, kết quả âm tính cẩn trọng và benchmark tái lập có thể thuyết phục hơn tuyên bố “alpha” phóng đại."
+        },
+        "workedExample": {
+          "en": "Fictional roles: A, Quant Research Intern, needs probability, C++/Python, chronological evaluation; B, Predoc RA, needs proofs, clean data work, writing; C, Research Engineer, needs tested pipelines and deployment. Your evidence: robotics/AI agent workflows, strong C++, benchmark repo with time-aware splits, and a documented uncertainty caveat. A fits coding/evaluation, B has a proof-writing gap, and C needs deployment evidence. Apply to A with the benchmark first; describe the gap for B rather than claiming graduate proof expertise.",
+          "vi": "Vị trí giả định: A, Quant Research Intern, cần xác suất, C++/Python, đánh giá theo thời gian; B, Predoc RA, cần chứng minh, xử lý dữ liệu sạch, viết; C, Research Engineer, cần pipeline có test và triển khai. Bằng chứng của bạn: robotics/AI workflow agentic, C++ tốt, repo benchmark có split theo thời gian và lưu ý bất định. A phù hợp code/đánh giá; B còn thiếu viết chứng minh; C cần bằng chứng triển khai. Ứng tuyển A với benchmark trước; nêu khoảng trống với B thay vì tự nhận chuyên gia chứng minh sau đại học."
+        },
+        "visual": {
+          "kind": "matrix",
+          "title": {
+            "en": "Match applications to fictional research roles",
+            "vi": "Ghép ứng tuyển với vị trí nghiên cứu giả định"
+          },
+          "caption": {
+            "en": "Only role A has a documented match for coding and chronological evaluation; B lacks proof-writing evidence and C lacks deployment evidence.",
+            "vi": "Chỉ vị trí A có bằng chứng phù hợp về code/đánh giá thời gian; B thiếu minh chứng viết chứng minh, C thiếu minh chứng triển khai."
+          },
+          "rows": [
+            "A Quant Research Intern",
+            "B Predoc RA",
+            "C Research Engineer"
+          ],
+          "columns": [
+            "documented match present (1=yes)"
+          ],
+          "values": [
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Annotate the three fictional role cards: must-have, evidence, and missing proof.",
+            "vi": "Ghi chú ba thẻ vị trí giả định: bắt buộc, bằng chứng và minh chứng còn thiếu."
+          },
+          {
+            "en": "Map C++/agent workflows/benchmark artifacts to A; map proof writing and data work to B.",
+            "vi": "Ghép C++/agent workflow/benchmark với A; ghép viết chứng minh/xử lý dữ liệu với B."
+          },
+          {
+            "en": "Draft three 120-word opening paragraphs with changed project order but identical factual record.",
+            "vi": "Soạn ba đoạn mở đầu 120 từ, đổi thứ tự dự án nhưng giữ nguyên dữ kiện."
+          },
+          {
+            "en": "Check every résumé noun and metric against a dated artifact; identify one honest growth gap per role.",
+            "vi": "Đối chiếu từng kỹ năng/con số CV với sản phẩm có ngày; nêu một khoảng phát triển trung thực mỗi vị trí."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w101d3",
+            "prompt": {
+              "en": "Which role best matches the documented C++ plus chronological benchmark evidence, and what gap should not be concealed?",
+              "vi": "Vị trí nào khớp nhất với bằng chứng C++ và benchmark thời gian, và khoảng trống nào không được che?"
+            },
+            "hint": {
+              "en": "Compare actual tasks: role A requires coding and time-aware evaluation; role B emphasizes proofs.",
+              "vi": "So nhiệm vụ thật: A cần code/đánh giá theo thời gian; B nhấn mạnh chứng minh."
+            },
+            "answer": {
+              "en": "Role A matches the C++ and time-aware benchmark evidence best. Role B remains a reasonable stretch application, but proof-writing evidence is missing; state this honestly and attach a sample proof-writing plan rather than claiming expertise. Role C is not supported until deployment/pipeline testing is documented.",
+              "vi": "A khớp bằng chứng C++ và benchmark theo thời gian nhất. B có thể là ứng tuyển vươn tới, nhưng thiếu bằng chứng viết chứng minh; nói thật và đính kèm kế hoạch mẫu thay vì tự nhận chuyên môn. C chưa được hỗ trợ nếu chưa có bằng chứng triển khai/test pipeline."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Save three role-specific application drafts and a skills-to-evidence matrix with gaps.",
+          "vi": "Lưu ba bản ứng tuyển theo vị trí và ma trận kỹ năng-bằng chứng-khoảng trống."
+        }
+      },
+      {
+        "title": {
+          "en": "Practice a quantified research interview",
+          "vi": "Luyện phỏng vấn nghiên cứu có định lượng"
+        },
+        "theory": {
+          "en": "Technical interviews reward explicit assumptions and a checkable chain of reasoning. Before calculating, clarify whether the task asks for prediction error, investment return, or a causal quantity. Write units and denominators. For code, state input/output contracts and edge cases before optimizing. For mathematics, show the key derivation instead of jumping to a memorized formula. If the prompt is under-specified, request the missing convention and then solve a stated version. A good answer includes a sanity check and a limitation.",
+          "vi": "Phỏng vấn kỹ thuật đánh giá giả định tường minh và chuỗi suy luận kiểm tra được. Trước khi tính, làm rõ đề hỏi lỗi dự báo, lợi nhuận đầu tư hay đại lượng nhân quả. Ghi đơn vị và mẫu số. Với code, nêu hợp đồng input/output và edge case trước tối ưu. Với toán, chỉ ra suy dẫn then chốt thay vì nhảy tới công thức nhớ sẵn. Nếu đề thiếu quy ước, hỏi phần thiếu rồi giải phiên bản đã nêu. Đáp án tốt có kiểm tra hợp lý và giới hạn."
+        },
+        "workedExample": {
+          "en": "Toy returns are +.02, −.01, +.01, so average return=(.02−.01+.01)/3=.00667. Against a zero forecast, absolute errors are .02,.01,.01; MAE=.04/3=.01333. These are different quantities. With n=3, this arithmetic alone says nothing about stable future performance, variance, costs, or statistical significance.",
+          "vi": "Lợi nhuận toy là +.02, −.01, +.01 nên lợi nhuận trung bình=(.02−.01+.01)/3=.00667. So với dự báo 0, lỗi tuyệt đối là .02,.01,.01; MAE=.04/3=.01333. Đây là hai đại lượng khác nhau. Với n=3, phép tính chưa nói gì về hiệu suất tương lai bền, phương sai, chi phí hay ý nghĩa thống kê."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Practice a quantified research interview",
+            "vi": "Luyện phỏng vấn nghiên cứu có định lượng"
+          },
+          "caption": {
+            "en": "A technical interview answer should state the estimand, compute from supplied values, and name assumptions.",
+            "vi": "Câu trả lời phỏng vấn kỹ thuật cần nêu estimand, tính từ số đã cho và nêu giả định."
+          },
+          "steps": [
+            {
+              "en": "Toy returns are +.02, −.01, +.01; mean=.00667.",
+              "vi": "Lợi nhuận toy là +.02, −.01, +.01; mean=.00667."
+            },
+            {
+              "en": "A zero forecast has errors .02,.01,.01; MAE=.01333.",
+              "vi": "Dự báo 0 có lỗi .02,.01,.01; MAE=.01333."
+            },
+            {
+              "en": "Three observations give little precision; do not infer persistent edge.",
+              "vi": "Ba quan sát cho độ chính xác thấp; không suy ra lợi thế bền."
+            },
+            {
+              "en": "Ask whether the interviewer means forecast accuracy, gross return, or net return.",
+              "vi": "Hỏi người phỏng vấn muốn độ chính xác dự báo, lợi nhuận gộp hay ròng."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Solve the toy return mean and MAE separately; write units and formulas.",
+            "vi": "Tính riêng lợi nhuận trung bình và MAE toy; ghi đơn vị và công thức."
+          },
+          {
+            "en": "Explain how one sign change in the third return changes mean but not the MAE calculation definition.",
+            "vi": "Giải thích đổi dấu lợi nhuận thứ ba ảnh hưởng mean nhưng không đổi định nghĩa MAE."
+          },
+          {
+            "en": "Give a 90-second answer and invite clarification: forecast error, gross return, or net return?",
+            "vi": "Trả lời 90 giây và hỏi rõ: lỗi dự báo, lợi nhuận gộp hay ròng?"
+          },
+          {
+            "en": "Run a mock interview with a follow-up about sample size, transaction costs, and look-ahead leakage.",
+            "vi": "Mô phỏng phỏng vấn với truy vấn về cỡ mẫu, chi phí giao dịch và rò rỉ nhìn trước."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w101d4",
+            "prompt": {
+              "en": "For returns .02,−.01,.01, compute the mean; for zero forecasts compute MAE. Are they interchangeable?",
+              "vi": "Với lợi nhuận .02,−.01,.01, tính mean; với dự báo 0 tính MAE. Hai thứ có thể thay nhau không?"
+            },
+            "hint": {
+              "en": "Mean is signed; MAE averages absolute forecast residuals.",
+              "vi": "Mean có dấu; MAE lấy trung bình trị tuyệt đối phần dư dự báo."
+            },
+            "answer": {
+              "en": "Mean return=(.02−.01+.01)/3=.02/3=.00667. Zero forecast residual magnitudes are .02,.01,.01, so MAE=.04/3=.01333. They are not interchangeable: one summarizes signed returns, the other forecast error. Three observations do not establish a repeatable edge.",
+              "vi": "Lợi nhuận trung bình=(.02−.01+.01)/3=.02/3=.00667. Độ lớn phần dư khi dự báo 0 là .02,.01,.01 nên MAE=.04/3=.01333. Hai đại lượng không thay nhau: một là lợi nhuận có dấu, một là lỗi dự báo. Ba quan sát không chứng minh lợi thế lặp lại."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Create a one-page interview sheet with formulas, assumptions, sanity checks, and two clarifying questions.",
+          "vi": "Tạo tờ ôn phỏng vấn một trang gồm công thức, giả định, kiểm tra hợp lý và hai câu hỏi làm rõ."
+        }
+      },
+      {
+        "title": {
+          "en": "Conduct a truthful mock interview",
+          "vi": "Thực hiện phỏng vấn mô phỏng trung thực"
+        },
+        "theory": {
+          "en": "A research interview tests both skill and judgment. Prepare a concise project summary, then let the interviewer probe assumptions, code, uncertainty, and failure modes. Use a structured example, but keep each part factual: context, task, action, result, and limitation. Do not disclose confidential information, exaggerate authorship, or fabricate a metric. When experience is missing, identify the nearest evidence and a concrete learning plan. Ask about supervision, data access, evaluation standards, and feedback cadence; these reveal whether the role supports rigorous work.",
+          "vi": "Phỏng vấn nghiên cứu kiểm tra cả kỹ năng lẫn phán đoán. Chuẩn bị tóm tắt dự án ngắn rồi để người phỏng vấn hỏi giả định, code, bất định và lỗi. Dùng ví dụ có cấu trúc nhưng mọi phần phải thật: bối cảnh, nhiệm vụ, hành động, kết quả, giới hạn. Không tiết lộ thông tin mật, phóng đại tác giả hay bịa metric. Nếu thiếu kinh nghiệm, nêu bằng chứng gần nhất và kế hoạch học cụ thể. Hỏi về hướng dẫn, quyền dữ liệu, chuẩn đánh giá và nhịp phản hồi để biết vai trò có hỗ trợ nghiên cứu chặt chẽ không."
+        },
+        "workedExample": {
+          "en": "For a question about production experience, say: “I have built agentic workflow prototypes and tested a chronological forecasting benchmark, but I have not operated a live trading system. I can show the tests and would need to learn your deployment and risk controls.” This states adjacent experience, a boundary, evidence, and a learning need without pretending.",
+          "vi": "Khi hỏi kinh nghiệm production, nói: “Tôi đã xây prototype workflow agentic và kiểm thử benchmark dự báo theo thời gian, nhưng chưa vận hành hệ thống giao dịch thật. Tôi có thể cho xem test và cần học quy trình triển khai/kiểm soát rủi ro của nhóm.” Câu nêu kinh nghiệm gần, giới hạn, bằng chứng và nhu cầu học mà không giả vờ."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Conduct a truthful mock interview",
+            "vi": "Thực hiện phỏng vấn mô phỏng trung thực"
+          },
+          "caption": {
+            "en": "A credible process protects factual accuracy, lets the interviewer inspect evidence, and treats missing experience as a plan.",
+            "vi": "Quy trình đáng tin giữ đúng dữ kiện, cho người phỏng vấn kiểm tra bằng chứng và chuyển kinh nghiệm thiếu thành kế hoạch."
+          },
+          "steps": [
+            {
+              "en": "Prepare a 45-second summary and one project artifact link.",
+              "vi": "Chuẩn bị phần giới thiệu 45 giây và một link sản phẩm dự án."
+            },
+            {
+              "en": "Use situation→task→action→measured result, then name limitation.",
+              "vi": "Dùng bối cảnh→nhiệm vụ→hành động→kết quả đo, rồi nêu giới hạn."
+            },
+            {
+              "en": "Never disclose private data or claim authorship for team work.",
+              "vi": "Không tiết lộ dữ liệu riêng hay nhận tác giả cho việc nhóm."
+            },
+            {
+              "en": "Send a concise thank-you note only after checking facts and recipient.",
+              "vi": "Chỉ gửi lời cảm ơn ngắn sau khi kiểm tra dữ kiện/người nhận."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Deliver a 45-second project story using the benchmark numbers .011/.012 and interval caveat.",
+            "vi": "Kể dự án trong 45 giây với số benchmark .011/.012 và lưu ý khoảng."
+          },
+          {
+            "en": "Have a partner ask five follow-ups on leakage, authorship, uncertainty, code tests, and a failure.",
+            "vi": "Nhờ bạn học hỏi năm truy vấn về leakage, tác giả, bất định, test code và lỗi."
+          },
+          {
+            "en": "Practice one honest gap answer and attach the nearest verifiable artifact plus learning steps.",
+            "vi": "Luyện một câu trả lời khoảng trống trung thực, kèm sản phẩm kiểm chứng và bước học."
+          },
+          {
+            "en": "Score clarity, accuracy, evidence, and listening from 1–4; rewrite one weak answer.",
+            "vi": "Chấm độ rõ, chính xác, bằng chứng, lắng nghe từ 1–4; viết lại một đáp án yếu."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w101d5",
+            "prompt": {
+              "en": "How do you answer “Have you run a live trading system?” using only documented prototype and benchmark experience?",
+              "vi": "Trả lời “Bạn từng chạy hệ thống giao dịch thật chưa?” dựa trên prototype và benchmark đã có."
+            },
+            "hint": {
+              "en": "State yes/no, adjacent evidence, boundary, and next learning step.",
+              "vi": "Nêu có/không, bằng chứng gần, giới hạn và bước học tiếp."
+            },
+            "answer": {
+              "en": "“No, I have not run a live trading system. I have built agentic workflow prototypes and a chronological forecasting benchmark, and can show its tests. I would need to learn the team’s deployment and risk controls.” This is specific and verifiable without inflating experience.",
+              "vi": "“Chưa, tôi chưa chạy hệ thống giao dịch thật. Tôi đã xây prototype workflow agentic và benchmark dự báo theo thời gian, có thể cho xem test. Tôi cần học quy trình triển khai và kiểm soát rủi ro của nhóm.” Câu cụ thể, kiểm chứng được, không phóng đại."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Save a mock-interview recording, rubric, revised answers, and a list of questions for prospective supervisors.",
+          "vi": "Lưu bản ghi phỏng vấn giả lập, rubric, câu trả lời sửa và câu hỏi dành cho quản lý tương lai."
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 102,
+    "title": {
+      "en": "Choosing the next research stage",
+      "vi": "Chọn giai đoạn nghiên cứu tiếp theo"
+    },
+    "prerequisites": {
+      "en": "A CV/portfolio audit and a clear account of research interests and constraints.",
+      "vi": "Đã kiểm CV/portfolio và nêu rõ mối quan tâm nghiên cứu cùng ràng buộc."
+    },
+    "objectives": [
+      {
+        "en": "Compare MSc, PhD, and RA by funding, duration, supervision, and options.",
+        "vi": "So lộ trình MSc, PhD, RA theo tài trợ, thời lượng, hướng dẫn, lựa chọn."
+      },
+      {
+        "en": "Interrogate funding and mentorship details rather than prestige alone.",
+        "vi": "Kiểm tra tài trợ/hướng dẫn thay vì chỉ nhìn danh tiếng."
+      },
+      {
+        "en": "Use transparent, sensitivity-tested preferences to rank options.",
+        "vi": "Xếp lựa chọn bằng ưu tiên minh bạch, đã kiểm tra độ nhạy."
+      },
+      {
+        "en": "Design a feasible six-month proposal and conditional decision memo.",
+        "vi": "Thiết kế đề xuất sáu tháng khả thi và memo quyết định có điều kiện."
+      }
+    ],
+    "foundations": {
+      "en": "Graduate study, an RA role, and a professional job create different evidence, costs, and option value. Compare hard constraints first, then score preferences transparently. Scores are judgments, so sensitivity matters. A research proposal specifies a falsifiable question, data access, chronology, baseline, outcome, uncertainty method, and stop condition. A decision is conditional on written terms and mentorship, not a fictional card or advertised prestige. Keep an alternate route and a date for review; the goal is an informed next step, not certainty about an entire career.",
+      "vi": "Học sau đại học, RA và công việc chuyên môn tạo bằng chứng, chi phí và giá trị lựa chọn khác nhau. So ràng buộc cứng trước, rồi chấm ưu tiên minh bạch. Điểm là phán đoán nên cần độ nhạy. Đề xuất nghiên cứu nêu câu hỏi bác bỏ được, quyền dữ liệu, thời gian, baseline, kết quả, bất định và điều kiện dừng. Quyết định phụ thuộc điều khoản văn bản và hướng dẫn, không dựa thẻ giả hay danh tiếng quảng cáo. Giữ đường dự phòng và ngày xem lại; mục tiêu là bước tiếp theo có căn cứ, không phải chắc chắn cả sự nghiệp."
+    },
+    "diagram": {
+      "kind": "matrix",
+      "title": {
+        "en": "From pathway to six-month plan",
+        "vi": "Từ lộ trình đến kế hoạch sáu tháng"
+      },
+      "labels": [
+        {
+          "en": "constraints",
+          "vi": "ràng buộc"
+        },
+        {
+          "en": "verified offers",
+          "vi": "offer xác minh"
+        },
+        {
+          "en": "research fit",
+          "vi": "phù hợp nghiên cứu"
+        },
+        {
+          "en": "conditional plan",
+          "vi": "kế hoạch có điều kiện"
+        }
+      ],
+      "caption": {
+        "en": "Choose a path only after checking its terms, then test fit with a bounded research plan and review trigger.",
+        "vi": "Chọn lộ trình sau khi kiểm điều khoản, rồi thử độ phù hợp bằng kế hoạch nghiên cứu có giới hạn và ngưỡng xem lại."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Compare MSc, PhD, and RA pathways",
+          "vi": "So sánh lộ trình MSc, PhD và RA"
+        },
+        "theory": {
+          "en": "A next-stage choice depends on the work you want, current preparation, finances, mentorship, and tolerance for uncertainty. An MSc can provide coursework and a credential but may require tuition and does not ensure research access. A PhD offers sustained original research and often funding, but has long duration and supervisor risk. An RA role builds evidence and lets you test fit, but admission later is not guaranteed. Treat advertised outcomes as uncertain, separate hard constraints from preferences, and compare counterfactuals: what evidence or option will each year create?",
+          "vi": "Lựa chọn giai đoạn tiếp theo phụ thuộc công việc bạn muốn, nền tảng hiện tại, tài chính, hướng dẫn và mức chịu bất định. MSc có thể cung cấp môn học/bằng cấp nhưng tốn học phí và không bảo đảm được làm nghiên cứu. PhD cho nghiên cứu gốc dài hạn, thường có tài trợ, nhưng kéo dài và có rủi ro người hướng dẫn. Vị trí RA xây bằng chứng và giúp thử độ phù hợp, nhưng không bảo đảm được nhận học sau đó. Xem kết quả quảng bá là bất định, tách ràng buộc cứng khỏi ưu tiên và so sánh mỗi năm tạo ra lựa chọn/bằng chứng nào."
+        },
+        "workedExample": {
+          "en": "Use fictional planning cards, not market offers: MSc 2 years and 24 total tuition units; funded PhD 5 years at 32 units/year; RA 1 year at 28 units/year without an admission guarantee. They differ in both cash flow and credential. If funding is mandatory and no tuition reserve exists, an unfunded MSc fails a hard constraint even if its coursework looks attractive. The figures are illustrative only; inspect actual written funding, living costs, visa, and supervisor terms before committing.",
+          "vi": "Dùng thẻ kế hoạch giả định, không phải offer thị trường: MSc 2 năm, học phí tổng 24 đơn vị; PhD tài trợ 5 năm, 32 đơn vị/năm; RA 1 năm, lương 28 đơn vị/năm nhưng không bảo đảm tuyển học. Chúng khác cả dòng tiền lẫn bằng cấp. Nếu tài trợ là ràng buộc bắt buộc và không có dự trữ học phí, MSc chưa tài trợ vi phạm ràng buộc dù môn học hấp dẫn. Số liệu chỉ minh họa; cần xem văn bản tài trợ, sinh hoạt phí, visa và điều khoản hướng dẫn trước khi cam kết."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Compare MSc, PhD, and RA pathways",
+            "vi": "So sánh lộ trình MSc, PhD và RA"
+          },
+          "caption": {
+            "en": "MSc, PhD, and research-assistant routes trade time, funding, supervision, and future options; no single route dominates for everyone.",
+            "vi": "Lộ trình MSc, PhD và RA đánh đổi thời gian, tài trợ, hướng dẫn và lựa chọn tương lai; không lộ trình nào tốt nhất cho mọi người."
+          },
+          "steps": [
+            {
+              "en": "MSc: 2 years; illustrative total tuition 24 budget units; degree awarded, research access varies.",
+              "vi": "MSc: 2 năm; học phí tổng giả định 24 đơn vị ngân sách; có bằng, quyền nghiên cứu tùy chương trình."
+            },
+            {
+              "en": "PhD: 5 years; illustrative funding 32 units/year; deep research, longer commitment.",
+              "vi": "PhD: 5 năm; tài trợ giả định 32 đơn vị/năm; nghiên cứu sâu, cam kết dài."
+            },
+            {
+              "en": "RA: 1 year; illustrative salary 28 units/year; mentored research, no admission guarantee.",
+              "vi": "RA: 1 năm; lương giả định 28 đơn vị/năm; nghiên cứu có hướng dẫn, không bảo đảm được nhận học."
+            },
+            {
+              "en": "Verify actual offers and personal constraints before deciding.",
+              "vi": "Xác minh offer thật và ràng buộc cá nhân trước khi quyết định."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Write hard constraints: funding, location, visa, health, caregiving, and research area.",
+            "vi": "Ghi ràng buộc cứng: tài trợ, nơi ở, visa, sức khỏe, chăm sóc gia đình, lĩnh vực."
+          },
+          {
+            "en": "Compare 2-year MSc/24 tuition, 5-year PhD/32 per year, and 1-year RA/28 per year; mark incomparable units.",
+            "vi": "So 2 năm MSc/học phí 24, 5 năm PhD/32 mỗi năm, 1 năm RA/28 mỗi năm; đánh dấu đại lượng không cùng loại."
+          },
+          {
+            "en": "List evidence each route creates after 6 and 24 months, including mentor access and research output.",
+            "vi": "Liệt kê bằng chứng mỗi lộ trình tạo sau 6 và 24 tháng, gồm mentor và sản phẩm nghiên cứu."
+          },
+          {
+            "en": "Draft one uncertainty-aware recommendation and two conditions that would reverse it.",
+            "vi": "Soạn một đề xuất có xét bất định và hai điều kiện làm đảo lựa chọn."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w102d1",
+            "prompt": {
+              "en": "With no tuition reserve and funding mandatory, which fictional route violates the hard constraint: MSc 24 total tuition, funded PhD 32/year, or RA 28/year?",
+              "vi": "Không có dự trữ học phí và bắt buộc được tài trợ, lộ trình giả định nào vi phạm: MSc học phí 24, PhD tài trợ 32/năm hay RA 28/năm?"
+            },
+            "hint": {
+              "en": "Apply the hard constraint before ranking preference scores.",
+              "vi": "Áp ràng buộc cứng trước khi xếp điểm ưu tiên."
+            },
+            "answer": {
+              "en": "The MSc as described violates the funding constraint because it requires 24 tuition units and no reserve exists. The funded PhD and salaried RA do not violate that particular constraint, though living cost, location, duration, and actual written guarantees still need verification. The figures are fictional planning inputs.",
+              "vi": "MSc như mô tả vi phạm ràng buộc tài trợ vì cần 24 đơn vị học phí khi không có dự trữ. PhD được tài trợ và RA có lương không vi phạm ràng buộc đó, nhưng cần xác minh sinh hoạt phí, nơi ở, thời lượng và bảo đảm bằng văn bản. Số liệu chỉ giả định."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Produce a route comparison separating hard constraints, preferences, unknowns, and new evidence each path creates.",
+          "vi": "Tạo so sánh lộ trình, tách ràng buộc cứng, ưu tiên, điều chưa biết và bằng chứng mới mỗi lộ trình tạo."
+        }
+      },
+      {
+        "title": {
+          "en": "Inspect fictional lab and funding cards",
+          "vi": "Xem thẻ lab và tài trợ giả định"
+        },
+        "theory": {
+          "en": "A lab offer bundles research fit, supervisor practice, funding certainty, location, workload, authorship norms, and exit options. Compare written details, not prestige labels. Ask who supervises daily, how projects are scoped, what happens if funding changes, and whether data access is permitted. A stipend number is not disposable income; compare it with fees and local cost assumptions. Lab cards in this lesson are fictional decision exercises. Their terms should never be presented as current openings or real institutions.",
+          "vi": "Offer của lab gồm độ phù hợp nghiên cứu, cách hướng dẫn, độ chắc tài trợ, nơi ở, khối lượng, quy tắc tác giả và lối rẽ. So điều khoản viết ra, không so nhãn danh tiếng. Hỏi ai hướng dẫn hằng ngày, dự án được giới hạn ra sao, điều gì xảy ra nếu tài trợ đổi và quyền dữ liệu có được cấp không. Stipend không phải thu nhập khả dụng; so với học phí và chi phí sinh hoạt giả định. Thẻ lab bài này đều hư cấu, không được hiểu là vị trí tuyển hiện tại hay cơ sở có thật."
+        },
+        "workedExample": {
+          "en": "Fictional cards: Northstar PhD, 5 years, support 32 units/year, two advisor meetings monthly, time-series fit 4/5, relocation required; Delta MSc, 2 years, tuition 24 total, four supervised research hours weekly, fit 3/5; River RA, 12 months, salary 28/year, weekly mentor meeting, fit 5/5, no graduate admission promise. The RA and PhD are funded in their fictional terms; Delta is not. Compare mentoring and research access alongside cash.",
+          "vi": "Thẻ hư cấu: PhD Northstar 5 năm, hỗ trợ 32 đơn vị/năm, hai buổi với advisor mỗi tháng, phù hợp chuỗi thời gian 4/5, phải chuyển nơi ở; MSc Delta 2 năm, học phí tổng 24, bốn giờ nghiên cứu có hướng dẫn mỗi tuần, phù hợp 3/5; RA River 12 tháng, lương 28/năm, họp mentor hằng tuần, phù hợp 5/5, không hứa nhận học. RA và PhD có tài trợ theo điều khoản giả định; Delta không. So hướng dẫn và quyền làm nghiên cứu cùng dòng tiền."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Inspect fictional lab and funding cards",
+            "vi": "Xem thẻ lab và tài trợ giả định"
+          },
+          "caption": {
+            "en": "These fictional cards show annual funding/salary of 32 for the PhD and 28 for RA; MSc instead has 24 total tuition, so its bar is not a comparable stipend.",
+            "vi": "Thẻ giả định có tài trợ/lương năm 32 cho PhD và 28 cho RA; MSc có học phí tổng 24 nên cột này không phải stipend so sánh được."
+          },
+          "xLabel": {
+            "en": "Route",
+            "vi": "Lộ trình"
+          },
+          "yLabel": {
+            "en": "Illustrative budget units/year",
+            "vi": "Đơn vị ngân sách giả định/năm"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "funded PhD annual support",
+                "vi": "hỗ trợ PhD/năm"
+              },
+              "value": 32
+            },
+            {
+              "label": {
+                "en": "RA annual salary",
+                "vi": "lương RA/năm"
+              },
+              "value": 28
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Extract duration, cash term, mentorship cadence, research fit, location, and admission guarantee from each fictional card.",
+            "vi": "Trích thời lượng, điều khoản tài chính, nhịp mentor, phù hợp nghiên cứu, nơi ở và bảo đảm tuyển từ mỗi thẻ."
+          },
+          {
+            "en": "Compute Northstar support over five years as 5×32=160 units before living costs; flag no-cost ambiguity.",
+            "vi": "Tính hỗ trợ Northstar 5×32=160 đơn vị trong 5 năm trước sinh hoạt phí; đánh dấu điểm chi phí chưa rõ."
+          },
+          {
+            "en": "Contrast River 12-month salary 28 with no admission guarantee; write the value and risk separately.",
+            "vi": "So lương River 28 trong 12 tháng với việc không bảo đảm tuyển học; tách lợi ích và rủi ro."
+          },
+          {
+            "en": "Prepare six questions for a real supervisor; do not copy fictional terms into an application.",
+            "vi": "Chuẩn bị sáu câu hỏi cho supervisor thật; không đưa điều khoản hư cấu vào hồ sơ."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w102d2",
+            "prompt": {
+              "en": "Which fictional card guarantees admission to a later graduate program? How do you distinguish this from research fit?",
+              "vi": "Thẻ giả định nào bảo đảm được nhận chương trình sau đại học? Phân biệt điều đó với độ phù hợp nghiên cứu thế nào?"
+            },
+            "hint": {
+              "en": "Read the guarantee field rather than infer it from mentorship or prestige.",
+              "vi": "Đọc mục bảo đảm, không suy từ mentor hay danh tiếng."
+            },
+            "answer": {
+              "en": "None guarantees later admission. Northstar is a PhD offer already; River explicitly makes no graduate-admission promise; Delta is an MSc and also gives no admission guarantee. Research-fit scores of 4/5 or 5/5 describe topic alignment, not an admissions decision.",
+              "vi": "Không thẻ nào bảo đảm tuyển học sau này. Northstar đã là offer PhD; River nói rõ không hứa tuyển học; Delta là MSc và cũng không bảo đảm. Điểm phù hợp 4/5 hay 5/5 là khớp chủ đề, không phải quyết định tuyển."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Create a comparison card with exact fictional terms plus an unanswered-questions column for real offers.",
+          "vi": "Tạo thẻ so sánh điều khoản hư cấu chính xác và cột câu hỏi còn thiếu cho offer thật."
+        }
+      },
+      {
+        "title": {
+          "en": "Use a decision matrix without hiding values",
+          "vi": "Dùng ma trận quyết định không che giấu ưu tiên"
+        },
+        "theory": {
+          "en": "A weighted matrix makes preferences visible but does not turn them into objective truth. First remove options violating hard constraints. Then choose criteria, define score anchors, and set weights before seeing the total. Run sensitivity analysis: if a small weight change flips the winner, the decision is fragile and should preserve options. Include uncertainty intervals or ranges where scores are not known. The matrix supports a discussion; it cannot replace written offer verification, personal constraints, or supervisor conversations.",
+          "vi": "Ma trận trọng số làm ưu tiên lộ rõ nhưng không biến chúng thành chân lý khách quan. Trước hết loại lựa chọn vi phạm ràng buộc cứng. Sau đó chọn tiêu chí, định nghĩa thang điểm và đặt trọng số trước khi cộng điểm. Phân tích độ nhạy: nếu đổi trọng số nhỏ làm đổi người thắng, quyết định mong manh và cần giữ lựa chọn mở. Dùng khoảng điểm nếu chưa biết chắc. Ma trận hỗ trợ thảo luận, không thay xác minh offer, ràng buộc cá nhân hay trao đổi với supervisor."
+        },
+        "workedExample": {
+          "en": "Use weights fit=.40, mentorship=.25, funding=.25, options=.10. Card scores N=(4,5,5,3), D=(3,3,2,4), R=(5,4,4,5). Totals: Northstar=1.60+1.25+1.25+.30=4.40; Delta=1.20+.75+.50+.40=2.85; River=2.00+1.00+1.00+.50=4.50. River leads by .10 only, so uncertain scores could reverse it.",
+          "vi": "Dùng trọng số phù hợp=.40, mentor=.25, tài trợ=.25, lựa chọn=.10. Điểm N=(4,5,5,3), D=(3,3,2,4), R=(5,4,4,5). Tổng: Northstar=1,60+1,25+1,25+0,30=4,40; Delta=1,20+0,75+0,50+0,40=2,85; River=2,00+1,00+1,00+0,50=4,50. River hơn 0,10 nên điểm chưa chắc có thể đảo kết quả."
+        },
+        "visual": {
+          "kind": "matrix",
+          "title": {
+            "en": "Use a decision matrix without hiding values",
+            "vi": "Dùng ma trận quyết định không che giấu ưu tiên"
+          },
+          "caption": {
+            "en": "Weighted scores depend on stated preferences; River narrowly leads Northstar and sensitivity matters.",
+            "vi": "Điểm trọng số phụ thuộc ưu tiên đã nêu; River nhỉnh hơn Northstar và cần kiểm tra độ nhạy."
+          },
+          "rows": [
+            "Northstar PhD",
+            "Delta MSc",
+            "River RA"
+          ],
+          "columns": [
+            "Fit",
+            "Mentorship",
+            "Funding",
+            "Options"
+          ],
+          "values": [
+            [
+              4,
+              5,
+              5,
+              3
+            ],
+            [
+              3,
+              3,
+              2,
+              4
+            ],
+            [
+              5,
+              4,
+              4,
+              5
+            ]
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Multiply each score vector by (.40,.25,.25,.10) and verify all three totals.",
+            "vi": "Nhân mỗi vectơ điểm với (.40,.25,.25,.10) và kiểm tra ba tổng."
+          },
+          {
+            "en": "Vary mentorship weight from .15 to .35 and adjust options weight so weights still sum to 1; find winner changes.",
+            "vi": "Đổi trọng số mentor .15–.35 và chỉnh trọng số lựa chọn để tổng vẫn 1; tìm lúc đổi lựa chọn."
+          },
+          {
+            "en": "Replace uncertain mentor and funding scores with ranges and recompute best/worst totals.",
+            "vi": "Thay điểm mentor/tài trợ chưa chắc bằng khoảng rồi tính tổng tốt/xấu."
+          },
+          {
+            "en": "Write a memo naming your value judgments; do not describe the weighted winner as scientifically optimal.",
+            "vi": "Viết memo nêu phán đoán giá trị; không gọi người thắng trọng số là tối ưu khoa học."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w102d3",
+            "prompt": {
+              "en": "With weights (.40,.25,.25,.10), calculate total for River scores (5,4,4,5) and compare Northstar (4,5,5,3).",
+              "vi": "Với trọng số (.40,.25,.25,.10), tính tổng River (5,4,4,5), so với Northstar (4,5,5,3)."
+            },
+            "hint": {
+              "en": "Compute component products before adding.",
+              "vi": "Tính tích từng thành phần rồi cộng."
+            },
+            "answer": {
+              "en": "River=.40·5+.25·4+.25·4+.10·5=2+1+1+.5=4.50. Northstar=.40·4+.25·5+.25·5+.10·3=1.6+1.25+1.25+.3=4.40. River leads by .10, smaller than plausible scoring error, so inspect the uncertain terms rather than treating the ranking as certain.",
+              "vi": "River=.40·5+.25·4+.25·4+.10·5=2+1+1+.5=4,50. Northstar=.40·4+.25·5+.25·5+.10·3=1,6+1,25+1,25+.3=4,40. River hơn .10, nhỏ hơn sai số chấm hợp lý; cần kiểm tra tiêu chí chưa chắc thay vì xem thứ hạng là chắc chắn."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Save a transparent score sheet, weight rationale, sensitivity table, and unresolved-facts list.",
+          "vi": "Lưu bảng điểm minh bạch, lý do trọng số, bảng độ nhạy và danh sách dữ kiện chưa rõ."
+        }
+      },
+      {
+        "title": {
+          "en": "Draft a six-month research proposal",
+          "vi": "Soạn đề xuất nghiên cứu sáu tháng"
+        },
+        "theory": {
+          "en": "A short proposal is a testable plan, not a promise of a positive result. State a question and target estimand, related mechanism, data-generating or acquisition plan, comparator, chronological split, metric, uncertainty method, and failure criterion. Separate exploratory choices from confirmatory evaluation. A milestone should have an artifact and a decision gate. Synthetic data can test code and known behavior but cannot support a real-market claim. A negative result is still useful if the design can distinguish “no effect” from a broken or underpowered experiment.",
+          "vi": "Đề xuất ngắn là kế hoạch kiểm định được, không phải lời hứa có kết quả dương. Nêu câu hỏi/estimand, cơ chế, kế hoạch dữ liệu, đối chứng, split thời gian, metric, phương pháp bất định và tiêu chí thất bại. Tách lựa chọn khám phá khỏi đánh giá xác nhận. Mốc cần sản phẩm và cổng quyết định. Dữ liệu tổng hợp kiểm tra code/hành vi đã biết nhưng không hỗ trợ kết luận thị trường thật. Kết quả âm tính vẫn hữu ích nếu thiết kế phân biệt “không tác động” với thí nghiệm lỗi hoặc thiếu lực."
+        },
+        "workedExample": {
+          "en": "Proposal: on 10,000 synthetic daily returns with volatility doubling after row 7,000, compare fixed η=.1 to a prespecified adaptive step-size. Train rows 1–7,000, validate 7,001–8,500, and test 8,501–10,000 once. Primary outcome is next-row absolute forecast error; report paired test difference and block interval. Falsifier: no reduction after the shift, or an effect that disappears under the predeclared block sensitivity. This demonstrates method behavior only, not a market edge.",
+          "vi": "Đề xuất: trên 10.000 lợi nhuận ngày tổng hợp với biến động tăng gấp đôi sau hàng 7.000, so η=.1 cố định với bước thích nghi định trước. Train 1–7.000, validation 7.001–8.500, test 8.501–10.000 một lần. Kết quả chính là lỗi tuyệt đối dự báo hàng kế; báo chênh lệch ghép cặp và khoảng theo khối. Bác bỏ: không giảm lỗi sau điểm đổi hoặc hiệu ứng mất khi kiểm tra độ nhạy khối đã định trước. Đây chỉ là hành vi phương pháp, không phải lợi thế thị trường."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Draft a six-month research proposal",
+            "vi": "Soạn đề xuất nghiên cứu sáu tháng"
+          },
+          "caption": {
+            "en": "A six-month proposal should predefine question, unit, split, comparator, metric, and falsification result.",
+            "vi": "Đề xuất sáu tháng cần định trước câu hỏi, đơn vị, split, đối chứng, metric và kết quả bác bỏ."
+          },
+          "steps": [
+            {
+              "en": "Question: does adaptive step-size reduce forecast loss after a regime shift?",
+              "vi": "Câu hỏi: bước thích nghi có giảm lỗi dự báo sau đổi chế độ không?"
+            },
+            {
+              "en": "Data: 10,000 synthetic daily returns; first 7,000 train, next 1,500 validation, last 1,500 test.",
+              "vi": "Dữ liệu: 10.000 lợi nhuận ngày tổng hợp; 7.000 train, 1.500 validation, 1.500 test cuối."
+            },
+            {
+              "en": "Comparator: fixed η=.1; treatment: predeclared adaptive rule; metric: MAE.",
+              "vi": "Đối chứng: η=.1 cố định; xử lý: quy tắc thích nghi định trước; metric: MAE."
+            },
+            {
+              "en": "Stop if code cannot reproduce or leakage test fails.",
+              "vi": "Dừng nếu code không tái lập hoặc test leakage thất bại."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Write one falsifiable question and define target at row t using only information released by t.",
+            "vi": "Viết câu hỏi bác bỏ được và định nghĩa mục tiêu tại t chỉ dùng thông tin đã công bố tới t."
+          },
+          {
+            "en": "Create split diagram 1–7000 / 7001–8500 / 8501–10000; add a test that rejects future-row access.",
+            "vi": "Tạo sơ đồ split 1–7000 / 7001–8500 / 8501–10000; thêm test chặn truy cập hàng tương lai."
+          },
+          {
+            "en": "Specify fixed η=.1, adaptive rule, MAE, paired difference, block interval, and the no-improvement falsifier.",
+            "vi": "Nêu η=.1, quy tắc thích nghi, MAE, chênh lệch ghép, khoảng khối và tiêu chí không cải thiện."
+          },
+          {
+            "en": "Assign months 1–6 artifacts and stop/go gates; check each milestone fits actual mentorship/data access.",
+            "vi": "Gán sản phẩm/cổng dừng-tiếp tục tháng 1–6; kiểm tra mốc phù hợp mentor/quyền dữ liệu thật."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w102d4",
+            "prompt": {
+              "en": "A synthetic series has 10,000 rows and regime shift after 7,000; validation has 1,500 rows and test 1,500. State exact inclusive row ranges.",
+              "vi": "Chuỗi tổng hợp có 10.000 hàng, đổi chế độ sau 7.000; validation 1.500, test 1.500. Ghi đoạn hàng bao gồm đầu/cuối."
+            },
+            "hint": {
+              "en": "Train begins at 1; place validation immediately after 7,000 and test after validation.",
+              "vi": "Train bắt đầu 1; đặt validation sau 7.000, test sau validation."
+            },
+            "answer": {
+              "en": "Train=1–7,000 (7,000 rows); validation=7,001–8,500 (1,500); test=8,501–10,000 (1,500). Counts sum 7,000+1,500+1,500=10,000 with no gap or overlap. Fit transforms on train only and do not inspect test during tuning.",
+              "vi": "Train=1–7.000 (7.000 hàng); validation=7.001–8.500 (1.500); test=8.501–10.000 (1.500). Tổng 7.000+1.500+1.500=10.000, không hở/chồng. Fit transform chỉ trên train và không xem test khi tune."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Write a two-page proposal with preregistered split, baseline, metric, uncertainty, falsifier, six-month milestones, and limitations.",
+          "vi": "Viết đề xuất hai trang với split, baseline, metric, bất định, tiêu chí bác bỏ, mốc sáu tháng và giới hạn định trước."
+        }
+      },
+      {
+        "title": {
+          "en": "Write the decision memo and contingency plan",
+          "vi": "Viết memo quyết định và kế hoạch dự phòng"
+        },
+        "theory": {
+          "en": "A decision memo separates facts, assumptions, preferences, and unknowns. Name the chosen path and why it meets hard constraints; record what would make it fail. Prefer reversible steps while uncertainty is high: verify funding in writing, speak to current trainees, and define a review date. Do not treat a weighted score as objective truth. A contingency should specify a trigger, next action, budget consequence, and deadline. The six-month research proposal should fit the actual supervisor, data permissions, and time available.",
+          "vi": "Memo quyết định tách dữ kiện, giả định, ưu tiên và điều chưa biết. Nêu lộ trình chọn và vì sao đáp ứng ràng buộc cứng; ghi điều khiến nó thất bại. Khi bất định cao, ưu tiên bước đảo ngược được: xác minh tài trợ bằng văn bản, nói chuyện với nghiên cứu sinh hiện tại, đặt ngày xem lại. Không xem điểm trọng số là chân lý khách quan. Dự phòng cần ngưỡng kích hoạt, hành động, hệ quả ngân sách và hạn chót. Đề xuất sáu tháng phải khớp mentor, quyền dữ liệu và thời gian thật."
+        },
+        "workedExample": {
+          "en": "The score matrix gives River RA 4.50 and Northstar PhD 4.40, but the gap is only .10 and the RA has no graduate-admission promise. A cautious memo can select River only if its written salary, supervisor access, and data rights are confirmed; review at month 4. Trigger: if supervision or data access is absent by day 30, begin alternate funded applications by day 45. This makes the narrow ranking reversible rather than pretending certainty.",
+          "vi": "Ma trận cho RA River 4,50 và PhD Northstar 4,40, nhưng chênh chỉ .10 và RA không hứa tuyển học. Memo thận trọng có thể chọn River nếu xác nhận bằng văn bản lương, quyền gặp supervisor và quyền dữ liệu; xem lại ở tháng 4. Ngưỡng: nếu thiếu hướng dẫn hoặc quyền dữ liệu tới ngày 30, bắt đầu hồ sơ tài trợ khác trước ngày 45. Như vậy lựa chọn mong manh có thể đảo, không giả vờ chắc chắn."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Write the decision memo and contingency plan",
+            "vi": "Viết memo quyết định và kế hoạch dự phòng"
+          },
+          "caption": {
+            "en": "A decision memo states chosen path, constraints, reversibility, and evidence that would change the choice.",
+            "vi": "Memo quyết định nêu lộ trình chọn, ràng buộc, khả năng đảo ngược và bằng chứng có thể đổi lựa chọn."
+          },
+          "steps": [
+            {
+              "en": "Hard constraint: no unfunded tuition without reserve.",
+              "vi": "Ràng buộc cứng: không học phí chưa tài trợ khi không có dự trữ."
+            },
+            {
+              "en": "River RA has 12 months of mentored work, salary 28, no admission guarantee.",
+              "vi": "RA River có 12 tháng được hướng dẫn, lương 28, không bảo đảm tuyển học."
+            },
+            {
+              "en": "Its weighted score 4.50 vs Northstar 4.40 is a narrow margin.",
+              "vi": "Điểm trọng số 4,50 so 4,40 của Northstar chỉ cách biệt nhỏ."
+            },
+            {
+              "en": "Decision: verify supervision/funding and preserve PhD applications as an option.",
+              "vi": "Quyết định: xác minh mentor/tài trợ và giữ ứng tuyển PhD như lựa chọn mở."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Separate verified card facts from assumptions and preferences; highlight the .10 score margin.",
+            "vi": "Tách dữ kiện thẻ đã xác minh khỏi giả định/ưu tiên; làm nổi chênh điểm .10."
+          },
+          {
+            "en": "Write decision, conditions precedent, month-4 review date, and a day-30/day-45 contingency.",
+            "vi": "Viết quyết định, điều kiện tiên quyết, ngày xem lại tháng 4 và dự phòng ngày 30/ngày 45."
+          },
+          {
+            "en": "Check six-month proposal milestones against supervisor time, written funding, and data permission.",
+            "vi": "So mốc đề xuất sáu tháng với thời gian supervisor, tài trợ văn bản và quyền dữ liệu."
+          },
+          {
+            "en": "Ask a peer to attack the memo; revise the claim if a single unknown could reverse the choice.",
+            "vi": "Nhờ bạn học phản biện memo; sửa kết luận nếu một điều chưa biết có thể đảo lựa chọn."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w102d5",
+            "prompt": {
+              "en": "River scores 4.50, Northstar 4.40. If a day-30 data-access condition fails and alternate applications take 15 days, what deadline should the memo set?",
+              "vi": "River 4,50, Northstar 4,40. Nếu điều kiện dữ liệu ngày 30 thất bại và hồ sơ thay thế mất 15 ngày, memo đặt hạn nào?"
+            },
+            "hint": {
+              "en": "Add 15 days to the day-30 trigger.",
+              "vi": "Cộng 15 ngày vào ngưỡng ngày 30."
+            },
+            "answer": {
+              "en": "Start alternate applications by day 45 (day 30+15). State the day-30 trigger clearly: no written data access or supervision confirmation. The narrow .10 score lead is not a reason to ignore this condition; the backup preserves an option.",
+              "vi": "Bắt đầu hồ sơ thay thế trước ngày 45 (30+15). Ghi rõ ngưỡng ngày 30: chưa có xác nhận bằng văn bản về quyền dữ liệu/hướng dẫn. Chênh điểm .10 không phải lý do bỏ qua điều kiện; dự phòng giữ lựa chọn."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Finalize a decision memo with verified terms, uncertainty, six-month proposal fit, review date, and trigger-based backup.",
+          "vi": "Hoàn thiện memo với điều khoản xác minh, bất định, mức phù hợp đề xuất sáu tháng, ngày xem lại và dự phòng theo ngưỡng."
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 103,
+    "title": {
+      "en": "Graduate-level skills assessment",
+      "vi": "Đánh giá năng lực sau đại học"
+    },
+    "prerequisites": {
+      "en": "Completed probability, inference, optimization, and forecasting work from the preceding curriculum.",
+      "vi": "Hoàn thành xác suất, suy luận, tối ưu và dự báo trong chương trình trước."
+    },
+    "objectives": [
+      {
+        "en": "Solve a conditional probability problem by total probability and Bayes.",
+        "vi": "Giải bài xác suất điều kiện bằng xác suất toàn phần và Bayes."
+      },
+      {
+        "en": "Interpret an exact test without turning p-values into posterior probabilities.",
+        "vi": "Diễn giải kiểm định chính xác mà không nhầm p-value với xác suất hậu nghiệm."
+      },
+      {
+        "en": "Derive and verify a constrained optimum using KKT.",
+        "vi": "Suy dẫn và xác minh tối ưu ràng buộc bằng KKT."
+      },
+      {
+        "en": "Find and test a temporal leakage bug; write a proof with assumptions.",
+        "vi": "Tìm/test lỗi leakage thời gian; viết chứng minh có giả định."
+      }
+    ],
+    "foundations": {
+      "en": "This assessment uses closed, supplied toy inputs, not outside reading or a hidden dataset. Show intermediate calculations, assumptions, and checks. Probability answers must normalize; inference answers name the null and interpretation; optimization answers verify all KKT conditions; code answers include a failing buggy case and a passing corrected test; proof answers state what population identity does and does not imply. A score should diagnose gaps, not define ability. Revisit a topic when the reasoning or unit tests expose a specific failure.",
+      "vi": "Bài đánh giá dùng input toy đã cho, không cần đọc ngoài hay dataset ẩn. Trình bày phép tính trung gian, giả định và kiểm tra. Xác suất cần chuẩn hóa; suy luận nêu null/ý nghĩa; tối ưu kiểm đủ KKT; code có test fail ở bản lỗi và pass ở bản sửa; chứng minh nêu đẳng thức tổng thể hàm ý/không hàm ý gì. Điểm số chẩn đoán khoảng trống, không định nghĩa năng lực. Ôn lại khi suy luận hoặc test chỉ ra lỗi cụ thể."
+    },
+    "diagram": {
+      "kind": "matrix",
+      "title": {
+        "en": "Assessment evidence and diagnosis",
+        "vi": "Bằng chứng đánh giá và chẩn đoán"
+      },
+      "labels": [
+        {
+          "en": "probability",
+          "vi": "xác suất"
+        },
+        {
+          "en": "inference",
+          "vi": "suy luận"
+        },
+        {
+          "en": "optimization",
+          "vi": "tối ưu"
+        },
+        {
+          "en": "code + proof",
+          "vi": "code + chứng minh"
+        }
+      ],
+      "caption": {
+        "en": "Each skill is assessed through a worked calculation, explicit assumptions, and a checkable artifact.",
+        "vi": "Mỗi kỹ năng được đánh giá bằng phép tính, giả định tường minh và sản phẩm kiểm tra được."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Probability and conditioning assessment",
+          "vi": "Bài đánh giá xác suất và điều kiện"
+        },
+        "theory": {
+          "en": "A probability model begins with events and a declared sample mechanism. The law of total probability partitions an event B over disjoint regimes Aᵢ: P(B)=ΣP(B|Aᵢ)P(Aᵢ). Bayes reverses conditioning: P(A|B)=P(B|A)P(A)/P(B). Conditional expectation is a probability-weighted average. State the conditioning information and verify probabilities normalize. When regimes are latent, observing an outcome updates belief; it does not reveal the regime with certainty. Distinguish posterior probability under a model from a causal statement about what the regime did.",
+          "vi": "Mô hình xác suất bắt đầu từ biến cố và cơ chế mẫu đã nêu. Công thức xác suất toàn phần phân hoạch B qua các chế độ rời nhau Aᵢ: P(B)=ΣP(B|Aᵢ)P(Aᵢ). Bayes đảo điều kiện: P(A|B)=P(B|A)P(A)/P(B). Kỳ vọng có điều kiện là trung bình có trọng số xác suất. Nêu thông tin điều kiện và kiểm tra xác suất chuẩn hóa. Khi chế độ ẩn, quan sát kết quả cập nhật niềm tin, không tiết lộ chế độ chắc chắn. Phân biệt xác suất hậu nghiệm theo mô hình với phát biểu nhân quả."
+        },
+        "workedExample": {
+          "en": "A process is in high regime H with probability .3 and low regime L with probability .7. Success probabilities are P(S|H)=.6 and P(S|L)=.2. Thus P(S)=.3(.6)+.7(.2)=.18+.14=.32. Bayes gives P(H|S)=.18/.32=.5625. The posterior exceeds the prior .3 but is not 1; success is evidence for H, not proof of H.",
+          "vi": "Một tiến trình ở chế độ cao H với xác suất .3, thấp L với .7. Xác suất thành công P(S|H)=.6 và P(S|L)=.2. Do đó P(S)=.3(.6)+.7(.2)=.18+.14=.32. Bayes cho P(H|S)=.18/.32=.5625. Hậu nghiệm cao hơn prior .3 nhưng không bằng 1; thành công là bằng chứng cho H, không phải chứng minh H."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Probability and conditioning assessment",
+            "vi": "Bài đánh giá xác suất và điều kiện"
+          },
+          "caption": {
+            "en": "P(success)=.3(.6)+.7(.2)=.32; observing success changes high-regime probability to .18/.32=.5625.",
+            "vi": "P(thành công)=.3(.6)+.7(.2)=.32; quan sát thành công đổi xác suất chế độ cao thành .18/.32=.5625."
+          },
+          "xLabel": {
+            "en": "Regime",
+            "vi": "Chế độ"
+          },
+          "yLabel": {
+            "en": "Probability",
+            "vi": "Xác suất"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "prior high",
+                "vi": "prior cao"
+              },
+              "value": 0.3
+            },
+            {
+              "label": {
+                "en": "success",
+                "vi": "thành công"
+              },
+              "value": 0.32
+            },
+            {
+              "label": {
+                "en": "high given success",
+                "vi": "cao khi thành công"
+              },
+              "value": 0.5625
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Draw the H/L partition with prior masses .3/.7 and conditional success rates .6/.2.",
+            "vi": "Vẽ phân hoạch H/L với prior .3/.7 và tỷ lệ thành công có điều kiện .6/.2."
+          },
+          {
+            "en": "Compute joint masses P(H,S), P(L,S), and verify they sum to P(S).",
+            "vi": "Tính khối chung P(H,S), P(L,S), xác minh tổng bằng P(S)."
+          },
+          {
+            "en": "Apply Bayes after success and after failure; compare both posteriors with prior .3.",
+            "vi": "Áp Bayes sau thành công và thất bại; so hai hậu nghiệm với prior .3."
+          },
+          {
+            "en": "Write a paragraph separating updated belief from a causal claim about regime effects.",
+            "vi": "Viết đoạn phân biệt niềm tin cập nhật với kết luận nhân quả về chế độ."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w103d1",
+            "prompt": {
+              "en": "New assessment: P(H)=0.2, P(L)=0.8, P(S|H)=0.8 and P(S|L)=0.1. Find P(S), P(H|S), and explain why the posterior is not 0.8.",
+              "vi": "Bài đánh giá mới: P(H)=0,2, P(L)=0,8, P(S|H)=0,8, P(S|L)=0,1. Tính P(S), P(H|S), giải thích vì sao hậu nghiệm không phải 0,8."
+            },
+            "hint": {
+              "en": "Weight each success probability by its regime prior; Bayes reverses the conditioning.",
+              "vi": "Đặt trọng số mỗi xác suất thành công theo xác suất chế độ; Bayes đảo điều kiện."
+            },
+            "answer": {
+              "en": "P(S)=0.2×0.8+0.8×0.1=0.24. The joint probability P(H∩S)=0.16, so P(H|S)=0.16/0.24=2/3≈0.6667. The supplied 0.8 is P(S|H), a different conditional probability. The large low-regime prior still contributes successes to the denominator.",
+              "vi": "P(S)=0,2×0,8+0,8×0,1=0,24. Xác suất đồng thời P(H∩S)=0,16 nên P(H|S)=0,16/0,24=2/3≈0,6667. Số 0,8 cho trước là P(S|H), xác suất điều kiện khác. Xác suất ban đầu lớn của chế độ thấp vẫn đóng góp thành công vào mẫu số."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Submit a probability tree, Bayes calculation, normalization check, and interpretation with assumptions.",
+          "vi": "Nộp cây xác suất, phép tính Bayes, kiểm tra chuẩn hóa và diễn giải giả định."
+        }
+      },
+      {
+        "title": {
+          "en": "Inference and uncertainty assessment",
+          "vi": "Bài đánh giá suy luận và bất định"
+        },
+        "theory": {
+          "en": "Inference names a target, estimator, sampling model, and uncertainty procedure. A p-value is the probability, under a null and assumptions, of a statistic at least as extreme as observed; it is not the probability the null is true. Confidence coverage is a repeated-sample property. A Bayesian posterior probability conditions on likelihood and prior. Exact and approximate methods can differ at small n. Report effect size and interval alongside a test, and never convert failure to reject into proof of no effect. Check whether the sample design satisfies independence or dependence handling.",
+          "vi": "Suy luận nêu mục tiêu, estimator, mô hình lấy mẫu và thủ tục bất định. p-value là xác suất, dưới giả thuyết không và giả định, quan sát thống kê cực đoan ít nhất như vậy; không phải xác suất H₀ đúng. Coverage confidence là tính chất lấy mẫu lặp. Xác suất posterior Bayes dựa vào likelihood và prior. Phương pháp chính xác và xấp xỉ có thể khác ở n nhỏ. Báo độ lớn tác động/khoảng cùng kiểm định; không bác bỏ không chứng minh không có tác động. Kiểm tra thiết kế mẫu có độc lập hay đã xử lý phụ thuộc chưa."
+        },
+        "workedExample": {
+          "en": "For 14 successes in 20 Bernoulli trials under H₀:p=.5, X~Binomial(20,.5). P(X≥14)=Σₖ₌₁₄²⁰C(20,k)/2²⁰=60,460/1,048,576=.05766. A symmetric two-sided p is about .1153. The observed proportion .70 is an effect estimate; the p-value describes tail probability under H₀. A non-significant result does not establish p=.5.",
+          "vi": "Với 14 thành công trong 20 phép thử Bernoulli dưới H₀:p=.5, X~Binomial(20,.5). P(X≥14)=Σₖ₌₁₄²⁰C(20,k)/2²⁰=60.460/1.048.576=.05766. p hai phía đối xứng khoảng .1153. Tỷ lệ quan sát .70 là ước lượng tác động; p-value mô tả xác suất đuôi dưới H₀. Kết quả không ý nghĩa không xác lập p=.5."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Inference and uncertainty assessment",
+            "vi": "Bài đánh giá suy luận và bất định"
+          },
+          "caption": {
+            "en": "For X~Binomial(20,.5), two-sided p=2P(X≥14)=.1153; this is not a posterior probability that H₀ is true.",
+            "vi": "Với X~Binomial(20,.5), p hai phía=2P(X≥14)=.1153; đây không phải xác suất hậu nghiệm H₀ đúng."
+          },
+          "xLabel": {
+            "en": "Quantity",
+            "vi": "Đại lượng"
+          },
+          "yLabel": {
+            "en": "Probability",
+            "vi": "Xác suất"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "observed proportion 14/20",
+                "vi": "tỷ lệ quan sát 14/20"
+              },
+              "value": 0.7
+            },
+            {
+              "label": {
+                "en": "one tail P(X≥14)",
+                "vi": "một đuôi P(X≥14)"
+              },
+              "value": 0.05765
+            },
+            {
+              "label": {
+                "en": "two-sided p",
+                "vi": "p hai phía"
+              },
+              "value": 0.1153
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Calculate phat=14/20 and list assumptions of the binomial null.",
+            "vi": "Tính phat=14/20 và liệt kê giả định của null nhị thức."
+          },
+          {
+            "en": "Sum binomial coefficients k=14,…,20; verify the total 60,460 over 2²⁰.",
+            "vi": "Cộng hệ số nhị thức k=14,…,20; xác minh 60.460 trên 2²⁰."
+          },
+          {
+            "en": "Double the smaller tail for the symmetric two-sided value; explain the convention.",
+            "vi": "Nhân đôi đuôi nhỏ hơn để có p hai phía đối xứng; giải thích quy ước."
+          },
+          {
+            "en": "Write a result sentence distinguishing estimate, p-value, and what cannot be concluded.",
+            "vi": "Viết câu kết quả phân biệt ước lượng, p-value và điều không kết luận được."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w103d2",
+            "prompt": {
+              "en": "New assessment: observe 8 successes in 10 independent Bernoulli trials under H0:p=0.5. Given C(10,8)=45, C(10,9)=10, C(10,10)=1, calculate the upper tail and symmetric two-sided p-value. Interpret the result at 0.05.",
+              "vi": "Bài mới: có 8 thành công trong 10 phép thử Bernoulli độc lập dưới H0:p=0,5. Cho C(10,8)=45, C(10,9)=10, C(10,10)=1, tính đuôi trên và p hai phía đối xứng. Diễn giải ở mức 0,05."
+            },
+            "hint": {
+              "en": "Every binary sequence has probability 1/1024 under the null.",
+              "vi": "Mỗi chuỗi nhị phân có xác suất 1/1024 dưới giả thuyết không."
+            },
+            "answer": {
+              "en": "P(X≥8)=(45+10+1)/2^10=56/1024=0.0546875. By symmetry, the two-sided tail is 112/1024=0.109375. Do not reject at 0.05 under this stated test. The estimate is 0.8, but failure to reject neither proves p=0.5 nor assigns probability 0.109375 to H0.",
+              "vi": "P(X≥8)=(45+10+1)/2^10=56/1024=0,0546875. Do đối xứng, đuôi hai phía là 112/1024=0,109375. Không bác bỏ ở mức 0,05 theo kiểm định này. Ước lượng là 0,8, nhưng không bác bỏ không chứng minh p=0,5 hay gán xác suất 0,109375 cho H0."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Write an inference report with estimate, exact-tail calculation, assumptions, and a restrained interpretation.",
+          "vi": "Viết báo cáo suy luận gồm ước lượng, tính đuôi chính xác, giả định và diễn giải thận trọng."
+        }
+      },
+      {
+        "title": {
+          "en": "Constrained optimization assessment",
+          "vi": "Bài đánh giá tối ưu có ràng buộc"
+        },
+        "theory": {
+          "en": "For constraints g(x)≤0, use L=f+λg with λ≥0. KKT requires primal feasibility, dual feasibility, stationarity, and complementary slackness. At a binding boundary, solve stationarity and verify multiplier sign; convexity plus an appropriate constraint qualification can make KKT sufficient for a global optimum. Projection maps an unconstrained step back to a feasible set but can alter the direction. Always distinguish the constrained minimizer from the unconstrained stationary point and check the objective values.",
+          "vi": "Với ràng buộc g(x)≤0, dùng L=f+λg, λ≥0. KKT gồm khả thi nguyên thủy, khả thi đối ngẫu, dừng và bù trừ. Ở biên chặt, giải dừng rồi kiểm dấu nhân tử; tính lồi cùng điều kiện qualification phù hợp có thể làm KKT đủ cho tối ưu toàn cục. Phép chiếu đưa bước tự do về miền khả thi nhưng có thể đổi hướng. Luôn tách nghiệm có ràng buộc khỏi điểm dừng không ràng buộc và kiểm giá trị mục tiêu."
+        },
+        "workedExample": {
+          "en": "Minimize f(x)=(x−3)² subject to x≤1, so g=x−1≤0. The unconstrained minimum x=3 is infeasible. On the feasible half-line, f decreases toward 3, so x*=1 and f=4. Stationarity 2(x−3)+λ=0 gives λ=4 at x=1; feasibility holds and λg=4·0=0. Convexity certifies the global constrained minimum.",
+          "vi": "Cực tiểu f(x)=(x−3)² với x≤1, g=x−1≤0. Cực tiểu tự do x=3 không khả thi. Trên nửa đường khả thi, f giảm về phía 3 nên x*=1,f=4. Dừng 2(x−3)+λ=0 cho λ=4 tại x=1; khả thi đúng và λg=4·0=0. Tính lồi chứng nhận cực tiểu toàn cục có ràng buộc."
+        },
+        "visual": {
+          "kind": "xy",
+          "title": {
+            "en": "Constrained optimization assessment",
+            "vi": "Bài đánh giá tối ưu có ràng buộc"
+          },
+          "caption": {
+            "en": "For f=(x−3)² with x≤1, the constrained minimum is x=1 with f=4; the unconstrained point x=3 is infeasible.",
+            "vi": "Với f=(x−3)², x≤1, cực tiểu ràng buộc x=1,f=4; điểm không ràng buộc x=3 không khả thi."
+          },
+          "xLabel": {
+            "en": "x",
+            "vi": "x"
+          },
+          "yLabel": {
+            "en": "Objective f(x)",
+            "vi": "Hàm mục tiêu f(x)"
+          },
+          "series": [
+            {
+              "name": {
+                "en": "f(x)=(x−3)²",
+                "vi": "f(x)=(x−3)²"
+              },
+              "mode": "line",
+              "points": [
+                [
+                  -2,
+                  25
+                ],
+                [
+                  -1,
+                  16
+                ],
+                [
+                  0,
+                  9
+                ],
+                [
+                  1,
+                  4
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  0
+                ]
+              ]
+            },
+            {
+              "name": {
+                "en": "feasible boundary",
+                "vi": "biên khả thi"
+              },
+              "mode": "scatter",
+              "points": [
+                [
+                  1,
+                  4
+                ]
+              ]
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Draw feasible x≤1 and mark unconstrained x=3 and boundary candidate x=1.",
+            "vi": "Vẽ miền x≤1, đánh dấu x=3 tự do và ứng viên biên x=1."
+          },
+          {
+            "en": "Compute f at x=1 and x=3; explain why the latter cannot be selected.",
+            "vi": "Tính f tại x=1,x=3; giải thích vì sao không chọn điểm sau."
+          },
+          {
+            "en": "Derive λ from stationarity; verify λ≥0 and λg=0 separately.",
+            "vi": "Suy λ từ điều kiện dừng; kiểm riêng λ≥0 và λg=0."
+          },
+          {
+            "en": "Code a grid check over x∈[−5,1] at step .01 and compare its minimum to KKT.",
+            "vi": "Code kiểm tra lưới x∈[−5,1], bước .01, so cực tiểu số với KKT."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w103d3",
+            "prompt": {
+              "en": "New assessment: minimize (x−4)^2 subject to x≤1. Find x*, objective and KKT multiplier for g(x)=x−1. Verify all conditions and explain global optimality.",
+              "vi": "Bài mới: tối thiểu (x−4)^2 với x≤1. Tìm x*, giá trị mục tiêu, nhân tử KKT cho g(x)=x−1. Kiểm tra mọi điều kiện và giải thích tối ưu toàn cục."
+            },
+            "hint": {
+              "en": "The unconstrained point 4 is infeasible; stationarity is 2(x−4)+λ=0.",
+              "vi": "Điểm không ràng buộc 4 không khả thi; dừng là 2(x−4)+λ=0."
+            },
+            "answer": {
+              "en": "The feasible minimizer is x*=1 with f=9. Stationarity gives −6+λ=0, hence λ=6≥0. Feasibility g(1)=0 and complementary slackness λg=0 hold. The objective is convex, the constraint affine, and a strictly feasible point exists; these KKT conditions certify the global optimum.",
+              "vi": "Điểm tối thiểu khả thi x*=1, f=9. Điều kiện dừng −6+λ=0 cho λ=6≥0. Khả thi g(1)=0 và bù trừ λg=0 đều đúng. Mục tiêu lồi, ràng buộc affine, có điểm khả thi nghiêm ngặt; các điều kiện KKT xác nhận tối ưu toàn cục."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Submit derivation, feasibility checks, boundary plot, and a grid-based numerical cross-check.",
+          "vi": "Nộp suy dẫn, kiểm tra khả thi, đồ thị biên và đối chiếu số bằng lưới."
+        }
+      },
+      {
+        "title": {
+          "en": "Code and leakage assessment",
+          "vi": "Bài đánh giá code và leakage"
+        },
+        "theory": {
+          "en": "A time-aware dataset needs explicit feature-availability and target-release times. For a one-step return target r_t=P_{t+1}/P_t−1, the value is not known at forecast origin t until the next close. A lag feature may use r_{t−1}, not r_t. Separate feature construction from splitting; transformations fit on training rows only. Tests should assert date alignment, no future access, and expected values on a tiny fixture. Passing a high-level API test is insufficient if its indexes silently misalign.",
+          "vi": "Dataset theo thời gian cần thời điểm sẵn có của feature và lúc target được công bố. Với target lợi nhuận một bước r_t=P_{t+1}/P_t−1, giá trị chưa biết tại origin t cho đến khi phiên sau đóng. Feature trễ có thể dùng r_{t−1}, không dùng r_t. Tách tạo feature khỏi split; transform chỉ fit trên train. Test cần khẳng định căn chỉnh ngày, không truy tương lai và giá trị mong đợi trên fixture nhỏ. Test API cấp cao không đủ nếu index âm thầm lệch."
+        },
+        "workedExample": {
+          "en": "For prices [100,102,101,104], returns are r₀=.020000, r₁=−.009804, r₂=.029703. At origin 1 use x=r₀,y=r₁; at origin 2 use x=r₁,y=r₂. Code x=r[t] copies the future target into the feature; code x=r[t−1] uses only an already released value.",
+          "vi": "Với giá [100,102,101,104], return r₀=.020000,r₁=−.009804,r₂=.029703. Ở origin 1 dùng x=r₀,y=r₁; origin 2 dùng x=r₁,y=r₂. Code x=r[t] chép target tương lai vào feature; x=r[t−1] chỉ dùng giá trị đã công bố."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Code and leakage assessment",
+            "vi": "Bài đánh giá code và leakage"
+          },
+          "caption": {
+            "en": "Use returns r=[.02,−.0098039,.029703]; feature at t is prior return and target is next return.",
+            "vi": "Dùng r=[.02,−.0098039,.029703]; feature tại t là lợi nhuận trước, target là lợi nhuận tiếp theo."
+          },
+          "steps": [
+            {
+              "en": "P=[100,102,101,104] gives returns r₀=.020000, r₁=−.009804, r₂=.029703.",
+              "vi": "P=[100,102,101,104] cho r₀=.020000,r₁=−.009804,r₂=.029703."
+            },
+            {
+              "en": "At t=1 use x=r₀ and y=r₁; at t=2 use x=r₁ and y=r₂.",
+              "vi": "Ở t=1 dùng x=r₀,y=r₁; ở t=2 dùng x=r₁,y=r₂."
+            },
+            {
+              "en": "Using x=rₜ would leak the target into the feature.",
+              "vi": "Dùng x=rₜ sẽ làm target rò vào feature."
+            },
+            {
+              "en": "Unit test requires each feature timestamp to precede its target release.",
+              "vi": "Unit test yêu cầu thời điểm feature trước khi target công bố."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Calculate all three returns by hand from adjacent price pairs.",
+            "vi": "Tính tay cả ba lợi nhuận từ cặp giá liền nhau."
+          },
+          {
+            "en": "Write feature/target rows for origins t=1,2; record timestamp available for each value.",
+            "vi": "Viết hàng feature/target ở origin t=1,2; ghi thời điểm có sẵn từng giá trị."
+          },
+          {
+            "en": "Implement a tiny unit test asserting feature index<t and expected pairs within 1e−6.",
+            "vi": "Viết unit test nhỏ khẳng định index feature<t, cặp đúng sai số 1e−6."
+          },
+          {
+            "en": "Run the test against buggy x=r[t],y=r[t] and corrected x=r[t−1],y=r[t]; record failure then pass.",
+            "vi": "Chạy test với code lỗi x=r[t],y=r[t] rồi code sửa x=r[t−1],y=r[t]; ghi fail rồi pass."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w103d4",
+            "prompt": {
+              "en": "New fixture: prices [100,110,99,108.9]. Implement lagged pairs x=r[t−1], y=r[t] for t=1,2. Show the expected rounded pairs and a test that rejects x=r[t].",
+              "vi": "Dữ liệu thử mới: giá [100,110,99,108.9]. Cài cặp trễ x=r[t−1], y=r[t] với t=1,2. Nêu cặp làm tròn mong đợi và kiểm thử từ chối x=r[t]."
+            },
+            "hint": {
+              "en": "Compute three simple returns, then use the earlier return as each feature.",
+              "vi": "Tính ba lợi suất đơn rồi dùng lợi suất trước làm đặc trưng."
+            },
+            "answer": {
+              "en": "Returns are approximately [0.1,−0.1,0.1]. Correct pairs are [(0.1,−0.1),(−0.1,0.1)]. A runnable check:\n```python\np = [100,110,99,108.9]\nr = [p[i+1]/p[i]-1 for i in range(3)]\nrows = [(round(r[t-1],6), round(r[t],6)) for t in (1,2)]\nassert rows == [(0.1,-0.1),(-0.1,0.1)]\n```\nThe buggy same-index version returns [(-0.1,-0.1),(0.1,0.1)] and fails this fixture. Index ordering, not a good score, establishes availability here.",
+              "vi": "Lợi suất xấp xỉ [0,1;−0,1;0,1]. Cặp đúng là [(0.1,-0.1),(-0.1,0.1)]. Kiểm tra chạy được:\n```python\np = [100,110,99,108.9]\nr = [p[i+1]/p[i]-1 for i in range(3)]\nrows = [(round(r[t-1],6), round(r[t],6)) for t in (1,2)]\nassert rows == [(0.1,-0.1),(-0.1,0.1)]\n```\nBản sai cùng chỉ số trả [(-0.1,-0.1),(0.1,0.1)] và trượt kiểm thử. Thứ tự chỉ số, không phải điểm tốt, xác định tính sẵn có ở đây."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Publish a runnable unit-tested alignment function, fixture, expected pairs, and split/leakage note.",
+          "vi": "Công bố hàm căn chỉnh có test chạy, fixture, cặp mong đợi và ghi chú split/leakage."
+        }
+      },
+      {
+        "title": {
+          "en": "Proof and synthesis assessment",
+          "vi": "Bài đánh giá chứng minh và tổng hợp"
+        },
+        "theory": {
+          "en": "Conditional expectation is the orthogonal projection of Y onto functions measurable with respect to available information. For any square-integrable g(X), E[(Y−E[Y|X])g(X)]=0. In finite groups, this means residuals sum to zero within every group. This orthogonality yields the squared-error decomposition: constant-mean risk equals conditional-mean risk plus the variation explained by X. A proof should name the conditioning set and integrability, derive the identity, and distinguish population statements from fitted estimates. Assessment is about reasoning and scope, not recalling slogans.",
+          "vi": "Kỳ vọng có điều kiện là phép chiếu trực giao của Y lên các hàm đo được theo thông tin X. Với mọi g(X) bình phương khả tích, E[(Y−E[Y|X])g(X)]=0. Trong nhóm hữu hạn, phần dư cộng bằng 0 trong từng nhóm. Tính trực giao cho phân rã lỗi bình phương: risk quanh mean hằng bằng risk quanh conditional mean cộng phần biến thiên X giải thích. Chứng minh cần nêu thông tin điều kiện/tính khả tích, suy dẫn đẳng thức và tách phát biểu tổng thể khỏi estimator đã fit. Đánh giá dựa suy luận/phạm vi, không dựa khẩu hiệu."
+        },
+        "workedExample": {
+          "en": "Four equally likely observations are (A,0),(A,2),(B,2),(B,6). Conditional means are m(A)=1,m(B)=4. Residuals −1,+1,−2,+2 have zero sum in each group and E[residual·g(X)]=0 for every group-constant g. The overall mean is 2.5; its MSE=(6.25+.25+.25+12.25)/4=4.75. Conditional MSE=(1+1+4+4)/4=2.5. Difference 2.25 equals Var(m(X)) for equal groups: ((1−2.5)²+(4−2.5)²)/2=2.25.",
+          "vi": "Bốn quan sát xác suất đều là (A,0),(A,2),(B,2),(B,6). Mean điều kiện m(A)=1,m(B)=4. Phần dư −1,+1,−2,+2 có tổng 0 từng nhóm và E[residual·g(X)]=0 với mọi g hằng theo nhóm. Mean chung 2,5; MSE=(6,25+.25+.25+12,25)/4=4,75. MSE điều kiện=(1+1+4+4)/4=2,5. Chênh 2,25 bằng Var(m(X)) với nhóm đều: ((1−2,5)²+(4−2,5)²)/2=2,25."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Proof and synthesis assessment",
+            "vi": "Bài đánh giá chứng minh và tổng hợp"
+          },
+          "caption": {
+            "en": "The conditional mean is the squared-loss projection: residuals average to zero within each information group.",
+            "vi": "Mean có điều kiện là phép chiếu dưới loss bình phương: phần dư trung bình 0 trong mỗi nhóm thông tin."
+          },
+          "steps": [
+            {
+              "en": "Group A outcomes 0,2 have mean 1; group B outcomes 2,6 have mean 4.",
+              "vi": "Nhóm A có kết quả 0,2, mean 1; nhóm B có 2,6, mean 4."
+            },
+            {
+              "en": "Conditional residuals are (−1,+1) in A and (−2,+2) in B; each group sum is zero.",
+              "vi": "Phần dư có điều kiện là (−1,+1) ở A, (−2,+2) ở B; tổng từng nhóm bằng 0."
+            },
+            {
+              "en": "Overall constant mean is 2.5; its MSE=19/4=4.75.",
+              "vi": "Mean hằng toàn cục 2,5; MSE=19/4=4,75."
+            },
+            {
+              "en": "Conditional predictor MSE=(1+1+4+4)/4=2.5, lower by between-group variation.",
+              "vi": "MSE predictor điều kiện=(1+1+4+4)/4=2,5, thấp hơn nhờ biến thiên giữa nhóm."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Compute m(A),m(B), residuals, and within-group residual sums from the four supplied pairs.",
+            "vi": "Tính m(A),m(B), phần dư và tổng phần dư từng nhóm từ bốn cặp."
+          },
+          {
+            "en": "Calculate constant and conditional MSE by listing four squared residuals each.",
+            "vi": "Tính MSE hằng và có điều kiện bằng cách liệt kê bốn phần dư bình phương."
+          },
+          {
+            "en": "Verify the decomposition 4.75=2.5+2.25 and independently calculate Var(m(X)).",
+            "vi": "Xác minh phân rã 4,75=2,5+2,25 và tự tính Var(m(X))."
+          },
+          {
+            "en": "Write a proof using indicator functions for A and B, then state what a fitted model cannot guarantee.",
+            "vi": "Viết chứng minh bằng hàm chỉ báo A,B rồi nêu điều mô hình fit không bảo đảm."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w103d5",
+            "prompt": {
+              "en": "New equally likely pairs: (A,1),(A,5),(B,4),(B,8). Find m(X)=E[Y|X], prove E[(Y−m(X))g(X)]=0 for every group-constant g, and compare constant-mean with conditional-mean MSE.",
+              "vi": "Cặp đồng xác suất mới: (A,1),(A,5),(B,4),(B,8). Tìm m(X)=E[Y|X], chứng minh E[(Y−m(X))g(X)]=0 với mọi g không đổi trong nhóm, so MSE dự báo trung bình chung với trung bình điều kiện."
+            },
+            "hint": {
+              "en": "Compute each group mean first, then pair the opposite residuals within each group.",
+              "vi": "Tính trung bình từng nhóm rồi ghép hai phần dư trái dấu trong mỗi nhóm."
+            },
+            "answer": {
+              "en": "m(A)=3,m(B)=6; overall mean=4.5. Residuals around m are [−2,2,−2,2]. For g(A)=a,g(B)=b, the expectation is (−2a+2a−2b+2b)/4=0. Conditional MSE=4. Constant-mean squared residuals are [12.25,0.25,0.25,12.25], mean 6.25. Gain=2.25=Var(m(X)). This population identity does not guarantee a fitted conditional-mean estimator generalizes.",
+              "vi": "m(A)=3,m(B)=6; trung bình chung=4,5. Phần dư quanh m là [−2,2,−2,2]. Với g(A)=a,g(B)=b, kỳ vọng=(−2a+2a−2b+2b)/4=0. MSE điều kiện=4. Bình phương phần dư quanh trung bình chung là [12,25;0,25;0,25;12,25], trung bình 6,25. Cải thiện=2,25=Var(m(X)). Đồng nhất thức quần thể này không bảo đảm ước lượng trung bình điều kiện đã khớp sẽ khái quát tốt."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Submit derivation, checked calculations, one code/proof artifact, and a self-scored gap list with evidence.",
+          "vi": "Nộp suy dẫn, phép tính kiểm tra, một sản phẩm code/chứng minh và danh sách khoảng trống tự chấm kèm bằng chứng."
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 104,
+    "title": {
+      "en": "Final manuscript and public release",
+      "vi": "Bản thảo cuối và phát hành công khai"
+    },
+    "prerequisites": {
+      "en": "A complete draft and reproducible result lineage with known limitations.",
+      "vi": "Bản thảo đầy đủ và lineage kết quả tái lập cùng giới hạn."
+    },
+    "objectives": [
+      {
+        "en": "Align claims with estimates and uncertainty.",
+        "vi": "Căn kết luận với ước lượng và bất định."
+      },
+      {
+        "en": "Retain mixed and negative evidence.",
+        "vi": "Giữ bằng chứng hỗn hợp và âm."
+      },
+      {
+        "en": "Trace results to exact inputs, code, and config.",
+        "vi": "Truy kết quả tới input/code/config chính xác."
+      },
+      {
+        "en": "Prepare rights-checked clean release.",
+        "vi": "Chuẩn bị phát hành sạch, đã kiểm quyền."
+      }
+    ],
+    "foundations": {
+      "en": "A public release is an auditable set of claims, inputs, versions, permissions, and limitations. Provenance maps each value to its run; negative findings stay visible. A license applies only to rights held. Clean reproduction checks declared computation but does not alone validate study design. Version outputs and provide a correction path.",
+      "vi": "Phát hành công khai là tập kết luận,input,phiên bản,quyền,giới hạn kiểm toán được. Provenance nối số với run; kết quả âm vẫn hiện diện. License chỉ áp dụng quyền đang có. Tái lập sạch kiểm phép tính khai báo nhưng không tự xác nhận thiết kế. Lưu phiên bản và có đường sửa sai."
+    },
+    "diagram": {
+      "kind": "flow",
+      "title": {
+        "en": "Manuscript to evidence",
+        "vi": "Bản thảo đến bằng chứng"
+      },
+      "labels": [
+        {
+          "en": "claim ledger",
+          "vi": "sổ kết luận"
+        },
+        {
+          "en": "provenance",
+          "vi": "provenance"
+        },
+        {
+          "en": "rights check",
+          "vi": "kiểm quyền"
+        },
+        {
+          "en": "clean run",
+          "vi": "chạy sạch"
+        }
+      ],
+      "caption": {
+        "en": "Release only when claims, results, provenance, and permission agree.",
+        "vi": "Chỉ phát hành khi kết luận, kết quả, provenance và quyền thống nhất."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Link manuscript claims to evidence",
+          "vi": "Nối kết luận bản thảo tới bằng chứng"
+        },
+        "theory": {
+          "en": "A manuscript is a chain of claims supported by methods, results, and artifacts. State estimand, eligibility, chronology, preprocessing, selection rule, metric, and uncertainty so a reader can reconstruct the analysis. Separate prespecified and exploratory findings. Abstract numbers must match tables and code. A claim-evidence ledger links each quantitative sentence to a file, run, and population. Discuss what the design supports and cannot identify.",
+          "vi": "Bản thảo là chuỗi kết luận được hỗ trợ bởi phương pháp, kết quả, sản phẩm. Nêu estimand, điều kiện dữ liệu, thời gian, tiền xử lý, quy tắc chọn, metric và bất định để người đọc dựng lại phân tích. Tách phát hiện định trước khỏi khám phá. Số trong tóm tắt cần khớp bảng/code. Sổ kết luận-bằng chứng nối câu định lượng với file, run, tổng thể. Nêu thiết kế hỗ trợ gì và không nhận diện được gì."
+        },
+        "workedExample": {
+          "en": "One 100-date holdout has candidate MAE=.011, baseline=.012, relative reduction 8.3%, interval [−.002,.004]. Link values to results/holdout.json and state single-period scope, interval including zero, and no cost/live-return analysis. “The strategy is profitable” has no supporting artifact and must be removed. Report the measured forecast-error difference without translating it into investment performance.",
+          "vi": "Một holdout 100 ngày có MAE mô hình=.011, baseline=.012, giảm 8,3%, khoảng [−.002;.004]. Nối số tới results/holdout.json; nêu phạm vi một kỳ, khoảng chứa 0, chưa phân tích chi phí/lợi nhuận thật. “Chiến lược có lãi” không có sản phẩm hỗ trợ nên cần xóa. Báo chênh lệch lỗi dự báo đo được, không quy thành hiệu suất đầu tư."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Link manuscript claims to evidence",
+            "vi": "Nối kết luận bản thảo tới bằng chứng"
+          },
+          "caption": {
+            "en": "MAE=.011 vs .012 is an 8.3% observed reduction, but interval [−.002,.004] includes zero.",
+            "vi": "MAE=.011 so .012 giảm quan sát 8,3%, nhưng khoảng [−.002;.004] chứa 0."
+          },
+          "xLabel": {
+            "en": "Method",
+            "vi": "Phương pháp"
+          },
+          "yLabel": {
+            "en": "MAE",
+            "vi": "MAE"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "zero baseline",
+                "vi": "baseline 0"
+              },
+              "value": 0.012
+            },
+            {
+              "label": {
+                "en": "candidate",
+                "vi": "mô hình"
+              },
+              "value": 0.011
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Extract numeric claims and map each to an output file.",
+            "vi": "Trích kết luận định lượng và nối từng câu với file output."
+          },
+          {
+            "en": "Check .011,.012,8.3%, interval,N=100 against code; flag profit/causal wording.",
+            "vi": "Đối chiếu .011,.012,8,3%, khoảng,N=100 với code; đánh dấu từ lợi nhuận/nhân quả."
+          },
+          {
+            "en": "Draft a 150-word abstract with question, design, result, uncertainty, limits.",
+            "vi": "Soạn tóm tắt 150 từ gồm câu hỏi, thiết kế, kết quả, bất định, giới hạn."
+          },
+          {
+            "en": "Ask a peer to trace each conclusion to a figure or table and repair gaps.",
+            "vi": "Nhờ bạn học truy từng kết luận tới hình/bảng và sửa chỗ thiếu."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w104d1",
+            "prompt": {
+              "en": "An abstract gives MAE .011 vs .012 and interval [−.002,.004], then says “profitable.” What should change?",
+              "vi": "Tóm tắt nêu MAE .011 so .012, khoảng [−.002;.004], rồi nói “có lãi”. Cần đổi gì?"
+            },
+            "hint": {
+              "en": "Ask whether forecast-error MAE measures net returns.",
+              "vi": "Hỏi MAE lỗi dự báo có đo lợi nhuận ròng không."
+            },
+            "answer": {
+              "en": "Remove “profitable”: MAE measures forecast error on one period, the interval includes zero, and there are no net-return or cost results. Report the observed 8.3% MAE reduction with uncertainty and say profitability is untested.",
+              "vi": "Xóa “có lãi”: MAE đo lỗi dự báo một kỳ, khoảng chứa 0, chưa có lợi nhuận ròng/chi phí. Báo mức giảm MAE quan sát 8,3% cùng bất định và nêu lợi nhuận chưa được kiểm."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Submit a claim-evidence ledger and abstract whose values trace to outputs.",
+          "vi": "Nộp sổ kết luận-bằng chứng và tóm tắt có số truy được tới output."
+        }
+      },
+      {
+        "title": {
+          "en": "Report negative and mixed evidence",
+          "vi": "Báo bằng chứng âm và hỗn hợp"
+        },
+        "theory": {
+          "en": "A null or unfavorable result is a finding. Preserve the prespecified outcome. Report subgroup sample counts and state whether the analysis was planned. Heterogeneous estimates may reflect real regimes, sampling noise, or design weakness; the data may not distinguish them. Do not promote a post-hoc subgroup as confirmation. Explain how evidence narrows the claim and propose a new test with a fixed split and subgroup rule.",
+          "vi": "Kết quả null/bất lợi vẫn là phát hiện. Giữ outcome định trước. Báo cỡ mẫu từng nhóm và nêu phân tích có được hoạch định không. Ước lượng khác nhau có thể do chế độ thật, nhiễu mẫu hoặc thiết kế yếu; dữ liệu chưa chắc phân biệt được. Không biến nhóm hậu nghiệm thành xác nhận. Giải thích bằng chứng thu hẹp kết luận và đề xuất kiểm định mới với split/quy tắc nhóm cố định."
+        },
+        "workedExample": {
+          "en": "Overall improvement Δ=.001, interval [−.002,.004]. Post-shift Δ=−.003, interval [−.006,0], so candidate error is worse there. The overall interval includes zero and the subgroup was exploratory. Report the pattern with counts and selection status. Do not say adaptation “solves” regime shifts; register the next regime rule before a new evaluation period.",
+          "vi": "Cải thiện tổng Δ=.001, khoảng [−.002;.004]. Sau đổi chế độ Δ=−.003, khoảng [−.006;0], lỗi mô hình tệ hơn. Khoảng tổng chứa 0 và nhóm phụ là khám phá. Báo mẫu hình cùng số lượng/trạng thái chọn. Không nói thích nghi “giải quyết” đổi chế độ; đăng ký quy tắc nhóm trước kỳ đánh giá mới."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Report negative and mixed evidence",
+            "vi": "Báo bằng chứng âm và hỗn hợp"
+          },
+          "caption": {
+            "en": "Overall interval crosses zero and post-shift Δ is negative; report mixed evidence, not only an aggregate.",
+            "vi": "Khoảng tổng cắt 0, Δ sau đổi âm; báo bằng chứng hỗn hợp, không chỉ số tổng."
+          },
+          "steps": [
+            {
+              "en": "Overall Δ=baseline−candidate=.001, interval [−.002,.004].",
+              "vi": "Δ tổng=baseline−mô hình=.001, khoảng [−.002;.004]."
+            },
+            {
+              "en": "Post-shift Δ=−.003, interval [−.006,0]; candidate error is higher.",
+              "vi": "Δ sau đổi=−.003, khoảng [−.006;0]; lỗi mô hình cao hơn."
+            },
+            {
+              "en": "Mark subgroup as exploratory if it was chosen after inspection.",
+              "vi": "Đánh dấu nhóm phụ khám phá nếu chọn sau khi xem."
+            },
+            {
+              "en": "Retain both results and preregister the next subgroup test.",
+              "vi": "Giữ cả hai kết quả và định trước kiểm tra nhóm tiếp."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Show both estimates, intervals, sample counts, and prespecification status.",
+            "vi": "Hiện hai ước lượng, khoảng, cỡ mẫu và trạng thái định trước."
+          },
+          {
+            "en": "Translate Δ=baseline−candidate; explain why −.003 means worse MAE.",
+            "vi": "Diễn giải Δ=baseline−mô hình; giải thích −.003 nghĩa MAE tệ hơn."
+          },
+          {
+            "en": "Write accurate and intentionally selective summaries; list what the selective version omitted.",
+            "vi": "Viết tóm tắt đúng và cố tình chọn lọc; liệt kê điều bản chọn lọc đã bỏ."
+          },
+          {
+            "en": "Predefine a new period and subgroup rule that could falsify the regime claim.",
+            "vi": "Định trước kỳ mới và quy tắc nhóm có thể bác bỏ kết luận chế độ."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w104d2",
+            "prompt": {
+              "en": "Overall Δ=.001 [−.002,.004]; subgroup Δ=−.003 [−.006,0]. Interpret both.",
+              "vi": "Tổng Δ=.001 [−.002;.004]; nhóm Δ=−.003 [−.006;0]. Diễn giải cả hai."
+            },
+            "hint": {
+              "en": "Negative Δ means candidate error exceeds baseline error.",
+              "vi": "Δ âm nghĩa lỗi mô hình cao hơn baseline."
+            },
+            "answer": {
+              "en": "The aggregate estimate favors the candidate by .001 but its interval includes zero. The subgroup favors the baseline by .003 and touches zero. Evidence is mixed; the subgroup is exploratory and cannot confirm a regime effect. Preserve both results and plan an independent, prespecified test.",
+              "vi": "Ước lượng tổng nghiêng mô hình .001 nhưng khoảng chứa 0. Nhóm nghiêng baseline .003, cận chạm 0. Bằng chứng hỗn hợp; nhóm khám phá không xác nhận hiệu ứng chế độ. Giữ cả hai và lập kiểm định độc lập định trước."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Write results text retaining the unfavorable result and a follow-up test.",
+          "vi": "Viết phần kết quả giữ số bất lợi và kiểm định tiếp."
+        }
+      },
+      {
+        "title": {
+          "en": "Preserve run provenance",
+          "vi": "Giữ provenance lần chạy"
+        },
+        "theory": {
+          "en": "Provenance records source, transformations, code, configuration, environment, and outputs. A hash identifies bytes but does not prove data permission or scientific validity. A manifest names the command and expected result. Keep raw and derived data separate where rights permit. A version change requires a new run record; overwriting an old result breaks the audit trail. Reproducibility includes matching the claim and figure, not just a successful process exit.",
+          "vi": "Provenance ghi nguồn, biến đổi, code, cấu hình, môi trường, output. Hash nhận diện byte nhưng không chứng minh quyền dữ liệu hay tính đúng khoa học. Manifest nêu lệnh và kết quả mong đợi. Tách dữ liệu thô/dẫn xuất nếu quyền cho phép. Đổi phiên bản cần run record mới; ghi đè kết quả cũ phá dấu vết. Tái lập cần khớp kết luận/hình, không chỉ process chạy thành công."
+        },
+        "workedExample": {
+          "en": "Seed 17 yields source hash D7; transform v2 and config c4 run under commit a17. The manifest produces 100 predictions and JSON with MAE .011/.012. If any seed, input, config, or code changes, it is a different run and must not reuse the old claim card. The figure should link to the JSON from the declared lineage, not a manually copied value.",
+          "vi": "Seed 17 cho hash nguồn D7; transform v2/config c4 chạy ở commit a17. Manifest tạo 100 prediction và JSON MAE .011/.012. Nếu seed,input,config,code đổi thì là run khác và không được dùng lại thẻ kết luận cũ. Hình cần link JSON từ lineage khai báo, không phải số chép tay."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Preserve run provenance",
+            "vi": "Giữ provenance lần chạy"
+          },
+          "caption": {
+            "en": "seed17→D7→transform v2→commit a17/config c4→100 predictions→holdout JSON.",
+            "vi": "seed17→D7→transform v2→commit a17/config c4→100 prediction→JSON holdout."
+          },
+          "steps": [
+            {
+              "en": "Seed 17 generates source hash D7.",
+              "vi": "Seed 17 tạo hash nguồn D7."
+            },
+            {
+              "en": "Transform v2 and config c4 run at commit a17.",
+              "vi": "Transform v2/config c4 chạy ở commit a17."
+            },
+            {
+              "en": "Manifest command creates 100 predictions and holdout JSON.",
+              "vi": "Lệnh manifest tạo 100 prediction và JSON holdout."
+            },
+            {
+              "en": "The manuscript number must trace to this exact result artifact.",
+              "vi": "Số bản thảo cần truy về đúng sản phẩm kết quả này."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Draw seed17→D7→v2→a17/c4→predictions→JSON.",
+            "vi": "Vẽ seed17→D7→v2→a17/c4→prediction→JSON."
+          },
+          {
+            "en": "Record hashes, command, environment, output path, and expected metrics in manifest.",
+            "vi": "Ghi hash,lệnh,môi trường,đường output,metric kỳ vọng trong manifest."
+          },
+          {
+            "en": "Change seed to 18 in a copy and list every dependent result to regenerate.",
+            "vi": "Đổi seed thành 18 ở bản sao, liệt kê kết quả phụ thuộc phải tạo lại."
+          },
+          {
+            "en": "Ask a peer to trace .011 from manuscript to source without verbal help.",
+            "vi": "Nhờ bạn học truy .011 từ bản thảo về nguồn không hướng dẫn miệng."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w104d3",
+            "prompt": {
+              "en": "What must be recorded to tie .011 to an exact run: only the figure or seed17,D7,v2,a17,c4 and output?",
+              "vi": "Cần ghi gì để gắn .011 với run cụ thể: chỉ hình hay seed17,D7,v2,a17,c4 và output?"
+            },
+            "hint": {
+              "en": "Trace source, transform, code, config, environment, and result.",
+              "vi": "Truy nguồn, transform, code, config, môi trường và kết quả."
+            },
+            "answer": {
+              "en": "Record seed17, D7, transform v2, commit a17, config c4, environment, command, prediction file, and JSON. A figure alone cannot identify its generating run. Changing the seed requires regenerating predictions, metrics, figure, and the linked claim card.",
+              "vi": "Ghi seed17,D7,transform v2,commit a17,config c4,môi trường,lệnh,file prediction,JSON. Chỉ hình không nhận diện run. Đổi seed cần tạo lại prediction,metric,hình và thẻ kết luận liên quan."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Commit a manifest mapping each manuscript number to a run artifact.",
+          "vi": "Commit manifest nối từng số bản thảo tới sản phẩm run."
+        }
+      },
+      {
+        "title": {
+          "en": "Check rights, privacy, authorship, and license",
+          "vi": "Kiểm quyền, riêng tư, tác giả và license"
+        },
+        "theory": {
+          "en": "A release needs permission for every included artifact. Inventory authorship, institutional or sponsor terms, third-party dependencies, data licenses, attribution, and privacy. An open-source license grants only rights the publisher holds; it cannot erase source-data restrictions or third-party notices. Remove credentials and personal data from the full version history, not just the latest file. If ownership or permission is unclear, exclude the item or delay release until written clarification. Do not treat an empty license field as permission to reuse.",
+          "vi": "Phát hành cần quyền với mọi sản phẩm được kèm. Kiểm kê tác giả, điều khoản cơ quan/tài trợ, dependency bên thứ ba, license dữ liệu, ghi công và riêng tư. License mã nguồn mở chỉ cấp quyền nhà phát hành có; không xóa hạn chế dữ liệu nguồn hay thông báo bên thứ ba. Loại credentials/dữ liệu cá nhân khỏi toàn bộ lịch sử phiên bản, không chỉ file mới nhất. Nếu sở hữu/cho phép chưa rõ, loại sản phẩm hoặc hoãn tới khi có giải thích bằng văn bản. Trường license trống không có nghĩa được phép tái dùng."
+        },
+        "workedExample": {
+          "en": "The project code is solely student-authored and data are generated from seed 17, but one chart was copied from a paper with unclear reuse permission. Release code only after checking any institutional agreement and choosing a license you can grant; document the synthetic generator and seed. Do not release the copied chart: redraw it from your result JSON or obtain permission and attribution. A repository license cannot authorize a third-party chart.",
+          "vi": "Code do riêng sinh viên viết, dữ liệu sinh từ seed 17, nhưng một biểu đồ chép từ paper chưa rõ quyền tái dùng. Chỉ phát hành code sau khi kiểm thỏa thuận cơ quan và chọn license mình có quyền cấp; ghi generator/seed tổng hợp. Không phát hành hình chép: vẽ lại từ JSON kết quả hoặc xin phép/ghi công. License repo không cấp quyền cho hình bên thứ ba."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Check rights, privacy, authorship, and license",
+            "vi": "Kiểm quyền, riêng tư, tác giả và license"
+          },
+          "caption": {
+            "en": "Original code and synthetic data may be released if rights are clear; a copied chart with unclear permission must be excluded or replaced.",
+            "vi": "Có thể phát hành code gốc/dữ liệu tổng hợp nếu rõ quyền; phải loại hoặc thay hình chép chưa rõ phép."
+          },
+          "steps": [
+            {
+              "en": "List creator, origin, permission, attribution, privacy risk for each file.",
+              "vi": "Ghi tác giả, nguồn, phép dùng, ghi công, rủi ro riêng tư cho mỗi file."
+            },
+            {
+              "en": "Choose a code license only if you can grant it and no agreement conflicts.",
+              "vi": "Chọn license code chỉ khi bạn có quyền cấp và không xung đột thỏa thuận."
+            },
+            {
+              "en": "Document synthetic generator and seed; redraw chart from owned result data.",
+              "vi": "Ghi generator/seed tổng hợp; vẽ lại biểu đồ từ dữ liệu kết quả của mình."
+            },
+            {
+              "en": "If ownership or permission is unclear, hold that artifact from release.",
+              "vi": "Nếu sở hữu/cho phép chưa rõ, hoãn phát hành sản phẩm đó."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Inventory code, synthetic data, figures, notes, dependencies, and identifiers.",
+            "vi": "Kiểm kê code,dữ liệu tổng hợp,hình,ghi chú,dependency,định danh."
+          },
+          {
+            "en": "Write creator, permission, attribution, license, and privacy risk for every file.",
+            "vi": "Ghi tác giả,phép,ghi công,license,riêng tư cho từng file."
+          },
+          {
+            "en": "Redraw the unlicensed chart from owned results; retain its exact values and record its source.",
+            "vi": "Vẽ lại hình chưa license từ kết quả sở hữu; giữ số chính xác và ghi nguồn."
+          },
+          {
+            "en": "Scan Git history for secrets; hold publication while any rights question remains unresolved.",
+            "vi": "Quét lịch sử Git tìm secret; hoãn phát hành khi còn câu hỏi quyền chưa giải quyết."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w104d4",
+            "prompt": {
+              "en": "Code is original, data are synthetic, but a copied chart has unclear rights. What can be released now?",
+              "vi": "Code gốc, dữ liệu tổng hợp, nhưng hình chép chưa rõ quyền. Hiện phát hành được gì?"
+            },
+            "hint": {
+              "en": "Evaluate permission file by file; the repository license does not cover third-party material.",
+              "vi": "Xét quyền từng file; license repo không bao phủ tài liệu bên thứ ba."
+            },
+            "answer": {
+              "en": "Release the original code only after checking institutional terms and selecting a license you can grant; document synthetic data generation. Exclude the copied chart until permission/attribution is clear, or redraw it from owned results. The repository license cannot grant rights over third-party material.",
+              "vi": "Chỉ phát hành code gốc sau khi kiểm điều khoản cơ quan và chọn license mình có quyền cấp; ghi cách tạo dữ liệu tổng hợp. Loại hình chép tới khi rõ phép/ghi công, hoặc tự vẽ lại từ kết quả sở hữu. License repo không cấp quyền tài liệu bên thứ ba."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Save a file-level rights ledger, license notices, privacy scan, and hold list for unresolved items.",
+          "vi": "Lưu sổ quyền theo file, thông báo license, quét riêng tư, danh sách mục đang hoãn."
+        }
+      },
+      {
+        "title": {
+          "en": "Reproduce and release the final package",
+          "vi": "Tái lập và phát hành gói cuối"
+        },
+        "theory": {
+          "en": "A release candidate must pass a clean reproduction and a human claim audit. Pin dependencies, document runtime, and use permitted data. Check that predictions, metrics, figures, and manuscript values match the manifest. Include limitations, negative evidence, licenses, attribution, and a correction path. Remove secrets from the full Git history and rotate exposed credentials. Tag only after computation and rights checks pass. If a rerun changes a result, make a versioned correction rather than silently replacing it.",
+          "vi": "Bản chuẩn bị phát hành cần qua tái lập sạch và kiểm toán kết luận bằng người. Khóa dependency, ghi runtime, dùng dữ liệu được phép. Kiểm prediction,metric,hình và số bản thảo khớp manifest. Kèm giới hạn,bằng chứng âm,license,ghi công và đường sửa sai. Loại secret khỏi toàn bộ lịch sử Git, đổi credentials đã lộ. Chỉ tag sau khi kiểm tính toán/quyền đạt. Nếu run đổi kết quả, tạo sửa đổi có phiên bản thay vì âm thầm thay."
+        },
+        "workedExample": {
+          "en": "A clean run with commit a17, config c4, seed 17, D7 prints candidate=.011, baseline=.012, n=100. If it prints n=99, stop: inspect split indices, missing targets, and alignment; do not hand-edit the manuscript. The release notes state the interval includes zero and no live costs/returns were tested. Every abstract number and figure must match the checked output.",
+          "vi": "Run sạch commit a17, config c4, seed 17,D7 in mô hình=.011, baseline=.012,n=100. Nếu in n=99, dừng: kiểm index split,target thiếu,căn chỉnh; không sửa tay bản thảo. Release notes nói khoảng chứa 0 và chưa thử chi phí/lợi nhuận thật. Mọi số/hình trong tóm tắt phải khớp output đã kiểm."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Reproduce and release the final package",
+            "vi": "Tái lập và phát hành gói cuối"
+          },
+          "caption": {
+            "en": "Release only after clean run confirms n=100 and MAE .011/.012; a mismatch blocks the tag.",
+            "vi": "Chỉ phát hành sau chạy sạch xác nhận n=100, MAE .011/.012; sai lệch ngăn tag."
+          },
+          "steps": [
+            {
+              "en": "Install locked environment from clean checkout.",
+              "vi": "Cài môi trường khóa từ checkout sạch."
+            },
+            {
+              "en": "Run manifest command with permitted synthetic input.",
+              "vi": "Chạy lệnh manifest với input tổng hợp được phép."
+            },
+            {
+              "en": "Compare row count, metrics, interval, and figure to manifest.",
+              "vi": "So số hàng, metric, khoảng, hình với manifest."
+            },
+            {
+              "en": "Tag a version only after rights and claim checks pass.",
+              "vi": "Chỉ tag phiên bản sau khi kiểm quyền/kết luận đạt."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Run from clean checkout; capture environment, command, and exit code.",
+            "vi": "Chạy từ checkout sạch; lưu môi trường,lệnh,exit code."
+          },
+          {
+            "en": "Assert n=100, metrics .011/.012, interval, and figure data; fail release on mismatch.",
+            "vi": "Assert n=100, metric .011/.012, khoảng, dữ liệu hình; dừng nếu lệch."
+          },
+          {
+            "en": "Review rights, attribution, privacy, claim scope, negative evidence, and secret history.",
+            "vi": "Rà quyền,ghi công,riêng tư,phạm vi kết luận,bằng chứng âm,lịch sử secret."
+          },
+          {
+            "en": "Tag only after checks pass; write dated notes and correction/rollback steps.",
+            "vi": "Chỉ tag khi đạt; viết ghi chú có ngày và bước sửa/rollback."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w104d5",
+            "prompt": {
+              "en": "Manifest expects 100 predictions but the clean run returns 99. What do you do before release?",
+              "vi": "Manifest mong 100 prediction nhưng chạy sạch trả 99. Cần làm gì trước phát hành?"
+            },
+            "hint": {
+              "en": "A changed count may indicate eligibility, missing-target, or alignment drift.",
+              "vi": "Số đổi có thể báo lệch điều kiện, target thiếu hoặc căn chỉnh."
+            },
+            "answer": {
+              "en": "Stop the release. Compare input hash, split indices, missing-target filtering, and feature/label alignment. Reproduce n=100 from declared inputs or create a new version with a documented change and recomputed claims. Do not change the manuscript by hand to conceal the discrepancy.",
+              "vi": "Dừng phát hành. So hash input,index split,lọc target thiếu,căn feature/label. Tái tạo n=100 từ input khai báo hoặc tạo phiên bản mới có thay đổi ghi rõ và tính lại kết luận. Không sửa tay bản thảo để che lệch."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Archive the clean-run log, rights checklist, release notes, limitations, and exact versioned artifacts.",
+          "vi": "Lưu log chạy sạch, checklist quyền, release notes, giới hạn và sản phẩm có phiên bản chính xác."
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 105,
+    "title": {
+      "en": "Two-year research handoff",
+      "vi": "Bàn giao lộ trình nghiên cứu hai năm"
+    },
+    "prerequisites": {
+      "en": "Released manuscript, reproducibility package, and evidence-based skill audit.",
+      "vi": "Bản thảo phát hành, gói tái lập, kiểm toán kỹ năng dựa bằng chứng."
+    },
+    "objectives": [
+      {
+        "en": "Audit demonstrated strengths and specific gaps.",
+        "vi": "Kiểm điểm mạnh đã chứng minh và khoảng trống."
+      },
+      {
+        "en": "Plan six months with review gates.",
+        "vi": "Lập sáu tháng với cổng xem xét."
+      },
+      {
+        "en": "Hand off evidence, limits, and next actions.",
+        "vi": "Bàn giao bằng chứng, giới hạn, hành động tiếp."
+      }
+    ],
+    "foundations": {
+      "en": "A handoff maps completed work, evidence, and uncertainty by version. Skill ratings need artifacts; plans need dated outputs, feedback, and stop/go gates. Reproduction starts from declared commands and input hashes. Do not pass unsupported claims or private data forward.",
+      "vi": "Bàn giao ánh xạ công việc,bằng chứng,bất định theo phiên bản. Điểm kỹ năng cần sản phẩm; kế hoạch cần output có ngày,phản hồi,cổng dừng/tiếp. Tái lập bắt đầu từ lệnh/hash input khai báo. Không chuyển kết luận thiếu căn cứ hay dữ liệu riêng."
+    },
+    "diagram": {
+      "kind": "timeline",
+      "title": {
+        "en": "Evidence to the next six months",
+        "vi": "Bằng chứng đến sáu tháng tiếp"
+      },
+      "labels": [
+        {
+          "en": "verified strengths",
+          "vi": "điểm mạnh xác minh"
+        },
+        {
+          "en": "specific gap",
+          "vi": "khoảng cụ thể"
+        },
+        {
+          "en": "dated milestone",
+          "vi": "mốc ngày"
+        },
+        {
+          "en": "handoff gate",
+          "vi": "cổng bàn giao"
+        }
+      ],
+      "caption": {
+        "en": "Close with verified evidence, one focused question, and reproducible next steps.",
+        "vi": "Kết bằng bằng chứng xác minh, câu hỏi tập trung và bước tiếp tái lập."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Audit strengths and gaps with evidence",
+          "vi": "Kiểm điểm mạnh và khoảng trống bằng bằng chứng"
+        },
+        "theory": {
+          "en": "A handoff begins with artifacts, not self-esteem. Define a skill standard, inspect work, rate performance and confidence, and state what the artifact cannot prove. Strong code does not imply strong inference; one draft does not establish research independence. A gap is useful when linked to a next task and review date. Scores are a planning snapshot, not a credential.",
+          "vi": "Bàn giao bắt đầu từ sản phẩm, không phải tự đánh giá. Định chuẩn kỹ năng, xem sản phẩm, chấm năng lực/độ tin cậy và nêu điều chưa chứng minh. Code tốt không suy ra suy luận tốt; một bản thảo không chứng minh nghiên cứu độc lập. Khoảng trống cần bài tiếp/ngày xem lại. Điểm là ảnh chụp kế hoạch, không phải chứng chỉ."
+        },
+        "workedExample": {
+          "en": "Probability 4/5 from conditional-model problems; inference 3/5 because p-value wording was fixed but block sensitivity is absent; optimization 4/5 from KKT/proximal work; code 5/5 from leakage tests and clean release; writing 3/5 from a scoped draft awaiting review. Retest inference using paired serial errors at block lengths 5,10,20 with independent reproduction.",
+          "vi": "Xác suất 4/5 từ bài mô hình điều kiện; suy luận 3/5 vì sửa cách nói p-value nhưng thiếu độ nhạy khối; tối ưu 4/5 từ KKT/proximal; code 5/5 từ test leakage/release sạch; viết 3/5 từ bản thảo có phạm vi chờ phản biện. Kiểm lại suy luận bằng lỗi chuỗi ghép ở khối 5,10,20 và tái lập độc lập."
+        },
+        "visual": {
+          "kind": "matrix",
+          "title": {
+            "en": "Audit strengths and gaps with evidence",
+            "vi": "Kiểm điểm mạnh và khoảng trống bằng bằng chứng"
+          },
+          "caption": {
+            "en": "Ratings summarize evidence now, not permanent traits; pair every gap with an artifact and retest.",
+            "vi": "Điểm tóm tắt bằng chứng hiện tại, không phải đặc tính vĩnh viễn; ghép khoảng trống với sản phẩm và bài kiểm."
+          },
+          "rows": [
+            "Probability",
+            "Inference",
+            "Optimization",
+            "Code",
+            "Writing"
+          ],
+          "columns": [
+            "Score / 5",
+            "Artifact"
+          ],
+          "values": [
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Inspect one artifact per skill; record standard, score, confidence, limit.",
+            "vi": "Xem một sản phẩm mỗi kỹ năng; ghi chuẩn, điểm, độ tin cậy, giới hạn."
+          },
+          {
+            "en": "Verify the inference report lacks block-length sensitivity.",
+            "vi": "Xác minh báo cáo suy luận thiếu độ nhạy độ dài khối."
+          },
+          {
+            "en": "Separate not-yet-evidenced from cannot-do; define a distinguishing task.",
+            "vi": "Tách chưa có bằng chứng khỏi không làm được; định bài để phân biệt."
+          },
+          {
+            "en": "Ask a peer to challenge one high and one low rating using artifacts.",
+            "vi": "Nhờ bạn học phản biện một điểm cao/thấp dựa sản phẩm."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w105d1",
+            "prompt": {
+              "en": "Which skill rated 3/5 has a concrete retest, and what output must it produce?",
+              "vi": "Kỹ năng nào điểm 3/5 có bài kiểm cụ thể, output cần là gì?"
+            },
+            "hint": {
+              "en": "Connect the inference gap to dependence sensitivity.",
+              "vi": "Nối khoảng suy luận với độ nhạy phụ thuộc."
+            },
+            "answer": {
+              "en": "Inference: rerun paired serial-error intervals at prespecified block lengths 5,10,20; save estimates, intervals, counts, and code, then ask another person to reproduce. The earlier report supports basic interpretation but not mastery of dependence sensitivity.",
+              "vi": "Suy luận: chạy lại khoảng lỗi chuỗi ghép với khối 5,10,20 định trước; lưu ước lượng,khoảng,số lượng,code, nhờ người khác tái lập. Báo cáo trước chứng minh hiểu cơ bản nhưng chưa thuần độ nhạy phụ thuộc."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Save an evidence matrix with artifact links, confidence, limits, and retest.",
+          "vi": "Lưu ma trận bằng chứng có link, độ tin cậy, giới hạn và bài kiểm."
+        }
+      },
+      {
+        "title": {
+          "en": "Plan the next six months",
+          "vi": "Lập kế hoạch sáu tháng tiếp"
+        },
+        "theory": {
+          "en": "A six-month plan needs a few priorities, artifacts, and gates. Finish prerequisites before extensions; schedule feedback and reproduction alongside implementation. Every month needs an observable exit condition and a fallback for delayed data or supervision. Preserve rest and existing commitments. Review what shipped, failed, and changed in the question. Activity counts are not learning; redirect when validity conditions fail.",
+          "vi": "Kế hoạch sáu tháng cần ít ưu tiên,sản phẩm,cổng. Hoàn thành nền trước mở rộng; xếp phản hồi/tái lập cùng triển khai. Mỗi tháng có điều kiện hoàn tất quan sát được và dự phòng khi dữ liệu/mentor chậm. Bảo vệ nghỉ ngơi/cam kết. Xem sản phẩm,lỗi,thay đổi câu hỏi. Số hoạt động không bằng học; đổi hướng khi điều kiện hợp lệ fail."
+        },
+        "workedExample": {
+          "en": "M1 preregister block sizes 5,10,20 and freeze analysis; M2 run paired intervals; M3 independent rerun; M4 write methods/results; M5 critique; M6 decide on wider study. M3 gate requires source hash, row count, and output to match. If data permission is denied, use documented synthetic serial data and make no market claim.",
+          "vi": "T1 định trước khối 5,10,20 và khóa phân tích; T2 chạy khoảng ghép; T3 chạy độc lập; T4 viết kết quả; T5 phản biện; T6 quyết định nghiên cứu rộng. Cổng T3 cần hash nguồn,số hàng,output khớp. Nếu thiếu quyền dữ liệu, dùng chuỗi tổng hợp có tài liệu, không kết luận thị trường."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Plan the next six months",
+            "vi": "Lập kế hoạch sáu tháng tiếp"
+          },
+          "caption": {
+            "en": "M1 freeze block sizes; M3 independent run; M4 methods note; M6 go/no-go.",
+            "vi": "T1 khóa cỡ khối; T3 chạy độc lập; T4 note phương pháp; T6 quyết định tiếp."
+          },
+          "steps": [
+            {
+              "en": "M1: preregister 5,10,20 and freeze code.",
+              "vi": "T1: định trước 5,10,20, khóa code."
+            },
+            {
+              "en": "M2: paired analysis; M3: independent reproduction gate.",
+              "vi": "T2: phân tích ghép; T3: cổng tái lập độc lập."
+            },
+            {
+              "en": "M4: write; M5: critical review and revise.",
+              "vi": "T4: viết; T5: phản biện và sửa."
+            },
+            {
+              "en": "M6: decide whether a larger study is justified.",
+              "vi": "T6: quyết định nghiên cứu lớn có căn cứ không."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Assign one artifact/reviewer monthly; keep sensitivity analysis primary.",
+            "vi": "Gán sản phẩm/người xem mỗi tháng; giữ độ nhạy làm chính."
+          },
+          {
+            "en": "Freeze sizes, statistic, interval, stop rule before inspecting results.",
+            "vi": "Khóa cỡ,thống kê,khoảng,quy tắc dừng trước khi xem."
+          },
+          {
+            "en": "Specify M3 hash/N/output gate and data-denial fallback.",
+            "vi": "Định cổng T3 hash/N/output và dự phòng thiếu dữ liệu."
+          },
+          {
+            "en": "Reserve review/rest time; name evidence that narrows or cancels work.",
+            "vi": "Dành giờ phản hồi/nghỉ; nêu bằng chứng làm hẹp/hủy việc."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w105d2",
+            "prompt": {
+              "en": "What must match at month 3 before drafting the result claim?",
+              "vi": "Điều gì cần khớp tháng 3 trước khi viết kết luận?"
+            },
+            "hint": {
+              "en": "Check input identity, eligible rows, and paired output.",
+              "vi": "Kiểm input, số hàng hợp lệ và output ghép."
+            },
+            "answer": {
+              "en": "Source hash, expected N, and paired-error output must match the manifest within the stated tolerance. Otherwise pause claims and repair alignment/provenance. Synthetic data can test code but cannot establish a market result.",
+              "vi": "Hash nguồn,N mong đợi,output lỗi ghép phải khớp manifest trong sai số đã nêu. Nếu không, dừng kết luận, sửa căn chỉnh/provenance. Dữ liệu tổng hợp test code nhưng không xác lập kết quả thị trường."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Publish dated artifacts, review dates, M3 gate, and fallback.",
+          "vi": "Công bố sản phẩm có ngày, lịch phản hồi, cổng T3 và dự phòng."
+        }
+      },
+      {
+        "title": {
+          "en": "Prepare a durable research handoff",
+          "vi": "Chuẩn bị bàn giao nghiên cứu bền vững"
+        },
+        "theory": {
+          "en": "A handoff serves a future researcher without oral context. Include question, version, strongest evidence, negative result, open risks, review date, reproduction command, environment, hashes, rights note, and ownership boundaries. Archive old outputs instead of overwriting. Mark what is reusable, needs checking, or must not be claimed. A new reader should be able to act from the note alone.",
+          "vi": "Bàn giao phục vụ nhà nghiên cứu sau không có bối cảnh miệng. Ghi câu hỏi,phiên bản,bằng chứng mạnh,kết quả âm,rủi ro,ngày xem lại,lệnh tái lập,môi trường,hash,quyền,ranh giới sở hữu. Lưu output cũ, không ghi đè. Đánh dấu điều dùng lại,cần kiểm,không kết luận. Người mới cần làm theo được chỉ từ ghi chú."
+        },
+        "workedExample": {
+          "en": "Commit a17 reproduces MAE .011 vs .012 over 100 dates; interval includes zero. Live returns/costs are absent; block sensitivity awaits independent rerun. README points to D7, c4, command, and M3 gate. If N differs from 100 or hash differs from D7, stop. This prevents a validation metric becoming a trading guarantee.",
+          "vi": "Commit a17 tái tạo MAE .011 so .012 trên 100 ngày; khoảng chứa 0. Thiếu lợi nhuận/chi phí thật; độ nhạy khối chờ chạy độc lập. README trỏ D7,c4,lệnh,cổng T3. Nếu N khác 100/hash khác D7 thì dừng. Điều này ngăn metric validation thành bảo đảm giao dịch."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Prepare a durable research handoff",
+            "vi": "Chuẩn bị bàn giao nghiên cứu bền vững"
+          },
+          "caption": {
+            "en": "Commit a17 reproduces N=100 and MAE .011/.012; interval crosses zero; stop if hash or N differs.",
+            "vi": "Commit a17 tái tạo N=100, MAE .011/.012; khoảng cắt 0; dừng khi hash/N lệch."
+          },
+          "steps": [
+            {
+              "en": "Strength: chronological leakage tests pass.",
+              "vi": "Điểm mạnh: test leakage thời gian đạt."
+            },
+            {
+              "en": "Result: MAE .011/.012 over 100 dates; interval includes zero.",
+              "vi": "Kết quả: MAE .011/.012 trên 100 ngày; khoảng chứa 0."
+            },
+            {
+              "en": "Gap: independent block-sensitivity run is open.",
+              "vi": "Khoảng trống: chưa chạy độc lập độ nhạy khối."
+            },
+            {
+              "en": "Stop if hash is not D7 or row count is not 100.",
+              "vi": "Dừng nếu hash không D7 hoặc số hàng khác 100."
+            }
+          ]
+        },
+        "agenda": [
+          {
+            "en": "Document command, environment, D7, c4, expected N=100.",
+            "vi": "Ghi lệnh,môi trường,D7,c4,N=100 mong đợi."
+          },
+          {
+            "en": "List estimate, interval, negative evidence, and unsupported claims.",
+            "vi": "Liệt kê ước lượng,khoảng,bằng chứng âm,kết luận thiếu căn cứ."
+          },
+          {
+            "en": "Link M3 gate and documented synthetic fallback.",
+            "vi": "Nối cổng T3 và dữ liệu tổng hợp dự phòng."
+          },
+          {
+            "en": "Ask a new reader to follow unaided; fix missing file, owner, or ambiguity.",
+            "vi": "Nhờ người mới tự làm theo; sửa file, người phụ trách hay điểm mơ hồ."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "w105d3",
+            "prompt": {
+              "en": "What mismatch blocks reuse of .011, and where are inputs recorded?",
+              "vi": "Lệch gì ngăn tái dùng .011, input ghi ở đâu?"
+            },
+            "hint": {
+              "en": "N=100 and source D7 identify the declared run.",
+              "vi": "N=100 và nguồn D7 xác định run."
+            },
+            "answer": {
+              "en": "Stop if N≠100 or hash is not D7. Check split, missing targets, and alignment. README records D7,c4,a17, environment, command, expected output, and fallback. Do not reuse .011 as though changed inputs were the same run.",
+              "vi": "Dừng nếu N≠100 hoặc hash khác D7. Kiểm split,target thiếu,căn chỉnh. README ghi D7,c4,a17,môi trường,lệnh,output mong đợi,dự phòng. Không dùng lại .011 như thể input đổi vẫn cùng run."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "Archive handoff note, evidence links, six-month gates, command, and version.",
+          "vi": "Lưu ghi chú bàn giao, link bằng chứng, cổng sáu tháng, lệnh, phiên bản."
+        }
+      }
+    ],
+    "references": []
+  }
+]
