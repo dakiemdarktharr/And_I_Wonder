@@ -7,9 +7,12 @@ import final from '@/data/lessons-100-105.json';
 import foundationVisuals from '@/data/lesson-visuals-01-13.json';
 import type {LessonModule,LessonVisual} from './lesson-types';
 import type {Note} from './types';
+import checkpoints from '@/data/exercise-checkpoints.json';
+import {buildExerciseKey,type ExerciseCheckpoint} from './answer-workbench';
 
 const figures=foundationVisuals as unknown as Record<string,LessonVisual>;
-const lessons = ([...first,...middle,...late,...robustness,...writing,...final] as unknown as LessonModule[]).map(m=>({...m,sessions:m.sessions.map((s,i)=>({...s,visual:figures[`${m.week}-${i}`]||s.visual}))}));
+const checkpointIndex=checkpoints.exercises as unknown as Record<string,ExerciseCheckpoint>;
+const lessons = ([...first,...middle,...late,...robustness,...writing,...final] as unknown as LessonModule[]).map(m=>({...m,sessions:m.sessions.map((s,i)=>({...s,visual:figures[`${m.week}-${i}`]||s.visual,exercises:s.exercises.map(e=>({...e,checkpoint:checkpointIndex[buildExerciseKey(m.week,i,e.id)]}))}))}));
 const byWeek = new Map(lessons.map(lesson=>[lesson.week,lesson]));
 
 export function getDailyLesson(note:Note):{lesson?:LessonModule;dayIndex?:number}{

@@ -1,0 +1,765 @@
+/* Resource and project surfaces use local namespaces because App Router
+   stylesheet imports may persist between routes. */
+.library-workspace .paper-scroll--rolled{background:transparent;border:0;box-shadow:none;width:180px;height:230px;max-width:100%;padding:0;transform:rotate(-5deg);}
+.library-workspace .paper-scroll--rolled::before,.library-workspace .paper-scroll--rolled::after{display:none}
+.library-workspace .rolled-scroll-art{width:100%;height:100%;display:block;overflow:visible}
+.library-workspace .library-item {
+  outline-offset: 6px !important;
+}
+
+.library-workspace .library-item:focus-visible,
+.projects-workspace .quest-row:focus-visible,
+.project-guide-shell a:focus-visible,
+.project-guide-shell button:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 5px;
+}
+
+.library-workspace .book-cover {
+  width: 100%;
+  max-width: 176px;
+  height: 230px;
+  border: 2px solid var(--ink);
+  background: #fffdf7;
+  box-shadow: 5px 3px 0 var(--ink);
+  overflow: visible;
+  isolation: isolate;
+}
+
+.library-workspace .book-cover--source-image {
+  overflow: visible;
+  background: #fff;
+}
+
+.library-workspace .book-cover-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+
+.library-workspace .book-cover--source-image::before {
+  position: absolute;
+  z-index: 2;
+  inset: 0 auto 0 0;
+  width: 7px;
+  content: "";
+  background: linear-gradient(90deg, #1114, #fff2 52%, transparent);
+  pointer-events: none;
+}
+
+.library-workspace .book-cover-provenance {
+  position: absolute;
+  z-index: 3;
+  top: -8px;
+  right: -10px;
+  display: grid;
+  min-height: 19px;
+  place-items: center;
+  padding: 3px 5px;
+  border: 1px solid var(--ink);
+  background: var(--yellow);
+  color: var(--ink);
+  font: 800 6px/1 "Be Vietnam Pro", Arial, sans-serif;
+  letter-spacing: .04em;
+  transform: rotate(3deg);
+}
+
+.library-workspace .book-pages {
+  z-index: 0;
+}
+
+.library-workspace .book-title-page {
+  display: flex;
+  position: relative;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 23px 15px 19px 20px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, #1112 0 2px, transparent 2px 100%),
+    repeating-linear-gradient(0deg, transparent 0 18px, #1717170c 18px 19px),
+    #fffdf7;
+  text-align: left;
+}
+
+.library-workspace .book-title-page-label {
+  color: #4d4d4d;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.library-workspace .book-title-page h3 {
+  position: static;
+  margin: 19px 0 10px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(15px, 1.5vw, 21px);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.13;
+  overflow-wrap: anywhere;
+}
+
+.library-workspace .book-title-page p {
+  margin: 0;
+  color: #333;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.library-workspace .book-title-page-note {
+  margin-top: auto;
+  padding-top: 14px;
+  color: #5c5c5c;
+  font-size: 7px;
+  line-height: 1.45;
+}
+
+.library-workspace .book-cover--title-fallback {
+  border-color: #5a5649;
+  box-shadow: 5px 3px 0 #5a5649;
+}
+
+.library-workspace .catalog-object {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 182px;
+  height: 188px;
+  flex-direction: column;
+  padding: 16px;
+  border: 2px solid var(--ink);
+  background:
+    linear-gradient(90deg, #17171718 0 9px, transparent 9px),
+    linear-gradient(145deg, #fff 0 59%, color-mix(in srgb, var(--cover) 42%, white) 59% 100%);
+  box-shadow: 5px 4px 0 var(--ink);
+  color: var(--ink);
+  text-align: left;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.library-workspace .catalog-object--course {
+  border-radius: 2px 8px 8px 2px;
+  background:
+    linear-gradient(90deg, var(--cover) 0 10px, transparent 10px 18px, #17171719 18px 20px, transparent 20px),
+    linear-gradient(145deg, #fff 0 61%, color-mix(in srgb, var(--cover) 38%, white) 61% 100%);
+}
+
+.library-workspace .catalog-object--link {
+  height: 172px;
+  transform: rotate(1.5deg);
+}
+
+.library-workspace .catalog-object-kicker {
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.library-workspace .catalog-object h3 {
+  margin: 19px 0 9px;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: -.04em;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.library-workspace .catalog-object-author {
+  color: #666;
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.library-workspace .catalog-object-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid #17171770;
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.library-workspace .library-item:hover .catalog-object,
+.library-workspace .library-item:focus-visible .catalog-object {
+  transform: translateY(-12px) rotate(-2deg);
+  box-shadow: 8px 9px 0 var(--ink);
+}
+
+.library-workspace .library-item:hover .catalog-object--link,
+.library-workspace .library-item:focus-visible .catalog-object--link {
+  transform: translateY(-12px) rotate(0deg);
+}
+
+.library-workspace .paper-scroll {
+  width: 100%;
+  max-width: 195px;
+  height: 218px;
+  position: relative;
+  overflow: visible;
+  filter: drop-shadow(4px 5px 0 #0003);
+  transition: transform .3s;
+}
+
+.library-workspace .scroll-roll-body {
+  position: absolute;
+  z-index: 1;
+  right: 9px;
+  bottom: 16px;
+  width: 59%;
+  height: 47px;
+  border: 2px solid #654a27;
+  border-radius: 27px;
+  background:
+    linear-gradient(180deg, #fff4, transparent 30% 65%, #2015002b),
+    repeating-linear-gradient(90deg, #b8914d 0 5px, #d7ba7d 5px 10px);
+  box-shadow: inset 0 2px 3px #fff7, 2px 3px 0 #17171740;
+}
+
+.library-workspace .scroll-sheet {
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  left: 2px;
+  width: 80%;
+  height: 154px;
+  border: 1.5px solid #6e5632;
+  background:
+    linear-gradient(90deg, #987b4c12, transparent 13% 88%, #987b4c22),
+    repeating-linear-gradient(0deg, transparent 0 16px, #5d4a2e12 16px 17px),
+    #fff8df;
+  box-shadow: 3px 4px 0 #0002;
+  transform: rotate(-2deg) skewY(1deg);
+}
+
+.library-workspace .scroll-sheet-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 17px 12px 10px;
+  overflow: hidden;
+}
+
+.library-workspace .paper-label {
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.library-workspace .scroll-sheet h3 {
+  margin: 11px 0 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.library-workspace .paper-lines {
+  display: block;
+  height: 30px;
+  flex: 0 0 auto;
+  margin: 4px 0;
+  background: repeating-linear-gradient(#666 0 1px, transparent 1px 6px);
+  opacity: .55;
+}
+
+.library-workspace .paper-formula {
+  margin-top: auto;
+  padding: 6px 0 3px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10px;
+}
+
+.library-workspace .scroll-roll-end {
+  display: grid;
+  position: absolute;
+  z-index: 4;
+  right: -1px;
+  bottom: 8px;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  border: 2px solid #513a1e;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 29%, #fff8 0 8%, transparent 33%),
+    radial-gradient(circle, #d9bd81 0 57%, #a37c42 59% 70%, #e1c990 72% 79%, #73512a 82%);
+  box-shadow: 2px 4px 0 #17171752, inset 0 0 0 2px #f8e4b2;
+}
+
+.library-workspace .scroll-roll-end svg {
+  width: 48px;
+  height: 48px;
+  fill: none;
+  stroke: #61431f;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+}
+
+.library-workspace .library-item:hover .paper-scroll,
+.library-workspace .library-item:focus-visible .paper-scroll {
+  transform: translateY(-12px) rotate(1deg);
+}
+
+.library-workspace .resource-tooltip {
+  width: min(250px, calc(100vw - 40px));
+}
+
+.library-workspace .resource-tooltip small {
+  display: block;
+  margin-top: 7px;
+  color: #aaa;
+  font-size: 7px;
+  line-height: 1.45;
+}
+
+.library-workspace .shelf-caption {
+  min-height: 2.8em;
+  overflow-wrap: anywhere;
+}
+
+.projects-workspace .quest-row {
+  text-decoration: none;
+}
+
+.projects-workspace .quest-row:hover .quest-open,
+.projects-workspace .quest-row:focus-visible .quest-open {
+  color: var(--blue);
+}
+
+.project-guide-shell {
+  width: min(1080px, calc(100% - 48px));
+  margin: 32px auto 54px;
+  border: 2px solid var(--ink);
+  background: #fffdf7;
+  box-shadow: 7px 7px 0 var(--ink);
+  color: var(--ink);
+  font-family: "Be Vietnam Pro", Arial, sans-serif;
+}
+
+.project-guide-topline {
+  display: flex;
+  min-height: 45px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--yellow);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.project-guide-topline a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-guide-topline a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.project-guide-topline span {
+  text-align: right;
+}
+
+.project-guide-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 220px);
+  gap: 22px;
+  align-items: end;
+  padding: clamp(22px, 4vw, 40px);
+  border-bottom: 2px solid var(--ink);
+}
+
+.project-guide-kicker {
+  margin: 0 0 10px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.project-guide-header h2 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 900;
+  letter-spacing: -.065em;
+  line-height: .98;
+}
+
+.project-guide-question {
+  max-width: 740px;
+  margin: 15px 0 0;
+  color: #4a4a4a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(15px, 2vw, 19px);
+  line-height: 1.5;
+}
+
+.project-guide-window {
+  padding: 15px;
+  border: 2px solid var(--ink);
+  background: var(--mint);
+  box-shadow: 4px 4px 0 var(--ink);
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.project-guide-window span {
+  display: block;
+  color: #555;
+  font-size: 8px;
+}
+
+.project-guide-scope {
+  margin: 0;
+  padding: 14px clamp(20px, 4vw, 40px);
+  border-bottom: 1px solid #c9c7bd;
+  background: #f2f0e8;
+  color: #3f3f3f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.project-guide-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+}
+
+.project-guide-section {
+  min-width: 0;
+  padding: 24px clamp(18px, 3vw, 30px);
+  border-bottom: 1px solid #c9c7bd;
+}
+
+.project-guide-section:nth-child(odd) {
+  border-right: 1px solid #c9c7bd;
+}
+
+.project-guide-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 15px;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: -.035em;
+}
+
+.project-guide-section h3 span {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+  place-items: center;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--yellow);
+  font: 800 10px/1 "Be Vietnam Pro", Arial, sans-serif;
+}
+
+.project-guide-section ol,
+.project-guide-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-guide-list {
+  display: grid;
+  gap: 12px;
+}
+
+.project-guide-list li {
+  display: grid;
+  grid-template-columns: 23px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.project-guide-list li > span:first-child {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: #eeeae0;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.project-guide-list h4 {
+  margin: 1px 0 4px;
+  font-size: 11px;
+  font-weight: 850;
+  line-height: 1.4;
+}
+
+.project-guide-list p,
+.project-guide-bullet {
+  margin: 0;
+  color: #555;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.project-guide-tree {
+  max-width: 100%;
+  margin: 0;
+  padding: 14px;
+  overflow: auto;
+  border: 1px solid var(--ink);
+  background: #1d2230;
+  color: #f4f1e8;
+  font: 10px/1.8 ui-monospace, SFMono-Regular, Consolas, monospace;
+  tab-size: 2;
+}
+
+.project-guide-checks {
+  display: grid;
+  gap: 10px;
+}
+
+.project-guide-check {
+  padding: 12px;
+  border: 1px solid #aaa79c;
+  background: #fff;
+}
+
+.project-guide-check h4 {
+  margin: 0 0 5px;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.project-guide-check p {
+  margin: 0;
+  color: #4d4d4d;
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.project-guide-metrics {
+  display: grid;
+  gap: 8px;
+}
+
+.project-guide-metric {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  color: #484848;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.project-guide-metric svg {
+  flex: 0 0 15px;
+  margin-top: 2px;
+  color: var(--blue);
+}
+
+.project-guide-pitfalls {
+  display: grid;
+  gap: 8px;
+}
+
+.project-guide-pitfalls li {
+  padding-left: 13px;
+  position: relative;
+  color: #4d4d4d;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.project-guide-pitfalls li::before {
+  position: absolute;
+  top: .45em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--orange);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.project-guide-milestones {
+  display: grid;
+  gap: 0;
+}
+
+.project-guide-milestone {
+  display: grid;
+  grid-template-columns: minmax(105px, .8fr) minmax(0, 1.6fr);
+  gap: 8px 13px;
+  padding: 11px 0;
+  border-top: 1px solid #d6d3ca;
+}
+
+.project-guide-milestone h4 {
+  grid-row: span 2;
+  margin: 0;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.project-guide-milestone p {
+  margin: 0;
+  color: #555;
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.project-guide-milestone p b {
+  color: var(--ink);
+}
+
+.project-guide-source {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 12px clamp(18px, 3vw, 30px);
+  background: #f2f0e8;
+  color: #555;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.project-guide-source a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--blue);
+  font-weight: 800;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 980px) {
+  .library-workspace .shelf-items {
+    gap: 22px;
+  }
+
+  .project-guide-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-guide-section:nth-child(odd) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .library-workspace .book-cover {
+    width: min(100%, 160px);
+    height: 200px;
+  }
+
+  .library-workspace .catalog-object {
+    width: min(100%, 160px);
+    height: 180px;
+    padding: 13px;
+  }
+
+  .library-workspace .catalog-object h3 {
+    font-size: 12px;
+  }
+
+  .library-workspace .paper-scroll {
+    max-width: 170px;
+    height: 190px;
+  }
+
+  .library-workspace .scroll-sheet {
+    height: 136px;
+  }
+
+  .library-workspace .scroll-roll-end {
+    width: 54px;
+    height: 54px;
+  }
+
+  .library-workspace .scroll-roll-end svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .project-guide-shell {
+    width: calc(100% - 28px);
+    margin: 25px auto 38px;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .project-guide-topline {
+    align-items: flex-start;
+    padding: 10px 12px;
+    font-size: 8px;
+  }
+
+  .project-guide-header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 23px 17px;
+  }
+
+  .project-guide-window {
+    width: fit-content;
+    min-width: 165px;
+    padding: 9px 12px;
+    text-align: left;
+  }
+
+  .project-guide-scope {
+    padding: 13px 17px;
+    font-size: 11px;
+  }
+
+  .project-guide-section {
+    padding: 20px 16px;
+  }
+
+  .project-guide-list p,
+  .project-guide-bullet,
+  .project-guide-metric {
+    font-size: 9px;
+  }
+
+  .project-guide-milestone {
+    grid-template-columns: minmax(95px, .75fr) minmax(0, 1.4fr);
+    gap: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .library-workspace .book-cover,
+  .library-workspace .paper-scroll,
+  .library-workspace .catalog-object {
+    transition: none;
+  }
+}

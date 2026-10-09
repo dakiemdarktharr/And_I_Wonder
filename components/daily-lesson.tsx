@@ -8,6 +8,11 @@ import type { Bilingual, LessonModule } from "@/lib/lesson-types";
 import { useLanguage } from "@/components/providers";
 import "./lesson.css";
 import {LessonVisual} from './lesson-visual';
+import {useState} from 'react';
+import {MathLab} from './math-lab';
+import {exerciseLabs,theoryLabs} from '@/lib/lab-catalog';
+import {InteractiveAnswer} from './interactive-answer';
+import {buildExerciseKey} from '@/lib/answer-workbench';
 
 type DailyLessonProps = {
   lesson: LessonModule;
@@ -115,11 +120,20 @@ function Diagram({ lesson, language }: { lesson: LessonModule; language: "vi" | 
 
 export function DailyLesson({ lesson, dayIndex, noteId, checkedTasks, canEdit, onTaskToggle }: DailyLessonProps) {
   const { language } = useLanguage();
+  const [focus,setFocus]=useState(false);
   const session = lesson.sessions[dayIndex];
   if (!session || dayIndex < 0 || dayIndex > 4) return null;
   const lang = language;
+  const labKey=`${lesson.week}-${dayIndex}`;
+  const complete=session.agenda.filter((_,index)=>checkedTasks[`${noteId}::lesson${index}`]).length;
 
-  return <section className="daily-lesson" aria-labelledby={`daily-lesson-title-${lesson.week}`}>
+  return <section className={`daily-lesson ${focus?'learning-focus':''}`} aria-labelledby={`daily-lesson-title-${lesson.week}`}>
+    <nav className="learning-nav" aria-label={lang==='vi'?'Các phần của bài học':'Lesson sections'}>
+      {[["learn",'Lý thuyết','Theory'],["example",'Ví dụ','Example'],["explore",'Khám phá','Explore'],["practice",'Luyện tập','Practice'],["agenda",'Lịch học','Agenda']].map(([id,vi,en])=><a key={id} href={`#lesson-${id}`}>{lang==='vi'?vi:en}</a>)}
+      <button type="button" aria-pressed={focus} onClick={()=>setFocus(v=>!v)}>{lang==='vi'?(focus?'Hiện nền tảng':'Tập trung'):(focus?'Show context':'Focus')}</button>
+    </nav>
+    <div className="learning-progress"><progress value={complete} max={session.agenda.length} aria-label={lang==='vi'?'Khối học đã hoàn thành':'Completed study blocks'}/><span>{complete}/{session.agenda.length} {lang==='vi'?'khối học đã hoàn thành':'study blocks completed'}</span></div>
+    {focus&&<p className="learning-focus-note">{lang==='vi'?'Đã thu gọn mục tiêu và nền tảng tuần. Bạn vẫn có thể xem lại bất cứ lúc nào.':'Week context is collapsed. You can bring it back at any time.'}</p>}
     <header className="daily-lesson__header">
       <div><span className="daily-lesson__eyebrow">{lang === "vi" ? `TUẦN ${lesson.week} · BÀI HỌC HẰNG NGÀY` : `WEEK ${lesson.week} · DAILY LESSON`}</span><h2 id={`daily-lesson-title-${lesson.week}`}>{localized(lesson.title, lang)}</h2></div>
       <span className="daily-lesson__day">{lang === "vi" ? `NGÀY ${dayIndex + 1} / ${lesson.sessions.length}` : `DAY ${dayIndex + 1} / ${lesson.sessions.length}`}</span>
@@ -131,14 +145,16 @@ export function DailyLesson({ lesson, dayIndex, noteId, checkedTasks, canEdit, o
 
     <details className="daily-lesson__chapter-map"><summary>{lang==='vi'?'Sơ đồ chương':'Chapter map'}</summary><Diagram lesson={lesson} language={lang}/></details>
 
-    <section className="daily-lesson__foundations"><h3>{lang === "vi" ? "Nền tảng lý thuyết" : "Theory foundations"}</h3><LessonMarkdown>{localized(lesson.foundations, lang)}</LessonMarkdown></section>
+    <details className="daily-lesson__foundations" open={dayIndex===0?true:undefined}><summary>{lang === "vi" ? "Nền tảng lý thuyết của tuần" : "This week's theory foundations"}</summary><LessonMarkdown>{localized(lesson.foundations, lang)}</LessonMarkdown></details>
 
     <article className="daily-lesson__session" aria-labelledby={`daily-lesson-session-${lesson.week}-${dayIndex}`}>
       <div className="daily-lesson__session-heading"><span>{lang === "vi" ? `BUỔI ${dayIndex + 1}` : `SESSION ${dayIndex + 1}`}</span><h3 id={`daily-lesson-session-${lesson.week}-${dayIndex}`}>{localized(session.title, lang)}</h3></div>
-      <section className="daily-lesson__theory"><h4>{lang === "vi" ? "Học lý thuyết" : "Learn the theory"}</h4><LessonMarkdown>{localized(session.theory, lang)}</LessonMarkdown></section>
-      <section className="daily-lesson__example"><h4>{lang === "vi" ? "Ví dụ hướng dẫn" : "Guided example"}</h4><LessonMarkdown>{localized(session.workedExample, lang)}</LessonMarkdown></section>
-      {session.visual && <LessonVisual visual={session.visual}/>}
-      <section className="daily-lesson__agenda"><h4>{lang === "vi" ? "Lịch học 4 giờ" : "Four-hour study agenda"}</h4><ol>{session.agenda.map((item, index) => {
+      <section id="lesson-learn" className="daily-lesson__theory learning-section"><h4>{lang === "vi" ? "Học lý thuyết" : "Learn the theory"}</h4><LessonMarkdown>{localized(session.theory, lang)}</LessonMarkdown></section>
+      <section id="lesson-example" className="daily-lesson__example learning-section"><h4>{lang === "vi" ? "Ví dụ hướng dẫn" : "Guided example"}</h4><LessonMarkdown>{localized(session.workedExample, lang)}</LessonMarkdown></section>
+      <section id="lesson-explore" className="learning-section" aria-label={lang==='vi'?'Khám phá kiến thức':'Explore the concept'}>
+       {theoryLabs[labKey]?<><MathLab key={labKey} spec={theoryLabs[labKey]}/>{session.visual&&<details className="daily-lesson__chapter-map"><summary>{lang==='vi'?'Đối chiếu đồ thị và dữ liệu ví dụ gốc':'Compare the original example and data'}</summary><LessonVisual visual={session.visual}/></details>}</>:session.visual&&<LessonVisual key={labKey} visual={session.visual}/>}
+      </section>
+      <section id="lesson-agenda" className="daily-lesson__agenda learning-section"><h4>{lang === "vi" ? "Lịch học 4 giờ" : "Four-hour study agenda"}</h4><ol>{session.agenda.map((item, index) => {
         const taskId = `${noteId}::lesson${index}`;
         const checked = checkedTasks[taskId] ?? false;
         const taskLabel = localized(item, lang).replace(/^60\s*(min|phút)\s*[—–-]\s*/i, "");
@@ -150,12 +166,12 @@ export function DailyLesson({ lesson, dayIndex, noteId, checkedTasks, canEdit, o
           </label>
         </li>;
       })}</ol></section>
-      <section className="daily-lesson__exercises"><h4>{lang === "vi" ? "Bài tập tự luyện" : "Practice exercises"}</h4>
+      <section id="lesson-practice" className="daily-lesson__exercises learning-section"><h4>{lang === "vi" ? "Bài tập tự luyện" : "Practice exercises"}</h4>
         {session.exercises.map((exercise, index) => <article className="daily-lesson__exercise" key={exercise.id}>
           <h5>{lang === "vi" ? `Bài ${index + 1}` : `Exercise ${index + 1}`}</h5>
-          <LessonMarkdown>{localized(exercise.prompt, lang)}</LessonMarkdown>
-          <details className="daily-lesson__answer"><summary>{lang === "vi" ? "Hiện gợi ý" : "Show hint"}</summary><LessonMarkdown>{localized(exercise.hint, lang)}</LessonMarkdown></details>
-          <details className="daily-lesson__answer daily-lesson__answer--full"><summary>{lang === "vi" ? "Hiện lời giải" : "Show answer"}</summary><LessonMarkdown>{localized(exercise.answer, lang)}</LessonMarkdown></details>
+          <InteractiveAnswer key={buildExerciseKey(lesson.week,dayIndex,exercise.id)} exercise={exercise} checkpoint={exercise.checkpoint} language={lang} exerciseKey={buildExerciseKey(lesson.week,dayIndex,exercise.id)}>
+           {exerciseLabs[labKey]&&<MathLab key={`answer-${labKey}`} spec={exerciseLabs[labKey]}/>}
+          </InteractiveAnswer>
         </article>)}
       </section>
       <div className="daily-lesson__deliverable"><strong>{lang === "vi" ? "Sản phẩm hôm nay" : "Today's deliverable"}</strong><LessonMarkdown>{localized(session.deliverable, lang)}</LessonMarkdown></div>

@@ -1,6 +1,6 @@
 # Atlas connectivity investigation — 8 October 2026
 
-Status: production connectivity recovered on 8 October 2026. Both progress and note reads return HTTP 200. Owner-authorized save/reload verification is still pending.
+Status: production connectivity recovered on 8 October 2026. Both progress and note reads return HTTP 200. The user subsequently confirmed GitHub authorization and that the checkbox remained checked after reload.
 
 ## Recovery verification
 
@@ -11,7 +11,7 @@ After the user reconfirmed the active `0.0.0.0/0` entry, the existing deployment
 - `GET /api/auth/login`: HTTP 302 to GitHub with the canonical production callback.
 - Unauthenticated `PATCH /api/progress`: HTTP 401, correctly denied before writes.
 
-The next verification is an actual GitHub owner sign-in, checkbox save, and page reload. Successful reads alone do not prove write permissions or the completed OAuth flow.
+The owner sign-in and checkbox save/reload were subsequently confirmed by the user. This is distinct from the automated public-read and unauthorized-write checks above.
 
 ## Observations
 

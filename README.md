@@ -9,6 +9,9 @@ Production address: **https://and-i-wonder-quant.vercel.app**
 - Three animated portals: Daily, Projects, Resources. Hovered objects jump out, land, then dissolve. Reduced-motion preferences disable these effects.
 - A monthly calendar covering **7 October 2026–6 October 2028**: 731 days, 523 four-hour study sessions and 208 weekend rest days.
 - Self-contained bilingual daily lessons with definitions, data-matched charts and reasoning diagrams, worked examples, four study blocks, exercises, hidden hints and sample answers. References are optional.
+- Pop-art outlines and hard cel shadows with a warm paper, steel-blue, sage and ochre reading palette. Sticky lesson navigation and a focus mode reduce the amount of context shown at once.
+- 523 exercise workspaces with 1,614 bilingual solution stages, browser-local drafts and 182 curated numeric checks across 164 exercises. Proof/code/research answers use manual comparison; they are not automatically graded.
+- Interactive figure inspection throughout the curriculum, plus 52 exercise-specific parameter fixtures and 6 theory/example fixtures across 19 mathematical models. A reset returns each simulation to its original inputs.
 - Five project quest lines and a free-resource library of book covers, research scrolls and video cassettes.
 - The 899 imported Markdown notes retain checklists, links, wikilinks, callouts, code, tables, math and note embeds. Original daily plans remain available in a collapsed reference panel.
 - Search, Markdown downloads, owner study logs and revision-checked Markdown editing. Both languages share progress.
@@ -54,7 +57,9 @@ Original Markdown task IDs use `<noteId>::0`, `::1`, etc. New lesson agenda IDs 
 
 Progress and note overrides are stored in MongoDB. This is an import/export workflow: browser changes do not automatically write into the local Obsidian vault. Obsidian community plugins are not executed in the browser; the roadmap's `.base` dashboard links to the web calendar.
 
-Book-cover designs and portal illustrations are original SVG/CSS compositions. The library links to free official resources; it does not bundle third-party books or redistribute publisher PDFs.
+Portal illustrations and rolled scrolls use SVG/CSS compositions. Book thumbnails reproduce covers or first pages from the linked official sources; provenance and capture metadata are recorded in `data/resource-covers.json`. The library links to free official resources and does not bundle full third-party PDFs.
+
+See [the UI/learning audit](docs/ux-learning-audit.md) for the critique, reference sites, palette, actual interactive coverage and content corrections. `data/project-guides.json` supplies five bilingual implementation briefs. After regenerating foundation lesson data, run `node scripts/correct-foundation-answers.mjs` and then `node scripts/build-exercise-checkpoints.mjs` to keep answers and assessments aligned.
 
 ## Deployment
 

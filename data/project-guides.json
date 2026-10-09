@@ -1,0 +1,1225 @@
+[
+  {
+    "id": "P01",
+    "title": {
+      "en": "Numerical foundations laboratory",
+      "vi": "Phòng thí nghiệm nền tảng tính toán số"
+    },
+    "question": {
+      "en": "How do stable linear algebra and carefully measured simulation change conclusions from small data experiments?",
+      "vi": "Đại số tuyến tính ổn định và mô phỏng được đo lường cẩn thận thay đổi kết luận từ thí nghiệm dữ liệu nhỏ như thế nào?"
+    },
+    "scope": {
+      "en": "Build a CPU-only laboratory for QR least squares, centered PCA, Monte Carlo uncertainty, and variance reduction. Keep deterministic checks separate from stochastic experiments.",
+      "vi": "Xây dựng phòng thí nghiệm chỉ cần CPU cho bình phương tối thiểu QR, PCA đã trừ trung bình, độ bất định Monte Carlo và giảm phương sai. Tách kiểm tra xác định khỏi thí nghiệm ngẫu nhiên."
+    },
+    "startingInputs": [
+      {
+        "en": "Python 3.11+, NumPy, SciPy, Matplotlib, pytest. Exact full-rank fixture: X=[[1,-1],[1,0],[1,1],[1,2],[1,3]], beta=[2,-0.75], y=X beta.",
+        "vi": "Python 3.11+, NumPy, SciPy, Matplotlib, pytest. Bộ dữ liệu hạng đầy đủ chính xác: X=[[1,-1],[1,0],[1,1],[1,2],[1,3]], beta=[2,-0.75], y=X beta."
+      },
+      {
+        "en": "Second seeded design: n=500, p=8 Gaussian features, an intercept, noise sigma=0.5; PCG64 seed=20261009.",
+        "vi": "Bộ thiết kế có seed thứ hai: n=500, p=8 đặc trưng Gaussian, hệ số chặn, nhiễu sigma=0.5; PCG64 seed=20261009."
+      },
+      {
+        "en": "For Monte Carlo, draw U~Uniform(0,1), estimate E[exp(U)]=e-1, and use U as a known-mean control variate with E[U]=0.5. Estimate its coefficient from a separate 1,000-draw pilot.",
+        "vi": "Với Monte Carlo, lấy mẫu U~Uniform(0,1), ước lượng E[exp(U)]=e-1 và dùng U làm biến kiểm soát có trung bình E[U]=0.5 đã biết. Ước lượng hệ số từ đợt thí điểm riêng gồm 1.000 mẫu."
+      }
+    ],
+    "steps": [
+      {
+        "title": {
+          "en": "Freeze the experiment contract",
+          "vi": "Cố định quy ước thí nghiệm"
+        },
+        "detail": {
+          "en": "Record equations, seeds, array shapes, dtype, and one reproduction command per experiment. Keep the five-row fixture independent of the noisy sample.",
+          "vi": "Ghi phương trình, seed, kích thước mảng, dtype và một lệnh tái tạo cho mỗi thí nghiệm. Giữ bộ 5 hàng tách biệt với mẫu có nhiễu."
+        }
+      },
+      {
+        "title": {
+          "en": "Implement and audit OLS",
+          "vi": "Cài đặt và kiểm tra OLS"
+        },
+        "detail": {
+          "en": "Solve by QR or trusted least squares; never form (XᵀX)⁻¹. Return coefficients, fitted values, residuals, rank, and condition number. Compare with numpy.linalg.lstsq on both fixtures.",
+          "vi": "Giải bằng QR hoặc bình phương tối thiểu đáng tin cậy; không lập (XᵀX)⁻¹. Trả về hệ số, giá trị khớp, phần dư, hạng và số điều kiện. So sánh numpy.linalg.lstsq trên cả hai bộ."
+        }
+      },
+      {
+        "title": {
+          "en": "Implement centered PCA",
+          "vi": "Cài đặt PCA đã trừ trung bình"
+        },
+        "detail": {
+          "en": "Center using training means, obtain components by SVD, sort explained variance descending, and reconstruct with k=p and k=2. Document singular-vector sign ambiguity.",
+          "vi": "Trừ trung bình bằng trung bình tập huấn luyện, lấy thành phần bằng SVD, sắp xếp phương sai giải thích giảm dần và tái tạo với k=p cùng k=2. Ghi rõ tính bất định dấu vector kỳ dị."
+        }
+      },
+      {
+        "title": {
+          "en": "Compare Monte Carlo estimators",
+          "vi": "So sánh các ước lượng Monte Carlo"
+        },
+        "detail": {
+          "en": "Compare plain and pilot-fitted control-variate estimators at n=100, 1,000, 10,000; repeat each for 1,000 independent seeds. Report bias, standard error, 95% coverage, and variance ratio.",
+          "vi": "So sánh ước lượng thường và ước lượng biến kiểm soát khớp từ đợt thí điểm tại n=100, 1.000, 10.000; lặp mỗi cỡ mẫu với 1.000 seed độc lập. Báo cáo độ chệch, sai số chuẩn, độ bao phủ 95% và tỷ số phương sai."
+        }
+      },
+      {
+        "title": {
+          "en": "Explain the evidence",
+          "vi": "Giải thích minh chứng"
+        },
+        "detail": {
+          "en": "Publish one table and two labeled figures. Separate deterministic claims from seed-dependent results and explain why one favorable run cannot establish variance reduction.",
+          "vi": "Công bố một bảng và hai biểu đồ có nhãn. Tách kết luận xác định khỏi kết quả phụ thuộc seed, đồng thời giải thích vì sao một lần chạy thuận lợi không chứng minh được giảm phương sai."
+        }
+      }
+    ],
+    "repositoryTree": [
+      "quant-foundations-lab/",
+      "├── pyproject.toml",
+      "├── README.md",
+      "├── configs/monte-carlo.json",
+      "├── src/quant_lab/ols.py",
+      "├── src/quant_lab/pca.py",
+      "├── src/quant_lab/monte_carlo.py",
+      "├── tests/test_ols.py",
+      "├── tests/test_pca.py",
+      "├── tests/test_monte_carlo.py",
+      "├── reports/experiment-plan.md",
+      "├── reports/results.csv",
+      "└── reports/figures/"
+    ],
+    "acceptanceChecks": [
+      {
+        "metric": {
+          "en": "OLS coefficients and residuals",
+          "vi": "Hệ số OLS và phần dư"
+        },
+        "criterion": {
+          "en": "On the exact fixture, max coefficient error <1e-12, rank=2, and ||Xᵀr||∞<1e-12. On the noisy fixture, coefficients match numpy.linalg.lstsq within relative tolerance 1e-10.",
+          "vi": "Trên bộ chính xác, sai số hệ số lớn nhất <1e-12, hạng=2 và ||Xᵀr||∞<1e-12. Trên bộ có nhiễu, hệ số khớp numpy.linalg.lstsq với dung sai tương đối 1e-10."
+        }
+      },
+      {
+        "metric": {
+          "en": "PCA reconstruction",
+          "vi": "Tái tạo PCA"
+        },
+        "criterion": {
+          "en": "At k=p, relative Frobenius reconstruction error <1e-10; component columns are orthonormal within 1e-10; explained-variance ratios sum to 1 within 1e-10.",
+          "vi": "Tại k=p, sai số tái tạo Frobenius tương đối <1e-10; các cột thành phần trực chuẩn trong 1e-10; tổng tỷ lệ phương sai giải thích bằng 1 trong 1e-10."
+        }
+      },
+      {
+        "metric": {
+          "en": "Monte Carlo interval calibration",
+          "vi": "Hiệu chuẩn khoảng Monte Carlo"
+        },
+        "criterion": {
+          "en": "Across 1,000 runs, nominal 95% normal intervals cover e-1 in 0.93–0.97 of runs at n=10,000. Save seeds and the interval formula.",
+          "vi": "Qua 1.000 lần chạy, khoảng chuẩn danh nghĩa 95% chứa e-1 trong 0,93–0,97 số lần tại n=10.000. Lưu seed và công thức khoảng."
+        }
+      },
+      {
+        "metric": {
+          "en": "Variance reduction and rerun",
+          "vi": "Giảm phương sai và chạy lại"
+        },
+        "criterion": {
+          "en": "At n=1,000, control-variate empirical variance is below 10% of plain-estimator variance on the fixed 1,000-seed batch. Re-running reproduces CSV and figures byte-for-byte.",
+          "vi": "Tại n=1.000, phương sai thực nghiệm của biến kiểm soát thấp hơn 10% phương sai ước lượng thường trên lô 1.000 seed cố định. Chạy lại tái tạo CSV và biểu đồ giống hệt từng byte."
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "en": "Maximum coefficient error; residual orthogonality; PCA reconstruction error and explained variance.",
+        "vi": "Sai số hệ số lớn nhất; tính trực giao phần dư; sai số tái tạo và phương sai giải thích PCA."
+      },
+      {
+        "en": "Monte Carlo bias, standard error, interval coverage, empirical variance, and control/plain variance ratio.",
+        "vi": "Độ chệch Monte Carlo, sai số chuẩn, độ bao phủ khoảng, phương sai thực nghiệm và tỷ số phương sai biến kiểm soát/ước lượng thường."
+      }
+    ],
+    "pitfalls": [
+      {
+        "en": "An explicit inverse magnifies conditioning problems; use QR or least squares.",
+        "vi": "Ma trận nghịch đảo tường minh làm khuếch đại vấn đề điều kiện số; hãy dùng QR hoặc bình phương tối thiểu."
+      },
+      {
+        "en": "Fit PCA centering or scaling only on training rows.",
+        "vi": "Chỉ khớp tham số trừ trung bình hoặc chuẩn hóa PCA trên hàng huấn luyện."
+      },
+      {
+        "en": "Estimate the control coefficient on the separate pilot, not the small sample used to report variance.",
+        "vi": "Ước lượng hệ số kiểm soát trên đợt thí điểm riêng, không dùng chính mẫu nhỏ báo cáo phương sai."
+      },
+      {
+        "en": "A 95% interval will miss in some runs. Report repeated-run coverage and its uncertainty.",
+        "vi": "Khoảng 95% sẽ bỏ sót trong một số lần chạy. Báo cáo độ bao phủ qua các lần lặp và độ bất định."
+      }
+    ],
+    "milestones": [
+      {
+        "name": {
+          "en": "Protocol frozen",
+          "vi": "Cố định quy trình"
+        },
+        "evidence": {
+          "en": "Equations, seeds, sample sizes, outputs, and reproduction commands.",
+          "vi": "Phương trình, seed, cỡ mẫu, đầu ra và lệnh tái tạo."
+        },
+        "gate": {
+          "en": "A clean environment runs the exact fixture.",
+          "vi": "Môi trường sạch chạy được bộ dữ liệu chính xác."
+        }
+      },
+      {
+        "name": {
+          "en": "Numerical core",
+          "vi": "Lõi tính toán số"
+        },
+        "evidence": {
+          "en": "OLS/PCA modules and independent reference comparisons.",
+          "vi": "Mô-đun OLS/PCA và phép đối chiếu độc lập."
+        },
+        "gate": {
+          "en": "All deterministic tolerances pass.",
+          "vi": "Đạt mọi dung sai xác định."
+        }
+      },
+      {
+        "name": {
+          "en": "Monte Carlo study",
+          "vi": "Nghiên cứu Monte Carlo"
+        },
+        "evidence": {
+          "en": "Seeded CSV, coverage table, variance ratio, and figures.",
+          "vi": "CSV có seed, bảng độ bao phủ, tỷ số phương sai và biểu đồ."
+        },
+        "gate": {
+          "en": "The 1,000-run protocol completes and shows uncertainty.",
+          "vi": "Hoàn thành quy trình 1.000 lần chạy và trình bày độ bất định."
+        }
+      },
+      {
+        "name": {
+          "en": "Reviewed report",
+          "vi": "Báo cáo đã rà soát"
+        },
+        "evidence": {
+          "en": "Reviewer feedback on numerical choices, coverage, and limitations.",
+          "vi": "Góp ý về lựa chọn số học, độ bao phủ và giới hạn."
+        },
+        "gate": {
+          "en": "Every reported number traces to a saved seed and command.",
+          "vi": "Mọi con số báo cáo truy được về seed và lệnh đã lưu."
+        }
+      },
+      {
+        "name": {
+          "en": "Release",
+          "vi": "Phát hành"
+        },
+        "evidence": {
+          "en": "Tagged code, README, environment lock, and compact artifacts.",
+          "vi": "Mã có tag, README, khóa môi trường và sản phẩm gọn."
+        },
+        "gate": {
+          "en": "A fresh clone reproduces both figures without paid services.",
+          "vi": "Bản clone mới tái tạo cả hai hình mà không cần dịch vụ trả phí."
+        }
+      }
+    ]
+  },
+  {
+    "id": "P02",
+    "title": {
+      "en": "Factor replication study",
+      "vi": "Nghiên cứu tái lập nhân tố"
+    },
+    "question": {
+      "en": "How stable are factor exposures across portfolio, time window, and uncertainty method, and which conclusions are explanatory rather than predictive?",
+      "vi": "Mức độ ổn định của mức phơi nhiễm nhân tố theo danh mục, cửa sổ thời gian và phương pháp bất định ra sao; kết luận nào chỉ giải thích chứ không dự báo?"
+    },
+    "scope": {
+      "en": "Estimate the Fama–French five-factor model for the 25 Size–Book-to-Market portfolios, then compare full-sample, rolling, expanding, and HAC summaries. This is exposure analysis, not a trading signal.",
+      "vi": "Ước lượng mô hình năm nhân tố Fama–French cho 25 danh mục Quy mô–Giá trị sổ sách trên thị trường, rồi so sánh tóm tắt toàn mẫu, cuốn chiếu, mở rộng và HAC. Đây là phân tích mức phơi nhiễm, không phải tín hiệu giao dịch."
+    },
+    "source": {
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+      "label": {"en": "Official Kenneth French Data Library", "vi": "Thư viện Dữ liệu Kenneth French chính thức"}
+    },
+    "startingInputs": [
+      {
+        "en": "Download monthly Fama/French 5 Factors (2x3) and 25 Portfolios Formed on Size and Book-to-Market from the official Kenneth French Data Library. Freeze both downloads, retrieval date, source names, and SHA-256 hashes.",
+        "vi": "Tải Fama/French 5 Factors (2x3) theo tháng và 25 Portfolios Formed on Size and Book-to-Market từ Thư viện Dữ liệu Kenneth French chính thức. Cố định hai tệp tải, ngày tải, tên nguồn và mã băm SHA-256."
+      },
+      {
+        "en": "Fix the window at 1963-07–2023-12 (726 months when complete). Response is Ri-RF; predictors are Mkt-RF, SMB, HML, RMW, CMA. Source units are percentage points; convert to decimals exactly once and retain YYYYMM.",
+        "vi": "Cố định khoảng 1963-07–2023-12 (726 tháng nếu đầy đủ). Biến đáp ứng là Ri-RF; biến dự báo là Mkt-RF, SMB, HML, RMW, CMA. Đơn vị nguồn là điểm phần trăm; đổi sang số thập phân đúng một lần và giữ YYYYMM."
+      },
+      {
+        "en": "Keep raw data out of version control unless terms permit redistribution; store a checksum and retrieval note so later upstream updates are visible.",
+        "vi": "Không đưa dữ liệu thô vào kiểm soát phiên bản trừ khi điều khoản cho phép phân phối lại; lưu mã băm và ghi chú tải để nhận biết cập nhật nguồn sau này."
+      }
+    ],
+    "steps": [
+      {
+        "title": {
+          "en": "Record source and units",
+          "vi": "Ghi nguồn và đơn vị"
+        },
+        "detail": {
+          "en": "Capture official dataset names, URLs, retrieval date, checksum, missing marker, and units. Never silently overwrite a frozen snapshot.",
+          "vi": "Ghi tên bộ dữ liệu chính thức, URL, ngày tải, mã băm, ký hiệu thiếu và đơn vị. Không âm thầm ghi đè bản chụp đã cố định."
+        }
+      },
+      {
+        "title": {
+          "en": "Validate the monthly panel",
+          "vi": "Kiểm tra bảng dữ liệu tháng"
+        },
+        "detail": {
+          "en": "Parse each file separately; assert unique month keys and expected columns; convert units once; join by YYYYMM; list dropped months. Confirm 726 aligned rows before estimating.",
+          "vi": "Phân tích riêng từng tệp; khẳng định khóa tháng duy nhất và cột đúng; đổi đơn vị một lần; ghép theo YYYYMM; liệt kê tháng bị loại. Xác nhận 726 hàng đã căn chỉnh trước khi ước lượng."
+        }
+      },
+      {
+        "title": {
+          "en": "Estimate the full sample",
+          "vi": "Ước lượng toàn mẫu"
+        },
+        "detail": {
+          "en": "For each of 25 portfolios, regress excess returns on five factors with an intercept. Save betas, standard errors, 95% intervals, adjusted R², residual volatility, and condition number.",
+          "vi": "Với mỗi trong 25 danh mục, hồi quy lợi suất vượt trội theo năm nhân tố có hệ số chặn. Lưu beta, sai số chuẩn, khoảng 95%, R² hiệu chỉnh, độ biến động phần dư và số điều kiện."
+        }
+      },
+      {
+        "title": {
+          "en": "Measure time stability",
+          "vi": "Đo độ ổn định theo thời gian"
+        },
+        "detail": {
+          "en": "Re-estimate 60-month rolling and expanding windows; show exposure paths and maximum absolute deviation from full-sample betas. Use Newey–West HAC standard errors with six monthly lags.",
+          "vi": "Ước lượng lại với cửa sổ cuốn chiếu 60 tháng và cửa sổ mở rộng; trình bày đường đi mức phơi nhiễm và độ lệch tuyệt đối lớn nhất so với beta toàn mẫu. Dùng sai số chuẩn HAC Newey–West với sáu độ trễ tháng."
+        }
+      },
+      {
+        "title": {
+          "en": "Write an inference-first report",
+          "vi": "Viết báo cáo ưu tiên suy luận"
+        },
+        "detail": {
+          "en": "Separate estimates, uncertainty, and interpretation. State that contemporaneous exposure regression is not a future forecast or tradable strategy; include endpoint and HAC-lag sensitivity.",
+          "vi": "Tách ước lượng, độ bất định và diễn giải. Nêu hồi quy mức phơi nhiễm cùng thời điểm không phải dự báo tương lai hay chiến lược giao dịch; đưa vào độ nhạy đầu mút và độ trễ HAC."
+        }
+      }
+    ],
+    "repositoryTree": [
+      "factor-replication-study/",
+      "├── pyproject.toml",
+      "├── README.md",
+      "├── configs/analysis.yml",
+      "├── data/raw/.gitkeep",
+      "├── src/factors/download.py",
+      "├── src/factors/clean.py",
+      "├── src/factors/estimate.py",
+      "├── src/factors/diagnostics.py",
+      "├── tests/test_units.py",
+      "├── tests/test_alignment.py",
+      "├── reports/tables/",
+      "├── reports/figures/",
+      "└── reports/factor-stability.md"
+    ],
+    "acceptanceChecks": [
+      {
+        "metric": {
+          "en": "Panel and units",
+          "vi": "Bảng dữ liệu và đơn vị"
+        },
+        "criterion": {
+          "en": "The joined fixed window has 726 unique months, 25 portfolios, five factors, and no missing analysis cells. A 1.25% fixture converts to 0.0125 exactly once.",
+          "vi": "Khoảng cố định đã ghép có 726 tháng duy nhất, 25 danh mục, năm nhân tố và không thiếu ô phân tích. Bộ kiểm tra 1,25% đổi thành 0,0125 đúng một lần."
+        }
+      },
+      {
+        "metric": {
+          "en": "Regression reference",
+          "vi": "Đối chiếu hồi quy"
+        },
+        "criterion": {
+          "en": "All 25 coefficient vectors match independent numpy.linalg.lstsq results within relative error 1e-8; residuals are finite and intercepts are included.",
+          "vi": "Cả 25 vector hệ số khớp kết quả numpy.linalg.lstsq độc lập với sai số tương đối 1e-8; phần dư hữu hạn và có hệ số chặn."
+        }
+      },
+      {
+        "metric": {
+          "en": "Window integrity",
+          "vi": "Tính toàn vẹn cửa sổ"
+        },
+        "criterion": {
+          "en": "Each rolling estimate uses exactly 60 consecutive months; expanding estimates never use future rows. Mutating a synthetic future value leaves every earlier estimate unchanged.",
+          "vi": "Mỗi ước lượng cuốn chiếu dùng đúng 60 tháng liên tiếp; ước lượng mở rộng không dùng hàng tương lai. Đổi giá trị tương lai giả lập không làm đổi ước lượng trước đó."
+        }
+      },
+      {
+        "metric": {
+          "en": "Inference and reproduction",
+          "vi": "Suy luận và tái tạo"
+        },
+        "criterion": {
+          "en": "HAC lag-6 standard errors and 95% intervals are shown for every portfolio. Fixed config reproduces tables and figures; include lag-0 sensitivity without declaring a universal lag.",
+          "vi": "Trình bày sai số chuẩn và khoảng 95% HAC độ trễ 6 cho mọi danh mục. Cấu hình cố định tái tạo bảng và hình; có độ nhạy độ trễ 0 mà không tuyên bố một độ trễ phù hợp mọi trường hợp."
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "en": "Factor betas/intercepts, HAC intervals, adjusted R², residual volatility, and design condition number.",
+        "vi": "Beta/hệ số chặn nhân tố, khoảng HAC, R² hiệu chỉnh, độ biến động phần dư và số điều kiện ma trận thiết kế."
+      },
+      {
+        "en": "Rolling/expanding paths, maximum exposure drift, and sensitivity to sample endpoints and HAC lag.",
+        "vi": "Đường cuốn chiếu/mở rộng, độ trôi mức phơi nhiễm lớn nhất và độ nhạy đầu mút mẫu cùng độ trễ HAC."
+      }
+    ],
+    "pitfalls": [
+      {
+        "en": "A same-month regression explains co-movement; it is not a forecast or backtest.",
+        "vi": "Hồi quy cùng tháng giải thích đồng biến; đó không phải dự báo hay kiểm thử ngược."
+      },
+      {
+        "en": "Keep RF and portfolio returns in the same units and subtract RF only once.",
+        "vi": "Giữ RF và lợi suất danh mục cùng đơn vị, chỉ trừ RF một lần."
+      },
+      {
+        "en": "Do not join by row order or drop missing months without listing them.",
+        "vi": "Không ghép theo thứ tự hàng hoặc bỏ tháng thiếu mà không liệt kê."
+      },
+      {
+        "en": "Rolling betas are noisy; show uncertainty and do not call a visual shift a tested structural break.",
+        "vi": "Beta cuốn chiếu có nhiễu; trình bày độ bất định và không gọi thay đổi trên biểu đồ là điểm gãy cấu trúc đã kiểm định."
+      }
+    ],
+    "milestones": [
+      {
+        "name": {
+          "en": "Provenance frozen",
+          "vi": "Cố định nguồn dữ liệu"
+        },
+        "evidence": {
+          "en": "Official sources, units, retrieval date, hashes, and fixed window.",
+          "vi": "Nguồn chính thức, đơn vị, ngày tải, mã băm và khoảng cố định."
+        },
+        "gate": {
+          "en": "Changed upstream data is detected, never silently replaced.",
+          "vi": "Phát hiện dữ liệu nguồn đổi, không âm thầm thay thế."
+        }
+      },
+      {
+        "name": {
+          "en": "Validated panel",
+          "vi": "Bảng dữ liệu đã kiểm tra"
+        },
+        "evidence": {
+          "en": "Aligned panel with unit and date-key tests.",
+          "vi": "Bảng đã căn chỉnh cùng kiểm thử đơn vị và khóa ngày."
+        },
+        "gate": {
+          "en": "726 unique monthly rows and no analysis gaps.",
+          "vi": "726 hàng tháng duy nhất, không có khoảng trống phân tích."
+        }
+      },
+      {
+        "name": {
+          "en": "Baseline estimates",
+          "vi": "Ước lượng cơ sở"
+        },
+        "evidence": {
+          "en": "Five-factor full-sample table for 25 portfolios.",
+          "vi": "Bảng năm nhân tố toàn mẫu cho 25 danh mục."
+        },
+        "gate": {
+          "en": "All coefficients pass 1e-8 reference tolerance.",
+          "vi": "Mọi hệ số đạt dung sai đối chiếu 1e-8."
+        }
+      },
+      {
+        "name": {
+          "en": "Stability and inference",
+          "vi": "Độ ổn định và suy luận"
+        },
+        "evidence": {
+          "en": "60-month rolling, expanding paths, HAC table, and endpoint sensitivity.",
+          "vi": "Đường cuốn chiếu 60 tháng, mở rộng, bảng HAC và độ nhạy đầu mút."
+        },
+        "gate": {
+          "en": "Chronology and uncertainty are visible.",
+          "vi": "Trình tự thời gian và độ bất định được trình bày."
+        }
+      },
+      {
+        "name": {
+          "en": "Reviewed release",
+          "vi": "Phát hành đã rà soát"
+        },
+        "evidence": {
+          "en": "Reviewer comments and clean-clone reproduction log.",
+          "vi": "Góp ý rà soát và nhật ký tái tạo trên clone sạch."
+        },
+        "gate": {
+          "en": "README labels the work explanatory and states data terms.",
+          "vi": "README nêu rõ phân tích giải thích và điều khoản dữ liệu."
+        }
+      }
+    ]
+  },
+  {
+    "id": "P03",
+    "title": {
+      "en": "Chronological forecasting benchmark",
+      "vi": "Bộ chuẩn dự báo theo trình tự thời gian"
+    },
+    "question": {
+      "en": "Do simple and regularized autoregressive baselines forecast monthly market excess returns better than zero under a leakage-audited chronological protocol?",
+      "vi": "Các mô hình tự hồi quy đơn giản và có điều chuẩn có dự báo lợi suất thị trường vượt trội theo tháng tốt hơn mức không trong quy trình thời gian đã kiểm toán rò rỉ dữ liệu không?"
+    },
+    "scope": {
+      "en": "Build a transparent CPU benchmark on public monthly Fama/French data. Compare forecasts and uncertainty on shared test windows; do not turn forecasts into fictional trading performance.",
+      "vi": "Xây dựng bộ chuẩn CPU minh bạch trên dữ liệu tháng Fama/French công khai. So sánh dự báo và độ bất định trên cùng cửa sổ kiểm thử; không biến dự báo thành hiệu quả giao dịch giả định."
+    },
+    "source": {
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+      "label": {"en": "Official Kenneth French Data Library", "vi": "Thư viện Dữ liệu Kenneth French chính thức"}
+    },
+    "startingInputs": [
+      {
+        "en": "Use the official monthly five-factor and 25 Size–Book-to-Market files frozen for 1963-07–2023-12. Target Mkt-RF in decimals; use the prior 12 months of Mkt-RF, SMB, HML, RMW, and CMA as lagged predictors.",
+        "vi": "Dùng các tệp tháng năm nhân tố và 25 danh mục Quy mô–Giá trị sổ sách chính thức, cố định từ 1963-07 đến 2023-12. Mục tiêu Mkt-RF theo số thập phân; dùng 12 tháng trước của Mkt-RF, SMB, HML, RMW và CMA làm biến trễ."
+      },
+      {
+        "en": "Compare zero, expanding historical mean, and ridge autoregression with alpha=1.0. Use initial train=240 months, gap=1 month, test=12 months, and one-year step-forward folds.",
+        "vi": "So sánh dự báo không, trung bình lịch sử mở rộng và tự hồi quy ridge alpha=1,0. Dùng huấn luyện đầu=240 tháng, khoảng cách=1 tháng, kiểm thử=12 tháng và fold tiến từng năm."
+      },
+      {
+        "en": "Use identical eligible dates. Preserve P02 source hashes and save the exact feature config and split indices.",
+        "vi": "Dùng cùng ngày đủ điều kiện. Giữ mã băm nguồn P02 và lưu cấu hình đặc trưng cùng chỉ số chia chính xác."
+      }
+    ],
+    "steps": [
+      {
+        "title": {
+          "en": "Build lagged features",
+          "vi": "Tạo đặc trưng trễ"
+        },
+        "detail": {
+          "en": "For target month t, use only t-1 through t-12. Drop the first 12 rows and assert the target date is later than every feature date.",
+          "vi": "Với tháng mục tiêu t, chỉ dùng t-1 đến t-12. Bỏ 12 hàng đầu và khẳng định ngày mục tiêu sau mọi ngày đặc trưng."
+        }
+      },
+      {
+        "title": {
+          "en": "Freeze chronological folds",
+          "vi": "Cố định fold thời gian"
+        },
+        "detail": {
+          "en": "Expand from the first 240 eligible months, leave a one-month embargo, test the next 12 months, then advance a year through 2023-12. Save boundaries in split_indices.csv.",
+          "vi": "Mở rộng từ 240 tháng đủ điều kiện đầu, để cách ly một tháng, kiểm thử 12 tháng tiếp theo rồi tiến một năm đến 2023-12. Lưu ranh giới trong split_indices.csv."
+        }
+      },
+      {
+        "title": {
+          "en": "Fit honest baselines",
+          "vi": "Khớp mô hình cơ sở trung thực"
+        },
+        "detail": {
+          "en": "Refit the mean and ridge inside each fold. Fit scaling only on training rows. Keep alpha=1 fixed; any tuning requires a nested chronological study.",
+          "vi": "Khớp lại trung bình và ridge bên trong mỗi fold. Chỉ chuẩn hóa trên hàng huấn luyện. Giữ alpha=1 cố định; tinh chỉnh cần nghiên cứu lồng theo thời gian riêng."
+        }
+      },
+      {
+        "title": {
+          "en": "Score every prediction",
+          "vi": "Chấm mọi dự báo"
+        },
+        "detail": {
+          "en": "Save predictions; report MAE, RMSE, incremental OOS R² versus zero, directional accuracy, runtime, and 12-month moving-block bootstrap intervals for paired loss differences.",
+          "vi": "Lưu dự báo; báo cáo MAE, RMSE, R² ngoài mẫu tăng thêm so với mức không, độ chính xác hướng, thời gian chạy và khoảng bootstrap khối trượt 12 tháng cho chênh lệch tổn thất ghép cặp."
+        }
+      },
+      {
+        "title": {
+          "en": "Interpret bounded evidence",
+          "vi": "Diễn giải minh chứng có giới hạn"
+        },
+        "detail": {
+          "en": "State whether a model improves a statistical loss and how uncertain that difference is. Do not add transaction costs, leverage, Sharpe ratios, or untested portfolio returns.",
+          "vi": "Nêu mô hình có cải thiện tổn thất thống kê hay không và chênh lệch bất định ra sao. Không thêm chi phí giao dịch, đòn bẩy, Sharpe hay lợi suất danh mục chưa kiểm thử."
+        }
+      }
+    ],
+    "repositoryTree": [
+      "chronological-forecasting-bench/",
+      "├── pyproject.toml",
+      "├── README.md",
+      "├── configs/benchmark.yml",
+      "├── data/raw/.gitkeep",
+      "├── src/bench/data.py",
+      "├── src/bench/features.py",
+      "├── src/bench/splits.py",
+      "├── src/bench/models.py",
+      "├── src/bench/metrics.py",
+      "├── tests/test_temporal_order.py",
+      "├── tests/test_fold_boundaries.py",
+      "├── reports/predictions/",
+      "└── reports/benchmark.md"
+    ],
+    "acceptanceChecks": [
+      {
+        "metric": {
+          "en": "Leakage rejection",
+          "vi": "Từ chối rò rỉ"
+        },
+        "criterion": {
+          "en": "Every feature date precedes target; each test begins after train end plus one-month gap. A planted future feature makes the unit test fail.",
+          "vi": "Mọi ngày đặc trưng trước mục tiêu; mỗi tập kiểm thử bắt đầu sau cuối huấn luyện cộng khoảng cách một tháng. Đặc trưng tương lai cài vào phải làm kiểm thử thất bại."
+        }
+      },
+      {
+        "metric": {
+          "en": "Fold coverage",
+          "vi": "Độ bao phủ fold"
+        },
+        "criterion": {
+          "en": "All models emit one finite prediction per identical held-out date; boundaries increase strictly and each test block has exactly 12 months.",
+          "vi": "Mọi mô hình tạo một dự báo hữu hạn cho mỗi ngày giữ lại giống nhau; ranh giới tăng nghiêm ngặt và mỗi khối kiểm thử có đúng 12 tháng."
+        }
+      },
+      {
+        "metric": {
+          "en": "Metric implementation",
+          "vi": "Cài đặt chỉ số"
+        },
+        "criterion": {
+          "en": "On a hand-worked 4-point fixture, MAE/RMSE and OOS R²=1-SSE_model/SSE_zero match within 1e-12.",
+          "vi": "Trên bộ 4 điểm tính tay, MAE/RMSE và R² ngoài mẫu=1-SSE_mô_hình/SSE_không khớp trong 1e-12."
+        }
+      },
+      {
+        "metric": {
+          "en": "Reproduction",
+          "vi": "Tái tạo"
+        },
+        "criterion": {
+          "en": "Frozen hashes and fixed command recreate predictions and intervals. The report may conclude that no model beats zero.",
+          "vi": "Mã băm cố định và lệnh cố định tái tạo dự báo cùng khoảng tin cậy. Báo cáo có thể kết luận không mô hình nào tốt hơn mức không."
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "en": "MAE/RMSE in decimal return units, incremental OOS R², directional accuracy.",
+        "vi": "MAE/RMSE theo lợi suất thập phân, R² ngoài mẫu tăng thêm, độ chính xác hướng."
+      },
+      {
+        "en": "Paired loss differences with 12-month block bootstrap; fold dispersion and CPU runtime.",
+        "vi": "Chênh lệch tổn thất ghép cặp với bootstrap khối 12 tháng; phân tán theo fold và thời gian CPU."
+      }
+    ],
+    "pitfalls": [
+      {
+        "en": "Random shuffling leaks future regimes into training and changes the question.",
+        "vi": "Trộn ngẫu nhiên làm rò rỉ chế độ tương lai vào huấn luyện và đổi câu hỏi nghiên cứu."
+      },
+      {
+        "en": "A scaler fitted on the full series leaks test-distribution information.",
+        "vi": "Bộ chuẩn hóa khớp trên toàn chuỗi làm lộ thông tin phân phối kiểm thử."
+      },
+      {
+        "en": "Do not select alpha after examining final test results; tune only with nested chronological validation.",
+        "vi": "Không chọn alpha sau khi xem kiểm thử cuối; chỉ tinh chỉnh bằng xác thực thời gian lồng."
+      },
+      {
+        "en": "Forecast loss is not investment performance; do not invent a strategy or profit claim from anonymous returns.",
+        "vi": "Tổn thất dự báo không phải hiệu quả đầu tư; không bịa chiến lược hoặc lợi nhuận từ lợi suất ẩn danh."
+      }
+    ],
+    "milestones": [
+      {
+        "name": {
+          "en": "Protocol frozen",
+          "vi": "Cố định quy trình"
+        },
+        "evidence": {
+          "en": "Target, lags, train/gap/test lengths, folds, and metrics.",
+          "vi": "Mục tiêu, độ trễ, độ dài huấn luyện/khoảng cách/kiểm thử, fold và chỉ số."
+        },
+        "gate": {
+          "en": "Freeze before viewing model scores.",
+          "vi": "Cố định trước khi xem điểm mô hình."
+        }
+      },
+      {
+        "name": {
+          "en": "Leakage-audited panel",
+          "vi": "Bảng đã kiểm toán rò rỉ"
+        },
+        "evidence": {
+          "en": "Lagged panel, hashes, split_indices.csv, and temporal tests.",
+          "vi": "Bảng trễ, mã băm, split_indices.csv và kiểm thử thời gian."
+        },
+        "gate": {
+          "en": "Future-row and boundary tests behave as specified.",
+          "vi": "Kiểm thử hàng tương lai và ranh giới đúng quy định."
+        }
+      },
+      {
+        "name": {
+          "en": "Baseline benchmark",
+          "vi": "Bộ chuẩn cơ sở"
+        },
+        "evidence": {
+          "en": "Predictions for zero, mean, and ridge on shared dates.",
+          "vi": "Dự báo không, trung bình và ridge trên cùng ngày."
+        },
+        "gate": {
+          "en": "Complete finite predictions generated within each fold.",
+          "vi": "Dự báo hữu hạn, đầy đủ và được tạo bên trong từng fold."
+        }
+      },
+      {
+        "name": {
+          "en": "Uncertainty review",
+          "vi": "Rà soát độ bất định"
+        },
+        "evidence": {
+          "en": "Paired bootstrap intervals, fold plot, and reviewer comments.",
+          "vi": "Khoảng bootstrap ghép cặp, biểu đồ fold và góp ý rà soát."
+        },
+        "gate": {
+          "en": "Conclusion follows uncertainty even when models tie or lose.",
+          "vi": "Kết luận tuân theo độ bất định kể cả khi mô hình hòa hoặc kém hơn."
+        }
+      },
+      {
+        "name": {
+          "en": "Reproducible release",
+          "vi": "Phát hành tái tạo được"
+        },
+        "evidence": {
+          "en": "Versioned config, README, compact predictions, and provenance.",
+          "vi": "Cấu hình có phiên bản, README, dự báo gọn và nguồn gốc dữ liệu."
+        },
+        "gate": {
+          "en": "A clean CPU run reproduces results without paid data or services.",
+          "vi": "Lần chạy CPU sạch tái tạo kết quả mà không cần dữ liệu hay dịch vụ trả phí."
+        }
+      }
+    ]
+  },
+  {
+    "id": "P04",
+    "title": {
+      "en": "Quant research workbench",
+      "vi": "Bàn làm việc nghiên cứu định lượng"
+    },
+    "question": {
+      "en": "Can a small local runner make research reproducible and auditable without hiding changed data, future leakage, or failed runs?",
+      "vi": "Một trình chạy cục bộ nhỏ có giúp nghiên cứu tái tạo và kiểm toán được mà không che giấu dữ liệu đổi, rò rỉ tương lai hay lần chạy lỗi không?"
+    },
+    "scope": {
+      "en": "Build a local support tool, not an agent platform: typed configs, stable run IDs, input/code hashes, append-only SQLite registry, replay records, and temporal-data checks. No paid API or network service.",
+      "vi": "Xây dựng công cụ hỗ trợ cục bộ, không phải nền tảng tác tử: cấu hình có kiểu, mã lần chạy ổn định, mã băm đầu vào/mã nguồn, sổ SQLite chỉ ghi thêm, hồ sơ chạy lại và kiểm tra dữ liệu thời gian. Không cần API trả phí hay dịch vụ mạng."
+    },
+    "startingInputs": [
+      {
+        "en": "Python 3.11+, standard-library SQLite, pytest, and local Git. No cloud database, hosted notebook, or paid LLM API.",
+        "vi": "Python 3.11+, SQLite thư viện chuẩn, pytest và Git cục bộ. Không dùng cơ sở dữ liệu đám mây, notebook lưu trữ hay API LLM trả phí."
+      },
+      {
+        "en": "Fixtures: 100-row synthetic regression CSV; 60-month dated series with one deliberately future-dated row; Monte Carlo config with seed=20261009.",
+        "vi": "Bộ kiểm tra: CSV hồi quy tổng hợp 100 hàng; chuỗi 60 tháng có một hàng cố ý mang ngày tương lai; cấu hình Monte Carlo seed=20261009."
+      },
+      {
+        "en": "Example run id=ols-smoke records config, input SHA-256, code revision, environment, command, metrics, allowed dates, and a simulated interruption after input registration.",
+        "vi": "Lần chạy mẫu id=ols-smoke ghi cấu hình, SHA-256 đầu vào, bản sửa đổi mã, môi trường, lệnh, chỉ số, ngày cho phép và gián đoạn mô phỏng sau khi đăng ký đầu vào."
+      }
+    ],
+    "steps": [
+      {
+        "title": {
+          "en": "Define the run contract",
+          "vi": "Định nghĩa hợp đồng chạy"
+        },
+        "detail": {
+          "en": "Validate versioned JSON/TOML fields for experiment ID, seed, paths, date bounds, command arguments, and output directory. Reject missing and unknown fields before work starts.",
+          "vi": "Xác thực trường JSON/TOML có phiên bản gồm mã thí nghiệm, seed, đường dẫn, giới hạn ngày, tham số lệnh và thư mục đầu ra. Từ chối trường thiếu hoặc lạ trước khi chạy."
+        }
+      },
+      {
+        "title": {
+          "en": "Hash exact inputs",
+          "vi": "Tính mã băm đầu vào"
+        },
+        "detail": {
+          "en": "Hash canonical config, source bytes, code revision, and environment lock. A changed byte creates a new identity or explicit comparison record.",
+          "vi": "Tính mã băm cấu hình chuẩn hóa, byte nguồn, bản sửa đổi mã và khóa môi trường. Byte thay đổi phải tạo định danh mới hoặc hồ sơ so sánh rõ ràng."
+        }
+      },
+      {
+        "title": {
+          "en": "Implement stateful registry",
+          "vi": "Cài đặt sổ trạng thái"
+        },
+        "detail": {
+          "en": "Store queued, running, failed, interrupted, completed states with timestamps, command, exit code, log, metrics, and artifact hashes. Use transactions; never silently replace prior rows.",
+          "vi": "Lưu trạng thái queued, running, failed, interrupted, completed cùng thời điểm, lệnh, mã thoát, nhật ký, chỉ số và mã băm sản phẩm. Dùng giao dịch; không âm thầm thay hàng cũ."
+        }
+      },
+      {
+        "title": {
+          "en": "Audit chronology and replay",
+          "vi": "Kiểm toán thời gian và chạy lại"
+        },
+        "detail": {
+          "en": "Reject feature dates after targets or outside configured bounds. Resume only if code, inputs, config, and environment hashes match; otherwise create a linked run.",
+          "vi": "Từ chối ngày đặc trưng sau mục tiêu hoặc ngoài giới hạn cấu hình. Chỉ tiếp tục nếu mã, đầu vào, cấu hình và môi trường khớp mã băm; nếu không hãy tạo lần chạy mới có liên kết."
+        }
+      },
+      {
+        "title": {
+          "en": "Demonstrate visible failure",
+          "vi": "Minh họa lỗi có thể truy vết"
+        },
+        "detail": {
+          "en": "Interrupt one run after registration but before metrics, restart, and show its incomplete state and recovery path in CLI/report. Preserve the original failure log.",
+          "vi": "Ngắt một lần chạy sau đăng ký nhưng trước chỉ số, khởi động lại và trình bày trạng thái chưa hoàn tất cùng cách khôi phục trong CLI/báo cáo. Giữ nhật ký lỗi gốc."
+        }
+      }
+    ],
+    "repositoryTree": [
+      "quant-research-workbench/",
+      "├── pyproject.toml",
+      "├── README.md",
+      "├── configs/ols-smoke.json",
+      "├── src/workbench/config.py",
+      "├── src/workbench/hashing.py",
+      "├── src/workbench/registry.py",
+      "├── src/workbench/runner.py",
+      "├── src/workbench/audit.py",
+      "├── fixtures/regression.csv",
+      "├── fixtures/dated-series.csv",
+      "├── tests/test_registry.py",
+      "├── tests/test_replay.py",
+      "├── tests/test_temporal_guard.py",
+      "├── examples/interrupted-run/",
+      "└── reports/audit-demo.md"
+    ],
+    "acceptanceChecks": [
+      {
+        "metric": {
+          "en": "Run key and hashes",
+          "vi": "Khóa chạy và mã băm"
+        },
+        "criterion": {
+          "en": "Same config/code/input/environment yields the same reproducibility key; changing one input byte changes it. Use SHA-256 and canonical UTF-8 config serialization.",
+          "vi": "Cùng cấu hình/mã/đầu vào/môi trường tạo cùng khóa tái tạo; đổi một byte đầu vào làm khóa đổi. Dùng SHA-256 và tuần tự hóa cấu hình UTF-8 chuẩn."
+        }
+      },
+      {
+        "metric": {
+          "en": "Registry integrity",
+          "vi": "Tính toàn vẹn sổ đăng ký"
+        },
+        "criterion": {
+          "en": "A 100-run smoke has 100 terminal records, no overwritten IDs, and metrics linked to artifact hashes; reopening SQLite preserves every transition.",
+          "vi": "Đợt chạy thử 100 lần có 100 hồ sơ kết thúc, không ghi đè ID và chỉ số liên kết mã băm sản phẩm; mở lại SQLite vẫn giữ mọi chuyển trạng thái."
+        }
+      },
+      {
+        "metric": {
+          "en": "Temporal audit",
+          "vi": "Kiểm toán thời gian"
+        },
+        "criterion": {
+          "en": "Valid 60-month fixture passes; every future row is rejected with row and timestamp. Test inclusive date bounds.",
+          "vi": "Bộ 60 tháng hợp lệ được chấp nhận; mọi hàng tương lai bị từ chối kèm hàng và mốc thời gian. Kiểm tra ngày biên được tính bao gồm."
+        }
+      },
+      {
+        "metric": {
+          "en": "Replay behavior",
+          "vi": "Hành vi chạy lại"
+        },
+        "criterion": {
+          "en": "Resume only with all identity hashes unchanged. Any mismatch creates a linked run and leaves the old record/log untouched.",
+          "vi": "Chỉ tiếp tục khi mọi mã băm định danh không đổi. Sai lệch bất kỳ tạo lần mới có liên kết và giữ nguyên hồ sơ/nhật ký cũ."
+        }
+      },
+      {
+        "metric": {
+          "en": "Local overhead",
+          "vi": "Độ trễ cục bộ"
+        },
+        "criterion": {
+          "en": "Register and audit the 100-run fixture in under 10 seconds on a typical laptop CPU, excluding model computation; no network call.",
+          "vi": "Đăng ký và kiểm toán bộ 100 lần trong dưới 10 giây trên CPU laptop thông thường, chưa tính thời gian mô hình; không gọi mạng."
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "en": "Runs per state; missing/orphan artifacts; duplicate keys; hash failures.",
+        "vi": "Số lần chạy theo trạng thái; sản phẩm thiếu/mồ côi; khóa trùng; lỗi mã băm."
+      },
+      {
+        "en": "Temporal violations caught; exact-input replays; CLI overhead per run.",
+        "vi": "Vi phạm thời gian bị bắt; lần chạy lại đúng đầu vào; độ trễ CLI mỗi lần chạy."
+      }
+    ],
+    "pitfalls": [
+      {
+        "en": "A timestamp alone does not make a run reproducible; code, inputs, config, dependencies, and output hashes matter.",
+        "vi": "Chỉ có mốc thời gian không làm lần chạy tái tạo được; cần mã, đầu vào, cấu hình, phụ thuộc và mã băm đầu ra."
+      },
+      {
+        "en": "Do not resume after changed code/input because the experiment name happens to match.",
+        "vi": "Không tiếp tục sau khi mã/đầu vào đổi chỉ vì tên thí nghiệm tình cờ trùng."
+      },
+      {
+        "en": "Never log API keys, personal data, or full licensed datasets.",
+        "vi": "Không ghi khóa API, dữ liệu cá nhân hay toàn bộ dữ liệu có giấy phép vào nhật ký."
+      },
+      {
+        "en": "A warning is not a guard. Invalid temporal input must fail closed with enough context to diagnose.",
+        "vi": "Cảnh báo không phải chốt chặn. Đầu vào thời gian sai phải bị từ chối cùng đủ ngữ cảnh để chẩn đoán."
+      }
+    ],
+    "milestones": [
+      {
+        "name": {
+          "en": "Run contract",
+          "vi": "Hợp đồng chạy"
+        },
+        "evidence": {
+          "en": "Versioned schema, config example, canonicalization rules, CLI draft.",
+          "vi": "Schema có phiên bản, cấu hình mẫu, quy tắc chuẩn hóa, bản nháp CLI."
+        },
+        "gate": {
+          "en": "Malformed config is rejected before registry creation.",
+          "vi": "Cấu hình sai bị từ chối trước khi tạo sổ."
+        }
+      },
+      {
+        "name": {
+          "en": "Registry baseline",
+          "vi": "Sổ đăng ký cơ sở"
+        },
+        "evidence": {
+          "en": "SQLite schema, state transitions, logs, metrics, artifact hashes.",
+          "vi": "Schema SQLite, chuyển trạng thái, nhật ký, chỉ số, mã băm sản phẩm."
+        },
+        "gate": {
+          "en": "100-run smoke preserves all records.",
+          "vi": "Đợt thử 100 lần giữ toàn bộ hồ sơ."
+        }
+      },
+      {
+        "name": {
+          "en": "Replay demo",
+          "vi": "Minh họa chạy lại"
+        },
+        "evidence": {
+          "en": "Interrupted fixture, recovery transcript, immutable previous log.",
+          "vi": "Bộ gián đoạn, bản ghi khôi phục, nhật ký trước bất biến."
+        },
+        "gate": {
+          "en": "Hash mismatch starts a linked run instead of mutating history.",
+          "vi": "Sai mã băm tạo lần mới liên kết thay vì sửa lịch sử."
+        }
+      },
+      {
+        "name": {
+          "en": "Temporal audit",
+          "vi": "Kiểm toán thời gian"
+        },
+        "evidence": {
+          "en": "Valid/invalid fixtures and precise rejection messages.",
+          "vi": "Bộ hợp lệ/không hợp lệ cùng thông báo từ chối chính xác."
+        },
+        "gate": {
+          "en": "Every planted future row is caught and valid input remains unchanged.",
+          "vi": "Phát hiện mọi hàng tương lai cài vào và giữ nguyên đầu vào hợp lệ."
+        }
+      },
+      {
+        "name": {
+          "en": "Reviewed release",
+          "vi": "Phát hành đã rà soát"
+        },
+        "evidence": {
+          "en": "Clean-clone run, README, audit demo, reviewer feedback.",
+          "vi": "Lần chạy clone sạch, README, minh họa kiểm toán và góp ý."
+        },
+        "gate": {
+          "en": "Works offline; README states what hashes can and cannot guarantee.",
+          "vi": "Chạy ngoại tuyến; README nêu mã băm đảm bảo và không đảm bảo điều gì."
+        }
+      }
+    ]
+  },
+  {
+    "id": "P05",
+    "title": {
+      "en": "Sequential learning research",
+      "vi": "Nghiên cứu học tuần tự"
+    },
+    "question": {
+      "en": "How do Thompson sampling and UCB compare in the paper's Bernoulli bandit setting, and how sensitive is Thompson sampling to prior concentration and mean mismatch?",
+      "vi": "Thompson sampling và UCB so sánh ra sao trong bài toán bandit Bernoulli của bài báo, và Thompson sampling nhạy thế nào với độ tập trung cùng sai lệch trung bình tiên nghiệm?"
+    },
+    "scope": {
+      "en": "Replicate CPU-sized synthetic experiments from Chapelle and Li (2011), then test a narrow prior-calibration extension. This is simulation research, not evidence about financial markets or live recommendations.",
+      "vi": "Tái lập thí nghiệm tổng hợp vừa CPU của Chapelle và Li (2011), sau đó kiểm tra phần mở rộng hiệu chuẩn tiên nghiệm hẹp. Đây là nghiên cứu mô phỏng, không phải minh chứng về thị trường tài chính hay gợi ý trực tiếp."
+    },
+    "source": {
+      "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/thompson.pdf",
+      "label": {"en": "Chapelle & Li (2011), official Microsoft Research PDF", "vi": "Chapelle & Li (2011), PDF chính thức của Microsoft Research"}
+    },
+    "startingInputs": [
+      {
+        "en": "Read the official Microsoft Research PDF: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/thompson.pdf. Freeze a one-page protocol that distinguishes paper settings from this scoped reproduction.",
+        "vi": "Đọc PDF Microsoft Research chính thức: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/thompson.pdf. Cố định quy trình một trang phân biệt thiết lập bài báo với bản tái lập trong phạm vi này."
+      },
+      {
+        "en": "Base case: K=10, best Bernoulli mean 0.50, nine others 0.48 (epsilon=0.02), Beta(1,1) prior, T=100,000 rounds, feedback/posterior update every 100 rounds, and 100 paired seeds.",
+        "vi": "Trường hợp cơ sở: K=10, trung bình Bernoulli tốt nhất 0,50, chín cánh tay còn lại 0,48 (epsilon=0,02), tiên nghiệm Beta(1,1), T=100.000 lượt, phản hồi/cập nhật hậu nghiệm mỗi 100 lượt và 100 seed ghép cặp."
+      },
+      {
+        "en": "Paper mismatch case: best mean 0.10, others 0.08, same Beta(1,1) prior. Extension grid holds K, epsilon, T, batch, and seeds fixed; prior mean m∈{0.35,0.50,0.65}, concentration kappa∈{2,10,50}, Beta(kappa*m,kappa*(1-m)).",
+        "vi": "Trường hợp sai lệch trong bài: trung bình tốt nhất 0,10, các cánh tay khác 0,08, vẫn Beta(1,1). Lưới mở rộng giữ K, epsilon, T, lô và seed cố định; trung bình tiên nghiệm m∈{0,35;0,50;0,65}, độ tập trung kappa∈{2,10,50}, Beta(kappa*m,kappa*(1-m))."
+      }
+    ],
+    "steps": [
+      {
+        "title": {
+          "en": "Extract the paper protocol",
+          "vi": "Trích xuất quy trình bài báo"
+        },
+        "detail": {
+          "en": "Record Beta updates, the tight UCB equation and delta schedule, Bernoulli rewards, 100-round batching, horizon, means, and repetitions. Mark every scaled choice as a deviation.",
+          "vi": "Ghi cập nhật Beta, phương trình UCB chặt và lịch delta, thưởng Bernoulli, lô 100 lượt, chân trời, trung bình và số lần lặp. Đánh dấu mọi lựa chọn thu nhỏ là khác biệt."
+        }
+      },
+      {
+        "title": {
+          "en": "Implement separate policies",
+          "vi": "Cài đặt riêng từng chính sách"
+        },
+        "detail": {
+          "en": "Implement Bernoulli Thompson sampling and UCB in separate modules. Track successes, failures, pulls, rewards, pending batches, and tie breaks; verify a hand-computed history.",
+          "vi": "Cài Thompson sampling Bernoulli và UCB trong mô-đun riêng. Theo dõi thành công, thất bại, lượt kéo, thưởng, lô chờ và phá hòa; kiểm tra lịch sử tính tay."
+        }
+      },
+      {
+        "title": {
+          "en": "Run paired replication",
+          "vi": "Chạy tái lập ghép cặp"
+        },
+        "detail": {
+          "en": "Run both policies with common environment seeds for both paper settings. True means are simulator-only; policies receive chosen-arm feedback. Save regret at 1k, 10k, and 100k rounds per seed.",
+          "vi": "Chạy hai chính sách với seed môi trường chung cho cả hai thiết lập bài báo. Trung bình thật chỉ dành cho mô phỏng; chính sách chỉ nhận phản hồi cánh tay được chọn. Lưu hối tiếc tại 1k, 10k và 100k lượt cho mỗi seed."
+        }
+      },
+      {
+        "title": {
+          "en": "Test prior calibration",
+          "vi": "Kiểm tra hiệu chuẩn tiên nghiệm"
+        },
+        "detail": {
+          "en": "Evaluate the 3x3 prior grid on base means with paired seeds. Report mean, median, 95th-percentile regret, best-arm fraction in the final 10k rounds, and paired bootstrap intervals for all nine cells.",
+          "vi": "Đánh giá lưới tiên nghiệm 3x3 trên trung bình cơ sở với seed ghép cặp. Báo cáo hối tiếc trung bình, trung vị, phân vị 95, tỷ lệ chọn cánh tay tốt nhất ở 10k lượt cuối và khoảng bootstrap ghép cặp cho đủ chín ô."
+        }
+      },
+      {
+        "title": {
+          "en": "Bound the conclusion",
+          "vi": "Giới hạn kết luận"
+        },
+        "detail": {
+          "en": "Compare direction and scale with the selected paper figures, discuss finite-seed uncertainty and delayed feedback, and state whether intervals support the extension. Do not generalize to live systems.",
+          "vi": "So sánh chiều hướng và quy mô với hình đã chọn của bài báo, bàn về độ bất định seed hữu hạn và phản hồi trễ, rồi nêu khoảng tin cậy có ủng hộ phần mở rộng hay không. Không khái quát sang hệ thống trực tiếp."
+        }
+      }
+    ],
+    "repositoryTree": [
+      "sequential-learning-research/",
+      "├── pyproject.toml",
+      "├── README.md",
+      "├── configs/replication.yml",
+      "├── configs/prior-grid.yml",
+      "├── paper/replication-protocol.md",
+      "├── src/bandits/bernoulli.py",
+      "├── src/bandits/thompson.py",
+      "├── src/bandits/ucb.py",
+      "├── src/bandits/simulate.py",
+      "├── tests/test_posterior.py",
+      "├── tests/test_delayed_updates.py",
+      "├── tests/test_regret.py",
+      "├── reports/raw-seed-results.csv",
+      "└── reports/replication-and-extension.md"
+    ],
+    "acceptanceChecks": [
+      {
+        "metric": {
+          "en": "Posterior invariants",
+          "vi": "Bất biến hậu nghiệm"
+        },
+        "criterion": {
+          "en": "For every arm posterior parameters equal alpha0+successes and beta0+failures; each run has exactly 100,000 actions and cumulative pseudo-regret never decreases.",
+          "vi": "Với mỗi cánh tay, tham số hậu nghiệm đúng bằng alpha0+các lần thành công và beta0+các lần thất bại; mỗi lần chạy có đúng 100.000 hành động và hối tiếc giả tích lũy không giảm."
+        }
+      },
+      {
+        "metric": {
+          "en": "Delayed updates",
+          "vi": "Cập nhật trễ"
+        },
+        "criterion": {
+          "en": "With batch=100, current unfinished rewards never update the posterior. A 250-round trace updates at 100 and 200 and retains 50 pending rewards.",
+          "vi": "Với lô=100, phần thưởng của lô hiện tại chưa kết thúc không cập nhật hậu nghiệm. Trace 250 lượt cập nhật tại 100 và 200, giữ 50 thưởng đang chờ."
+        }
+      },
+      {
+        "metric": {
+          "en": "Simulator calibration",
+          "vi": "Hiệu chuẩn bộ mô phỏng"
+        },
+        "criterion": {
+          "en": "Across 2,000,000 independent p=0.50 draws, empirical reward rate is within 0.002; all random streams and seeds are recorded.",
+          "vi": "Qua 2.000.000 mẫu độc lập p=0,50, tỷ lệ thưởng thực nghiệm lệch không quá 0,002; lưu mọi luồng ngẫu nhiên và seed."
+        }
+      },
+      {
+        "metric": {
+          "en": "Replication and extension",
+          "vi": "Tái lập và mở rộng"
+        },
+        "criterion": {
+          "en": "All 100 seeds exist for both policies and paper settings; all nine prior cells use the same paired seeds and include 95% intervals. Policy superiority is reported from results, never forced as a pass condition.",
+          "vi": "Đủ 100 seed cho hai chính sách và thiết lập bài báo; cả chín ô tiên nghiệm dùng cùng seed ghép cặp và có khoảng 95%. Ưu thế chính sách phải báo cáo theo kết quả, không ép thành điều kiện đạt."
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "en": "Cumulative pseudo-regret at three horizons; mean, median, 95th percentile; best-arm share in final 10,000 rounds.",
+        "vi": "Hối tiếc giả tích lũy tại ba chân trời; trung bình, trung vị, phân vị 95; tỷ lệ cánh tay tốt nhất trong 10.000 lượt cuối."
+      },
+      {
+        "en": "Paired Thompson-minus-UCB and prior-grid differences with bootstrap intervals; delay setting and CPU runtime.",
+        "vi": "Chênh lệch Thompson-trừ-UCB và lưới tiên nghiệm ghép cặp với khoảng bootstrap; cấu hình trễ và thời gian CPU."
+      }
+    ],
+    "pitfalls": [
+      {
+        "en": "True arm means are for reward generation and regret scoring only; never expose them to a policy.",
+        "vi": "Trung bình thật chỉ dùng sinh thưởng và chấm hối tiếc; không để chính sách nhìn thấy."
+      },
+      {
+        "en": "Use common environment seeds to reduce noise in policy comparisons.",
+        "vi": "Dùng seed môi trường chung để giảm nhiễu khi so sánh chính sách."
+      },
+      {
+        "en": "Batch updates change available information; do not describe batch=100 as immediate feedback.",
+        "vi": "Cập nhật theo lô làm đổi thông tin nhận được; không mô tả lô=100 là phản hồi tức thời."
+      },
+      {
+        "en": "Show all nine exploratory prior settings; do not select only the best-looking cell.",
+        "vi": "Trình bày đủ chín thiết lập tiên nghiệm thăm dò; không chỉ chọn ô trông tốt nhất."
+      },
+      {
+        "en": "Simulation does not establish market returns, clinical benefit, or live recommendation quality.",
+        "vi": "Mô phỏng không chứng minh lợi suất thị trường, lợi ích lâm sàng hay chất lượng gợi ý trực tiếp."
+      }
+    ],
+    "milestones": [
+      {
+        "name": {
+          "en": "Paper protocol audit",
+          "vi": "Kiểm toán quy trình bài báo"
+        },
+        "evidence": {
+          "en": "Citation, equations, assumptions, selected figures, scaled settings, and deviations.",
+          "vi": "Trích dẫn, phương trình, giả định, hình chọn, thiết lập thu nhỏ và khác biệt."
+        },
+        "gate": {
+          "en": "Reviewer distinguishes source protocol from implementation choices.",
+          "vi": "Người rà soát phân biệt quy trình nguồn với lựa chọn triển khai."
+        }
+      },
+      {
+        "name": {
+          "en": "Tested policies",
+          "vi": "Chính sách đã kiểm thử"
+        },
+        "evidence": {
+          "en": "Thompson/UCB modules, hand-computed posterior, delayed trace, regret tests.",
+          "vi": "Mô-đun Thompson/UCB, hậu nghiệm tính tay, trace trễ và kiểm thử hối tiếc."
+        },
+        "gate": {
+          "en": "Count, action, reward, and update invariants pass.",
+          "vi": "Đạt bất biến số đếm, hành động, thưởng và cập nhật."
+        }
+      },
+      {
+        "name": {
+          "en": "Scoped replication",
+          "vi": "Tái lập có phạm vi"
+        },
+        "evidence": {
+          "en": "Paired 100-seed outputs for both source cases and three horizons.",
+          "vi": "Đầu ra 100 seed ghép cặp cho hai trường hợp nguồn và ba chân trời."
+        },
+        "gate": {
+          "en": "All seeds/policies are present; conclusions follow observed intervals.",
+          "vi": "Đủ seed/chính sách; kết luận tuân theo khoảng quan sát."
+        }
+      },
+      {
+        "name": {
+          "en": "Calibration extension",
+          "vi": "Mở rộng hiệu chuẩn"
+        },
+        "evidence": {
+          "en": "Nine prior configs, paired outputs, bootstrap intervals, and full table.",
+          "vi": "Chín cấu hình tiên nghiệm, đầu ra ghép cặp, khoảng bootstrap và bảng đầy đủ."
+        },
+        "gate": {
+          "en": "Exploratory status and all settings are disclosed.",
+          "vi": "Nêu rõ tính thăm dò và công bố mọi thiết lập."
+        }
+      },
+      {
+        "name": {
+          "en": "Reviewed release",
+          "vi": "Phát hành đã rà soát"
+        },
+        "evidence": {
+          "en": "Reviewer feedback, deviations, limitations, environment lock, and tagged release.",
+          "vi": "Góp ý, khác biệt, giới hạn, khóa môi trường và bản phát hành có tag."
+        },
+        "gate": {
+          "en": "Clean CPU clone reproduces results without private data or paid services.",
+          "vi": "Clone CPU sạch tái tạo kết quả mà không cần dữ liệu riêng tư hay dịch vụ trả phí."
+        }
+      }
+    ]
+  }
+]

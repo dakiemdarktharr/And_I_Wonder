@@ -106,3 +106,68 @@
 }
 
 .daily-lesson__chapter-map{margin:16px 0;border:1px solid #bbb;padding:10px 14px}.daily-lesson__chapter-map>summary{cursor:pointer;font-size:12px;font-weight:800}.daily-lesson__markdown{font-size:15px;line-height:1.85}.daily-lesson__task{width:100%}.daily-lesson__answer>summary{font-size:13px;padding:12px}.worked-figure{margin:20px 0;background:#f6f8fb;border:2px solid #141414;padding:18px;min-width:0}.worked-figure>figcaption{font-size:16px;font-weight:800;margin-bottom:15px}.worked-figure__scroll{overflow-x:auto}.worked-figure svg{display:block;width:100%;min-width:520px}.plot-tick{fill:#333;font-size:11px;font-family:inherit}.plot-value{fill:#141414;font-size:12px;font-weight:700}.plot-axis-title{fill:#141414;font-size:12px;font-weight:700}.worked-figure__caption{font-size:13px;line-height:1.7;margin:13px 0 0}.worked-figure__legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px}.worked-figure__legend>span{display:flex;align-items:center;gap:6px}.worked-figure__legend i{width:15px;height:4px}.worked-figure__steps{list-style:none;padding:0;display:grid;gap:18px}.worked-figure__steps li{position:relative;display:grid;grid-template-columns:32px 1fr;align-items:start;gap:10px;border:1.5px solid #141414;background:white;padding:14px}.worked-figure__steps li>span{border-radius:50%;width:26px;height:26px;background:#1947e5;color:white;display:grid;place-items:center;font-size:12px;font-weight:800}.worked-figure__steps p{font-size:14px;line-height:1.7;margin:0}.worked-figure__steps b{position:absolute;bottom:-21px;left:26px;font-size:18px;color:#1947e5}.worked-figure__matrix,.worked-figure__data>div{overflow:auto;max-height:420px}.worked-figure table{border-collapse:collapse;font-size:13px;min-width:250px;margin:12px auto}.worked-figure th,.worked-figure td{border:1px solid #bbb;padding:8px 12px;text-align:center}.worked-figure th{background:#e1e8fc}.worked-figure caption{font-size:12px;text-align:left;font-weight:700;padding:8px 0}.worked-figure__data{border-top:1px solid #ccc;margin-top:15px;padding-top:10px;font-size:12px}.worked-figure__data summary{cursor:pointer;color:#1947e5;font-weight:700}.worked-figure__matrix td{font-size:18px;font-variant-numeric:tabular-nums}.search-dialog__close{border:1px solid #bbb;background:white;font-size:24px;line-height:1;min-width:38px;height:38px;cursor:pointer}.daily-reader-nav{display:flex;justify-content:space-between;gap:12px;margin:18px 0;font-size:12px;color:#1947e5}.daily-reader-nav a{padding:10px 12px;border:1px solid #1947e5}.daily-reader-nav a:hover{background:#1947e5;color:white}@media(max-width:640px){.daily-lesson__markdown{font-size:14px}.worked-figure{padding:10px}.worked-figure__steps p{font-size:13px}.daily-lesson__task{grid-template-columns:18px minmax(0,1fr)}.daily-lesson__task-index{display:none}}
+
+/* A study note uses a light frame and clear spacing so the lesson stays central. */
+.daily-lesson{--lesson-ink:#23394e;--lesson-blue:#2455a4;--lesson-yellow:#e6c85f;--lesson-red:#b65344;margin-bottom:28px;padding:clamp(18px,3vw,32px);border:1px solid #bdcbd6;background:#fff;color:#24394c;box-shadow:3px 3px 0 #dce5eb;}
+.daily-lesson__header{align-items:flex-start;gap:18px;padding-bottom:17px;border-bottom:1px solid #c6d1da;}
+.daily-lesson__eyebrow{color:#536c83;font-size:12px;font-weight:700;letter-spacing:.015em;}
+.daily-lesson__header h2{margin-top:8px;font-size:clamp(1.65rem,3.5vw,2.45rem);line-height:1.12;letter-spacing:-.04em;color:#1f3448;}
+.daily-lesson__day{padding:8px 10px;border:1px solid #c4ced7;background:#f4f0dd;color:#4b4a3d;font-size:12px;font-weight:700;}
+.daily-lesson__prerequisites{grid-template-columns:145px minmax(0,1fr);gap:12px;margin-top:16px;padding:13px 15px;border-left:4px solid #7894ad;background:#eff4f8;}
+.daily-lesson__prerequisites>strong{color:#3f5c77;font-size:13px;text-transform:none;letter-spacing:0;}
+.daily-lesson__objectives{margin:21px 0 16px;}
+.daily-lesson h3{font-size:1.2rem;letter-spacing:-.02em;color:#23394e;}
+.daily-lesson h4{margin-bottom:9px;color:#435b70;font-size:1rem;font-weight:750;text-transform:none;letter-spacing:0;}
+.daily-lesson__objectives ul{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 22px;}
+.daily-lesson__objectives li{padding-left:19px;font-size:14px;line-height:1.65;color:#33495d;}
+.daily-lesson__objectives li::before{top:.39em;width:10px;height:10px;border:1px solid #8497a7;background:#e6c85f;}
+.daily-lesson__figure{margin:18px 0 21px;border:1px solid #bdcbd6;background:#f5f8fa;}
+.daily-lesson__figure figcaption{padding:10px 13px;border-bottom:1px solid #c8d3dc;background:#e9eff4;color:#354d63;font-size:13px;font-weight:700;letter-spacing:0;text-transform:none;}
+.daily-lesson__figure svg{max-height:300px;}
+.daily-lesson__figure>p{padding:9px 13px 11px;border-top:1px solid #d9e0e5;color:#627487;font-size:12px;line-height:1.55;}
+.diagram-paper{fill:#f8fafb;}.diagram-grid{stroke:#e4e9ed;}
+.diagram-box{fill:#e6c85f;stroke:#23394e;stroke-width:1.5;}.diagram-box--1{fill:#c5d4e2;}.diagram-box--2{fill:#e5b9ad;}
+.diagram-html-label{color:#23394e;font-size:10px;}
+.diagram-arrow,.diagram-axis{stroke:#435b70;stroke-width:1.7;}.diagram-arrow + marker path,marker path{fill:#435b70;}
+.diagram-label,.diagram-axis-label{fill:#33495d;}.diagram-axis-label{fill:#6b7c8b;}
+.diagram-point{fill:#b65344;stroke:#fff;stroke-width:1.5;}.diagram-cell{stroke:#8193a2;stroke-width:1;}
+.diagram-cell--a{fill:#e6c85f;}.diagram-cell--b{fill:#c5d4e2;}.diagram-cell--c{fill:#e5b9ad;}.diagram-cell--d{fill:#d9e7e0;}
+.diagram-curve{stroke:#2455a4;stroke-width:3;}.diagram-curve--second{stroke:#b65344;stroke-width:2;}.diagram-plane-point{fill:#e6c85f;stroke:#23394e;stroke-width:2;}
+.daily-lesson__foundations{margin:17px 0 21px;padding:17px;border:1px solid #d0d9e0;background:#f4f7f9;}
+.daily-lesson__session{padding-top:17px;border-top:1px solid #c7d1da;}
+.daily-lesson__session-heading{align-items:baseline;gap:12px;margin-bottom:13px;}
+.daily-lesson__session-heading>span{color:#536d85;font:700 12px/1.4 "Be Vietnam Pro",Arial,sans-serif;}
+.daily-lesson__session-heading h3{font-size:1.25rem;}
+.daily-lesson__session>section{margin:14px 0;padding:15px 16px;border:1px solid #d3dce3;background:#fff;}
+.daily-lesson__theory{border-left:3px solid #7894ad!important;}.daily-lesson__example{border-left:3px solid #d1b54e!important;background:#fbf7e9!important;}
+.daily-lesson__agenda{border-left:3px solid #73899b!important;}.daily-lesson__exercises{border-left:3px solid #b97869!important;background:#fbf5f3!important;}
+.daily-lesson__agenda ol{gap:7px;}.daily-lesson__agenda li{padding:10px;background:#f3f6f8;}
+.daily-lesson__task{grid-template-columns:20px 24px minmax(0,1fr);gap:9px;}.daily-lesson__task>input{width:18px;height:18px;accent-color:#2455a4;}
+.daily-lesson__task-index{color:#60788f;font:700 12px/1.5 "Be Vietnam Pro",Arial,sans-serif;}
+.daily-lesson__agenda li.is-complete{background:#e6eeeb;}.daily-lesson__agenda li.is-complete .daily-lesson__markdown{opacity:.72;}
+.daily-lesson__task input:focus-visible{outline:3px solid #e6c85f;outline-offset:2px;}
+.daily-lesson__exercise{padding:13px 0;border-top:1px solid #d7dfe5;}.daily-lesson__exercise h5{font-size:15px;}
+.daily-lesson__deliverable{margin-top:16px;padding:13px 15px;border:1px solid #d7c679;border-left:4px solid #c7aa3f;background:#fbf7e8;}
+.daily-lesson__deliverable>strong{margin-bottom:6px;color:#665b2e;font-size:13px;text-transform:none;letter-spacing:0;}
+.daily-lesson__note{margin-top:17px;padding-top:11px;border-top:1px solid #d6dfe5;color:#748392;font-size:12px;line-height:1.6;}
+.daily-lesson__markdown{font-size:16px;line-height:1.78;color:#293f53;}.daily-lesson__markdown p{margin:9px 0;}
+.daily-lesson__markdown ul,.daily-lesson__markdown ol{margin:9px 0;padding-left:22px;}.daily-lesson__markdown li{margin:5px 0;}
+.daily-lesson__markdown a{color:#2455a4;}.daily-lesson__markdown code{border:1px solid #cbd5dd;background:#f0f4f7;}
+.daily-lesson__markdown pre{padding:13px;background:#1b2c3c;color:#f5f7f8;font-size:12px;}.daily-lesson__markdown table{font-size:13px;}
+.daily-lesson__markdown th,.daily-lesson__markdown td{padding:8px 10px;border:1px solid #d0d9e0;}.daily-lesson__markdown th{background:#e9eff4;}
+.daily-lesson__chapter-map{margin:15px 0;border:1px solid #c4ced7;background:#f8fafb;padding:0 14px;}
+.daily-lesson__chapter-map>summary{padding:11px 0;color:#3f5971;font-size:14px;font-weight:650;}
+.worked-figure{margin:19px 0;background:#f5f8fa;border:1px solid #c1cdd7;padding:16px;}.worked-figure>figcaption{font-size:16px;color:#2c4358;}
+.worked-figure__steps li{border:1px solid #cbd5dd;background:#fff;padding:14px;}.worked-figure__steps li>span{background:#2455a4;}
+.worked-figure__steps p{font-size:14px;line-height:1.75;}.worked-figure__steps b{color:#2455a4;}
+.worked-figure__data{border-color:#d0d9e0;}.worked-figure__data summary{color:#2455a4;}
+.worked-figure th,.worked-figure td{border-color:#c6d1da;}.worked-figure th{background:#e8eef3;}
+.daily-reader-nav{color:#2455a4;font-size:13px;}.daily-reader-nav a{padding:10px 13px;border:1px solid #9eafbd;background:#fff;color:#2455a4;}
+.daily-reader-nav a:hover{background:#e8eef4;color:#1e416c;}
+@media(max-width:640px){
+  .daily-lesson{padding:16px;box-shadow:2px 2px 0 #dce5eb;}.daily-lesson__header{gap:12px;}
+  .daily-lesson__prerequisites{grid-template-columns:1fr;gap:7px;}.daily-lesson__objectives ul{grid-template-columns:1fr;}
+  .daily-lesson__figure svg{min-height:130px;}.daily-lesson__session-heading{gap:5px;}
+  .daily-lesson__markdown{font-size:15px;line-height:1.72;}.worked-figure{padding:11px;}
+  .worked-figure__steps p{font-size:13px;}.daily-reader-nav{font-size:12px;}
+}

@@ -1,3 +1,4 @@
+import type {ExerciseCheckpoint} from './answer-workbench';
 export type Bilingual = { en: string; vi: string };
 
 /** A figure tied to the exact worked example, with explicit data and units. */
@@ -38,6 +39,7 @@ export interface LessonSession {
     prompt: Bilingual;
     hint: Bilingual;
     answer: Bilingual;
+    checkpoint?: ExerciseCheckpoint;
   }[];
   deliverable: Bilingual;
 }

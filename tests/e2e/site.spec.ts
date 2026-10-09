@@ -8,7 +8,7 @@ test('portals navigate, locale persists, and pages fit the viewport',async({page
   await expect(page.locator('.portal')).toHaveCount(3);
   await page.locator('.portal-daily').click();
   await expect(page).toHaveURL(/\/daily$/);
-  await expect(page.getByRole('heading',{name:'ONE DAY. ONE STEP.'})).toBeVisible();
+  await expect(page.getByRole('heading',{name:/one day. one step./i})).toBeVisible();
   await page.reload();
   await expect(page.getByRole('button',{name:'EN',exact:true})).toHaveAttribute('aria-pressed','true');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
@@ -16,6 +16,7 @@ test('portals navigate, locale persists, and pages fit the viewport',async({page
 });
 
 test('month navigation opens a day with a complete lesson and hidden answers',async({page})=>{
+  await page.clock.setFixedTime(new Date('2026-10-09T05:00:00Z'));
   await page.goto('/daily');
   await page.getByRole('button',{name:'EN',exact:true}).click();
   await page.getByRole('button',{name:'Next month',exact:true}).click();
@@ -25,12 +26,12 @@ test('month navigation opens a day with a complete lesson and hidden answers',as
   await expect(page.locator('.daily-lesson')).toBeVisible();
   await expect(page.locator('.daily-lesson input[type=checkbox]')).toHaveCount(4);
   for(const box of await page.locator('.daily-lesson input[type=checkbox]').all())await expect(box).toBeDisabled();
-  const answer=page.locator('.daily-lesson details').filter({has:page.locator('summary',{hasText:'Show answer'})}).first();
-  await expect(answer).not.toHaveAttribute('open','');
-  await answer.locator('summary').click();
-  await expect(answer).toHaveAttribute('open','');
+  await expect(page.locator('.answer-workbench__solution')).toHaveCount(0);
+  await page.getByRole('button',{name:'Open this worked stage',exact:true}).click();
+  await expect(page.locator('.answer-workbench__solution')).toBeVisible();
   await page.getByRole('button',{name:'VI',exact:true}).click();
   await expect(page.locator('.daily-lesson')).toContainText(/lý thuyết/i);
+  expect(await page.locator('.daily-lesson__task .daily-lesson__markdown').first().evaluate(e=>e.getBoundingClientRect().width)).toBeGreaterThan(180);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
 

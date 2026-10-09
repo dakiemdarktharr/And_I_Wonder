@@ -264,12 +264,12 @@ export function NoteReader({ note, notes = EMPTY_NOTES, lesson, dayIndex, dailyN
         <nav className="note-reader__breadcrumbs" aria-label={languageIsVi ? "Đường dẫn" : "Breadcrumbs"}>
           <Link href="/">{languageIsVi ? "TRANG CHỦ" : "HOME"}</Link><span>/</span><span>{readerNote.kind.toUpperCase()}</span>
         </nav>
-        <h1>{localTitle}</h1>
-        <p className="note-reader__path">{readerNote.id}</p>
+        <h1>{lesson&&dayIndex!==undefined?lesson.sessions[dayIndex].title[language]:localTitle}</h1>
+        <p className="note-reader__path">{lesson&&readerNote.meta.date?new Date(`${readerNote.meta.date}T12:00:00+07:00`).toLocaleDateString(languageIsVi?'vi-VN':'en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Ho_Chi_Minh'}):readerNote.title}</p>
       </div>
       <div className="note-reader__actions">
         <span className={`save-indicator save-indicator--${saveState}`} role="status" aria-live="polite"><i aria-hidden="true" />{saveLabel}</span>
-        {authenticated && owner && <span className="note-reader__owner"><img src={owner.avatarUrl} alt="" referrerPolicy="no-referrer" />{owner.login}</span>}
+        {authenticated && owner && <span className="note-reader__owner">{owner.avatarUrl&&<img src={owner.avatarUrl} alt="" referrerPolicy="no-referrer" />}{owner.login}</span>}
         <button className="reader-tool" type="button" onClick={() => setSearchOpen(true)}><span aria-hidden="true">⌕</span>{languageIsVi ? "Tìm" : "Search"}<kbd>⌘K</kbd></button>
         {authenticated && <button className="reader-tool" type="button" disabled={!noteRevision || sessionLoading} title={noteReadError || undefined} onClick={() => { setMarkdownDraft(languageIsVi ? (readerNote.bodyVi || readerNote.body) : readerNote.body); setMarkdownError(""); setMarkdownEditing((editing) => !editing); }}><span aria-hidden="true">✎</span>{markdownEditing ? (languageIsVi ? "Đọc" : "Read") : (languageIsVi ? (lesson ? "Sửa MD gốc" : "Sửa MD") : (lesson ? "Edit original MD" : "Edit MD"))}</button>}
         <button className="reader-tool" type="button" onClick={downloadSnapshot}><span aria-hidden="true">↓</span>{languageIsVi ? "Tải MD" : "Save MD"}</button>
@@ -283,7 +283,7 @@ export function NoteReader({ note, notes = EMPTY_NOTES, lesson, dayIndex, dailyN
 
     {saveError && <div className="reader-error" role="alert"><strong>{languageIsVi ? "Không đồng bộ được" : "Sync error"}</strong><span>{saveError}</span><button type="button" onClick={() => setSaveError("")} aria-label={languageIsVi ? "Đóng thông báo" : "Dismiss error"}>×</button></div>}
 
-    {authenticated && <section className="progress-panel" aria-label={languageIsVi ? "Tiến độ học" : "Study progress"}>
+    {authenticated && <details className="note-reader__original-plan"><summary>{languageIsVi?'Nhật ký và tiến độ học':'Study log and progress'}</summary><section className="progress-panel" aria-label={languageIsVi ? "Tiến độ học" : "Study progress"}>
       <div className="progress-panel__heading"><span className="progress-panel__eyebrow">{languageIsVi ? "NHẬT KÝ HỌC TẬP" : "STUDY LOG"}</span><span>{languageIsVi ? "Chỉ chủ sở hữu chỉnh sửa" : "Owner only"}</span></div>
       <div className="progress-panel__fields">
         <label className="progress-field"><span>{languageIsVi ? "Trạng thái" : "Status"}</span><select value={draftStatus} onChange={(event) => setDraftStatus(event.target.value as (typeof STATUS_OPTIONS)[number])}>{STATUS_OPTIONS.map((status) => <option key={status} value={status}>{displayStatus[status]}</option>)}</select></label>
@@ -291,7 +291,7 @@ export function NoteReader({ note, notes = EMPTY_NOTES, lesson, dayIndex, dailyN
       </div>
       <label className="progress-field progress-field--evidence"><span>{languageIsVi ? "Bằng chứng / ghi chú tiến độ" : "Evidence / progress notes"}</span><textarea value={draftEvidence} onChange={(event) => setDraftEvidence(event.target.value)} rows={3} placeholder={languageIsVi ? "Ghi lại điều bạn đã làm, phát hiện hoặc cần tiếp tục…" : "Record what you completed, learned, or need to continue…"} /></label>
       <div className="progress-panel__footer"><span>{currentProgress.updatedAt ? `${languageIsVi ? "Cập nhật" : "Updated"} · ${new Date(currentProgress.updatedAt).toLocaleDateString(languageIsVi ? "vi-VN" : "en-US")}` : (languageIsVi ? "Tiến độ có thể xem công khai; ghi chú bằng chứng chỉ bạn xem." : "Progress is public; evidence notes are visible only to you.")}</span><button className="progress-save" type="button" onClick={saveEvidence} disabled={sessionLoading || saveState === "saving"}>{languageIsVi ? "Lưu tiến độ" : "Save progress"}<span aria-hidden="true">↗</span></button></div>
-    </section>}
+    </section></details>}
 
     {noteReadError && authenticated && <p className="reader-readonly">{languageIsVi ? "Chế độ đọc đang dùng bản đã xuất bản; không tải được phiên bản để chỉnh sửa." : "Reading the published copy; an editable revision could not be loaded."}</p>}
     {markdownEditing ? <section className="markdown-editor" aria-label={languageIsVi ? "Trình soạn thảo Markdown" : "Markdown editor"}>
