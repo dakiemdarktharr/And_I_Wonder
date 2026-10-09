@@ -1,0 +1,273 @@
+{
+  "checked": "2026-10-10",
+  "policy": "Full free online material; no payment, trial or required subscription. HTTP success alone is not proof of free access. External uptime may change.",
+  "readers": [
+    {
+      "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/mit18_05_s22_statistics.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://richardhammack.github.io/BookOfProof/Main.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://jirka.org/ra/realanal.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://www.jirka.org/ra/realanal2.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://otexts.com/fpp3/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://tor-lattimore.com/downloads/book/book.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://bfi.uchicago.edu/wp-content/uploads/2023/07/BFI_WP_2023-100.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://users.aalto.fi/~ssarkka/pub/sde_book.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://users.aalto.fi/~ssarkka/pub/bfs_book_2023_online.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2607.11889",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60A3XMwZ5sep719_nh95qOe",
+      "format": "video",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=J7DzL2_Na80",
+      "format": "video",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP60hI9ATjSFgLZpbNJ7myAg6",
+      "format": "video",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo",
+      "format": "video",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=wvXDB9dMdEo",
+      "format": "video",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=qdbkvD4N-us",
+      "format": "video",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/6-436j-fundamentals-of-probability-fall-2018/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://stat.cmu.edu/~siva/teaching/705/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/pages/lecture-notes-and-readings/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/resource-index/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/resource-index/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/6-436j-fundamentals-of-probability-fall-2018/pages/lecture-notes/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/pages/lecture-slides/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/18-655-mathematical-statistics-spring-2016/pages/lecture-notes/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/resources/lecture-notes/",
+      "format": "html",
+      "evidence": "Public educational materials, accessible without payment; anonymous GET successful"
+    },
+    {
+      "url": "https://www.stat.cmu.edu/~cshalizi/754/notes/all.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://users.ssc.wisc.edu/~behansen/papers/ecnmt_92.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://stat.cmu.edu/~siva/teaching/705/lec19.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://users.aalto.fi/~ssarkka/pub/cup_book_online_20131111.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://web.stanford.edu/~boyd/papers/pdf/prox_algs.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://www.nber.org/system/files/working_papers/t0055/t0055.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://arxiv.org/pdf/1909.05207",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1VmkAAGOYCTORq1wxSQqy255qLJjTNvBI/view",
+      "format": "viewer",
+      "evidence": "Author-linked public Drive reader, title page rendered in browser without login"
+    },
+    {
+      "url": "https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF)"
+    },
+    {
+      "url": "https://stat210a.berkeley.edu/fall-2024/reader/jamesstein.html",
+      "format": "html",
+      "evidence": "Full university lecture read anonymously"
+    },
+    {
+      "url": "https://stat.cmu.edu/~cshalizi/dst/18/lectures/18/lecture-18.html",
+      "format": "html",
+      "evidence": "Full university lecture read anonymously"
+    },
+    {
+      "url": "https://arxiv.org/pdf/1912.06116",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF), university or author preprint full text"
+    },
+    {
+      "url": "https://www.stat.berkeley.edu/~ryantibs/statlearn-s23/lectures/conformal.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF), university or author preprint full text"
+    },
+    {
+      "url": "https://stanford.edu/class/ee367/slides/lecture12.pdf",
+      "format": "pdf",
+      "evidence": "Anonymous GET returned PDF bytes (%PDF), university or author preprint full text"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "o-kunsch",
+      "reason": "Original article full access not verified; replaced with accurately titled open CMU companion lecture"
+    },
+    {
+      "id": "isl-python",
+      "reason": "Current online reading could not be verified; omitted from active library"
+    },
+    {
+      "id": "elements-statistical-learning",
+      "reason": "Current online reading could not be verified; omitted from active library"
+    },
+    {
+      "id": "cme-intro-options",
+      "reason": "Current online reading could not be verified; omitted from active library"
+    },
+    {
+      "id": "cme-intro-futures",
+      "reason": "Current online reading could not be verified; omitted from active library"
+    }
+  ]
+}

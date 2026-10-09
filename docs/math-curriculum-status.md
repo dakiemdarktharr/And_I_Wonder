@@ -1,3 +1,7 @@
+# Current daily-learning update
+
+The 2026-10-10 update in [daily-learning-update.md](daily-learning-update.md) supersedes the three-problem/retrieval schedule below: 523 distinct main-route primary focuses, four staged tasks/day, no main-route retrieval padding, and reviewed full free online readers. Previous review counts below describe the historical release.
+
 # Mathematics curriculum v2 — local handoff status
 
 Local implementation complete on 2026-10-10.

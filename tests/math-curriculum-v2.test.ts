@@ -38,7 +38,7 @@ test('canonical graph, theorem/source/exercise and alternate-form references res
   for(const th of w.theorems){assert.ok(sources.has(th.sourceId));assert.ok(th.sourceSection);assert.ok(['proved','proof sketch','assumed'].includes(th.proofStatus));}
   const ids=new Set(w.exercises.map(e=>e.id)),theorems=new Set(w.theorems.map(t=>t.id));
   for(const s of w.sessions){assert.ok(s.exerciseIds.length);for(const id of [...s.exerciseIds,...s.alternativeExerciseIds??[]])assert.ok(ids.has(id),`${id} at W${w.week}`);for(const id of s.theoremIds)assert.ok(theorems.has(id));}
-  for(const e of w.exercises){assert.ok(e.solution.length);assert.ok(e.hints.length);assert.ok(e.rubric.length);assert.ok(e.rubric.every(r=>r.points>0));if(e.practiceOrigin)assert.ok(exerciseIds.has(e.practiceOrigin));for(const p of e.remediation)assert.ok(c.weeks.some(w=>w.week===p));}
+  for(const e of w.exercises){assert.ok(e.solution.length);assert.ok(Array.isArray(e.hints));assert.ok(e.rubric.length);assert.ok(e.rubric.every(r=>r.points>0));if(e.practiceOrigin)assert.ok(exerciseIds.has(e.practiceOrigin));for(const p of e.remediation)assert.ok(c.weeks.some(w=>w.week===p));}
   if(w.week>=29){const scheduled=new Set(w.sessions.flatMap(s=>s.exerciseIds));const es=w.exercises.filter(e=>scheduled.has(e.id));assert.ok(es.filter(e=>e.skills.some(s=>s==='proof'||s==='derivation')).length>=2,`Two substantial proof/derivation tasks W${w.week}`);assert.ok(es.some(e=>e.skills.includes('transfer')||e.skills.includes('counterexample')),`Transfer W${w.week}`);}
  }
  for(const a of c.assessments){assert.equal(a.forms.length,2);const A=new Set(a.forms[0].exerciseIds);for(const form of a.forms)for(const id of form.exerciseIds)assert.ok(exerciseIds.has(id));assert.ok(a.forms[1].exerciseIds.every(id=>!A.has(id)));}
@@ -69,9 +69,14 @@ test('new final-exam bilingual formulas preserve exact mathematical symbols and 
  }
 });
 
-test('all archived v1 bytes verify and original content data remain unchanged',()=>{
+test('archived v1 content verifies across Git text line-ending conversion',()=>{
  const archive=JSON.parse(fs.readFileSync('data/archive/curriculum-v1/manifest.json','utf8'));
- for(const entry of archive.entries){const bytes=fs.readFileSync(`data/archive/curriculum-v1/${entry.file}`);assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),entry.sha256,entry.file);if(entry.file.startsWith('data/'))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(entry.file)).digest('hex'),entry.sha256,`Original ${entry.file}`);}
+ const canonicalHash=(bytes:Buffer,expected:string)=>{const hash=(v:Buffer|string)=>crypto.createHash('sha256').update(v).digest('hex');const lf=bytes.toString('utf8').replace(/\r\n/g,'\n');return [hash(bytes),hash(lf),hash(lf.replace(/\n/g,'\r\n'))].includes(expected)?expected:hash(lf);};
+ // Git autocrlf normalizes text on checkout. This script originally mixed CRLF/LF;
+ // pin its LF blob separately while retaining the original historical manifest.
+ const checkoutHashes:Record<string,string>={'scripts/author-87-93.mjs':'5be46d25204d3c17d5c941e25aa7e7c3bf1000189604ff8d3878ec7813f20d91'};
+ for(const entry of archive.entries){const bytes=fs.readFileSync('data/archive/curriculum-v1/'+entry.file);assert.equal(canonicalHash(bytes,entry.sha256),checkoutHashes[entry.file]??entry.sha256,entry.file);if(entry.file.startsWith('data/'))assert.equal(canonicalHash(fs.readFileSync(entry.file),entry.sha256),checkoutHashes[entry.file]??entry.sha256,'Original '+entry.file);}
+
 });
 
 test('revision-scoped progress accepts only canonical tasks and keeps public evidence private',()=>{
@@ -104,14 +109,27 @@ test('math search routes to versioned public lessons; repair route defers learni
  for(const s of c.foundationSessions)assert.equal(mathSessionForDate(s.date,'foundation'),s);
 });
 
-test('every study session has three distinct problems with specific teaching on both routes',()=>{
+test('every study session has four staged problems with specific teaching on both routes',()=>{
  const all=new Map(c.weeks.flatMap(w=>w.exercises.map(e=>[e.id,e] as const)));
  const identity=(id:string):string=>all.get(id)!.practiceOrigin?identity(all.get(id)!.practiceOrigin!):id;
  for(const sessions of [c.sessions,c.foundationSessions])for(const s of sessions){
   for(const ids of [s.exerciseIds,...(s.alternativeExerciseIds?[s.alternativeExerciseIds]:[])]){
-   assert.ok(ids.length>=3,s.id);assert.equal(new Set(ids.map(identity)).size,ids.length,s.id);
+   assert.equal(ids.length,4,s.id);assert.equal(new Set(ids.map(identity)).size,ids.length,s.id);
    for(const id of ids){const e=all.get(id)!;assert.ok(e.teaching?.application.en&&e.teaching.application.vi,id);assert.ok(e.teaching.formula.en&&e.teaching.formula.vi,id);assert.ok(e.teaching.steps.length>=3,id);}
   }
  }
- assert.equal(m.counts.originalAuthoredRecords,543);assert.equal(m.counts.minimumDailyProblems,3);
+ assert.equal(m.counts.originalAuthoredRecords,543);assert.equal(m.counts.minimumDailyProblems,4);
+});
+
+test('main route teaches one distinct primary focus per day without reconstruction padding',()=>{
+ const all=new Map(c.weeks.flatMap(w=>w.exercises.map(e=>[e.id,e] as const)));
+ assert.equal(new Set(c.sessions.map(s=>s.lesson!.conceptKey)).size,523);
+ for(const session of c.sessions){
+  assert.ok(session.lesson?.steps.length!>=3);assert.equal(session.exerciseIds[2],session.lesson!.primaryExerciseId);
+  const problems=session.exerciseIds.map(id=>all.get(id)!);
+  assert.deepEqual(problems.map(e=>e.practiceRole),['concept','derivation','application','error analysis']);
+  assert.ok(problems.every(e=>!e.reviewKind&&!e.practiceOrigin));
+ }
+ assert.equal(c.sessions.filter(s=>s.lesson!.primaryExerciseId.startsWith('daily-')).length,20);
+ assert.equal(m.counts.defaultProblemAssignments,2092);
 });

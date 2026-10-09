@@ -21,7 +21,7 @@ Start with the [audit](docs/math-curriculum-audit.md), [specification](docs/math
 
 - Three animated portals: Daily, Projects, Resources. Hovered objects jump out, land, then dissolve. Reduced-motion preferences disable these effects.
 - A monthly calendar covering **7 October 2026–6 October 2028**: 731 days, 523 four-hour study sessions and 208 weekend rest days.
-- Self-contained bilingual daily lessons, four study blocks, at least three problems per study day and hidden model answers. In v2, source consultation is classified as assigned or reference and always fits the reading block.
+- Self-contained bilingual daily lessons, four study blocks, four staged problems per study day and hidden model answers. Lessons are self-contained. The active resource library uses reviewed full free online readers; unverified destinations are omitted.
 - Pop-art outlines and hard cel shadows with a warm paper, steel-blue, sage and ochre reading palette. Sticky lesson navigation and a focus mode reduce the amount of context shown at once.
 - V2 practice has only the problem and show/hide solution. Existing local drafts are preserved; legacy workspaces remain accessible. Assessment criteria stay on the syllabus. Historical v1 coverage was 523 exercises, 1,614 stages and 182 numeric checks; those are legacy counts, not v2 quotas or proof-validation evidence.
 - Legacy figures retain their original exercise-specific fixtures. They are not attached to newly authored v2 problems. V2's numeric checks are selected exact values from its own solutions; plots and simulations are not proofs of convexity, a CLT or calibration.
@@ -60,11 +60,11 @@ npm run test:e2e
 
 Use `TEST_BASE_URL` to test another local port or a deployment. Browser tests cover English/Vietnamese persistence, portal navigation, month navigation, lesson answers, read-only guest controls, search, library destinations, responsive widths and rollback after a failed owner save. The failed-save test uses an explicit mock; it is not evidence of a live MongoDB write.
 
-For this local upgrade, tests use only localhost with `MONGODB_URI` unset/empty and `APP_URL` set to that localhost origin. Do not target production to validate a curriculum change. Latest local refinement (2026-10-10): all 543 original exercises have applications and ≥3 method steps; all 523 sessions have three distinct problems (1,569 assignments, including review). Build/typecheck and 57 unit checks passed. Browser results and selector repairs are in the validation report. See [the UI refinement audit](docs/study-ui-refinement.md).
+For this local upgrade, tests use only localhost with `MONGODB_URI` unset/empty and `APP_URL` set to that localhost origin. Do not target production to validate a curriculum change. Latest local refinement (2026-10-10): all 543 original exercises have applications and ≥3 method steps; all 523 main-route sessions now have a distinct primary focus and four staged problems (2,092 assignments; no retrieval padding). Build/typecheck and test results are recorded in the validation report. Browser results and selector repairs are in the validation report. See [the UI refinement audit](docs/study-ui-refinement.md).
 
 ## Deterministic mathematics authoring
 
-Canonical v2 content lives in `content/math-v2/` with the schema in `lib/math-curriculum-types.ts`. Four author files contain original lessons and assessments; four teaching maps add individual applications, formulas and methods. lib/math-practice-plan.ts schedules three distinct problems per day, including labelled retrieval practice. The build derives dated sessions, content hashes, task IDs, exercise revision keys, source records and coverage; runtime renders the derived curriculum.
+Canonical v2 content lives in `content/math-v2/` with the schema in `lib/math-curriculum-types.ts`. Four author files contain original lessons and assessments; four teaching maps add individual applications, formulas and methods. lib/math-practice-plan.ts schedules one primary lesson and four contextual tasks per day. Twenty new mathematical extensions replace repeated main-route sessions. The optional foundation repair route deliberately reconstructs prior work. The build derives dated sessions, content hashes, task IDs, exercise revision keys, source records and coverage; runtime renders the derived curriculum.
 
 ```sh
 npm run curriculum:build

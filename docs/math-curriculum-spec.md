@@ -76,3 +76,7 @@ Each weekly reading contains domain/notation, a theorem/derivation with hypothes
 ## Daily practice refinement — 10 October 2026
 
 Four canonical *-teaching.ts maps cover every original ID with bilingual application/formula and at least three specific method steps. The builder merges them before hashing. lib/math-practice-plan.ts schedules three distinct prompts per session, including A/B and foundation alternatives, in existing blocks. There are 543 original records and 1,087 retrieval copies (1,630 total), giving 1,569 main-route assignments. Copies are not unseen graduate problems. Practice shows only prompt and a solution disclosure; canonical rubrics and gate rules remain in the syllabus. Previous local drafts remain untouched.
+
+## Daily teaching superseding the earlier retrieval schedule — 2026-10-10
+
+One distinct main-route primary focus per day; four staged tasks (concept, derivation, application, error analysis); 20 replacement topics. The main lesson shows application, general formula and concrete steps; chapter definitions/proofs are optional reference. A/B records remain historical assessment material rather than scheduled daily forms. The optional foundation route intentionally reconstructs prior learning. Read daily-learning-update.md for actual authorship counts and resource access policy. All live source readers must pass the exact URL access list; an unknown URL is withheld.

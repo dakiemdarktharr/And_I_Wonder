@@ -14,12 +14,20 @@ export interface MathTheorem {
 }
 export interface MathRubric { points: number; criterion: Bilingual; critical?: boolean }
 export interface MathTeaching { application: Bilingual; formula: Bilingual; steps: Bilingual[]; solution?: Bilingual[] }
+export interface MathDailyLesson {
+  id: string; conceptKey: string; primaryExerciseId: string;
+  title: Bilingual; application: Bilingual; formula: Bilingual;
+  steps: Bilingual[];
+  reading?: MathReading[];
+}
 export interface MathExercise {
   id: string; revision: number; title: Bilingual; skills: MathSkill[];
   /** Scheduled reconstruction of an earlier problem, never advertised as an unseen retest. */
   practiceOrigin?: string;
   reviewKind?: 'spaced';
   teaching?: MathTeaching;
+  practiceRole?: 'concept' | 'derivation' | 'application' | 'error analysis';
+  relatedExerciseId?: string;
   prompt: Bilingual; hints: Bilingual[]; solution: Bilingual[];
   rubric: MathRubric[]; commonErrors: Bilingual[];
   /** Earlier week numbers to revisit on failure. */
@@ -28,6 +36,7 @@ export interface MathExercise {
 }
 export interface MathSessionPlan {
   title: Bilingual; exerciseIds: string[]; theoremIds: string[];
+  lesson?: MathDailyLesson;
   /** Specific actions, in order: 60/100/50/30 minutes. Exams may explicitly override. */
   actions: [Bilingual, Bilingual, Bilingual, Bilingual];
   minutes?: [number, number, number, number];
