@@ -24,5 +24,5 @@ Open localhost:3000/projects for the illustrated questline, /resources for the s
 
 ## GitHub handoff
 
-On 2026-10-10 the user authorized committing and pushing this implementation to dakiemdarktharr/And_I_Wonder on branch codex/math-curriculum-v2. The local-only statement above describes the implementation and validation phase before this authorization. No manual Vercel deployment, production database migration or credential change is part of this handoff.
+On 2026-10-10 the user first authorized committing and pushing this implementation on branch codex/math-curriculum-v2, published as commit 3c3b028. They subsequently requested all completed changes be committed to main and deployed immediately after relevant checks. This standing authorization is recorded in AGENTS.md. The local-only statement above describes the implementation and validation phase before release authorization. No production database migration or credential change is included in this release.
 

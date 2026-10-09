@@ -7,3 +7,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## User release preference
+
+After completing user-requested changes and the relevant checks, commit the latest project changes to `main`, push `main` to `dakiemdarktharr/And_I_Wonder`, and deploy production on the Vercel project `and-i-wonder`. This is standing user authorization from 2026-10-10; no repeated confirmation is needed. Verify the deployment result and report the commit and live URL. Preserve unrelated changes and never commit credentials or ignored local artifacts.

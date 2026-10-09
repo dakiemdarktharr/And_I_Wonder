@@ -1,8 +1,8 @@
 # And I Wonder
 
-A Vietnamese/English quant learning studio, built from the **Road to Quant** Obsidian curriculum. **Mathematics v2 is the local default curriculum.** Public visitors can read; the configured GitHub owner can save progress and edit the original legacy Markdown notes.
+A Vietnamese/English quant learning studio, built from the **Road to Quant** Obsidian curriculum. **Mathematics v2 is the default curriculum.** Public visitors can read; the configured GitHub owner can save progress and edit the original legacy Markdown notes.
 
-Existing production address: **https://and-i-wonder-quant.vercel.app**. This mathematics upgrade is a local review diff; the production address does not imply v2 has been deployed.
+Production address: **https://and-i-wonder-quant.vercel.app**. Completed changes are checked, committed and pushed to `main`, then deployed to the Vercel project `and-i-wonder` under the user's standing release authorization.
 
 ## Mathematics v2
 
