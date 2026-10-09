@@ -1,4 +1,22 @@
 import type {LessonModule,LessonVisual} from './lesson-types';
+import type {MathWeek,MathSession,MathSource} from './math-curriculum-types';
+
+/** Portable daily handout; old workbench drafts are never read or deleted. */
+export function mathLessonToMarkdown(week:MathWeek,session:MathSession,sources:MathSource[],language:'vi'|'en',checked:Record<string,boolean>={},form:'A'|'B'='A'){
+ const t=(v:{en:string;vi:string})=>v[language];const vi=language==='vi';
+ const ids=form==='B'&&session.alternativeExerciseIds?.length?session.alternativeExerciseIds:session.exerciseIds;
+ const sections=['# '+session.date+' — '+t(session.title),'**math-v2.0 · '+session.id+' · '+session.revision+' · '+form+'**',
+  '## '+(vi?'Kế hoạch · 4 giờ':'Plan · 4 hours')+'\n\n'+session.actions.map((a,i)=>'- ['+(checked[session.taskIds[i]]?'x':' ')+'] '+(session.minutes?.[i]??[60,100,50,30][i])+' min — '+t(a)).join('\n'),
+  '## '+(vi?'Định nghĩa':'Definitions')+'\n\n'+t(week.definitions)];
+ for(const th of week.theorems.filter(th=>session.theoremIds.includes(th.id)))sections.push('### '+t(th.title)+'\n\n'+t(th.statement)+'\n\n**'+th.proofStatus+'**\n\n'+t(th.proof));
+ for(const [i,id] of ids.entries()){
+  const e=week.exercises.find(e=>e.id===id)!;
+  sections.push('## '+(vi?'Bài ':'Problem ')+(i+1)+'. '+t(e.title)+'\n\n'+(e.teaching?'**'+(vi?'Ứng dụng':'Application')+'**\n\n'+t(e.teaching.application)+'\n\n### '+(vi?'Công thức tổng quát':'General formula')+'\n\n'+t(e.teaching.formula)+'\n\n'+e.teaching.steps.map((s,j)=>(j+1)+'. '+t(s)).join('\n\n')+'\n\n':'')+t(e.prompt)+'\n\n<details>\n<summary>'+(vi?'Hiện lời giải':'Show solution')+'</summary>\n\n'+e.solution.map((s,j)=>(j+1)+'. '+t(s)).join('\n\n')+'\n\n</details>');
+ }
+ sections.push('## '+(vi?'Tài liệu':'Sources')+'\n\n'+week.reading.map(r=>{const source=sources.find(s=>s.id===r.sourceId);return '- ['+(source?.title??r.sourceId)+']('+(source?.url??'')+'), '+r.section;}).join('\n'));
+ return sections.join('\n\n')+'\n';
+}
+
 
 function figureMarkdown(v:LessonVisual,language:'vi'|'en'){
  const t=(x:{en:string;vi:string})=>x[language];

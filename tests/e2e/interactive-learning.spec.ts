@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 
 test('a numeric answer gives feedback and a private draft survives reload and language changes',async({page})=>{
- await page.goto('/daily/2026-10-08');
+ await page.goto('/daily/2026-10-08?curriculum=v1');
  await page.getByRole('button',{name:'EN',exact:true}).click();
  const work=page.locator('.answer-workbench');
  await work.locator('textarea').fill('The columns are independent before duplication.');
@@ -19,7 +19,7 @@ test('a numeric answer gives feedback and a private draft survives reload and la
 });
 
 test('convexity controls recompute eigenvalues and reset to the actual problem',async({page})=>{
- await page.goto('/daily/2026-10-30');
+ await page.goto('/daily/2026-10-30?curriculum=v1');
  await page.getByRole('button',{name:'EN',exact:true}).click();
  const lab=page.locator('#lesson-explore [data-lab-kind=convex]');
  await expect(lab.locator('.interactive-explanation')).toContainText('strictly convex');
@@ -60,7 +60,7 @@ test('reduced motion removes flying objects and preserves navigation',async({pag
 });
 
 test('project briefs supply inputs, acceptance criteria and repository structure',async({page})=>{
- await page.goto('/projects/P01');await page.getByRole('button',{name:'EN',exact:true}).click();
+ await page.goto('/projects/P01?curriculum=v1');await page.getByRole('button',{name:'EN',exact:true}).click();
  const guide=page.locator('.project-guide-shell');
  await expect(guide).toBeVisible();
  await expect(guide.getByRole('heading',{name:'Numerical acceptance checks'})).toBeVisible();

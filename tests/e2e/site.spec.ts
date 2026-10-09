@@ -8,7 +8,7 @@ test('portals navigate, locale persists, and pages fit the viewport',async({page
   await expect(page.locator('.portal')).toHaveCount(3);
   await page.locator('.portal-daily').click();
   await expect(page).toHaveURL(/\/daily$/);
-  await expect(page.getByRole('heading',{name:/one day. one step./i})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Study calendar',exact:true})).toBeVisible();
   await page.reload();
   await expect(page.getByRole('button',{name:'EN',exact:true})).toHaveAttribute('aria-pressed','true');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
@@ -17,12 +17,12 @@ test('portals navigate, locale persists, and pages fit the viewport',async({page
 
 test('month navigation opens a day with a complete lesson and hidden answers',async({page})=>{
   await page.clock.setFixedTime(new Date('2026-10-09T05:00:00Z'));
-  await page.goto('/daily');
+  await page.goto('/daily?curriculum=v1');
   await page.getByRole('button',{name:'EN',exact:true}).click();
   await page.getByRole('button',{name:'Next month',exact:true}).click();
   await expect(page.locator('.calendar-toolbar h2')).toContainText('November');
   await page.getByRole('button',{name:'Previous month',exact:true}).click();
-  await page.locator('a.day-cell[href="/daily/2026-10-08"]').click();
+  await page.locator('a.day-cell[href="/daily/2026-10-08?curriculum=v1"]').click();
   await expect(page.locator('.daily-lesson')).toBeVisible();
   await expect(page.locator('.daily-lesson input[type=checkbox]')).toHaveCount(4);
   for(const box of await page.locator('.daily-lesson input[type=checkbox]').all())await expect(box).toBeDisabled();
@@ -36,7 +36,7 @@ test('month navigation opens a day with a complete lesson and hidden answers',as
 });
 
 test('five quests and resource filters keep destinations usable',async({page})=>{
-  await page.goto('/projects');
+  await page.goto('/projects?curriculum=v1');
   await expect(page.locator('.quest-row')).toHaveCount(5);
   await page.locator('.quest-row').first().click();
   await expect(page.locator('.note-reader')).toBeVisible();
@@ -69,7 +69,7 @@ test('failed owner saves visibly roll back lesson checkbox',async({page})=>{
   await page.route('**/api/auth/session',r=>r.fulfill({json:{authenticated:true,owner:{login:'dakiemdarktharr',avatarUrl:''}}}));
   await page.route('**/api/notes/**',r=>r.fulfill({json:{note,revision:'a'.repeat(64),progress:{checked:{}}}}));
   await page.route('**/api/progress',r=>r.request().method()==='PATCH'?r.fulfill({status:503,json:{error:'Test database unavailable'}}):r.fulfill({json:{notes:{}}}));
-  await page.goto('/daily/2026-10-08');
+  await page.goto('/daily/2026-10-08?curriculum=v1');
   const task=page.locator('.daily-lesson input[type=checkbox]').first();
   // A rejected write may roll back before Playwright's check() postcondition.
   await expect(task).toBeEnabled();await task.click();

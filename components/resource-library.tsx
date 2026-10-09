@@ -22,33 +22,7 @@ type CoverRecord = {
 
 const covers = coverData as CoverRecord[];
 const coverById = new Map(covers.map((cover) => [cover.resourceId, cover]));
-const palette = ['#1947e5', '#ffe34a', '#ff5639', '#b7d6cb', '#eeeae0', '#735dc5', '#e893b7'];
-
-function titlePageLabel(resource: ResourceItem, cover: CoverRecord | undefined, language: string) {
-  if (cover?.sourcePageNumber === 1) {
-    return language === 'vi' ? 'Thẻ nhan đề từ thông tin nguồn' : 'Source-metadata title card';
-  }
-  if (resource.url.endsWith('/')) {
-    return language === 'vi' ? 'Ấn bản HTML chính thức' : 'Official HTML edition';
-  }
-  return language === 'vi' ? 'Trang tiêu đề từ thông tin nguồn' : 'Source-metadata title page';
-}
-
-function titlePageNote(resource: ResourceItem, cover: CoverRecord | undefined, language: string) {
-  if (cover?.sourcePageNumber === 1) {
-    return language === 'vi'
-      ? 'Trang 1 của PDF là nội dung bài học; thẻ này chỉ dùng nhan đề và tác giả đã xác minh.'
-      : 'PDF page 1 is lesson content; this card uses only the verified title and author.';
-  }
-  if (resource.url.endsWith('/')) {
-    return language === 'vi'
-      ? 'Không có ảnh bìa đã xác minh; đây là tên và tác giả trên trang nguồn chính thức.'
-      : 'No verified cover image; this uses the title and author on the official source page.';
-  }
-  return language === 'vi'
-    ? 'Không thể lấy trang PDF đầu tiên; đây là tên và tác giả đã xác minh của tài liệu.'
-    : 'The PDF first page was unavailable; this uses the verified resource title and author.';
-}
+const palette = ['#326782', '#dec469', '#ba705b', '#91b7a8', '#eeeae0', '#877ba0', '#b88b9f'];
 
 function PaperScroll({ title, language }: { title: string; language: string }) {
   return (
@@ -113,15 +87,10 @@ function BookJacket({
         <img className="book-cover-image" src={cover.asset} alt={imageDescription} loading="lazy" />
       ) : (
         <div className="book-title-page">
-          <span className="book-title-page-label">{titlePageLabel(resource, cover, language)}</span>
           <h3>{title}</h3>
           <p>{author}</p>
-          <span className="book-title-page-note">{titlePageNote(resource, cover, language)}</span>
         </div>
       )}
-      <span className="book-cover-provenance" aria-hidden="true">
-        {cover?.asset && cover.sourcePageNumber === 1 ? 'SOURCE PDF · PAGE 1' : cover?.asset ? 'OFFICIAL COVER' : 'SOURCE TITLE'}
-      </span>
       <span className="book-pages" aria-hidden="true" />
     </div>
   );
@@ -144,15 +113,10 @@ function CatalogObject({
       className={'catalog-object catalog-object--' + (course ? 'course' : 'link')}
       style={{ '--cover': color } as React.CSSProperties}
     >
-      <span className="catalog-object-kicker">
-        {course
-          ? (language === 'vi' ? 'KHÓA HỌC MIỄN PHÍ' : 'FREE COURSE')
-          : (language === 'vi' ? 'TÀI LIỆU THAM KHẢO' : 'REFERENCE')}
-      </span>
       <h3>{title}</h3>
       <span className="catalog-object-author">{resource.author}</span>
       <span className="catalog-object-foot">
-        <span>{course ? 'OPEN COURSE' : 'OPEN RESOURCE'}</span>
+        <span>{language==='vi'?'Mở tài liệu':'Open resource'}</span>
         <ArrowUpRight size={15} />
       </span>
     </div>
@@ -162,15 +126,8 @@ function CatalogObject({
 function LibraryObject({ resource, index }: { resource: ResourceItem; index: number }) {
   const { language } = useLanguage();
   const title = language === 'vi' ? resource.titleVi : resource.title;
-  const color = resource.color || palette[index % palette.length];
+  const color = palette[index % palette.length];
   const cover = coverById.get(resource.id);
-  const sourceLabel = cover
-    ? (cover.asset && cover.sourcePageNumber === 1
-      ? (language === 'vi' ? 'Trang 1 của PDF chính thức' : 'Page 1 of the official PDF')
-      : cover.asset
-        ? (language === 'vi' ? 'Ảnh bìa từ trang chính thức' : 'Cover from the official source')
-        : (language === 'vi' ? 'Thẻ nhan đề từ thông tin nguồn' : 'Title card from source metadata'))
-    : (resource.author || 'Free resource');
   const objectClass = resource.kind === 'video'
     ? 'object-tape'
     : resource.kind === 'paper'
@@ -199,7 +156,6 @@ function LibraryObject({ resource, index }: { resource: ResourceItem; index: num
       <span className="resource-tooltip">
         <b>{title}</b>
         <span>{resource.author || new URL(resource.url).hostname.replace('www.', '')}<ArrowUpRight size={15} /></span>
-        <small>{sourceLabel}</small>
       </span>
       <span className="shelf-caption">{title}</span>
     </a>
@@ -223,11 +179,7 @@ export function ResourceLibrary({ resources }: { resources: ResourceItem[] }) {
       <div className="page-heading">
         <div>
           <div className="breadcrumb"><Link href="/">And I Wonder</Link><span>/</span><Text vi="Thư viện" en="Resources" /></div>
-          <h1><Text vi={'CẢ MỘT THẾ GIỚI.\nTRÊN KỆ SÁCH.'} en={'A WORLD OF IDEAS.\nWITHIN REACH.'} /></h1>
-        </div>
-        <div className="library-heading-note">
-          <span className="free-stamp"><Text vi={'MIỄN PHÍ\n100%'} en={'ALWAYS\nFREE'} /></span>
-          <p><Text vi="Sách để đọc. Bài báo để đặt câu hỏi. Bài giảng để hiểu thêm." en="Books to read. Papers to question. Lectures to think along with." /></p>
+          <h1><Text vi="Thư viện" en="Library" /></h1>
         </div>
       </div>
 
@@ -257,7 +209,7 @@ export function ResourceLibrary({ resources }: { resources: ResourceItem[] }) {
 
       <div className="library-room">
         <div className="cabinet-top">
-          <span>AND I WONDER / {language === 'vi' ? 'TỦ TRI THỨC' : 'KNOWLEDGE CABINET'}</span>
+          <span><Text vi="Sách · Bài báo · Bài giảng" en="Books · Papers · Lectures"/></span>
           <span aria-live="polite">{items.length} <Text vi="tài liệu" en="resources" /></span>
         </div>
         <div className="bookcase">
@@ -283,9 +235,8 @@ export function ResourceLibrary({ resources }: { resources: ResourceItem[] }) {
       </div>
 
       <div className="library-footnote">
-        <span><Text vi="Di chuột để đọc tiêu đề · Bấm để mở tab mới" en="Hover for details · Click to open a new tab" /></span>
         <Link href="/notes/Free%20Resources%20and%20Access%20Policy">
-          <Text vi="Nguồn miễn phí & hướng dẫn sử dụng" en="Free access & reading guide" /><ArrowUpRight size={15} />
+          <Text vi="Thông tin nguồn" en="Source information" /><ArrowUpRight size={15} />
         </Link>
       </div>
     </main>

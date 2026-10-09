@@ -1,0 +1,3000 @@
+[
+  {
+    "week": 94,
+    "title": {
+      "en": "Economic interpretation boundaries",
+      "vi": "Giới hạn diễn giải kinh tế"
+    },
+    "prerequisites": {
+      "en": "Read a results table, compute a mean and a percentage, and distinguish a prediction from its later outcome. All data required today are provided below.",
+      "vi": "Biết đọc bảng kết quả, tính trung bình và phần trăm, phân biệt dự báo với kết quả xuất hiện sau đó. Toàn bộ dữ liệu cần dùng được cung cấp bên dưới."
+    },
+    "objectives": [
+      {
+        "en": "Make claims that a reader can trace to the supplied evidence.",
+        "vi": "Viết kết luận mà người đọc có thể đối chiếu với bằng chứng đã cho."
+      },
+      {
+        "en": "Explain the reason for each decision and record what remains unknown.",
+        "vi": "Giải thích lý do của từng quyết định và ghi rõ điều chưa biết."
+      }
+    ],
+    "foundations": {
+      "en": "A forecast is a statement about an outcome. A trading strategy additionally specifies position size, execution time, prices, costs and risk constraints. Forecast accuracy alone does not supply those missing pieces. In this week, one basis point (bp) means 0.01 percentage point of return. All returns are hypothetical one-period, unlevered examples; they are not market observations or promises.",
+      "vi": "Dự báo là phát biểu về một kết quả. Chiến lược giao dịch còn cần quy mô vị thế, thời điểm thực hiện, giá khớp, chi phí và giới hạn rủi ro. Độ chính xác dự báo không tự cung cấp các phần còn thiếu. Tuần này, một điểm cơ bản (bp) bằng 0,01 điểm phần trăm lợi suất. Các lợi suất đều là ví dụ giả định một kỳ, không dùng đòn bẩy; không phải dữ liệu thị trường hay lời hứa lợi nhuận."
+    },
+    "diagram": {
+      "kind": "flow",
+      "title": {
+        "en": "Five decisions this week",
+        "vi": "Năm quyết định trong tuần"
+      },
+      "labels": [
+        {
+          "en": "Accuracy is not a trading return",
+          "vi": "Độ chính xác không phải lợi suất"
+        },
+        {
+          "en": "Turnover turns fees into drag",
+          "vi": "Vòng quay vị thế tạo chi phí"
+        },
+        {
+          "en": "Separate exposure from unexplained return",
+          "vi": "Tách phơi nhiễm khỏi phần chưa giải thích"
+        },
+        {
+          "en": "A delayed trade is a different experiment",
+          "vi": "Giao dịch trễ là thí nghiệm khác"
+        },
+        {
+          "en": "Write the strongest supported claim",
+          "vi": "Viết kết luận mạnh nhất có căn cứ"
+        }
+      ],
+      "caption": {
+        "en": "Each node is a separate session; this map describes the work, not numerical evidence.",
+        "vi": "Mỗi nút là một buổi riêng; sơ đồ mô tả công việc, không phải bằng chứng định lượng."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Accuracy is not a trading return",
+          "vi": "Độ chính xác không phải lợi suất"
+        },
+        "theory": {
+          "en": "Accuracy counts correct signs, giving every observation equal weight. Profit also depends on the size of each move. For a unit long/short position, gross return is position × subsequent asset return. A correct tiny move may be outweighed by one large wrong move. A price forecast also does not prove that an order could have been filled.",
+          "vi": "Accuracy đếm dấu dự báo đúng, coi mỗi quan sát có trọng số như nhau. Lãi lỗ còn phụ thuộc độ lớn biến động. Với vị thế mua/bán khống một đơn vị, lợi suất gộp bằng vị thế × lợi suất tài sản sau đó. Nhiều lần đúng với biến động nhỏ vẫn có thể thua một lần sai lớn. Dự báo giá cũng không chứng minh lệnh đã khớp được."
+        },
+        "workedExample": {
+          "en": "Predict up on four periods. Realized returns in bp are [1, 1, 1, −10]. Sign accuracy is 3/4=75%. A hypothetical unit long earns [1,1,1,−10], sum −7 bp before costs. This sum is an additive illustration; compounded return would multiply four gross factors instead. Thus “75% accurate” and “profitable” are different claims.",
+          "vi": "Dự báo tăng cả bốn kỳ. Lợi suất thực tế giả định theo bp là [1,1,1,−10]. Đúng dấu 3/4=75%. Vị thế mua một đơn vị thu [1,1,1,−10], tổng −7 bp trước chi phí. Đây là phép cộng minh họa; lợi suất kép phải nhân bốn hệ số tăng trưởng. Vì vậy “đúng 75%” và “có lãi” là hai kết luận khác nhau."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Calculate the four sign matches and gross returns by hand.",
+            "vi": "60 phút — Tự tính bốn lần đúng/sai dấu và lợi suất gộp."
+          },
+          {
+            "en": "60 min — Code the two calculations; add a test where all signs are correct.",
+            "vi": "60 phút — Viết mã hai phép tính; thêm kiểm thử khi tất cả dấu đều đúng."
+          },
+          {
+            "en": "60 min — Solve the exercise before opening the answer; compare arithmetic and compounded returns.",
+            "vi": "60 phút — Giải bài trước khi mở đáp án; so sánh tổng lợi suất với lợi suất kép."
+          },
+          {
+            "en": "60 min — Write 150 words explaining the missing execution evidence and annotate the figure.",
+            "vi": "60 phút — Viết 150 từ giải thích bằng chứng khớp lệnh còn thiếu và chú thích hình."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "accuracy-is-not-a-trading-return",
+            "prompt": {
+              "en": "Predict up on five periods with returns [2,2,2,2,−12] bp. Find sign accuracy and additive gross return. Is positive accuracy above 50% sufficient for profit?",
+              "vi": "Dự báo tăng năm kỳ có lợi suất [2,2,2,2,−12] bp. Tính accuracy và tổng lợi suất gộp. Đúng trên 50% có đủ để có lãi không?"
+            },
+            "hint": {
+              "en": "Count positive outcomes, then separately sum their magnitudes.",
+              "vi": "Đếm kết quả dương rồi cộng riêng độ lớn có dấu."
+            },
+            "answer": {
+              "en": "Four positive outcomes give 4/5=80% accuracy. Gross return is 2+2+2+2−12=−4 bp. The large loss exceeds the four small gains. Therefore this counterexample disproves the proposed implication; it does not say accuracy is always useless.",
+              "vi": "Bốn kết quả dương cho accuracy 4/5=80%. Tổng gộp là 2+2+2+2−12=−4 bp. Một khoản lỗ lớn vượt bốn khoản lời nhỏ. Phản ví dụ bác bỏ suy luận “accuracy cao thì có lãi”; nó không nói accuracy luôn vô ích."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "accuracy-vs-return.md with both calculations and one limited claim.",
+          "vi": "accuracy-vs-return.md gồm hai phép tính và một kết luận có giới hạn."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "The four returns in the example",
+            "vi": "Bốn lợi suất trong ví dụ"
+          },
+          "xLabel": {
+            "en": "Case",
+            "vi": "Trường hợp"
+          },
+          "yLabel": {
+            "en": "Gross return (bp)",
+            "vi": "Lợi suất gộp (bp)"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "Period 1",
+                "vi": "Kỳ 1"
+              },
+              "value": 1
+            },
+            {
+              "label": {
+                "en": "Period 2",
+                "vi": "Kỳ 2"
+              },
+              "value": 1
+            },
+            {
+              "label": {
+                "en": "Period 3",
+                "vi": "Kỳ 3"
+              },
+              "value": 1
+            },
+            {
+              "label": {
+                "en": "Period 4",
+                "vi": "Kỳ 4"
+              },
+              "value": -10
+            }
+          ],
+          "caption": {
+            "en": "Synthetic unit-long returns. Three positive bars do not outweigh the −10 bp loss.",
+            "vi": "Lợi suất giả định của vị thế mua một đơn vị. Ba cột dương không bù được khoản lỗ −10 bp."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Turnover turns fees into drag",
+          "vi": "Vòng quay vị thế tạo chi phí"
+        },
+        "theory": {
+          "en": "Let w_t be the position held for period t. Define one-way turnover as |w_t−w_(t−1)|. If each unit of turnover costs c bp, net period return is w_t r_t−c|w_t−w_(t−1)|. Switching from +1 to −1 has turnover 2, because closing and reopening are both trades. State whether an ending liquidation is included.",
+          "vi": "Gọi w_t là vị thế giữ trong kỳ t. Vòng quay một chiều là |w_t−w_(t−1)|. Nếu mỗi đơn vị vòng quay tốn c bp, lợi suất ròng kỳ là w_t r_t−c|w_t−w_(t−1)|. Đổi từ +1 sang −1 có vòng quay 2 vì vừa đóng vừa mở vị thế. Phải nêu rõ có tính thanh lý cuối kỳ hay không."
+        },
+        "workedExample": {
+          "en": "Start w₀=0, then hold [1,−1,0] against returns [4,−3,2] bp. Gross contributions are [4,3,0], total 7. Turnover is [1,2,1], total 4. At c=1 bp, cost is 4 and net is 3 bp. At c=2, net is −1 bp. Break-even cost is 7/4=1.75 bp per unit turnover. The last position is already zero.",
+          "vi": "Bắt đầu w₀=0, giữ [1,−1,0] khi lợi suất là [4,−3,2] bp. Đóng góp gộp [4,3,0], tổng 7. Vòng quay [1,2,1], tổng 4. Với c=1 bp, phí là 4, ròng 3 bp. Với c=2, ròng −1 bp. Mức phí hòa vốn là 7/4=1,75 bp cho mỗi đơn vị vòng quay. Cuối kỳ vị thế đã bằng 0."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Recreate the position, return, turnover and fee table.",
+            "vi": "60 phút — Lập lại bảng vị thế, lợi suất, vòng quay và phí."
+          },
+          {
+            "en": "60 min — Implement the formula with explicit initial position and test a +1 to −1 switch.",
+            "vi": "60 phút — Viết công thức với vị thế đầu kỳ rõ ràng; kiểm thử lần đổi +1 sang −1."
+          },
+          {
+            "en": "60 min — Solve the exercise and draw net return against c from 0 to 4.",
+            "vi": "60 phút — Giải bài và vẽ lợi suất ròng theo c từ 0 đến 4."
+          },
+          {
+            "en": "60 min — Document the one-way convention and ending liquidation treatment.",
+            "vi": "60 phút — Ghi quy ước một chiều và cách xử lý thanh lý cuối kỳ."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "turnover-turns-fees-into-drag",
+            "prompt": {
+              "en": "For w₀=0, positions [1,1,0], returns [3,2,−1] bp and c=0.5 bp, compute gross, turnover, net and break-even c.",
+              "vi": "Với w₀=0, vị thế [1,1,0], lợi suất [3,2,−1] bp và c=0,5 bp, tính gộp, vòng quay, ròng và phí hòa vốn."
+            },
+            "hint": {
+              "en": "Keeping the same position produces zero turnover.",
+              "vi": "Giữ nguyên vị thế thì vòng quay bằng 0."
+            },
+            "answer": {
+              "en": "Gross=3+2+0=5 bp. Turnover=|1−0|+|1−1|+|0−1|=2. Cost=0.5×2=1 bp, so net=4 bp. Break-even c solves 5−2c=0, giving 2.5 bp. Fees are charged on changes, not every period merely because a position exists.",
+              "vi": "Gộp=3+2+0=5 bp. Vòng quay=|1−0|+|1−1|+|0−1|=2. Phí=0,5×2=1 bp nên ròng=4 bp. Hòa vốn giải 5−2c=0, được 2,5 bp. Phí tính theo thay đổi vị thế, không tự phát sinh mỗi kỳ chỉ vì đang giữ vị thế."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "cost-sensitivity.csv and a tested turnover function.",
+          "vi": "cost-sensitivity.csv và hàm vòng quay có kiểm thử."
+        },
+        "visual": {
+          "kind": "xy",
+          "title": {
+            "en": "Net return under stated fees",
+            "vi": "Lợi suất ròng theo phí đã nêu"
+          },
+          "xLabel": {
+            "en": "Cost per unit turnover (bp)",
+            "vi": "Phí mỗi đơn vị vòng quay (bp)"
+          },
+          "yLabel": {
+            "en": "Total net return (bp)",
+            "vi": "Tổng lợi suất ròng (bp)"
+          },
+          "series": [
+            {
+              "name": {
+                "en": "7 − 4c",
+                "vi": "7 − 4c"
+              },
+              "mode": "line",
+              "points": [
+                [
+                  0,
+                  7
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1.75,
+                  0
+                ],
+                [
+                  2,
+                  -1
+                ],
+                [
+                  3,
+                  -5
+                ]
+              ]
+            }
+          ],
+          "caption": {
+            "en": "Exact line for gross 7 bp and turnover 4 in the example; fee 1.75 bp crosses zero.",
+            "vi": "Đường chính xác cho gộp 7 bp và vòng quay 4 trong ví dụ; phí 1,75 bp cắt mức 0."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Separate exposure from unexplained return",
+          "vi": "Tách phơi nhiễm khỏi phần chưa giải thích"
+        },
+        "theory": {
+          "en": "A simple attribution writes portfolio return r_p=βr_m+α+ε. β is sensitivity to a market factor; α is an intercept under this specified model, not proof of skill. A few observations cannot identify a stable alpha. Today β is given, so residual r_p−βr_m is arithmetic attribution, not an estimated causal effect.",
+          "vi": "Phân rã đơn giản viết r_p=βr_m+α+ε. β là độ nhạy với nhân tố thị trường; α là hệ số chặn trong mô hình đã chọn, không phải bằng chứng tài năng. Ít quan sát không xác định được alpha ổn định. Hôm nay β được cho sẵn, nên phần dư r_p−βr_m chỉ là phân rã số học, không phải tác động nhân quả được ước lượng."
+        },
+        "workedExample": {
+          "en": "Let given β=1.5. Market returns are [2,−1,3]% and portfolio returns [3,−1,4]%. Factor contributions are [3,−1.5,4.5]%; residuals are [0,0.5,−0.5]%, mean zero. Portfolio average is 2%; market average is 4/3%, and 1.5×4/3=2%. The positive average is fully accounted for by this given exposure in this sample.",
+          "vi": "Cho β=1,5. Lợi suất thị trường [2; −1; 3]% và danh mục [3; −1; 4]%. Đóng góp nhân tố [3; −1,5; 4,5]%; phần dư [0; 0,5; −0,5]%, trung bình 0. Danh mục trung bình 2%; thị trường trung bình 4/3%, và 1,5×4/3=2%. Trung bình dương được giải thích hết bởi phơi nhiễm đã cho trong mẫu này."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Recreate all three attribution rows with units in percentage points.",
+            "vi": "60 phút — Tính lại ba hàng phân rã, ghi đơn vị điểm phần trăm."
+          },
+          {
+            "en": "60 min — Write a residual function and test β=0 and β=1.",
+            "vi": "60 phút — Viết hàm phần dư, kiểm thử β=0 và β=1."
+          },
+          {
+            "en": "60 min — Solve the exercise and compare mean portfolio and factor returns.",
+            "vi": "60 phút — Giải bài, so sánh trung bình danh mục với nhân tố."
+          },
+          {
+            "en": "60 min — Explain why estimating β using the same three rows would add uncertainty.",
+            "vi": "60 phút — Giải thích vì sao ước lượng β trên chính ba hàng này làm tăng bất định."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "separate-exposure-from-unexplained-return",
+            "prompt": {
+              "en": "Given β=2, market [1,−2,1]% and portfolio [2,−3,3]%, calculate residuals and their mean. Can this establish repeatable skill?",
+              "vi": "Cho β=2, thị trường [1; −2; 1]% và danh mục [2; −3; 3]%, tính phần dư và trung bình. Có thể kết luận kỹ năng lặp lại được không?"
+            },
+            "hint": {
+              "en": "Subtract twice the market return in each corresponding row.",
+              "vi": "Trừ hai lần lợi suất thị trường ở từng hàng tương ứng."
+            },
+            "answer": {
+              "en": "Factor contributions=[2,−4,2]%; residuals=[0,1,1] percentage points, mean 2/3 point. This is a positive sample residual under a supplied β. Three observations, an assumed β and omitted factors leave substantial uncertainty; repeatable skill is not established.",
+              "vi": "Đóng góp nhân tố=[2; −4; 2]%; phần dư=[0; 1; 1] điểm phần trăm, trung bình 2/3 điểm. Đây là phần dư mẫu dương với β cho trước. Ba quan sát, β giả định và nhân tố bị bỏ sót để lại bất định lớn; chưa chứng minh kỹ năng lặp lại được."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "exposure-attribution.csv plus a paragraph separating calculation and inference.",
+          "vi": "exposure-attribution.csv và đoạn phân biệt phép tính với suy luận."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Residual after the given market exposure",
+            "vi": "Phần dư sau phơi nhiễm thị trường đã cho"
+          },
+          "xLabel": {
+            "en": "Case",
+            "vi": "Trường hợp"
+          },
+          "yLabel": {
+            "en": "Residual (percentage points)",
+            "vi": "Phần dư (điểm phần trăm)"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "Period 1",
+                "vi": "Kỳ 1"
+              },
+              "value": 0
+            },
+            {
+              "label": {
+                "en": "Period 2",
+                "vi": "Kỳ 2"
+              },
+              "value": 0.5
+            },
+            {
+              "label": {
+                "en": "Period 3",
+                "vi": "Kỳ 3"
+              },
+              "value": -0.5
+            }
+          ],
+          "caption": {
+            "en": "Example residuals r_p−1.5r_m. Their mean is zero; no alpha has been estimated.",
+            "vi": "Phần dư r_p−1,5r_m của ví dụ. Trung bình bằng 0; chưa ước lượng alpha."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "A delayed trade is a different experiment",
+          "vi": "Giao dịch trễ là thí nghiệm khác"
+        },
+        "theory": {
+          "en": "Information time and execution time must be distinct. If a signal is only available after a period ends, assigning it that same period’s return uses unavailable information. A delay stress test shifts the position and recomputes both return and turnover; it does not simply subtract a constant from the original performance.",
+          "vi": "Phải tách thời điểm có thông tin với thời điểm thực hiện lệnh. Nếu tín hiệu chỉ có sau khi kỳ kết thúc, gán cho nó lợi suất ngay kỳ đó là dùng thông tin chưa có. Kiểm tra độ trễ phải dịch vị thế rồi tính lại cả lợi suất lẫn vòng quay; không chỉ trừ một hằng số khỏi kết quả cũ."
+        },
+        "workedExample": {
+          "en": "A signal produced after each close is [1,−1,1]. The three close-to-close returns are [5,−4,3] bp. Illegally pairing same-index signal and return gives 12 bp. With no initial signal, feasible next-period positions are [0,1,−1], giving [0,−4,−3], total −7 bp before costs. There is no fourth return, so the last +1 signal is not scored.",
+          "vi": "Tín hiệu tạo sau mỗi giá đóng cửa là [1,−1,1]. Ba lợi suất giữa các lần đóng cửa là [5,−4,3] bp. Ghép sai tín hiệu cùng chỉ số với lợi suất cho 12 bp. Khi chưa có tín hiệu ban đầu, vị thế kỳ tiếp theo hợp lệ là [0,1,−1], đóng góp [0,−4,−3], tổng −7 bp trước phí. Không có lợi suất thứ tư nên tín hiệu +1 cuối chưa được chấm."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Draw the three close times and mark when each signal becomes known.",
+            "vi": "60 phút — Vẽ ba mốc đóng cửa và lúc từng tín hiệu được biết."
+          },
+          {
+            "en": "60 min — Implement shift(1) with initial zero; inspect every signal-to-return pairing.",
+            "vi": "60 phút — Cài đặt dịch một kỳ với giá trị đầu 0; kiểm tra từng cặp tín hiệu–lợi suất."
+          },
+          {
+            "en": "60 min — Solve the exercise without filling a missing future return.",
+            "vi": "60 phút — Giải bài, không tự điền lợi suất tương lai còn thiếu."
+          },
+          {
+            "en": "60 min — Write an assertion that a position uses only signals available before its return interval.",
+            "vi": "60 phút — Viết kiểm tra rằng vị thế chỉ dùng tín hiệu có trước khoảng lợi suất của nó."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "a-delayed-trade-is-a-different-experiment",
+            "prompt": {
+              "en": "Signals available after close are [−1,1,1]; returns are [2,3,−2] bp. Compare invalid same-index and feasible one-period-delayed totals.",
+              "vi": "Tín hiệu có sau đóng cửa [−1,1,1]; lợi suất [2,3,−2] bp. So sánh tổng ghép sai cùng chỉ số với tổng trễ một kỳ hợp lệ."
+            },
+            "hint": {
+              "en": "The valid positions begin with zero, then the first two signals.",
+              "vi": "Vị thế hợp lệ bắt đầu bằng 0 rồi dùng hai tín hiệu đầu."
+            },
+            "answer": {
+              "en": "Invalid total=(−1)2+1·3+1·(−2)=−1 bp. Valid positions=[0,−1,1], so total=0−3−2=−5 bp. The third signal has no later outcome in this record and must remain unscored. Delay changes the pairing, not the observations themselves.",
+              "vi": "Tổng sai=(−1)2+1·3+1·(−2)=−1 bp. Vị thế hợp lệ=[0,−1,1] nên tổng=0−3−2=−5 bp. Tín hiệu thứ ba chưa có kết quả sau nó trong bản ghi, phải để chưa chấm. Độ trễ thay đổi cách ghép, không đổi bản thân quan sát."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "delay-audit.md with a timestamp table and regression test.",
+          "vi": "delay-audit.md có bảng thời gian và kiểm thử hồi quy."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "The only feasible pairings",
+            "vi": "Các cặp ghép hợp lệ"
+          },
+          "steps": [
+            {
+              "en": "Interval 1: no prior signal → position 0",
+              "vi": "Khoảng 1: chưa có tín hiệu → vị thế 0"
+            },
+            {
+              "en": "Signal +1 after close 1 → return −4 in interval 2",
+              "vi": "Tín hiệu +1 sau đóng cửa 1 → lợi suất −4 ở khoảng 2"
+            },
+            {
+              "en": "Signal −1 after close 2 → return +3 in interval 3",
+              "vi": "Tín hiệu −1 sau đóng cửa 2 → lợi suất +3 ở khoảng 3"
+            },
+            {
+              "en": "Final +1 signal → future return absent",
+              "vi": "Tín hiệu +1 cuối → chưa có lợi suất tương lai"
+            }
+          ],
+          "caption": {
+            "en": "Each arrow uses a signal before the return interval being scored.",
+            "vi": "Mỗi mũi tên dùng tín hiệu trước khoảng lợi suất được chấm."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Write the strongest supported claim",
+          "vi": "Viết kết luận mạnh nhất có căn cứ"
+        },
+        "theory": {
+          "en": "A defensible claim names the task, comparison, sample, metric and limitations. “Lower forecast loss” is justified by forecast evaluation. “Tradable profit” needs executable prices and costs. A boundary document lists what was measured, what was assumed and what evidence is absent. Being specific is stronger than hiding behind “results may vary.”",
+          "vi": "Kết luận có căn cứ nêu nhiệm vụ, đối chứng, mẫu, thước đo và giới hạn. “Sai số dự báo thấp hơn” cần đánh giá dự báo. “Lợi nhuận giao dịch khả thi” cần giá thực hiện được và chi phí. Tài liệu giới hạn tách thứ đã đo, thứ giả định và bằng chứng còn thiếu. Cụ thể tốt hơn câu mơ hồ “kết quả có thể thay đổi”."
+        },
+        "workedExample": {
+          "en": "Provided record: 200 chronological forecasts; mean squared error A=0.90, baseline=1.00; no confidence interval; no bid/ask or fill logs. A defensible sentence is: “On these 200 held-out forecasts, A had 10% lower sample MSE than the baseline; uncertainty and executable trading returns were not evaluated.” Relative reduction=(1−0.90)/1=10%. Do not call this a 10% investment return.",
+          "vi": "Bản ghi cho trước: 200 dự báo theo thời gian; MSE A=0,90, đối chứng=1,00; chưa có khoảng tin cậy; không có bid/ask hay nhật ký khớp lệnh. Câu phù hợp: “Trên 200 dự báo giữ lại này, A có MSE mẫu thấp hơn đối chứng 10%; chưa đánh giá bất định và lợi suất giao dịch thực hiện được.” Mức giảm tương đối=(1−0,90)/1=10%. Không gọi đây là lợi suất đầu tư 10%."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Underline each part of the claim that maps to a supplied field.",
+            "vi": "60 phút — Gạch chân từng phần kết luận nối với trường dữ liệu đã cho."
+          },
+          {
+            "en": "60 min — Make a three-column table: measured, assumed, absent.",
+            "vi": "60 phút — Lập bảng ba cột: đã đo, giả định, còn thiếu."
+          },
+          {
+            "en": "60 min — Solve the rewrite exercise and compare its scope with the answer.",
+            "vi": "60 phút — Làm bài sửa câu kết luận rồi đối chiếu phạm vi với đáp án."
+          },
+          {
+            "en": "60 min — Combine this week’s costs, exposure and delay findings in claims-boundary.md.",
+            "vi": "60 phút — Gộp kết quả phí, phơi nhiễm và độ trễ của tuần vào claims-boundary.md."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "write-the-strongest-supported-claim",
+            "prompt": {
+              "en": "Record: 50 held-out forecasts, MAE 4 versus baseline 5, no execution data and no uncertainty estimate. Rewrite “Our strategy earns 20% more and will work in all markets.”",
+              "vi": "Bản ghi: 50 dự báo giữ lại, MAE 4 so với đối chứng 5, không có dữ liệu khớp lệnh hay ước lượng bất định. Sửa câu “Chiến lược lời hơn 20% và hiệu quả ở mọi thị trường”."
+            },
+            "hint": {
+              "en": "Replace profit with the actual error metric and restrict the population.",
+              "vi": "Thay lợi nhuận bằng đúng thước đo sai số, giới hạn phạm vi mẫu."
+            },
+            "answer": {
+              "en": "“On 50 held-out forecasts, the model’s sample MAE was 4 versus 5 for the baseline, a 20% relative reduction. Uncertainty, execution costs and performance in other settings remain untested.” The percentage is (5−4)/5, not a return. The universal and profit claims have no evidence in this record.",
+              "vi": "“Trên 50 dự báo giữ lại, MAE mẫu của mô hình là 4 so với 5 của đối chứng, giảm tương đối 20%. Chưa kiểm tra bất định, phí thực hiện hay kết quả ở bối cảnh khác.” Tỷ lệ là (5−4)/5, không phải lợi suất. Bản ghi không có bằng chứng cho kết luận lợi nhuận hoặc mọi thị trường."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "claims-boundary.md with a claim-to-evidence table.",
+          "vi": "claims-boundary.md có bảng nối kết luận với bằng chứng."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Evidence limits the sentence",
+            "vi": "Bằng chứng giới hạn câu kết luận"
+          },
+          "steps": [
+            {
+              "en": "Observed: MSE 0.90 vs 1.00 on 200 forecasts",
+              "vi": "Đã quan sát: MSE 0,90 so với 1,00 trên 200 dự báo"
+            },
+            {
+              "en": "Calculated: 10% relative sample error reduction",
+              "vi": "Tính được: giảm 10% sai số mẫu tương đối"
+            },
+            {
+              "en": "Absent: uncertainty, executable quotes and fills",
+              "vi": "Còn thiếu: bất định, báo giá khả thi và lệnh khớp"
+            },
+            {
+              "en": "Conclusion: forecast result only within this sample",
+              "vi": "Kết luận: kết quả dự báo trong phạm vi mẫu này"
+            }
+          ],
+          "caption": {
+            "en": "A reasoning diagram, not a graph of investment performance.",
+            "vi": "Sơ đồ lập luận, không phải đồ thị lợi nhuận đầu tư."
+          }
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 95,
+    "title": {
+      "en": "Synthesize results without hiding conflicts",
+      "vi": "Tổng hợp kết quả và giữ lại mâu thuẫn"
+    },
+    "prerequisites": {
+      "en": "Read a results table, compute a mean and a percentage, and distinguish a prediction from its later outcome. All data required today are provided below.",
+      "vi": "Biết đọc bảng kết quả, tính trung bình và phần trăm, phân biệt dự báo với kết quả xuất hiện sau đó. Toàn bộ dữ liệu cần dùng được cung cấp bên dưới."
+    },
+    "objectives": [
+      {
+        "en": "Make claims that a reader can trace to the supplied evidence.",
+        "vi": "Viết kết luận mà người đọc có thể đối chiếu với bằng chứng đã cho."
+      },
+      {
+        "en": "Explain the reason for each decision and record what remains unknown.",
+        "vi": "Giải thích lý do của từng quyết định và ghi rõ điều chưa biết."
+      }
+    ],
+    "foundations": {
+      "en": "A research result is a collection of comparisons, not the single most attractive number. Primary analyses answer the question fixed before evaluation. Exploratory analyses suggest new questions and must retain that label. Aggregation changes the weighting of evidence: a pooled average weights observations, whereas an average across datasets may weight each dataset equally. Neither weighting is automatically the right scientific target.",
+      "vi": "Kết quả nghiên cứu là tập hợp các phép so sánh, không phải con số đẹp nhất. Phân tích chính trả lời câu hỏi được chốt trước đánh giá. Phân tích khám phá gợi ý câu hỏi mới và phải giữ nhãn đó. Tổng hợp làm thay đổi trọng số bằng chứng: trung bình gộp đặt trọng số theo số quan sát, còn trung bình giữa bộ dữ liệu có thể coi mỗi bộ ngang nhau. Không cách nào tự động là mục tiêu khoa học đúng."
+    },
+    "diagram": {
+      "kind": "flow",
+      "title": {
+        "en": "Five decisions this week",
+        "vi": "Năm quyết định trong tuần"
+      },
+      "labels": [
+        {
+          "en": "Primary and exploratory evidence",
+          "vi": "Bằng chứng chính và khám phá"
+        },
+        {
+          "en": "Paired differences retain the comparison",
+          "vi": "Chênh lệch ghép cặp giữ đúng so sánh"
+        },
+        {
+          "en": "Explain weighting before pooling",
+          "vi": "Giải thích trọng số trước khi gộp"
+        },
+        {
+          "en": "Trace every figure to a result record",
+          "vi": "Truy từng hình về bản ghi kết quả"
+        },
+        {
+          "en": "Write a balanced synthesis",
+          "vi": "Viết tổng hợp cân bằng"
+        }
+      ],
+      "caption": {
+        "en": "Each node is a separate session; this map describes the work, not numerical evidence.",
+        "vi": "Mỗi nút là một buổi riêng; sơ đồ mô tả công việc, không phải bằng chứng định lượng."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Primary and exploratory evidence",
+          "vi": "Bằng chứng chính và khám phá"
+        },
+        "theory": {
+          "en": "A primary metric is chosen before looking at evaluation outcomes. Selecting the smallest error among many metrics after seeing results favors chance successes. An exploratory finding can still be valuable, but it needs fresh validation rather than being retroactively called the original hypothesis.",
+          "vi": "Thước đo chính được chọn trước khi xem kết quả đánh giá. Chọn sai số đẹp nhất trong nhiều thước đo sau khi xem sẽ ưu ái thành công do ngẫu nhiên. Kết quả khám phá vẫn có ích, nhưng cần kiểm chứng mới thay vì đổi tên thành giả thuyết ban đầu."
+        },
+        "workedExample": {
+          "en": "Protocol P1 names MAE as primary. Results: baseline MAE=2.0, model MAE=2.2; baseline MSE=9, model MSE=8. The primary comparison worsens by (2.2−2)/2=10%. MSE improves 11.1% but was not prespecified. Report both with their roles; the MSE result cannot rescue the failed primary claim.",
+          "vi": "Giao thức P1 chọn MAE làm chính. Kết quả: MAE đối chứng=2,0, mô hình=2,2; MSE đối chứng=9, mô hình=8. So sánh chính xấu đi (2,2−2)/2=10%. MSE tốt hơn 11,1% nhưng chưa được định trước. Báo cả hai đúng vai trò; MSE không biến kết luận chính thất bại thành thành công."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Recalculate both relative changes and name their denominators.",
+            "vi": "60 phút — Tính lại hai mức thay đổi, ghi rõ mẫu số."
+          },
+          {
+            "en": "60 min — Create a results table with a prespecified/exploratory column.",
+            "vi": "60 phút — Lập bảng kết quả có cột định trước/khám phá."
+          },
+          {
+            "en": "60 min — Solve the exercise and write one sentence for each metric.",
+            "vi": "60 phút — Giải bài và viết một câu cho mỗi thước đo."
+          },
+          {
+            "en": "60 min — Draft a protocol deviation log for the newly inspected MSE.",
+            "vi": "60 phút — Soạn nhật ký lệch giao thức cho MSE mới xem thêm."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "primary-and-exploratory-evidence",
+            "prompt": {
+              "en": "Primary RMSE changes from 3 to 3.3, exploratory MAE from 2 to 1.8. Which result answers the planned question? What should be reported?",
+              "vi": "RMSE chính đổi từ 3 lên 3,3, MAE khám phá từ 2 xuống 1,8. Kết quả nào trả lời câu hỏi định trước? Phải báo điều gì?"
+            },
+            "hint": {
+              "en": "Metric role comes from the protocol, not which sign is favorable.",
+              "vi": "Vai trò thước đo do giao thức quyết định, không do dấu có lợi."
+            },
+            "answer": {
+              "en": "Primary RMSE worsens 10%; that answers the planned comparison. Exploratory MAE improves 10%. Report both, identify the conflict and propose a fresh test of the MAE hypothesis. Changing the primary label after observing results conceals selection.",
+              "vi": "RMSE chính xấu hơn 10%, trả lời so sánh định trước. MAE khám phá tốt hơn 10%. Báo cả hai, nêu mâu thuẫn và đề xuất kiểm tra MAE trên mẫu mới. Đổi nhãn chính sau khi xem che giấu việc lựa chọn."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "primary-exploratory.csv and a two-sentence conclusion.",
+          "vi": "primary-exploratory.csv và kết luận hai câu."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Protocol before results",
+            "vi": "Giao thức trước kết quả"
+          },
+          "steps": [
+            {
+              "en": "P1: MAE is primary",
+              "vi": "P1: MAE là chính"
+            },
+            {
+              "en": "MAE: 2.0 → 2.2, worse",
+              "vi": "MAE: 2,0 → 2,2, xấu hơn"
+            },
+            {
+              "en": "MSE: 9 → 8, exploratory improvement",
+              "vi": "MSE: 9 → 8, cải thiện khám phá"
+            }
+          ],
+          "caption": {
+            "en": "MAE and MSE have different units, so they are not placed on a shared numeric axis.",
+            "vi": "MAE và MSE khác đơn vị, nên không đặt chung một trục số."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Paired differences retain the comparison",
+          "vi": "Chênh lệch ghép cặp giữ đúng so sánh"
+        },
+        "theory": {
+          "en": "Use the same evaluation rows for both methods. Define d_t=loss_A,t−loss_B,t; negative favors A. The mean difference is a sample summary. Its uncertainty depends on sample size and dependence, so four rows cannot justify a broad significance claim. Unpaired means can compare different environments instead of methods.",
+          "vi": "Dùng cùng hàng đánh giá cho hai phương pháp. Đặt d_t=loss_A,t−loss_B,t; âm có lợi cho A. Trung bình chênh lệch là tóm tắt mẫu. Bất định phụ thuộc cỡ mẫu và phụ thuộc thời gian, nên bốn hàng không đủ cho kết luận ý nghĩa rộng. Trung bình không ghép cặp có thể đang so môi trường khác nhau thay vì phương pháp."
+        },
+        "workedExample": {
+          "en": "A losses=[1,4,2,5], B=[2,3,3,6]. Paired differences=[−1,1,−1,−1], mean −0.5. A wins 3 of 4 rows, but loses row 2. Both mean loss and the full difference sequence belong in the result; a win count discards magnitude.",
+          "vi": "Sai số A=[1,4,2,5], B=[2,3,3,6]. Chênh lệch ghép=[−1,1,−1,−1], trung bình −0,5. A thắng 3/4 hàng nhưng thua hàng 2. Cần báo trung bình và cả chuỗi chênh lệch; số lần thắng bỏ qua độ lớn."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Check the paired differences row by row.",
+            "vi": "60 phút — Kiểm tra chênh lệch từng hàng."
+          },
+          {
+            "en": "60 min — Implement a join by row ID and reject missing partners.",
+            "vi": "60 phút — Ghép theo ID hàng và từ chối hàng thiếu đối tác."
+          },
+          {
+            "en": "60 min — Solve the exercise; contrast win count with mean difference.",
+            "vi": "60 phút — Giải bài, so số lần thắng với trung bình chênh lệch."
+          },
+          {
+            "en": "60 min — Write why an IID standard error may fail for serial losses.",
+            "vi": "60 phút — Giải thích vì sao sai số chuẩn IID có thể sai với chuỗi sai số."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "paired-differences-retain-the-comparison",
+            "prompt": {
+              "en": "A=[1,1,10], B=[2,2,2]. Compute win count and mean paired difference. Which method has smaller mean loss?",
+              "vi": "A=[1,1,10], B=[2,2,2]. Tính số lần thắng và trung bình chênh lệch. Phương pháp nào có sai số trung bình thấp hơn?"
+            },
+            "hint": {
+              "en": "The last difference is much larger than the first two.",
+              "vi": "Chênh lệch cuối lớn hơn nhiều hai chênh lệch đầu."
+            },
+            "answer": {
+              "en": "Differences=[−1,−1,8], mean=6/3=2. A wins 2/3 rows yet mean loss A=4 exceeds B=2. B wins the mean-loss comparison. The count and mean answer different questions; neither should be silently substituted for the other.",
+              "vi": "Chênh lệch=[−1,−1,8], trung bình=6/3=2. A thắng 2/3 hàng nhưng sai số trung bình A=4 lớn hơn B=2. B thắng theo sai số trung bình. Số lần thắng và trung bình trả lời hai câu hỏi khác nhau, không được âm thầm thay thế."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "paired-results.csv with a checked row-ID join.",
+          "vi": "paired-results.csv có ghép ID đã kiểm tra."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Example paired loss differences",
+            "vi": "Chênh lệch sai số ghép cặp trong ví dụ"
+          },
+          "xLabel": {
+            "en": "Case",
+            "vi": "Trường hợp"
+          },
+          "yLabel": {
+            "en": "Loss A − loss B",
+            "vi": "Sai số A − sai số B"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "Row 1",
+                "vi": "Hàng 1"
+              },
+              "value": -1
+            },
+            {
+              "label": {
+                "en": "Row 2",
+                "vi": "Hàng 2"
+              },
+              "value": 1
+            },
+            {
+              "label": {
+                "en": "Row 3",
+                "vi": "Hàng 3"
+              },
+              "value": -1
+            },
+            {
+              "label": {
+                "en": "Row 4",
+                "vi": "Hàng 4"
+              },
+              "value": -1
+            }
+          ],
+          "caption": {
+            "en": "Same four rows for both models; negative bars favor A.",
+            "vi": "Cùng bốn hàng cho hai mô hình; cột âm có lợi cho A."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Explain weighting before pooling",
+          "vi": "Giải thích trọng số trước khi gộp"
+        },
+        "theory": {
+          "en": "A pooled mean weights each observation equally. An unweighted mean of group means gives a small group the same influence as a large one. Choose the target first: the average evaluated row or the average environment? Report group counts so another reader can reconstruct your choice.",
+          "vi": "Trung bình gộp coi mỗi quan sát ngang nhau. Trung bình không trọng số của trung bình nhóm cho nhóm nhỏ ảnh hưởng bằng nhóm lớn. Chọn mục tiêu trước: hàng đánh giá trung bình hay môi trường trung bình? Báo số lượng từng nhóm để người khác dựng lại lựa chọn."
+        },
+        "workedExample": {
+          "en": "Environment X has n=90 and mean difference −1; Y has n=10 and mean difference +5. Pooled difference=(90·(−1)+10·5)/100=−0.4, favoring A. Equal-environment mean=(−1+5)/2=2, favoring B. This is a change of estimand, not an arithmetic contradiction.",
+          "vi": "Môi trường X có n=90, chênh lệch trung bình −1; Y có n=10, trung bình +5. Gộp=(90·(−1)+10·5)/100=−0,4, lợi cho A. Coi môi trường ngang nhau=(−1+5)/2=2, lợi cho B. Đây là đổi đại lượng mục tiêu, không phải mâu thuẫn số học."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Derive the weighted mean from total loss differences.",
+            "vi": "60 phút — Suy ra trung bình có trọng số từ tổng chênh lệch."
+          },
+          {
+            "en": "60 min — Make a two-row table preserving n and mean for X and Y.",
+            "vi": "60 phút — Lập bảng hai hàng giữ n và trung bình của X, Y."
+          },
+          {
+            "en": "60 min — Solve the exercise and draw both group means.",
+            "vi": "60 phút — Giải bài và vẽ hai trung bình nhóm."
+          },
+          {
+            "en": "60 min — Write which target fits equal importance across environments and why.",
+            "vi": "60 phút — Viết mục tiêu phù hợp khi các môi trường quan trọng ngang nhau, giải thích lý do."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "explain-weighting-before-pooling",
+            "prompt": {
+              "en": "Group means are −2 and +4 with counts 20 and 80. Compute pooled and equal-group means.",
+              "vi": "Hai trung bình nhóm là −2 và +4 với số lượng 20 và 80. Tính trung bình gộp và coi nhóm ngang nhau."
+            },
+            "hint": {
+              "en": "Weights are 0.2 and 0.8 for pooling, 0.5 and 0.5 for equal groups.",
+              "vi": "Trọng số gộp 0,2 và 0,8; ngang nhóm 0,5 và 0,5."
+            },
+            "answer": {
+              "en": "Pooled=0.2(−2)+0.8(4)=2.8. Equal-group=(−2+4)/2=1. Both favor B under d=A−B, with different effect sizes because they target different populations. The count of 80 gives group two more influence only in the pooled target.",
+              "vi": "Gộp=0,2(−2)+0,8(4)=2,8. Ngang nhóm=(−2+4)/2=1. Cả hai lợi cho B khi d=A−B, nhưng độ lớn khác vì mục tiêu quần thể khác. Nhóm 80 quan sát chỉ có ảnh hưởng nhiều hơn trong mục tiêu gộp."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "aggregation-policy.md stating the estimand and weights.",
+          "vi": "aggregation-policy.md nêu đại lượng mục tiêu và trọng số."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Same evidence, different summaries",
+            "vi": "Cùng bằng chứng, khác cách tóm tắt"
+          },
+          "xLabel": {
+            "en": "Case",
+            "vi": "Trường hợp"
+          },
+          "yLabel": {
+            "en": "Mean loss difference A − B",
+            "vi": "Chênh lệch sai số trung bình A − B"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "X (n=90)",
+                "vi": "X (n=90)"
+              },
+              "value": -1
+            },
+            {
+              "label": {
+                "en": "Y (n=10)",
+                "vi": "Y (n=10)"
+              },
+              "value": 5
+            },
+            {
+              "label": {
+                "en": "Pooled",
+                "vi": "Gộp"
+              },
+              "value": -0.4
+            },
+            {
+              "label": {
+                "en": "Equal groups",
+                "vi": "Ngang nhóm"
+              },
+              "value": 2
+            }
+          ],
+          "caption": {
+            "en": "All bars use the same loss units; the last two apply the stated weights.",
+            "vi": "Các cột cùng đơn vị sai số; hai cột cuối áp dụng trọng số đã nêu."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Trace every figure to a result record",
+          "vi": "Truy từng hình về bản ghi kết quả"
+        },
+        "theory": {
+          "en": "A result identifier links configuration, data version, code version and output. A filename such as final.csv is not enough because it can be overwritten. A manifest is a small table recording these links. A figure should cite the exact result IDs it uses; a mismatch is a reproducibility defect even when the picture looks plausible.",
+          "vi": "ID kết quả nối cấu hình, phiên bản dữ liệu, phiên bản mã và đầu ra. Tên final.csv chưa đủ vì có thể bị ghi đè. Manifest là bảng nhỏ lưu các mối nối này. Hình cần dẫn đúng ID kết quả đã dùng; sai nối là lỗi tái lập dù hình trông hợp lý."
+        },
+        "workedExample": {
+          "en": "Provided ledger: R1=(data D1, code C1, seed 7, MAE 2.0); R2=(D1,C2,7,1.8). Figure F1 claims to show C2 but its source column says R1. The numeric value 2.0 belongs to C1. Fix F1 to use R2 and 1.8, or change its label to C1; never simply relabel 2.0 as C2.",
+          "vi": "Sổ cho trước: R1=(dữ liệu D1, mã C1, seed 7, MAE 2,0); R2=(D1,C2,7,1,8). Hình F1 ghi C2 nhưng cột nguồn là R1. Số 2,0 thuộc C1. Sửa F1 dùng R2 và 1,8 hoặc đổi nhãn thành C1; không đổi nhãn 2,0 thành C2 mà giữ dữ liệu cũ."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Represent R1, R2 and F1 as JSON records.",
+            "vi": "60 phút — Biểu diễn R1, R2, F1 thành JSON."
+          },
+          {
+            "en": "60 min — Write a validator comparing the figure’s declared code with its source record.",
+            "vi": "60 phút — Viết kiểm tra mã khai báo của hình khớp bản ghi nguồn."
+          },
+          {
+            "en": "60 min — Solve the exercise and retain the incorrect figure in an audit folder.",
+            "vi": "60 phút — Giải bài, giữ hình sai trong thư mục kiểm toán."
+          },
+          {
+            "en": "60 min — Produce results-index.md listing configuration, inputs and outputs for each result.",
+            "vi": "60 phút — Tạo results-index.md ghi cấu hình, đầu vào, đầu ra từng kết quả."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "trace-every-figure-to-a-result-record",
+            "prompt": {
+              "en": "R3 uses D2,C2 and reports 1.6. A table compares R1 and R3 as a “code-only improvement.” Explain the confounding and give a valid next experiment.",
+              "vi": "R3 dùng D2,C2 và báo 1,6. Bảng so R1 với R3 gọi là “cải thiện chỉ do mã”. Giải thích nhiễu và đề xuất thí nghiệm hợp lệ."
+            },
+            "hint": {
+              "en": "Both data and code changed between R1 and R3.",
+              "vi": "Cả dữ liệu lẫn mã đổi giữa R1 và R3."
+            },
+            "answer": {
+              "en": "R1→R3 changes D1→D2 and C1→C2, so the 0.4 reduction cannot be assigned to code alone. Run C1 and C2 on the same frozen D2 with identical evaluation rules, or use the existing R1/R2 comparison on D1. A controlled comparison holds the other inputs fixed.",
+              "vi": "R1→R3 đổi D1→D2 và C1→C2 nên không quy mức giảm 0,4 riêng cho mã. Chạy C1, C2 trên cùng D2 đóng băng với quy tắc đánh giá giống nhau, hoặc dùng R1/R2 trên D1. So sánh có kiểm soát giữ cố định các đầu vào khác."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "results-index.md and one manifest consistency test.",
+          "vi": "results-index.md và một kiểm thử tính nhất quán manifest."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Correct provenance for F1",
+            "vi": "Nguồn đúng cho F1"
+          },
+          "steps": [
+            {
+              "en": "D1 + C2 + seed 7",
+              "vi": "D1 + C2 + seed 7"
+            },
+            {
+              "en": "Result R2: MAE 1.8",
+              "vi": "Kết quả R2: MAE 1,8"
+            },
+            {
+              "en": "Figure F1: source R2, label C2",
+              "vi": "Hình F1: nguồn R2, nhãn C2"
+            }
+          ],
+          "caption": {
+            "en": "Arrows mean “generated from”; identifiers are synthetic teaching labels.",
+            "vi": "Mũi tên nghĩa là “được tạo từ”; ID là nhãn giả định phục vụ học."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Write a balanced synthesis",
+          "vi": "Viết tổng hợp cân bằng"
+        },
+        "theory": {
+          "en": "A synthesis explains what evidence jointly supports and challenges a hypothesis. A negative result may narrow the domain where a method is useful. Avoid treating “no clear evidence” as proof of exact equality. Distinguish measured outcomes from explanations that remain hypotheses.",
+          "vi": "Tổng hợp giải thích bằng chứng nào ủng hộ và thách thức giả thuyết. Kết quả âm có thể thu hẹp miền phương pháp hữu ích. Đừng biến “chưa có bằng chứng rõ” thành chứng minh bằng nhau tuyệt đối. Tách kết quả đã đo khỏi cách giải thích còn là giả thuyết."
+        },
+        "workedExample": {
+          "en": "Supplied summaries: stable regime difference −0.3; shift regime +0.4; pooled −0.05 with interval [−0.2,0.1], where d=A−B. A supported synthesis says A improves sample loss in the stable regime but worsens after shifts; pooled uncertainty spans zero. “A universally wins” is contradicted. “Adaptation delay explains the loss” is only a hypothesis until delay is measured.",
+          "vi": "Tóm tắt cho trước: chế độ ổn định chênh lệch −0,3; chế độ đổi +0,4; gộp −0,05 với khoảng [−0,2;0,1], d=A−B. Tổng hợp phù hợp: A giảm sai số mẫu khi ổn định nhưng tăng sau thay đổi; khoảng bất định gộp chứa 0. “A luôn thắng” bị bác bỏ. “Độ trễ thích nghi gây thua” chỉ là giả thuyết cho tới khi đo độ trễ."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Separate each supplied statement into observation or explanation.",
+            "vi": "60 phút — Phân loại từng phát biểu thành quan sát hay giải thích."
+          },
+          {
+            "en": "60 min — Write one supporting and one challenging paragraph with exact numbers.",
+            "vi": "60 phút — Viết một đoạn ủng hộ và một đoạn thách thức có số cụ thể."
+          },
+          {
+            "en": "60 min — Solve the exercise without converting an interval into a probability about the hypothesis.",
+            "vi": "60 phút — Giải bài, không đổi khoảng tin cậy thành xác suất của giả thuyết."
+          },
+          {
+            "en": "60 min — Assemble results-synthesis.md with primary, subgroup and negative findings.",
+            "vi": "60 phút — Tạo results-synthesis.md gồm kết quả chính, nhóm con và kết quả âm."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "write-a-balanced-synthesis",
+            "prompt": {
+              "en": "A pooled difference is −0.1 with interval [−0.4,0.2]. Rewrite “The methods are identical” and propose one informative next measurement.",
+              "vi": "Chênh lệch gộp −0,1 với khoảng [−0,4;0,2]. Sửa câu “Hai phương pháp giống hệt” và đề xuất một phép đo tiếp theo hữu ích."
+            },
+            "hint": {
+              "en": "The interval includes both improvements and deteriorations of practical size.",
+              "vi": "Khoảng chứa cả cải thiện và suy giảm có độ lớn đáng kể."
+            },
+            "answer": {
+              "en": "“This estimate is imprecise: the interval includes zero and effects in both directions, so exact equality is not established.” A useful next measurement is prespecified regime-specific loss with enough independent evaluation blocks, which can reveal whether opposite regime effects cancel. More data alone does not repair a biased evaluation.",
+              "vi": "“Ước lượng còn thiếu chính xác: khoảng chứa 0 và tác động hai hướng, nên chưa chứng minh bằng nhau tuyệt đối.” Có thể đo sai số theo chế độ được định trước trên đủ khối đánh giá độc lập để xem hai hướng có triệt tiêu nhau không. Thêm dữ liệu tự nó không sửa đánh giá bị lệch."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "results-synthesis.md including the strongest negative finding.",
+          "vi": "results-synthesis.md có kết quả âm mạnh nhất."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "The two supplied regime effects",
+            "vi": "Hai hiệu ứng chế độ đã cho"
+          },
+          "xLabel": {
+            "en": "Case",
+            "vi": "Trường hợp"
+          },
+          "yLabel": {
+            "en": "Mean loss difference A − B",
+            "vi": "Chênh lệch sai số trung bình A − B"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "Stable",
+                "vi": "Ổn định"
+              },
+              "value": -0.3
+            },
+            {
+              "label": {
+                "en": "Shift",
+                "vi": "Thay đổi"
+              },
+              "value": 0.4
+            }
+          ],
+          "caption": {
+            "en": "Point estimates only; no subgroup uncertainty was supplied, so none is invented.",
+            "vi": "Chỉ là ước lượng điểm; đề không cho bất định nhóm con nên không tự vẽ thêm."
+          }
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 96,
+    "title": {
+      "en": "Build an auditable manuscript",
+      "vi": "Viết bản thảo có thể kiểm chứng"
+    },
+    "prerequisites": {
+      "en": "Read a results table, compute a mean and a percentage, and distinguish a prediction from its later outcome. All data required today are provided below.",
+      "vi": "Biết đọc bảng kết quả, tính trung bình và phần trăm, phân biệt dự báo với kết quả xuất hiện sau đó. Toàn bộ dữ liệu cần dùng được cung cấp bên dưới."
+    },
+    "objectives": [
+      {
+        "en": "Make claims that a reader can trace to the supplied evidence.",
+        "vi": "Viết kết luận mà người đọc có thể đối chiếu với bằng chứng đã cho."
+      },
+      {
+        "en": "Explain the reason for each decision and record what remains unknown.",
+        "vi": "Giải thích lý do của từng quyết định và ghi rõ điều chưa biết."
+      }
+    ],
+    "foundations": {
+      "en": "A manuscript connects a question to evidence through an explicit method. Its abstract is a compressed argument, not an advertisement. Methods let a reader reconstruct the experiment; results report what happened; discussion explains what it may mean. A quantitative sentence should have an identifiable source, unit and population. This week uses a small fictional study so every editing decision can be practiced without opening another document.",
+      "vi": "Bản thảo nối câu hỏi với bằng chứng qua phương pháp rõ ràng. Tóm tắt là lập luận nén, không phải quảng cáo. Phương pháp giúp dựng lại thí nghiệm; kết quả báo chuyện đã xảy ra; thảo luận giải thích ý nghĩa có thể có. Mỗi câu định lượng cần nguồn, đơn vị và quần thể xác định. Tuần này dùng nghiên cứu giả định nhỏ, nên mọi quyết định biên tập đều thực hành được ngay trong bài."
+    },
+    "diagram": {
+      "kind": "flow",
+      "title": {
+        "en": "Five decisions this week",
+        "vi": "Năm quyết định trong tuần"
+      },
+      "labels": [
+        {
+          "en": "Question, estimand, contribution",
+          "vi": "Câu hỏi, đại lượng mục tiêu, đóng góp"
+        },
+        {
+          "en": "Methods as executable instructions",
+          "vi": "Phương pháp như hướng dẫn thực thi"
+        },
+        {
+          "en": "Results text must agree with tables",
+          "vi": "Văn bản kết quả phải khớp bảng"
+        },
+        {
+          "en": "Related work without overstating novelty",
+          "vi": "Đối chiếu công trình trước, không phóng đại mới lạ"
+        },
+        {
+          "en": "An abstract with evidence and limits",
+          "vi": "Tóm tắt có bằng chứng và giới hạn"
+        }
+      ],
+      "caption": {
+        "en": "Each node is a separate session; this map describes the work, not numerical evidence.",
+        "vi": "Mỗi nút là một buổi riêng; sơ đồ mô tả công việc, không phải bằng chứng định lượng."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Question, estimand, contribution",
+          "vi": "Câu hỏi, đại lượng mục tiêu, đóng góp"
+        },
+        "theory": {
+          "en": "A research question must identify what varies and what is measured. An estimand is the precise quantity you want to learn, such as expected paired loss difference after a shift. A contribution states what your work adds: a new method, a controlled comparison, a counterexample or a reproducible negative result. New code alone is not automatically a new scientific method.",
+          "vi": "Câu hỏi nghiên cứu cần chỉ rõ thứ thay đổi và thứ được đo. Đại lượng mục tiêu là thứ chính xác muốn biết, chẳng hạn kỳ vọng chênh lệch sai số ghép cặp sau thay đổi. Đóng góp nói công trình thêm gì: phương pháp mới, so sánh có kiểm soát, phản ví dụ hoặc kết quả âm tái lập được. Mã mới không tự động là phương pháp khoa học mới."
+        },
+        "workedExample": {
+          "en": "Fictional study compares fixed step size η=0.1 with η=0.5 on 20 generated mean-shift streams. Question: does the faster update reduce average squared forecast loss in the first 10 post-shift steps? Estimand: mean over streams of that 10-step paired loss difference. Contribution: a controlled sensitivity study, not a universal forecasting theorem.",
+          "vi": "Nghiên cứu giả định so bước η=0,1 với η=0,5 trên 20 chuỗi sinh có đổi trung bình. Câu hỏi: cập nhật nhanh hơn có giảm sai số bình phương dự báo trong 10 bước đầu sau đổi không? Đại lượng mục tiêu: trung bình giữa các chuỗi của chênh lệch ghép cặp trong 10 bước đó. Đóng góp: nghiên cứu độ nhạy có kiểm soát, không phải định lý dự báo phổ quát."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Write the population, intervention, comparator and outcome as four fields.",
+            "vi": "60 phút — Viết bốn trường: quần thể, can thiệp, đối chứng, kết quả."
+          },
+          {
+            "en": "60 min — Express the estimand as a mean over 20 stream-level differences.",
+            "vi": "60 phút — Viết đại lượng mục tiêu dưới dạng trung bình 20 chênh lệch cấp chuỗi."
+          },
+          {
+            "en": "60 min — Solve the exercise and remove any unsupported novelty claim.",
+            "vi": "60 phút — Giải bài, bỏ tuyên bố mới lạ không có căn cứ."
+          },
+          {
+            "en": "60 min — Draft a 200-word introduction ending in one precise research question.",
+            "vi": "60 phút — Soạn mở đầu 200 từ kết bằng một câu hỏi nghiên cứu chính xác."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "question-estimand-contribution",
+            "prompt": {
+              "en": "A study reimplements an existing online mean update and evaluates two step sizes on synthetic streams. Rewrite “We invent a new intelligent forecasting algorithm.”",
+              "vi": "Nghiên cứu cài lại cập nhật trung bình trực tuyến có sẵn và đánh giá hai bước học trên chuỗi giả lập. Sửa câu “Chúng tôi phát minh thuật toán dự báo thông minh mới”."
+            },
+            "hint": {
+              "en": "Describe the controlled comparison that was actually performed.",
+              "vi": "Mô tả đúng phép so sánh có kiểm soát đã làm."
+            },
+            "answer": {
+              "en": "“We provide a reproducible comparison of two step sizes for an existing online mean update under specified synthetic shifts.” This credits the existing method and locates the contribution in evaluation. Claiming algorithmic invention would require a genuinely new method and a documented comparison with prior work.",
+              "vi": "“Chúng tôi cung cấp so sánh tái lập được giữa hai bước học của cập nhật trung bình trực tuyến có sẵn dưới các thay đổi giả lập xác định.” Câu này ghi nhận phương pháp có trước và đặt đóng góp ở đánh giá. Tuyên bố phát minh thuật toán cần phương pháp thật sự mới và đối chiếu công trình trước."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "introduction.md with a bounded contribution statement.",
+          "vi": "introduction.md có phát biểu đóng góp đúng phạm vi."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Question becomes a measurable target",
+            "vi": "Câu hỏi thành mục tiêu đo được"
+          },
+          "steps": [
+            {
+              "en": "Compare η=0.5 against η=0.1",
+              "vi": "So η=0,5 với η=0,1"
+            },
+            {
+              "en": "Score first 10 post-shift forecasts per stream",
+              "vi": "Chấm 10 dự báo đầu sau đổi của mỗi chuỗi"
+            },
+            {
+              "en": "Average 20 paired stream differences",
+              "vi": "Lấy trung bình 20 chênh lệch ghép cấp chuỗi"
+            }
+          ],
+          "caption": {
+            "en": "The stream, not each correlated time step, is the aggregation unit here.",
+            "vi": "Đơn vị tổng hợp ở đây là chuỗi, không phải từng bước thời gian có tương quan."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Methods as executable instructions",
+          "vi": "Phương pháp như hướng dẫn thực thi"
+        },
+        "theory": {
+          "en": "A method description must fix data generation, information order, initialization, update rule and scoring. “We used online learning” leaves many incompatible implementations. Pseudocode should make clear whether a target is scored before or after updating. The wrong order can create a deceptively small loss.",
+          "vi": "Mô tả phương pháp phải chốt cách sinh dữ liệu, thứ tự thông tin, khởi tạo, quy tắc cập nhật và cách chấm. “Dùng học trực tuyến” còn cho phép nhiều cài đặt khác nhau. Mã giả cần rõ chấm mục tiêu trước hay sau cập nhật. Sai thứ tự có thể tạo sai số nhỏ giả tạo."
+        },
+        "workedExample": {
+          "en": "Let θ₀=0, η=0.5, targets [2,2]. At t=1 predict 0, record loss 4, then update θ₁=1. At t=2 predict 1, record loss 1, then update θ₂=1.5. Mean loss=2.5. Scoring after updating would report losses 1 and 0.25, mean 0.625, but these are fitted errors using the target being scored.",
+          "vi": "Cho θ₀=0, η=0,5, mục tiêu [2,2]. Tại t=1 dự báo 0, ghi sai số 4 rồi cập nhật θ₁=1. Tại t=2 dự báo 1, ghi sai số 1 rồi cập nhật θ₂=1,5. Sai số trung bình=2,5. Chấm sau cập nhật sẽ báo 1 và 0,25, trung bình 0,625, nhưng đó là sai số khớp đã dùng chính mục tiêu đang chấm."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Reproduce the four values: prediction, target, loss and updated state.",
+            "vi": "60 phút — Dựng lại bốn giá trị: dự báo, mục tiêu, sai số, trạng thái mới."
+          },
+          {
+            "en": "60 min — Write six-line pseudocode with an immutable forecast log.",
+            "vi": "60 phút — Viết mã giả sáu dòng với nhật ký dự báo không sửa lại."
+          },
+          {
+            "en": "60 min — Solve the exercise and test a deliberately wrong update-first implementation.",
+            "vi": "60 phút — Giải bài, kiểm thử cài đặt cố ý sai là cập nhật trước."
+          },
+          {
+            "en": "60 min — Write methods.md including initialization, units and scoring order.",
+            "vi": "60 phút — Viết methods.md có khởi tạo, đơn vị và thứ tự chấm."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "methods-as-executable-instructions",
+            "prompt": {
+              "en": "Use θ₀=1, η=0.5 and targets [3,1]. Compute forecast-time losses and the final state.",
+              "vi": "Dùng θ₀=1, η=0,5, mục tiêu [3,1]. Tính sai số lúc dự báo và trạng thái cuối."
+            },
+            "hint": {
+              "en": "Each prediction is the state before the current target update.",
+              "vi": "Mỗi dự báo là trạng thái trước khi cập nhật bằng mục tiêu hiện tại."
+            },
+            "answer": {
+              "en": "Predict 1 for target 3: loss 4, update to 2. Predict 2 for target 1: loss 1, update to 1.5. Mean loss=(4+1)/2=2.5. Final state 1.5 is available only after both outcomes, so it cannot replace either historical forecast.",
+              "vi": "Dự báo 1 cho mục tiêu 3: sai số 4, cập nhật thành 2. Dự báo 2 cho mục tiêu 1: sai số 1, cập nhật thành 1,5. Trung bình=(4+1)/2=2,5. Trạng thái cuối 1,5 chỉ có sau cả hai kết quả, không được thay dự báo lịch sử."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "methods.md and an order-of-operations test.",
+          "vi": "methods.md và kiểm thử thứ tự thao tác."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Correct online loop",
+            "vi": "Vòng lặp trực tuyến đúng"
+          },
+          "steps": [
+            {
+              "en": "State 0 → predict 0",
+              "vi": "Trạng thái 0 → dự báo 0"
+            },
+            {
+              "en": "Reveal 2 → loss 4 → update state 1",
+              "vi": "Thấy 2 → sai số 4 → trạng thái mới 1"
+            },
+            {
+              "en": "Predict 1 → reveal 2 → loss 1",
+              "vi": "Dự báo 1 → thấy 2 → sai số 1"
+            },
+            {
+              "en": "Update state 1.5; mean loss 2.5",
+              "vi": "Trạng thái mới 1,5; sai số trung bình 2,5"
+            }
+          ],
+          "caption": {
+            "en": "These nodes reproduce exactly the two-target example.",
+            "vi": "Các nút dựng lại chính xác ví dụ hai mục tiêu."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Results text must agree with tables",
+          "vi": "Văn bản kết quả phải khớp bảng"
+        },
+        "theory": {
+          "en": "A percentage reduction needs an explicit denominator. Absolute change and relative change use different units: loss falls from 5 to 4 by 1 loss unit, or 20% of the baseline. Round only after calculating. A table’s sample count and metric must accompany comparisons so unlike quantities are not silently combined.",
+          "vi": "Mức giảm phần trăm cần mẫu số rõ. Thay đổi tuyệt đối và tương đối khác đơn vị: sai số từ 5 xuống 4 là giảm 1 đơn vị sai số hoặc 20% so với đối chứng. Chỉ làm tròn sau tính toán. Phải kèm số mẫu và thước đo để không âm thầm ghép đại lượng khác nhau."
+        },
+        "workedExample": {
+          "en": "Supplied table: baseline MSE 1.25, model MSE 1.10, n=200. Absolute reduction=0.15 target-units². Relative reduction=0.15/1.25=12%. Draft text “15% lower MAE on 250 samples” has three errors: percentage, metric and count. Correct all three, and do not invent an uncertainty interval.",
+          "vi": "Bảng cho trước: MSE đối chứng 1,25, mô hình 1,10, n=200. Giảm tuyệt đối=0,15 đơn vị mục tiêu². Giảm tương đối=0,15/1,25=12%. Câu nháp “MAE thấp hơn 15% trên 250 mẫu” sai ba chỗ: phần trăm, thước đo, số mẫu. Sửa cả ba, không tự bịa khoảng bất định."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Find and explain the three inconsistencies.",
+            "vi": "60 phút — Tìm và giải thích ba chỗ không nhất quán."
+          },
+          {
+            "en": "60 min — Generate a results sentence directly from a JSON table.",
+            "vi": "60 phút — Tạo câu kết quả trực tiếp từ bảng JSON."
+          },
+          {
+            "en": "60 min — Solve the percentage exercise with full precision before rounding.",
+            "vi": "60 phút — Giải bài phần trăm bằng độ chính xác đầy đủ rồi mới làm tròn."
+          },
+          {
+            "en": "60 min — Audit every numeric sentence in the short methods/results draft.",
+            "vi": "60 phút — Kiểm toán mọi câu có số trong bản nháp phương pháp/kết quả."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "results-text-must-agree-with-tables",
+            "prompt": {
+              "en": "Baseline MAE=0.8, model MAE=0.7 on 80 forecasts. Report absolute and relative reduction, including units and scope.",
+              "vi": "MAE đối chứng=0,8, mô hình=0,7 trên 80 dự báo. Báo giảm tuyệt đối, tương đối, đơn vị và phạm vi."
+            },
+            "hint": {
+              "en": "Use 0.8, not 0.7, as the reference denominator.",
+              "vi": "Dùng 0,8 làm mẫu số tham chiếu, không phải 0,7."
+            },
+            "answer": {
+              "en": "Absolute reduction=0.1 target unit. Relative reduction=0.1/0.8=0.125=12.5%. “On these 80 forecasts, sample MAE fell from 0.8 to 0.7.” No uncertainty or out-of-sample generalization beyond the stated evaluation is supplied.",
+              "vi": "Giảm tuyệt đối=0,1 đơn vị mục tiêu. Tương đối=0,1/0,8=0,125=12,5%. “Trên 80 dự báo này, MAE mẫu giảm từ 0,8 xuống 0,7.” Chưa có thông tin bất định hay khả năng khái quát ngoài phép đánh giá đã nêu."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "results.md generated from a checked results table.",
+          "vi": "results.md được tạo từ bảng kết quả đã kiểm tra."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Table values, without invented error bars",
+            "vi": "Giá trị trong bảng, không bịa thanh sai số"
+          },
+          "xLabel": {
+            "en": "Case",
+            "vi": "Trường hợp"
+          },
+          "yLabel": {
+            "en": "MSE (target units squared)",
+            "vi": "MSE (bình phương đơn vị mục tiêu)"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "Baseline",
+                "vi": "Đối chứng"
+              },
+              "value": 1.25
+            },
+            {
+              "label": {
+                "en": "Model",
+                "vi": "Mô hình"
+              },
+              "value": 1.1
+            }
+          ],
+          "caption": {
+            "en": "Both bars summarize the same 200 forecasts; reduction is 12%.",
+            "vi": "Hai cột tóm tắt cùng 200 dự báo; mức giảm là 12%."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Related work without overstating novelty",
+          "vi": "Đối chiếu công trình trước, không phóng đại mới lạ"
+        },
+        "theory": {
+          "en": "Related work compares assumptions, methods and evidence, not just titles. A fair comparison describes what a previous result actually claims. A paper that proves a bound under bounded gradients is not refuted by an experiment with unbounded noise; the settings differ. The cards below are fictional summaries, so no external reading is required.",
+          "vi": "Đối chiếu công trình trước cần so giả định, phương pháp, bằng chứng, không chỉ tiêu đề. So sánh công bằng nêu đúng kết luận trước đó. Định lý dưới gradient bị chặn không bị bác bỏ bởi thí nghiệm có nhiễu không bị chặn; hai bối cảnh khác nhau. Các thẻ dưới đây là tóm tắt giả định nên không cần đọc ngoài."
+        },
+        "workedExample": {
+          "en": "Card A: projected gradient, bounded gradients, worst-case regret theorem, no experiments. Card B: unprojected update, Gaussian observations, synthetic empirical MSE, no theorem. Our study: two step sizes, Gaussian mean shifts, empirical MSE. It is closest to B in evidence type; it cannot claim to improve A’s theorem unless it proves a comparable bound under stated assumptions.",
+          "vi": "Thẻ A: gradient có phép chiếu, gradient bị chặn, định lý regret trường hợp xấu nhất, không thí nghiệm. Thẻ B: cập nhật không chiếu, quan sát Gaussian, MSE thực nghiệm giả lập, không định lý. Nghiên cứu ta: hai bước học, đổi trung bình Gaussian, MSE thực nghiệm. Gần B về kiểu bằng chứng; không thể nói cải tiến định lý A nếu chưa chứng minh cận so sánh được dưới giả định rõ."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Build a three-row assumption/method/evidence table from the cards.",
+            "vi": "60 phút — Lập bảng ba hàng giả định/phương pháp/bằng chứng từ các thẻ."
+          },
+          {
+            "en": "60 min — Write one accurate contrast with A and one with B.",
+            "vi": "60 phút — Viết một đối chiếu chính xác với A và một với B."
+          },
+          {
+            "en": "60 min — Solve the exercise and identify the unsupported theorem claim.",
+            "vi": "60 phút — Giải bài và tìm tuyên bố định lý thiếu căn cứ."
+          },
+          {
+            "en": "60 min — Draft related-work.md using the fictional cards as practice placeholders.",
+            "vi": "60 phút — Soạn related-work.md dùng thẻ giả định làm chỗ thực hành."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "related-work-without-overstating-novelty",
+            "prompt": {
+              "en": "Card C proves a bound for convex losses. Your code tests a nonconvex neural model and gets lower MSE. Can you state that C’s bound is improved?",
+              "vi": "Thẻ C chứng minh cận cho hàm mất mát lồi. Mã của bạn thử mạng phi lồi và có MSE thấp hơn. Có thể nói đã cải thiện cận C không?"
+            },
+            "hint": {
+              "en": "An empirical error and a theorem’s upper bound are different objects.",
+              "vi": "Sai số thực nghiệm và cận trên của định lý là hai đối tượng khác nhau."
+            },
+            "answer": {
+              "en": "No. The experiment has different assumptions and reports an empirical metric, not a tighter theorem. State the measured MSE comparison in its own setting. Improving C’s bound requires a proof with comparable assumptions and a clear inequality showing the improvement.",
+              "vi": "Không. Thí nghiệm khác giả định và báo thước đo thực nghiệm, không phải định lý chặt hơn. Nêu so sánh MSE đã đo trong bối cảnh riêng. Cải thiện cận C cần chứng minh với giả định so sánh được và bất đẳng thức thể hiện phần cải thiện."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "related-work.md with explicit assumption boundaries.",
+          "vi": "related-work.md có ranh giới giả định rõ ràng."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Three dimensions of comparison",
+            "vi": "Ba chiều đối chiếu"
+          },
+          "steps": [
+            {
+              "en": "A: bounded gradients → regret theorem",
+              "vi": "A: gradient bị chặn → định lý regret"
+            },
+            {
+              "en": "B: Gaussian data → empirical MSE",
+              "vi": "B: dữ liệu Gaussian → MSE thực nghiệm"
+            },
+            {
+              "en": "Ours: Gaussian shifts → step-size comparison",
+              "vi": "Ta: đổi Gaussian → so bước học"
+            }
+          ],
+          "caption": {
+            "en": "The diagram organizes supplied cards; it does not rank fictional papers.",
+            "vi": "Sơ đồ tổ chức thẻ đã cho, không xếp hạng các bài giả định."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "An abstract with evidence and limits",
+          "vi": "Tóm tắt có bằng chứng và giới hạn"
+        },
+        "theory": {
+          "en": "A useful abstract has four moves: question, method, principal result and boundary. Space is limited, so choose the primary result rather than listing every experiment. Limitations should alter the interpretation: synthetic-only evidence is a real scope restriction; “more work is needed” says little.",
+          "vi": "Tóm tắt hữu ích có bốn bước: câu hỏi, phương pháp, kết quả chính, giới hạn. Dung lượng ngắn nên chọn kết quả chính thay vì kể mọi thí nghiệm. Hạn chế phải tác động đến diễn giải: chỉ có bằng chứng giả lập là giới hạn thật; “cần nghiên cứu thêm” nói rất ít."
+        },
+        "workedExample": {
+          "en": "Record: 20 synthetic streams, two step sizes, first 10 post-shift steps, mean difference −0.2 MSE units with interval [−0.35,−0.05]; no market data. Abstract skeleton: ask about faster adaptation; describe paired stream evaluation; report the estimate and interval; limit the conclusion to this generator and horizon. Do not add profitability or universal optimality.",
+          "vi": "Bản ghi: 20 chuỗi giả lập, hai bước học, 10 bước đầu sau đổi, chênh lệch −0,2 đơn vị MSE với khoảng [−0,35;−0,05]; không có dữ liệu thị trường. Khung tóm tắt: hỏi về thích nghi nhanh; mô tả đánh giá ghép cấp chuỗi; báo ước lượng và khoảng; giới hạn vào bộ sinh và chân trời này. Không thêm lợi nhuận hay tối ưu phổ quát."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Write one sentence for each of the four abstract moves.",
+            "vi": "60 phút — Viết một câu cho mỗi bước của tóm tắt."
+          },
+          {
+            "en": "60 min — Check every abstract number against the supplied record.",
+            "vi": "60 phút — So mọi số trong tóm tắt với bản ghi."
+          },
+          {
+            "en": "60 min — Solve the exercise, keeping the negative result visible.",
+            "vi": "60 phút — Giải bài, giữ kết quả âm hiện rõ."
+          },
+          {
+            "en": "60 min — Assemble manuscript-v1.md from introduction, methods, results and limits.",
+            "vi": "60 phút — Ghép manuscript-v1.md từ mở đầu, phương pháp, kết quả, giới hạn."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "an-abstract-with-evidence-and-limits",
+            "prompt": {
+              "en": "Given 10 streams and difference +0.3 with interval [0.1,0.5], write a results-and-limits sentence under d=fast−slow.",
+              "vi": "Cho 10 chuỗi và chênh lệch +0,3 với khoảng [0,1;0,5], viết câu kết quả và giới hạn khi d=nhanh−chậm."
+            },
+            "hint": {
+              "en": "A positive loss difference means the fast method is worse.",
+              "vi": "Chênh lệch sai số dương nghĩa là phương pháp nhanh tệ hơn."
+            },
+            "answer": {
+              "en": "“Across 10 synthetic streams, the fast update had 0.3 higher mean loss than the slow update, with supplied interval [0.1,0.5]; the conclusion applies to this generator and evaluation horizon.” This reports the unfavorable finding rather than redefining the target after evaluation.",
+              "vi": "“Trên 10 chuỗi giả lập, cập nhật nhanh có sai số trung bình cao hơn cập nhật chậm 0,3, với khoảng đã cho [0,1;0,5]; kết luận giới hạn ở bộ sinh và chân trời đánh giá này.” Câu báo kết quả bất lợi thay vì đổi mục tiêu sau đánh giá."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "manuscript-v1.md with a claim-audited abstract.",
+          "vi": "manuscript-v1.md có tóm tắt đã kiểm tra từng kết luận."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Four-sentence abstract plan",
+            "vi": "Kế hoạch tóm tắt bốn câu"
+          },
+          "steps": [
+            {
+              "en": "Question: faster post-shift adaptation?",
+              "vi": "Câu hỏi: thích nghi sau đổi nhanh hơn?"
+            },
+            {
+              "en": "Method: 20 paired synthetic streams",
+              "vi": "Phương pháp: 20 chuỗi giả lập ghép cặp"
+            },
+            {
+              "en": "Result: difference −0.2, interval [−0.35,−0.05]",
+              "vi": "Kết quả: −0,2, khoảng [−0,35;−0,05]"
+            },
+            {
+              "en": "Scope: this generator and first 10 steps",
+              "vi": "Phạm vi: bộ sinh này và 10 bước đầu"
+            }
+          ],
+          "caption": {
+            "en": "Every number comes from the supplied record; the interval is not recomputed from absent raw data.",
+            "vi": "Mọi số lấy từ bản ghi; không tính lại khoảng từ dữ liệu thô chưa được cung cấp."
+          }
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 97,
+    "title": {
+      "en": "Adversarial methodological review",
+      "vi": "Phản biện phương pháp nghiêm khắc"
+    },
+    "prerequisites": {
+      "en": "Read a results table, compute a mean and a percentage, and distinguish a prediction from its later outcome. All data required today are provided below.",
+      "vi": "Biết đọc bảng kết quả, tính trung bình và phần trăm, phân biệt dự báo với kết quả xuất hiện sau đó. Toàn bộ dữ liệu cần dùng được cung cấp bên dưới."
+    },
+    "objectives": [
+      {
+        "en": "Make claims that a reader can trace to the supplied evidence.",
+        "vi": "Viết kết luận mà người đọc có thể đối chiếu với bằng chứng đã cho."
+      },
+      {
+        "en": "Explain the reason for each decision and record what remains unknown.",
+        "vi": "Giải thích lý do của từng quyết định và ghi rõ điều chưa biết."
+      }
+    ],
+    "foundations": {
+      "en": "A methodological review tries to find alternative explanations for a result. It is not an attack on the author. Separate validity defects, which can invalidate a comparison, from clarity defects, which make a valid comparison hard to inspect. A useful review includes a reproducible counterexample and a specific repair. This week provides all review cases and expected inputs so no outside reviewer is required.",
+      "vi": "Phản biện phương pháp tìm cách giải thích khác cho kết quả, không công kích tác giả. Tách lỗi tính hợp lệ có thể làm hỏng so sánh khỏi lỗi diễn đạt khiến so sánh đúng khó kiểm tra. Phản biện hữu ích có phản ví dụ tái lập được và cách sửa cụ thể. Tuần này cung cấp đủ tình huống phản biện và đầu vào, không bắt buộc người đánh giá bên ngoài."
+    },
+    "diagram": {
+      "kind": "flow",
+      "title": {
+        "en": "Five decisions this week",
+        "vi": "Năm quyết định trong tuần"
+      },
+      "labels": [
+        {
+          "en": "Audit feature availability",
+          "vi": "Kiểm tra lúc đặc trưng có sẵn"
+        },
+        {
+          "en": "Challenge a weak baseline",
+          "vi": "Thách thức đối chứng yếu"
+        },
+        {
+          "en": "Selection can manufacture a winner",
+          "vi": "Lựa chọn có thể tạo người thắng giả"
+        },
+        {
+          "en": "A metric implementation can change the answer",
+          "vi": "Cài đặt thước đo có thể đổi đáp án"
+        },
+        {
+          "en": "Prioritize review findings",
+          "vi": "Ưu tiên phát hiện phản biện"
+        }
+      ],
+      "caption": {
+        "en": "Each node is a separate session; this map describes the work, not numerical evidence.",
+        "vi": "Mỗi nút là một buổi riêng; sơ đồ mô tả công việc, không phải bằng chứng định lượng."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Audit feature availability",
+          "vi": "Kiểm tra lúc đặc trưng có sẵn"
+        },
+        "theory": {
+          "en": "A timestamp saying which period a value describes is not necessarily its publication time. A forecast may use a feature only if the feature was actually available before the decision. Revised historical data can also leak later knowledge. Record event time, release time and decision time separately.",
+          "vi": "Mốc thời gian cho biết giá trị mô tả kỳ nào chưa chắc là lúc công bố. Dự báo chỉ được dùng đặc trưng thực sự có trước quyết định. Dữ liệu lịch sử đã sửa cũng có thể lộ thông tin tương lai. Ghi riêng thời điểm sự kiện, công bố và quyết định."
+        },
+        "workedExample": {
+          "en": "A monthly statistic describes January but is released February 5. A forecast is issued February 1. Joining by “January” makes the value look historical, yet it is four days unavailable at decision time. The fixture should reject release_time > forecast_time, regardless of the event month.",
+          "vi": "Thống kê mô tả tháng Một nhưng công bố ngày 5/2. Dự báo phát ngày 1/2. Ghép theo “tháng Một” khiến số liệu có vẻ lịch sử, nhưng lúc quyết định vẫn chưa có trong bốn ngày nữa. Kiểm thử phải từ chối release_time > forecast_time dù tháng sự kiện ở quá khứ."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Draw event, decision and release dates on a timeline.",
+            "vi": "60 phút — Vẽ mốc sự kiện, quyết định, công bố trên trục thời gian."
+          },
+          {
+            "en": "60 min — Write an as-of join test that rejects the February 5 release.",
+            "vi": "60 phút — Viết kiểm thử ghép theo thời điểm, từ chối bản công bố 5/2."
+          },
+          {
+            "en": "60 min — Solve the exercise including equality at the cutoff.",
+            "vi": "60 phút — Giải bài, xét cả trường hợp bằng mốc cắt."
+          },
+          {
+            "en": "60 min — Write a review comment with severity, reproduction and repair.",
+            "vi": "60 phút — Viết nhận xét có mức độ, cách tái hiện và cách sửa."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "audit-feature-availability",
+            "prompt": {
+              "en": "Decision is 09:00; releases are 08:55, 09:00 and 09:05. A protocol requires strictly earlier availability. Which rows qualify and why?",
+              "vi": "Quyết định lúc 09:00; công bố lúc 08:55, 09:00, 09:05. Giao thức yêu cầu có sẵn sớm hơn nghiêm ngặt. Hàng nào hợp lệ, vì sao?"
+            },
+            "hint": {
+              "en": "The rule is release < decision, not ≤.",
+              "vi": "Quy tắc là công bố < quyết định, không phải ≤."
+            },
+            "answer": {
+              "en": "Only 08:55 qualifies. The 09:00 row fails the explicitly strict boundary; 09:05 is in the future. If simultaneous releases are intended to be usable, the protocol needs a documented ordering and latency model rather than silently changing the inequality.",
+              "vi": "Chỉ 08:55 hợp lệ. Hàng 09:00 không thỏa ranh giới nghiêm ngặt; 09:05 ở tương lai. Nếu muốn dùng công bố đồng thời, giao thức cần quy định thứ tự và độ trễ, không âm thầm đổi dấu bất đẳng thức."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "availability-review.md and boundary tests.",
+          "vi": "availability-review.md và kiểm thử ranh giới."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "A historical month can still leak",
+            "vi": "Tháng quá khứ vẫn có thể gây rò rỉ"
+          },
+          "steps": [
+            {
+              "en": "January: event period",
+              "vi": "Tháng Một: kỳ sự kiện"
+            },
+            {
+              "en": "February 1: forecast decision",
+              "vi": "1/2: quyết định dự báo"
+            },
+            {
+              "en": "February 5: statistic released too late",
+              "vi": "5/2: thống kê công bố quá muộn"
+            }
+          ],
+          "caption": {
+            "en": "Chronological order of the exact dates in the example.",
+            "vi": "Thứ tự thời gian đúng các ngày trong ví dụ."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Challenge a weak baseline",
+          "vi": "Thách thức đối chứng yếu"
+        },
+        "theory": {
+          "en": "An improvement over a weak comparator may say little about the proposed method. A baseline must follow the same information constraints and receive a reasonable, disclosed tuning budget. Simple persistence is often informative for slowly changing series. Adding it is a validity check, not a guarantee that it will always win.",
+          "vi": "Thắng đối chứng yếu có thể chưa nói nhiều về phương pháp mới. Đối chứng phải tuân cùng giới hạn thông tin và có ngân sách tinh chỉnh hợp lý, công khai. Dự báo giữ giá trị gần nhất thường hữu ích với chuỗi đổi chậm. Thêm nó là kiểm tra tính hợp lệ, không bảo đảm nó luôn thắng."
+        },
+        "workedExample": {
+          "en": "Targets=[10,11,12]. Zero baseline forecasts=[0,0,0], squared losses=[100,121,144], mean 365/3. Model forecasts=[9,9,9], losses=[1,4,9], mean 14/3. Persistence forecasts=[9,10,11] using supplied prior values, losses=[1,1,1], mean 1. The model beats zero but loses to persistence.",
+          "vi": "Mục tiêu=[10,11,12]. Đối chứng 0 dự báo=[0,0,0], sai số bình phương=[100,121,144], trung bình 365/3. Mô hình dự báo=[9,9,9], sai số=[1,4,9], trung bình 14/3. Giữ giá trị trước dự báo=[9,10,11] theo giá trị quá khứ đã cho, sai số=[1,1,1], trung bình 1. Mô hình thắng 0 nhưng thua giữ giá trị trước."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Compute each baseline’s three losses by hand.",
+            "vi": "60 phút — Tự tính ba sai số của từng đối chứng."
+          },
+          {
+            "en": "60 min — Implement the shared scoring function and verify no future target is used.",
+            "vi": "60 phút — Viết hàm chấm chung, kiểm tra không dùng mục tiêu tương lai."
+          },
+          {
+            "en": "60 min — Solve the exercise and rank models by the declared metric.",
+            "vi": "60 phút — Giải bài, xếp mô hình theo thước đo đã khai báo."
+          },
+          {
+            "en": "60 min — Write a baseline review explaining how the conclusion changes.",
+            "vi": "60 phút — Viết phản biện đối chứng, giải thích kết luận thay đổi ra sao."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "challenge-a-weak-baseline",
+            "prompt": {
+              "en": "Targets=[4,5], model=[3,3], persistence=[3,4], zero=[0,0]. Compute MSE and state the fair conclusion.",
+              "vi": "Mục tiêu=[4,5], mô hình=[3,3], giữ giá trị trước=[3,4], đối chứng 0=[0,0]. Tính MSE và kết luận công bằng."
+            },
+            "hint": {
+              "en": "Square first, then average over the same two targets.",
+              "vi": "Bình phương trước rồi lấy trung bình trên cùng hai mục tiêu."
+            },
+            "answer": {
+              "en": "Model MSE=(1+4)/2=2.5; persistence=(1+1)/2=1; zero=(16+25)/2=20.5. The model improves over zero but not persistence on these two targets. A broad superiority claim is unsupported, even though the zero-baseline percentage improvement is large.",
+              "vi": "MSE mô hình=(1+4)/2=2,5; giữ giá trị trước=(1+1)/2=1; đối chứng 0=(16+25)/2=20,5. Mô hình hơn 0 nhưng kém giữ giá trị trước trên hai mục tiêu này. Kết luận vượt trội rộng không có căn cứ dù phần trăm cải thiện so 0 rất lớn."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "baseline-review.md and a common scoring fixture.",
+          "vi": "baseline-review.md và bộ chấm chung."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Same targets, three comparators",
+            "vi": "Cùng mục tiêu, ba phương pháp"
+          },
+          "xLabel": {
+            "en": "Case",
+            "vi": "Trường hợp"
+          },
+          "yLabel": {
+            "en": "MSE (units squared)",
+            "vi": "MSE (đơn vị bình phương)"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "Zero",
+                "vi": "Dự báo 0"
+              },
+              "value": 121.66666666666667
+            },
+            {
+              "label": {
+                "en": "Model",
+                "vi": "Mô hình"
+              },
+              "value": 4.666666666666667
+            },
+            {
+              "label": {
+                "en": "Persistence",
+                "vi": "Giữ giá trị trước"
+              },
+              "value": 1
+            }
+          ],
+          "caption": {
+            "en": "Exact example MSE; zero-based bars preserve the large baseline gap.",
+            "vi": "MSE đúng ví dụ; cột bắt đầu từ 0 để giữ đúng chênh lệch lớn."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Selection can manufacture a winner",
+          "vi": "Lựa chọn có thể tạo người thắng giả"
+        },
+        "theory": {
+          "en": "Testing many ideas and reporting only the best increases false discoveries. For m independent tests each with false-positive probability α, probability of at least one false positive is 1−(1−α)^m. Independence is an assumption here. A union bound mα does not require independence, though it can be loose.",
+          "vi": "Thử nhiều ý tưởng rồi chỉ báo tốt nhất làm tăng phát hiện sai. Với m kiểm định độc lập, mỗi kiểm định có xác suất dương tính giả α, xác suất ít nhất một dương tính giả là 1−(1−α)^m. Độc lập là giả định ở đây. Cận hợp mα không cần độc lập nhưng có thể lỏng."
+        },
+        "workedExample": {
+          "en": "With m=20 and α=0.05 under all nulls and independence, no false positive has probability 0.95²⁰≈0.3585. At least one has probability ≈0.6415. This does not mean a particular reported finding has 64% probability of being false; it is a repeated-testing event under the assumed null setup.",
+          "vi": "Với m=20, α=0,05 khi mọi giả thuyết không đều đúng và độc lập, không có dương tính giả có xác suất 0,95²⁰≈0,3585. Ít nhất một có xác suất ≈0,6415. Điều này không nói một kết quả cụ thể có 64% xác suất sai; đây là sự kiện thử lặp dưới bối cảnh giả thuyết không đã nêu."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Derive the complement probability before using a calculator.",
+            "vi": "60 phút — Suy ra xác suất biến cố bù trước khi dùng máy tính."
+          },
+          {
+            "en": "60 min — Plot 1−0.95^m for m=1 through 20.",
+            "vi": "60 phút — Vẽ 1−0,95^m với m từ 1 đến 20."
+          },
+          {
+            "en": "60 min — Solve the exercise and contrast independence with a union bound.",
+            "vi": "60 phút — Giải bài, phân biệt độc lập với cận hợp."
+          },
+          {
+            "en": "60 min — Design an experiment registry that retains failed runs and untouched validation.",
+            "vi": "60 phút — Thiết kế sổ thí nghiệm giữ lần thất bại và tập xác nhận chưa đụng tới."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "selection-can-manufacture-a-winner",
+            "prompt": {
+              "en": "For five independent tests, assuming all five null hypotheses are true and each test uses α=0.05, compute the chance of at least one false positive and the union bound.",
+              "vi": "Với năm kiểm định độc lập ở mức α=0,05 và giả sử cả năm giả thuyết không đều đúng, tính xác suất có ít nhất một dương tính giả và cận hợp."
+            },
+            "hint": {
+              "en": "Use 1−0.95^5 and compare with 5×0.05.",
+              "vi": "Dùng 1−0,95^5 và so với 5×0,05."
+            },
+            "answer": {
+              "en": "Exact under independence: 1−0.95⁵=0.226219≈22.62%. Union bound=0.25=25%, valid even without independence. The bound is larger because it can count overlapping false-positive events more than once.",
+              "vi": "Chính xác dưới độc lập: 1−0,95⁵=0,226219≈22,62%. Cận hợp=0,25=25%, vẫn đúng khi không độc lập. Cận lớn hơn vì có thể đếm lặp các sự kiện dương tính giả giao nhau."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "selection-review.md with assumptions and a run registry schema.",
+          "vi": "selection-review.md có giả định và cấu trúc sổ lần chạy."
+        },
+        "visual": {
+          "kind": "xy",
+          "title": {
+            "en": "Repeated-test false-positive risk",
+            "vi": "Rủi ro dương tính giả khi thử lặp"
+          },
+          "xLabel": {
+            "en": "Number of independent tests",
+            "vi": "Số kiểm định độc lập"
+          },
+          "yLabel": {
+            "en": "Probability of at least one false positive",
+            "vi": "Xác suất ít nhất một dương tính giả"
+          },
+          "series": [
+            {
+              "name": {
+                "en": "1 − 0.95^m",
+                "vi": "1 − 0,95^m"
+              },
+              "mode": "line",
+              "points": [
+                [
+                  1,
+                  0.050000000000000044
+                ],
+                [
+                  2,
+                  0.09750000000000003
+                ],
+                [
+                  3,
+                  0.1426250000000001
+                ],
+                [
+                  4,
+                  0.18549375000000012
+                ],
+                [
+                  5,
+                  0.22621906250000023
+                ],
+                [
+                  6,
+                  0.2649081093750002
+                ],
+                [
+                  7,
+                  0.3016627039062503
+                ],
+                [
+                  8,
+                  0.33657956871093775
+                ],
+                [
+                  9,
+                  0.3697505902753909
+                ],
+                [
+                  10,
+                  0.4012630607616213
+                ],
+                [
+                  11,
+                  0.43119990772354033
+                ],
+                [
+                  12,
+                  0.45963991233736334
+                ],
+                [
+                  13,
+                  0.4866579167204952
+                ],
+                [
+                  14,
+                  0.5123250208844705
+                ],
+                [
+                  15,
+                  0.536708769840247
+                ],
+                [
+                  16,
+                  0.5598733313482347
+                ],
+                [
+                  17,
+                  0.5818796647808229
+                ],
+                [
+                  18,
+                  0.6027856815417818
+                ],
+                [
+                  19,
+                  0.6226463974646927
+                ],
+                [
+                  20,
+                  0.6415140775914581
+                ]
+              ]
+            }
+          ],
+          "caption": {
+            "en": "Exact formula under independent true nulls at α=0.05; not the posterior probability that a selected result is false.",
+            "vi": "Công thức đúng dưới các giả thuyết không đúng và độc lập với α=0,05; không phải xác suất hậu nghiệm kết quả được chọn là sai."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "A metric implementation can change the answer",
+          "vi": "Cài đặt thước đo có thể đổi đáp án"
+        },
+        "theory": {
+          "en": "RMSE is sqrt(mean(error²)); mean absolute error is mean(|error|). Averaging row-level square roots of squared errors computes MAE, not RMSE. Names in code are not evidence of correct implementation. Use a fixture where errors have unequal magnitudes so the two metrics differ.",
+          "vi": "RMSE là sqrt(mean(error²)); MAE là mean(|error|). Lấy căn sai số bình phương từng hàng rồi trung bình sẽ ra MAE, không phải RMSE. Tên biến trong mã không chứng minh cài đúng. Dùng dữ liệu thử có độ lớn sai số khác nhau để hai thước đo tách biệt."
+        },
+        "workedExample": {
+          "en": "Errors=[0,4]. Correct RMSE=sqrt((0+16)/2)=sqrt(8)≈2.828. The buggy expression mean(sqrt(error²))=(0+4)/2=2. Both return 0 on perfect predictions, so a zero-only test would miss this bug.",
+          "vi": "Sai số=[0,4]. RMSE đúng=sqrt((0+16)/2)=sqrt(8)≈2,828. Biểu thức lỗi mean(sqrt(error²))=(0+4)/2=2. Cả hai trả 0 khi dự báo hoàn hảo nên chỉ kiểm thử toàn số 0 sẽ bỏ sót lỗi."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Derive both formulas and identify the misplaced square root.",
+            "vi": "60 phút — Suy ra hai công thức, xác định căn đặt sai chỗ."
+          },
+          {
+            "en": "60 min — Write tests for errors [0,4], [−3,3] and [0,0].",
+            "vi": "60 phút — Viết kiểm thử sai số [0,4], [−3,3], [0,0]."
+          },
+          {
+            "en": "60 min — Solve the exercise and state output units.",
+            "vi": "60 phút — Giải bài và nêu đơn vị đầu ra."
+          },
+          {
+            "en": "60 min — Write a defect report naming all tables that depend on the buggy metric.",
+            "vi": "60 phút — Viết báo lỗi nêu mọi bảng phụ thuộc thước đo sai."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "a-metric-implementation-can-change-the-answer",
+            "prompt": {
+              "en": "For errors [−1,3], calculate MAE, MSE and RMSE. Which quantity equals the buggy row-root average?",
+              "vi": "Với sai số [−1,3], tính MAE, MSE, RMSE. Đại lượng nào bằng trung bình căn từng hàng bị gắn nhãn sai?"
+            },
+            "hint": {
+              "en": "The square root must come after averaging for RMSE.",
+              "vi": "Với RMSE, phải lấy căn sau khi trung bình."
+            },
+            "answer": {
+              "en": "MAE=(1+3)/2=2; MSE=(1+9)/2=5; RMSE=√5≈2.236. The buggy expression gives MAE=2. MAE and RMSE use target units; MSE uses squared target units. Equal-magnitude errors would not distinguish the formulas.",
+              "vi": "MAE=(1+3)/2=2; MSE=(1+9)/2=5; RMSE=√5≈2,236. Biểu thức lỗi cho MAE=2. MAE, RMSE cùng đơn vị mục tiêu; MSE là đơn vị bình phương. Sai số có độ lớn bằng nhau không phân biệt được hai công thức."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "metric-bug.md and unequal-error regression tests.",
+          "vi": "metric-bug.md và kiểm thử hồi quy sai số không đều."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Where the square root belongs",
+            "vi": "Căn bậc hai phải đặt ở đâu"
+          },
+          "steps": [
+            {
+              "en": "Errors [0,4] → squares [0,16]",
+              "vi": "Sai số [0,4] → bình phương [0,16]"
+            },
+            {
+              "en": "Mean squares = 8",
+              "vi": "Trung bình bình phương = 8"
+            },
+            {
+              "en": "Square root last → RMSE √8",
+              "vi": "Lấy căn cuối → RMSE √8"
+            }
+          ],
+          "caption": {
+            "en": "The order of operations reproduces the correct metric.",
+            "vi": "Thứ tự thao tác dựng lại đúng thước đo."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Prioritize review findings",
+          "vi": "Ưu tiên phát hiện phản biện"
+        },
+        "theory": {
+          "en": "Severity depends on how a defect changes the scientific conclusion. A leakage bug can invalidate every result; a mislabeled axis may leave calculations valid but communication wrong. A review should distinguish confirmed defects from questions and assign a concrete acceptance test to each requested repair.",
+          "vi": "Mức độ phụ thuộc lỗi làm đổi kết luận khoa học thế nào. Rò rỉ có thể làm hỏng mọi kết quả; nhãn trục sai có thể giữ phép tính đúng nhưng truyền đạt sai. Phản biện cần tách lỗi đã xác nhận khỏi câu hỏi, gắn phép kiểm tra chấp nhận cụ thể với mỗi yêu cầu sửa."
+        },
+        "workedExample": {
+          "en": "Provided review: F1 uses tomorrow’s target as a feature; F2 says “percent” where values are fractions; F3 requests a new model without explaining relevance. Priority: block conclusions for F1 and rerun after repair; fix F2 with a unit test and labels; ask F3 which hypothesis the extra model tests. More experiments do not repair F1.",
+          "vi": "Phản biện cho trước: F1 dùng mục tiêu ngày mai làm đặc trưng; F2 ghi “phần trăm” nhưng số là tỷ lệ; F3 yêu cầu mô hình mới mà không nói liên quan gì. Ưu tiên: chặn kết luận vì F1 và chạy lại sau sửa; sửa F2 bằng kiểm thử đơn vị, nhãn; hỏi F3 mô hình thêm kiểm tra giả thuyết nào. Thêm thí nghiệm không sửa được F1."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Classify the three comments as validity, presentation or unresolved request.",
+            "vi": "60 phút — Phân loại ba nhận xét: tính hợp lệ, trình bày, yêu cầu chưa rõ."
+          },
+          {
+            "en": "60 min — Write one acceptance test for F1 and F2.",
+            "vi": "60 phút — Viết một kiểm tra chấp nhận cho F1, F2."
+          },
+          {
+            "en": "60 min — Solve the exercise and justify ordering by impact.",
+            "vi": "60 phút — Giải bài, biện minh thứ tự theo tác động."
+          },
+          {
+            "en": "60 min — Assemble method-review.md with five alternative explanations for an apparent gain.",
+            "vi": "60 phút — Tạo method-review.md có năm cách giải thích khác cho cải thiện có vẻ quan sát được."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "prioritize-review-findings",
+            "prompt": {
+              "en": "Review finds a shuffled time split, a typo in the title and a missing seed value. Rank repairs and state what must be rerun.",
+              "vi": "Phản biện thấy chia thời gian bị xáo trộn, lỗi chữ tiêu đề, thiếu seed. Xếp ưu tiên và nêu phần phải chạy lại."
+            },
+            "hint": {
+              "en": "Repair validity before reproducibility metadata and cosmetic wording.",
+              "vi": "Sửa tính hợp lệ trước metadata tái lập và câu chữ thẩm mỹ."
+            },
+            "answer": {
+              "en": "First replace the shuffled split with the declared chronological protocol and rerun all affected evaluation. Next recover or explicitly mark the missing seed; if the run cannot be identified, regenerate it under a recorded seed. Fix the title typo without rerunning numerical work. Preserve old outputs as invalidated evidence rather than erasing the history.",
+              "vi": "Trước hết thay chia xáo trộn bằng giao thức thời gian và chạy lại toàn bộ đánh giá bị ảnh hưởng. Sau đó khôi phục hoặc ghi rõ seed thiếu; nếu không xác định được lần chạy, tạo lại với seed được lưu. Sửa lỗi tiêu đề không cần chạy lại tính toán. Giữ đầu ra cũ với nhãn mất hiệu lực thay vì xóa lịch sử."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "method-review.md with prioritized, testable revisions.",
+          "vi": "method-review.md có sửa đổi ưu tiên và kiểm tra được."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Repair by scientific impact",
+            "vi": "Sửa theo tác động khoa học"
+          },
+          "steps": [
+            {
+              "en": "F1: leakage → block claims and rerun",
+              "vi": "F1: rò rỉ → chặn kết luận, chạy lại"
+            },
+            {
+              "en": "F2: unit label → correct and test display",
+              "vi": "F2: nhãn đơn vị → sửa, kiểm tra hiển thị"
+            },
+            {
+              "en": "F3: extra model → request a hypothesis",
+              "vi": "F3: mô hình thêm → yêu cầu giả thuyết"
+            }
+          ],
+          "caption": {
+            "en": "Priority is based on the supplied defects, not a numerical severity scale.",
+            "vi": "Ưu tiên dựa trên lỗi đã cho, không phải thang mức độ số học."
+          }
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 98,
+    "title": {
+      "en": "Revise without selecting a convenient story",
+      "vi": "Sửa nghiên cứu mà không chọn câu chuyện có lợi"
+    },
+    "prerequisites": {
+      "en": "Read a results table, compute a mean and a percentage, and distinguish a prediction from its later outcome. All data required today are provided below.",
+      "vi": "Biết đọc bảng kết quả, tính trung bình và phần trăm, phân biệt dự báo với kết quả xuất hiện sau đó. Toàn bộ dữ liệu cần dùng được cung cấp bên dưới."
+    },
+    "objectives": [
+      {
+        "en": "Make claims that a reader can trace to the supplied evidence.",
+        "vi": "Viết kết luận mà người đọc có thể đối chiếu với bằng chứng đã cho."
+      },
+      {
+        "en": "Explain the reason for each decision and record what remains unknown.",
+        "vi": "Giải thích lý do của từng quyết định và ghi rõ điều chưa biết."
+      }
+    ],
+    "foundations": {
+      "en": "A revision should have a reason independent of whether it makes the method look better. Correcting leakage restores validity; trying additional parameters after a disappointing result changes the research process and must be labeled exploratory. Preserve the previous version, describe the change and identify which outputs depend on it. A transparent unfavorable correction is more informative than an unexplained improved score.",
+      "vi": "Sửa đổi cần lý do độc lập với việc có làm phương pháp trông tốt hơn không. Sửa rò rỉ khôi phục tính hợp lệ; thử thêm tham số sau kết quả thất vọng làm đổi quá trình nghiên cứu và phải ghi là khám phá. Giữ phiên bản trước, mô tả thay đổi, xác định đầu ra phụ thuộc. Sửa đúng nhưng bất lợi một cách minh bạch có giá trị hơn điểm tốt lên không giải thích."
+    },
+    "diagram": {
+      "kind": "flow",
+      "title": {
+        "en": "Five decisions this week",
+        "vi": "Năm quyết định trong tuần"
+      },
+      "labels": [
+        {
+          "en": "Correction or new exploration?",
+          "vi": "Sửa lỗi hay khám phá mới?"
+        },
+        {
+          "en": "Rerun the dependency closure",
+          "vi": "Chạy lại toàn bộ phần phụ thuộc"
+        },
+        {
+          "en": "Report before and after honestly",
+          "vi": "Báo trước và sau trung thực"
+        },
+        {
+          "en": "Keep new hypotheses separate",
+          "vi": "Tách giả thuyết mới"
+        },
+        {
+          "en": "Answer a reviewer with a verifiable change",
+          "vi": "Trả lời phản biện bằng thay đổi kiểm chứng được"
+        }
+      ],
+      "caption": {
+        "en": "Each node is a separate session; this map describes the work, not numerical evidence.",
+        "vi": "Mỗi nút là một buổi riêng; sơ đồ mô tả công việc, không phải bằng chứng định lượng."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Correction or new exploration?",
+          "vi": "Sửa lỗi hay khám phá mới?"
+        },
+        "theory": {
+          "en": "Classify changes by their cause. A bug fix restores the originally intended procedure. An amendment changes a planned procedure for a stated reason. Exploration asks a new question after seeing data. These categories can coexist in a project, but calling all changes “bug fixes” conceals researcher choices.",
+          "vi": "Phân loại theo nguyên nhân. Sửa lỗi khôi phục thủ tục dự định ban đầu. Sửa giao thức thay thủ tục đã định vì lý do được nêu. Khám phá hỏi câu mới sau khi xem dữ liệu. Các loại có thể cùng tồn tại, nhưng gọi tất cả là “sửa lỗi” che giấu lựa chọn của người nghiên cứu."
+        },
+        "workedExample": {
+          "en": "C1 corrects RMSE implemented as MAE: bug fix. C2 adds five learning rates because the original rate lost: exploration. C3 shortens the evaluation horizon because later targets are permanently missing: amendment requiring justification and a new target definition. None should overwrite the original protocol silently.",
+          "vi": "C1 sửa RMSE bị cài thành MAE: sửa lỗi. C2 thêm năm bước học vì bước cũ thua: khám phá. C3 rút chân trời đánh giá vì mục tiêu muộn bị thiếu vĩnh viễn: sửa giao thức, cần lý do và định nghĩa mục tiêu mới. Không thay đổi nào được âm thầm ghi đè giao thức gốc."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Write the cause and category for C1–C3.",
+            "vi": "60 phút — Viết nguyên nhân, loại cho C1–C3."
+          },
+          {
+            "en": "60 min — Create a change record with old rule, new rule and affected results.",
+            "vi": "60 phút — Tạo bản ghi có quy tắc cũ, mới và kết quả bị ảnh hưởng."
+          },
+          {
+            "en": "60 min — Solve the exercise and separate validity repair from model search.",
+            "vi": "60 phút — Giải bài, tách sửa tính hợp lệ khỏi tìm mô hình."
+          },
+          {
+            "en": "60 min — Draft revision-log.md preserving the original protocol.",
+            "vi": "60 phút — Soạn revision-log.md giữ giao thức ban đầu."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "correction-or-new-exploration-",
+            "prompt": {
+              "en": "After seeing poor results, an author changes random seed until loss falls. Is this a correction? How should the work be reported?",
+              "vi": "Sau kết quả kém, tác giả đổi seed đến khi sai số giảm. Đây có phải sửa lỗi? Nên báo thế nào?"
+            },
+            "hint": {
+              "en": "Ask whether the original seed was invalid or merely unfavorable.",
+              "vi": "Hỏi seed ban đầu sai hay chỉ cho kết quả bất lợi."
+            },
+            "answer": {
+              "en": "It is selection/exploration unless a concrete seed-related defect was established. Retain every attempted seed and report a prespecified aggregate or a clearly exploratory distribution. Do not present the selected minimum as an ordinary single-run estimate; validate any new procedure on untouched runs.",
+              "vi": "Đây là lựa chọn/khám phá nếu chưa xác nhận lỗi cụ thể liên quan seed. Giữ mọi seed đã thử, báo tổng hợp định trước hoặc phân phối mang nhãn khám phá. Không trình bày giá trị nhỏ nhất được chọn như ước lượng một lần chạy bình thường; kiểm chứng thủ tục mới trên lần chạy chưa dùng."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "A categorized revision log with explicit motivations.",
+          "vi": "Nhật ký sửa đổi được phân loại, có động cơ rõ."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Three supplied changes",
+            "vi": "Ba thay đổi đã cho"
+          },
+          "steps": [
+            {
+              "en": "C1 wrong formula → correction",
+              "vi": "C1 sai công thức → sửa lỗi"
+            },
+            {
+              "en": "C2 more rates after loss → exploration",
+              "vi": "C2 thêm bước học sau khi thua → khám phá"
+            },
+            {
+              "en": "C3 missing outcomes → justified amendment",
+              "vi": "C3 thiếu kết quả → sửa giao thức có lý do"
+            }
+          ],
+          "caption": {
+            "en": "These are categories, not a ranking of whether the new score improves.",
+            "vi": "Đây là phân loại, không xếp theo điểm mới có tốt hơn không."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Rerun the dependency closure",
+          "vi": "Chạy lại toàn bộ phần phụ thuộc"
+        },
+        "theory": {
+          "en": "Outputs form a directed dependency graph. If a node changes, every descendant may be stale. A changed metric requires rescoring and rebuilding dependent tables and figures, but may not require retraining if saved predictions remain valid. Rerunning only the favorable figure leaves an inconsistent manuscript.",
+          "vi": "Đầu ra tạo đồ thị phụ thuộc có hướng. Khi một nút đổi, mọi nút con cháu có thể lỗi thời. Đổi thước đo cần chấm lại và dựng lại bảng, hình phụ thuộc, nhưng có thể không cần huấn luyện lại nếu dự báo đã lưu còn hợp lệ. Chỉ chạy lại hình có lợi khiến bản thảo không nhất quán."
+        },
+        "workedExample": {
+          "en": "Graph: raw D → predictions P → metric M → table T → figure F → abstract A. A separate runtime log R depends on P only. Fixing M invalidates M,T,F,A; D,P,R remain usable under the stated assumption that predictions were correct. Changing feature construction inside P would invalidate P and all its descendants, including R.",
+          "vi": "Đồ thị: dữ liệu D → dự báo P → thước đo M → bảng T → hình F → tóm tắt A. Nhật ký thời gian R chỉ phụ thuộc P. Sửa M làm M,T,F,A mất hiệu lực; D,P,R còn dùng được nếu dự báo đúng. Đổi tạo đặc trưng trong P làm P và mọi hậu duệ mất hiệu lực, gồm R."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Draw the graph and mark descendants of M.",
+            "vi": "60 phút — Vẽ đồ thị, đánh dấu hậu duệ của M."
+          },
+          {
+            "en": "60 min — Implement descendant traversal on an adjacency list.",
+            "vi": "60 phút — Viết duyệt hậu duệ trên danh sách kề."
+          },
+          {
+            "en": "60 min — Solve the exercise and compare the two rerun sets.",
+            "vi": "60 phút — Giải bài, so hai tập phải chạy lại."
+          },
+          {
+            "en": "60 min — Write a rerun plan that names reusable and invalidated artifacts.",
+            "vi": "60 phút — Viết kế hoạch chạy lại, nêu hiện vật dùng lại được và mất hiệu lực."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "rerun-the-dependency-closure",
+            "prompt": {
+              "en": "D→P, P→M, M→T, M→F, T→A, F→A. If T’s formatting changes without altering values, which descendants need rebuilding? If M changes, what expands?",
+              "vi": "D→P, P→M, M→T, M→F, T→A, F→A. Nếu chỉ đổi định dạng T không đổi số, hậu duệ nào cần dựng lại? Nếu đổi M thì tập mở rộng ra sao?"
+            },
+            "hint": {
+              "en": "Follow arrows forward from the changed node.",
+              "vi": "Đi theo mũi tên từ nút bị đổi."
+            },
+            "answer": {
+              "en": "A formatting change rebuilds T and A if A embeds T; P,M,F remain valid. A change to M requires M,T,F,A. Neither case requires retraining P when its stored predictions and inputs are unchanged. Dependencies should be explicit rather than guessed from filenames.",
+              "vi": "Đổi định dạng dựng lại T và A nếu A nhúng T; P,M,F còn đúng. Đổi M cần M,T,F,A. Cả hai không cần huấn luyện P nếu dự báo lưu và đầu vào không đổi. Phụ thuộc cần khai báo rõ thay vì đoán theo tên tệp."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "rerun-plan.json and a dependency traversal test.",
+          "vi": "rerun-plan.json và kiểm thử duyệt phụ thuộc."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Metric correction propagation",
+            "vi": "Lan truyền sửa thước đo"
+          },
+          "steps": [
+            {
+              "en": "Reuse D and correct predictions P",
+              "vi": "Dùng lại D và dự báo P đúng"
+            },
+            {
+              "en": "Recompute metric M",
+              "vi": "Tính lại thước đo M"
+            },
+            {
+              "en": "Rebuild table T and figure F",
+              "vi": "Dựng lại bảng T và hình F"
+            },
+            {
+              "en": "Update abstract A; retain runtime R",
+              "vi": "Cập nhật tóm tắt A; giữ nhật ký R"
+            }
+          ],
+          "caption": {
+            "en": "Matches the supplied graph and assumes prediction generation is unaffected.",
+            "vi": "Khớp đồ thị đã cho, giả định tạo dự báo không bị ảnh hưởng."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Report before and after honestly",
+          "vi": "Báo trước và sau trung thực"
+        },
+        "theory": {
+          "en": "A correction table keeps old and new values side by side and labels the old result invalid. The change in the conclusion matters more than whether the code diff is small. Use paired comparisons against the same corrected baseline, because a fix may affect both methods.",
+          "vi": "Bảng sửa lỗi giữ số cũ, mới cạnh nhau và đánh dấu kết quả cũ không hợp lệ. Thay đổi kết luận quan trọng hơn số dòng mã sửa. So ghép với cùng đối chứng đã sửa vì lỗi có thể ảnh hưởng cả hai phương pháp."
+        },
+        "workedExample": {
+          "en": "Old flawed scores: model 0.8, baseline 1.0, difference −0.2. After leakage repair: model 1.2, baseline 1.0, difference +0.2. The apparent advantage reverses. Report “the earlier improvement was invalidated by leakage correction,” not “performance was slightly adjusted.”",
+          "vi": "Điểm cũ lỗi: mô hình 0,8, đối chứng 1,0, chênh lệch −0,2. Sau sửa rò rỉ: mô hình 1,2, đối chứng 1,0, chênh lệch +0,2. Lợi thế có vẻ có đã đảo chiều. Báo “cải thiện trước mất hiệu lực sau sửa rò rỉ”, không phải “hiệu suất được điều chỉnh nhẹ”."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Compute old and new paired differences.",
+            "vi": "60 phút — Tính chênh lệch ghép trước, sau."
+          },
+          {
+            "en": "60 min — Make a correction table with validity status and source IDs.",
+            "vi": "60 phút — Lập bảng sửa có trạng thái hợp lệ và ID nguồn."
+          },
+          {
+            "en": "60 min — Solve the exercise where both methods change.",
+            "vi": "60 phút — Giải bài mà cả hai phương pháp đều đổi."
+          },
+          {
+            "en": "60 min — Rewrite the abstract and conclusion to match corrected evidence.",
+            "vi": "60 phút — Sửa tóm tắt, kết luận cho khớp bằng chứng đã sửa."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "report-before-and-after-honestly",
+            "prompt": {
+              "en": "Old scores A=2,B=3; corrected A=4,B=3.5. Compute both differences d=A−B and explain the conclusion change.",
+              "vi": "Điểm cũ A=2,B=3; đã sửa A=4,B=3,5. Tính hai chênh lệch d=A−B, giải thích kết luận đổi ra sao."
+            },
+            "hint": {
+              "en": "Compare within each version, not corrected A against old B.",
+              "vi": "So trong từng phiên bản, không so A mới với B cũ."
+            },
+            "answer": {
+              "en": "Old d=−1 favors A. Corrected d=+0.5 favors B. The old comparison is superseded, and the correction reverses the sample ranking. Keeping only A’s change from 2 to 4 would miss that the baseline also changed.",
+              "vi": "d cũ=−1 lợi cho A. d đã sửa=+0,5 lợi cho B. So sánh cũ bị thay thế, sửa lỗi đảo thứ hạng mẫu. Chỉ nhìn A từ 2 lên 4 sẽ bỏ qua việc đối chứng cũng đổi."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "before-after.csv and an explicit correction paragraph.",
+          "vi": "before-after.csv và đoạn công bố sửa lỗi rõ ràng."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "The comparison reverses after repair",
+            "vi": "So sánh đảo chiều sau sửa"
+          },
+          "xLabel": {
+            "en": "Case",
+            "vi": "Trường hợp"
+          },
+          "yLabel": {
+            "en": "Model loss − baseline loss",
+            "vi": "Sai số mô hình − đối chứng"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "Old: invalid",
+                "vi": "Cũ: không hợp lệ"
+              },
+              "value": -0.2
+            },
+            {
+              "label": {
+                "en": "Corrected",
+                "vi": "Đã sửa"
+              },
+              "value": 0.2
+            }
+          ],
+          "caption": {
+            "en": "Synthetic example; the old negative bar is retained only for the correction record.",
+            "vi": "Ví dụ giả định; giữ cột âm cũ chỉ để lưu hồ sơ sửa lỗi."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Keep new hypotheses separate",
+          "vi": "Tách giả thuyết mới"
+        },
+        "theory": {
+          "en": "After discovering a subgroup pattern, testing the same subgroup on the same data is not independent confirmation. Freeze the new hypothesis and evaluate on untouched data generated or held out under an explicit rule. If no fresh data remain, report exploration and uncertainty rather than manufacture a confirmatory label.",
+          "vi": "Sau khi phát hiện mẫu hình nhóm con, kiểm tra lại cùng nhóm trên cùng dữ liệu không phải xác nhận độc lập. Chốt giả thuyết mới và đánh giá trên dữ liệu chưa đụng tới được sinh hoặc giữ lại theo quy tắc rõ. Nếu hết dữ liệu mới, báo khám phá và bất định thay vì gắn nhãn xác nhận giả."
+        },
+        "workedExample": {
+          "en": "Runs 1–20 suggested η=0.5 helps only when shift size ≥3. Write H2 before runs 21–40: compare η=0.5 vs 0.1 on shift sizes 3 and 5, average paired MSE across all 20 new runs. Do not delete new runs where the effect reverses or move the threshold to 4 after seeing them.",
+          "vi": "Lần chạy 1–20 gợi ý η=0,5 chỉ tốt khi độ đổi ≥3. Viết H2 trước lần 21–40: so η=0,5 với 0,1 ở độ đổi 3,5, trung bình MSE ghép trên cả 20 lần mới. Không xóa lần hiệu ứng đảo chiều hay chuyển ngưỡng sang 4 sau khi xem."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Write H2 including threshold, comparator and aggregation.",
+            "vi": "60 phút — Viết H2 gồm ngưỡng, đối chứng, cách tổng hợp."
+          },
+          {
+            "en": "60 min — Design separate discovery and confirmation folders with immutable manifests.",
+            "vi": "60 phút — Thiết kế thư mục khám phá, xác nhận riêng có manifest cố định."
+          },
+          {
+            "en": "60 min — Solve the exercise and mark which data remain untouched.",
+            "vi": "60 phút — Giải bài, đánh dấu dữ liệu còn chưa dùng."
+          },
+          {
+            "en": "60 min — Write a stopping rule before any new simulated outcome is inspected.",
+            "vi": "60 phút — Viết quy tắc dừng trước khi xem kết quả giả lập mới."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "keep-new-hypotheses-separate",
+            "prompt": {
+              "en": "You inspected runs 1–30 to choose a threshold, then call runs 21–30 a holdout. Explain the problem and repair options.",
+              "vi": "Bạn xem lần 1–30 để chọn ngưỡng rồi gọi lần 21–30 là holdout. Giải thích lỗi và cách sửa."
+            },
+            "hint": {
+              "en": "A holdout loses that role once it informs the choice.",
+              "vi": "Holdout mất vai trò đó khi đã ảnh hưởng lựa chọn."
+            },
+            "answer": {
+              "en": "Runs 21–30 helped choose the threshold, so they are discovery data. Either collect/generate a genuinely untouched set after freezing the rule, or label the current result exploratory. Renaming files does not remove the information already used in selection.",
+              "vi": "Lần 21–30 đã góp phần chọn ngưỡng nên là dữ liệu khám phá. Hoặc thu/sinh tập thật sự chưa dùng sau khi chốt quy tắc, hoặc ghi kết quả hiện tại là khám phá. Đổi tên tệp không xóa thông tin đã dùng trong lựa chọn."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "hypothesis-H2.md with a prospective evaluation rule.",
+          "vi": "hypothesis-H2.md có quy tắc đánh giá định trước."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Discovery precedes confirmation",
+            "vi": "Khám phá đi trước xác nhận"
+          },
+          "steps": [
+            {
+              "en": "Runs 1–20: discover threshold 3",
+              "vi": "Lần 1–20: phát hiện ngưỡng 3"
+            },
+            {
+              "en": "Freeze H2 and scoring rule",
+              "vi": "Chốt H2 và quy tắc chấm"
+            },
+            {
+              "en": "Runs 21–40: untouched evaluation",
+              "vi": "Lần 21–40: đánh giá chưa dùng"
+            },
+            {
+              "en": "Report all new runs, including failures",
+              "vi": "Báo mọi lần mới, gồm thất bại"
+            }
+          ],
+          "caption": {
+            "en": "Run ranges are exact roles in the example, not historical project results.",
+            "vi": "Khoảng lần chạy là vai trò trong ví dụ, không phải kết quả dự án thật."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Answer a reviewer with a verifiable change",
+          "vi": "Trả lời phản biện bằng thay đổi kiểm chứng được"
+        },
+        "theory": {
+          "en": "A response letter links each comment to a decision, a concrete change and evidence. Agreement without action is incomplete. Disagreement can be reasonable when explained with the study’s scope and evidence. Avoid promising a fix that the manuscript or code does not actually contain.",
+          "vi": "Thư trả lời nối mỗi nhận xét với quyết định, thay đổi cụ thể, bằng chứng. Đồng ý mà không hành động là chưa đủ. Không đồng ý có thể hợp lý nếu giải thích bằng phạm vi và bằng chứng. Tránh hứa sửa khi bản thảo hoặc mã chưa thực sự có."
+        },
+        "workedExample": {
+          "en": "Comment R1: “The figure uses a shuffled split.” Response: “Confirmed. We replaced it with the chronological split in protocol P2, reran results E4–E9, and replaced Figure 2. The mean difference changed from −0.2 to +0.1; the superiority claim was removed.” This response identifies the defect, repair, affected evidence and changed conclusion.",
+          "vi": "Nhận xét R1: “Hình dùng chia mẫu xáo trộn.” Trả lời: “Đã xác nhận. Chúng tôi thay bằng chia thời gian trong P2, chạy lại E4–E9, thay Hình 2. Chênh lệch trung bình đổi từ −0,2 sang +0,1; đã bỏ kết luận vượt trội.” Câu trả lời nêu lỗi, sửa, bằng chứng ảnh hưởng, kết luận đổi."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Annotate the four parts of the supplied response.",
+            "vi": "60 phút — Chú thích bốn phần của câu trả lời đã cho."
+          },
+          {
+            "en": "60 min — Create a response table linking R1 to P2, E4–E9 and Figure 2.",
+            "vi": "60 phút — Tạo bảng nối R1 với P2, E4–E9, Hình 2."
+          },
+          {
+            "en": "60 min — Solve the exercise and avoid claiming an unperformed rerun.",
+            "vi": "60 phút — Giải bài, không tuyên bố đã chạy lại khi chưa làm."
+          },
+          {
+            "en": "60 min — Assemble manuscript-v2.md and a response letter consistent with the revision log.",
+            "vi": "60 phút — Ghép manuscript-v2.md và thư trả lời khớp nhật ký sửa."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "answer-a-reviewer-with-a-verifiable-change",
+            "prompt": {
+              "en": "A reviewer asks for market profitability, but your study has synthetic forecasts and no execution data. Write a respectful, evidence-based response.",
+              "vi": "Người phản biện yêu cầu lợi nhuận thị trường, nhưng nghiên cứu chỉ có dự báo giả lập, không có dữ liệu thực hiện lệnh. Viết trả lời tôn trọng và có căn cứ."
+            },
+            "hint": {
+              "en": "You can narrow the claim instead of inventing unavailable evidence.",
+              "vi": "Có thể thu hẹp kết luận thay vì bịa bằng chứng chưa có."
+            },
+            "answer": {
+              "en": "“We cannot estimate executable profitability from these synthetic forecast records. We have removed trading-performance language and now state that the study measures forecast loss under the specified generator. Execution-aware evaluation is a separate future study requiring prices, fills and costs.” This addresses the concern through an honest scope correction.",
+              "vi": "“Chúng tôi không thể ước lượng lợi nhuận thực hiện được từ các bản ghi dự báo giả lập này. Đã bỏ ngôn ngữ về hiệu quả giao dịch, nêu rõ nghiên cứu đo sai số dự báo dưới bộ sinh xác định. Đánh giá có thực hiện lệnh là nghiên cứu tiếp theo cần giá, khớp lệnh, phí.” Cách trả lời giải quyết vấn đề bằng sửa phạm vi trung thực."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "response-to-review.md and manuscript-v2.md.",
+          "vi": "response-to-review.md và manuscript-v2.md."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "A complete review response",
+            "vi": "Trả lời phản biện đầy đủ"
+          },
+          "steps": [
+            {
+              "en": "R1: confirm shuffled-split defect",
+              "vi": "R1: xác nhận lỗi chia xáo trộn"
+            },
+            {
+              "en": "P2: chronological replacement",
+              "vi": "P2: thay bằng chia thời gian"
+            },
+            {
+              "en": "E4–E9: rerun; difference +0.1",
+              "vi": "E4–E9: chạy lại; chênh lệch +0,1"
+            },
+            {
+              "en": "Figure 2 and conclusion updated",
+              "vi": "Cập nhật Hình 2 và kết luận"
+            }
+          ],
+          "caption": {
+            "en": "Each node names an artifact that a reviewer can inspect.",
+            "vi": "Mỗi nút nêu hiện vật người phản biện có thể kiểm tra."
+          }
+        }
+      }
+    ],
+    "references": []
+  },
+  {
+    "week": 99,
+    "title": {
+      "en": "An independent reproduction package",
+      "vi": "Gói tái lập độc lập"
+    },
+    "prerequisites": {
+      "en": "Read a results table, compute a mean and a percentage, and distinguish a prediction from its later outcome. All data required today are provided below.",
+      "vi": "Biết đọc bảng kết quả, tính trung bình và phần trăm, phân biệt dự báo với kết quả xuất hiện sau đó. Toàn bộ dữ liệu cần dùng được cung cấp bên dưới."
+    },
+    "objectives": [
+      {
+        "en": "Make claims that a reader can trace to the supplied evidence.",
+        "vi": "Viết kết luận mà người đọc có thể đối chiếu với bằng chứng đã cho."
+      },
+      {
+        "en": "Explain the reason for each decision and record what remains unknown.",
+        "vi": "Giải thích lý do của từng quyết định và ghi rõ điều chưa biết."
+      }
+    ],
+    "foundations": {
+      "en": "Reproduction means another clean environment can follow documented steps and obtain the stated outputs within declared tolerances. It is different from proving the scientific claim true. A package needs inputs, versioned code, environment instructions, commands and expected outputs. A tiny synthetic fixture checks plumbing cheaply; it does not replace the full experiment. No paid software or unavailable dataset is required in this week.",
+      "vi": "Tái lập nghĩa là môi trường sạch khác làm theo hướng dẫn và thu đầu ra đã nêu trong sai số cho phép. Điều đó khác chứng minh kết luận khoa học đúng. Gói cần đầu vào, mã có phiên bản, hướng dẫn môi trường, lệnh và đầu ra mong đợi. Bộ dữ liệu giả lập nhỏ kiểm tra đường chạy với chi phí thấp, không thay thí nghiệm đầy đủ. Tuần này không cần phần mềm trả phí hay bộ dữ liệu không có sẵn."
+    },
+    "diagram": {
+      "kind": "flow",
+      "title": {
+        "en": "Five decisions this week",
+        "vi": "Năm quyết định trong tuần"
+      },
+      "labels": [
+        {
+          "en": "Define the reproduction contract",
+          "vi": "Định nghĩa điều kiện tái lập"
+        },
+        {
+          "en": "Environment and determinism",
+          "vi": "Môi trường và tính xác định"
+        },
+        {
+          "en": "Trace a figure back to a command",
+          "vi": "Truy hình về lệnh tạo"
+        },
+        {
+          "en": "Package only material you can redistribute",
+          "vi": "Đóng gói đúng quyền phân phối"
+        },
+        {
+          "en": "Run a clean-room rehearsal",
+          "vi": "Diễn tập tái lập từ môi trường sạch"
+        }
+      ],
+      "caption": {
+        "en": "Each node is a separate session; this map describes the work, not numerical evidence.",
+        "vi": "Mỗi nút là một buổi riêng; sơ đồ mô tả công việc, không phải bằng chứng định lượng."
+      }
+    },
+    "sessions": [
+      {
+        "title": {
+          "en": "Define the reproduction contract",
+          "vi": "Định nghĩa điều kiện tái lập"
+        },
+        "theory": {
+          "en": "A reproduction contract states the command, input, expected output and tolerance. “Run the notebook” is ambiguous if hidden cells or local files are required. Separate exact assertions, such as row count, from floating-point comparisons where a documented tolerance is appropriate.",
+          "vi": "Điều kiện tái lập nêu lệnh, đầu vào, đầu ra mong đợi và dung sai. “Chạy notebook” mơ hồ nếu cần ô ẩn hoặc tệp chỉ có trên máy tác giả. Tách kiểm tra chính xác như số hàng khỏi so sánh số thực cần dung sai được ghi rõ."
+        },
+        "workedExample": {
+          "en": "Fixture targets=[1,3], predictions=[2,2]. The contract requires 2 scored rows and MSE=1 within absolute tolerance 10⁻¹². Both squared errors are 1. A result with 1 row and MSE=1 still fails because the count is wrong. Matching the final scalar alone is insufficient.",
+          "vi": "Mục tiêu thử=[1,3], dự báo=[2,2]. Điều kiện yêu cầu chấm 2 hàng và MSE=1 với dung sai tuyệt đối 10⁻¹². Hai sai số bình phương đều 1. Kết quả có 1 hàng, MSE=1 vẫn trượt vì số hàng sai. Chỉ khớp số cuối chưa đủ."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Write the fixture and expected result as small JSON files.",
+            "vi": "60 phút — Viết dữ liệu thử và kết quả mong đợi thành JSON nhỏ."
+          },
+          {
+            "en": "60 min — Implement row-count and absolute-tolerance assertions.",
+            "vi": "60 phút — Viết kiểm tra số hàng và dung sai tuyệt đối."
+          },
+          {
+            "en": "60 min — Solve the exercise and distinguish two failure types.",
+            "vi": "60 phút — Giải bài, phân biệt hai loại thất bại."
+          },
+          {
+            "en": "60 min — Write reproduction-contract.md with a single clean-start command.",
+            "vi": "60 phút — Viết reproduction-contract.md có một lệnh bắt đầu sạch."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "define-the-reproduction-contract",
+            "prompt": {
+              "en": "Expected n=3 and MSE=2 within 0.001. A reports n=3,MSE=2.0005; B reports n=2,MSE=2. Which pass?",
+              "vi": "Mong đợi n=3, MSE=2 trong dung sai 0,001. A báo n=3,MSE=2,0005; B báo n=2,MSE=2. Trường hợp nào đạt?"
+            },
+            "hint": {
+              "en": "Both count and numeric tolerance must pass.",
+              "vi": "Cả số hàng và dung sai số phải đạt."
+            },
+            "answer": {
+              "en": "A passes: count matches and |2.0005−2|=0.0005≤0.001. B fails the count even though its scalar matches exactly. A contract is a conjunction of requirements, not a choice among them.",
+              "vi": "A đạt: số hàng khớp, |2,0005−2|=0,0005≤0,001. B trượt số hàng dù số cuối khớp tuyệt đối. Điều kiện tái lập là đồng thời các yêu cầu, không chọn một trong số đó."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "reproduction-contract.md and two intentionally failing fixtures.",
+          "vi": "reproduction-contract.md và hai ca thử cố ý sai."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Fixture-to-result contract",
+            "vi": "Điều kiện từ dữ liệu thử tới kết quả"
+          },
+          "steps": [
+            {
+              "en": "Input: y=[1,3], prediction=[2,2]",
+              "vi": "Đầu vào: y=[1,3], dự báo=[2,2]"
+            },
+            {
+              "en": "Two squared errors: [1,1]",
+              "vi": "Hai sai số bình phương: [1,1]"
+            },
+            {
+              "en": "Require n=2 AND MSE≈1",
+              "vi": "Yêu cầu n=2 VÀ MSE≈1"
+            }
+          ],
+          "caption": {
+            "en": "The conjunction catches missing-row errors that a scalar check misses.",
+            "vi": "Điều kiện đồng thời bắt lỗi thiếu hàng mà kiểm tra số cuối bỏ sót."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Environment and determinism",
+          "vi": "Môi trường và tính xác định"
+        },
+        "theory": {
+          "en": "A random seed controls a random-number stream only within the specified generator and execution setup. Different library versions or parallel reduction orders may change outputs. Record versions and distinguish deterministic fixture expectations from stochastic experiment summaries. Do not force exact equality across hardware when the method only promises a tolerance.",
+          "vi": "Seed kiểm soát chuỗi số ngẫu nhiên trong bộ sinh và môi trường đã định. Phiên bản thư viện hoặc thứ tự cộng song song có thể đổi đầu ra. Ghi phiên bản, phân biệt kết quả thử xác định với tóm tắt thí nghiệm ngẫu nhiên. Không ép bằng nhau tuyệt đối giữa phần cứng khi phương pháp chỉ bảo đảm trong dung sai."
+        },
+        "workedExample": {
+          "en": "Provided manifest A: Python 3.11, NumPy 1.x, generator G1, seed 7. Manifest B: same seed but generator G2. The seed strings match, but identical samples are not promised. For a deterministic checksum test, store the tiny input [1,3] explicitly; for a simulation, record generator/version/seed and summarize all planned runs.",
+          "vi": "Manifest A: Python 3.11, NumPy 1.x, bộ sinh G1, seed 7. B cùng seed nhưng bộ sinh G2. Chuỗi seed giống nhau không bảo đảm mẫu giống nhau. Với kiểm thử xác định, lưu thẳng đầu vào nhỏ [1,3]; với giả lập, ghi bộ sinh/phiên bản/seed và tổng hợp mọi lần đã định."
+        },
+        "agenda": [
+          {
+            "en": "60 min — List every field needed to distinguish the two manifests.",
+            "vi": "60 phút — Liệt kê trường cần để phân biệt hai manifest."
+          },
+          {
+            "en": "60 min — Create an environment manifest from your actual runtime without inventing versions.",
+            "vi": "60 phút — Tạo manifest từ môi trường đang chạy, không bịa phiên bản."
+          },
+          {
+            "en": "60 min — Solve the exercise and define a reasonable tolerance policy.",
+            "vi": "60 phút — Giải bài, định nghĩa chính sách dung sai hợp lý."
+          },
+          {
+            "en": "60 min — Document which outputs should be byte-identical and which are numerical comparisons.",
+            "vi": "60 phút — Ghi đầu ra nào cần giống từng byte, đầu ra nào so số học."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "environment-and-determinism",
+            "prompt": {
+              "en": "Two runs return 0.30000000000000004 and 0.3. A contract uses absolute tolerance 10⁻¹². Are they numerically consistent? Does this prove all outputs reproducible?",
+              "vi": "Hai lần trả 0,30000000000000004 và 0,3. Dung sai tuyệt đối 10⁻¹². Có nhất quán số học không? Có chứng minh mọi đầu ra tái lập không?"
+            },
+            "hint": {
+              "en": "Compare the difference with tolerance, then limit the conclusion to this field.",
+              "vi": "So chênh lệch với dung sai rồi giới hạn kết luận ở trường này."
+            },
+            "answer": {
+              "en": "Their difference is about 5.55×10⁻¹⁷, below 10⁻¹², so this field passes. It does not verify row alignment, other metrics, manifests or the scientific claim. Floating-point agreement is one check within a broader contract.",
+              "vi": "Chênh lệch khoảng 5,55×10⁻¹⁷ nhỏ hơn 10⁻¹² nên trường này đạt. Không xác minh ghép hàng, thước đo khác, manifest hay kết luận khoa học. Khớp số thực chỉ là một kiểm tra trong điều kiện rộng hơn."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "environment.json and a documented equality/tolerance policy.",
+          "vi": "environment.json và chính sách bằng nhau/dung sai."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Seed is one part of the record",
+            "vi": "Seed chỉ là một phần bản ghi"
+          },
+          "steps": [
+            {
+              "en": "Input or data version",
+              "vi": "Đầu vào hoặc phiên bản dữ liệu"
+            },
+            {
+              "en": "Generator + library + execution settings",
+              "vi": "Bộ sinh + thư viện + thiết lập chạy"
+            },
+            {
+              "en": "Seed and planned run IDs",
+              "vi": "Seed và ID lần chạy đã định"
+            },
+            {
+              "en": "Expected outputs and tolerances",
+              "vi": "Đầu ra mong đợi và dung sai"
+            }
+          ],
+          "caption": {
+            "en": "All fields matter; a seed alone does not define an experiment.",
+            "vi": "Mọi trường đều quan trọng; seed đơn lẻ không định nghĩa thí nghiệm."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Trace a figure back to a command",
+          "vi": "Truy hình về lệnh tạo"
+        },
+        "theory": {
+          "en": "A reader should be able to regenerate a figure from its source data using a named command. Manual edits to numeric labels break this chain. Store presentation choices separately from computed results, and validate that displayed values match the source table. A source hash detects changes but does not prove data quality.",
+          "vi": "Người đọc cần tái tạo hình từ dữ liệu nguồn bằng lệnh được nêu. Sửa tay nhãn số làm đứt chuỗi. Tách lựa chọn trình bày khỏi kết quả tính, kiểm tra số hiển thị khớp bảng nguồn. Mã băm phát hiện thay đổi nhưng không chứng minh dữ liệu chất lượng."
+        },
+        "workedExample": {
+          "en": "Provided chain: fixture.json → score.py → results.json containing {baseline:2,model:1.5} → plot.py → figure.svg. Caption says reduction 25%, computed (2−1.5)/2. If results.json changes model to 1.8, rerender both bars and caption; the new reduction is 10%.",
+          "vi": "Chuỗi cho trước: fixture.json → score.py → results.json chứa {baseline:2,model:1.5} → plot.py → figure.svg. Chú thích giảm 25%, tính (2−1,5)/2. Nếu results.json đổi model thành 1,8, phải dựng lại cả cột lẫn chú thích; mức giảm mới là 10%."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Write the five-node dependency chain in a manifest.",
+            "vi": "60 phút — Viết chuỗi phụ thuộc năm nút vào manifest."
+          },
+          {
+            "en": "60 min — Generate the caption from the same values used for the bars.",
+            "vi": "60 phút — Tạo chú thích từ chính số dùng vẽ cột."
+          },
+          {
+            "en": "60 min — Solve the exercise and catch a stale caption automatically.",
+            "vi": "60 phút — Giải bài, tự động bắt chú thích lỗi thời."
+          },
+          {
+            "en": "60 min — Add a figure-reproduction command and expected output path to the README.",
+            "vi": "60 phút — Thêm lệnh tái tạo hình, đường dẫn đầu ra mong đợi vào README."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "trace-a-figure-back-to-a-command",
+            "prompt": {
+              "en": "Baseline=4, model=3.2 but a manually edited caption says “30% reduction.” Calculate the correct value and name the defect.",
+              "vi": "Đối chứng=4, mô hình=3,2 nhưng chú thích sửa tay ghi “giảm 30%”. Tính đúng và gọi tên lỗi."
+            },
+            "hint": {
+              "en": "Compute the reduction from the plotted numbers.",
+              "vi": "Tính mức giảm từ các số thực sự được vẽ."
+            },
+            "answer": {
+              "en": "Reduction=(4−3.2)/4=0.2=20%. The caption is inconsistent with its data source, likely stale or manually altered. Regenerate it from the shared result record and add an assertion; changing the bar height to fit the caption would falsify the result.",
+              "vi": "Mức giảm=(4−3,2)/4=0,2=20%. Chú thích không nhất quán nguồn, có thể lỗi thời hoặc sửa tay. Tạo lại từ bản ghi chung và thêm kiểm tra; đổi chiều cao cột để khớp chú thích sẽ làm sai kết quả."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "figure-manifest.json and a data-driven caption.",
+          "vi": "figure-manifest.json và chú thích sinh từ dữ liệu."
+        },
+        "visual": {
+          "kind": "bars",
+          "title": {
+            "en": "Values from the original result record",
+            "vi": "Giá trị bản ghi kết quả gốc"
+          },
+          "xLabel": {
+            "en": "Case",
+            "vi": "Trường hợp"
+          },
+          "yLabel": {
+            "en": "Mean loss",
+            "vi": "Sai số trung bình"
+          },
+          "values": [
+            {
+              "label": {
+                "en": "Baseline",
+                "vi": "Đối chứng"
+              },
+              "value": 2
+            },
+            {
+              "label": {
+                "en": "Model",
+                "vi": "Mô hình"
+              },
+              "value": 1.5
+            }
+          ],
+          "caption": {
+            "en": "Original record: (2−1.5)/2=25% reduction. The hypothetical later 1.8 value is not plotted here.",
+            "vi": "Bản ghi gốc: (2−1,5)/2=25%. Giá trị 1,8 giả định cập nhật sau không được vẽ ở đây."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Package only material you can redistribute",
+          "vi": "Đóng gói đúng quyền phân phối"
+        },
+        "theory": {
+          "en": "Publicly readable does not automatically mean redistributable. For this exercise, permissions are supplied as explicit fictional license cards, so no legal interpretation is required. Keep code, data and figures separate because their permissions may differ. If redistribution is forbidden, provide an authorized acquisition instruction and a synthetic fixture rather than bundling the file.",
+          "vi": "Đọc công khai không tự động có nghĩa được phân phối lại. Trong bài này quyền được cho rõ bằng thẻ giấy phép giả định nên không cần diễn giải pháp luật. Tách mã, dữ liệu, hình vì quyền có thể khác. Nếu cấm phân phối lại, cung cấp hướng dẫn lấy hợp lệ và dữ liệu giả lập thử thay vì đóng gói tệp."
+        },
+        "workedExample": {
+          "en": "Cards: A permits redistribution with attribution; B permits personal analysis only and forbids redistribution; C is synthetic data you created with no third-party inputs. Package A with its attribution, exclude B and document the restriction, include C as the clean-start fixture. Do not strip A’s notice to make the repository shorter.",
+          "vi": "Thẻ: A cho phân phối lại kèm ghi nguồn; B chỉ cho phân tích cá nhân, cấm phân phối lại; C là dữ liệu giả lập bạn tự tạo không có đầu vào bên thứ ba. Gói A kèm ghi nguồn, loại B và ghi hạn chế, đưa C làm dữ liệu thử bắt đầu sạch. Không bỏ thông báo của A để kho ngắn hơn."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Create an asset inventory assigning each file to A, B or C.",
+            "vi": "60 phút — Lập danh mục gán mỗi tệp vào A, B hoặc C."
+          },
+          {
+            "en": "60 min — Write a packaging allowlist that includes A and C only.",
+            "vi": "60 phút — Viết danh sách cho phép đóng gói chỉ gồm A, C."
+          },
+          {
+            "en": "60 min — Solve the exercise using only the stated permission cards.",
+            "vi": "60 phút — Giải bài chỉ dựa quyền được nêu trên thẻ."
+          },
+          {
+            "en": "60 min — Prepare attribution.md and a synthetic-data generation command.",
+            "vi": "60 phút — Chuẩn bị attribution.md và lệnh sinh dữ liệu giả lập."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "package-only-material-you-can-redistribute",
+            "prompt": {
+              "en": "A new card D allows linking but forbids copying. Can you include D’s PDF in the repository? What can the README include?",
+              "vi": "Thẻ D cho dẫn liên kết nhưng cấm sao chép. Có thể đưa PDF D vào kho không? README có thể gồm gì?"
+            },
+            "hint": {
+              "en": "Follow the stated permission, not whether the file is easy to download.",
+              "vi": "Theo quyền đã nêu, không theo việc tệp dễ tải hay không."
+            },
+            "answer": {
+              "en": "Do not bundle the PDF. The README may include the permitted link and identify D as optional background. The required runnable example must use permitted inputs such as C. This answer follows the fictional card; real assets require checking their actual terms.",
+              "vi": "Không đóng gói PDF. README có thể dẫn liên kết được phép và ghi D là nền đọc thêm tùy chọn. Ví dụ bắt buộc chạy được phải dùng đầu vào được phép như C. Đáp án theo thẻ giả định; tài sản thật cần kiểm tra điều khoản thật."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "asset-inventory.csv, attribution.md and a packaging allowlist.",
+          "vi": "asset-inventory.csv, attribution.md và danh sách đóng gói cho phép."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Permission-aware package",
+            "vi": "Gói theo quyền đã cho"
+          },
+          "steps": [
+            {
+              "en": "A: include with attribution",
+              "vi": "A: đưa vào kèm ghi nguồn"
+            },
+            {
+              "en": "B: exclude; document restriction",
+              "vi": "B: loại; ghi hạn chế"
+            },
+            {
+              "en": "C: include as synthetic fixture",
+              "vi": "C: đưa vào làm dữ liệu thử giả lập"
+            }
+          ],
+          "caption": {
+            "en": "The branches follow the supplied fictional permission cards.",
+            "vi": "Các nhánh tuân đúng thẻ quyền giả định đã cho."
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Run a clean-room rehearsal",
+          "vi": "Diễn tập tái lập từ môi trường sạch"
+        },
+        "theory": {
+          "en": "A clean-room rehearsal starts from a fresh copy and follows only the public instructions. It exposes hidden dependencies such as absolute paths, untracked data or notebook state. Log the first failure before fixing it, then repeat from a fresh start. Success means the declared contract passed, not that the model is scientifically correct.",
+          "vi": "Diễn tập sạch bắt đầu từ bản sao mới và chỉ làm theo hướng dẫn công khai. Nó lộ phụ thuộc ẩn như đường dẫn tuyệt đối, dữ liệu chưa theo dõi, trạng thái notebook. Ghi lỗi đầu tiên trước khi sửa rồi thử lại từ đầu sạch. Thành công nghĩa điều kiện khai báo đạt, không phải mô hình đúng khoa học."
+        },
+        "workedExample": {
+          "en": "Provided rehearsal log: step 1 installs dependencies; step 2 fails opening /home/author/data.csv; README never creates that file. Repair: use a project-relative input path, add a command generating the supplied synthetic fixture and document it before scoring. Rerun in a new temporary directory to ensure the author’s old file is not masking the issue.",
+          "vi": "Nhật ký diễn tập: bước 1 cài thư viện; bước 2 lỗi mở /home/author/data.csv; README không tạo tệp đó. Sửa: dùng đường dẫn tương đối trong dự án, thêm lệnh sinh dữ liệu giả lập đã cho, ghi trước bước chấm. Chạy lại trong thư mục tạm mới để tệp cũ của tác giả không che lỗi."
+        },
+        "agenda": [
+          {
+            "en": "60 min — Write the minimal failing reproduction from the supplied log.",
+            "vi": "60 phút — Viết cách tái hiện tối thiểu từ nhật ký đã cho."
+          },
+          {
+            "en": "60 min — Implement project-relative fixture generation and scoring commands.",
+            "vi": "60 phút — Viết lệnh sinh dữ liệu, chấm bằng đường dẫn tương đối dự án."
+          },
+          {
+            "en": "60 min — Solve the exercise and test from an empty working directory.",
+            "vi": "60 phút — Giải bài, thử từ thư mục làm việc rỗng."
+          },
+          {
+            "en": "60 min — Complete reproduction-report.md listing commands, outputs, failures and fixes.",
+            "vi": "60 phút — Hoàn thành reproduction-report.md ghi lệnh, đầu ra, lỗi, cách sửa."
+          }
+        ],
+        "exercises": [
+          {
+            "id": "run-a-clean-room-rehearsal",
+            "prompt": {
+              "en": "A notebook passes only after cell 8 has been run manually before cell 3. Explain the hidden dependency and give an acceptance test.",
+              "vi": "Notebook chỉ chạy đúng khi chạy tay ô 8 trước ô 3. Giải thích phụ thuộc ẩn và cho kiểm tra chấp nhận."
+            },
+            "hint": {
+              "en": "A fresh kernel should execute the documented order without prior state.",
+              "vi": "Kernel mới phải chạy theo thứ tự ghi trong hướng dẫn, không cần trạng thái cũ."
+            },
+            "answer": {
+              "en": "Cell 3 depends on state created later in cell 8, so the visible order is incomplete. Move initialization before its first use or refactor into explicit functions. Acceptance: restart the kernel, run all cells top to bottom and verify the contract without manual intervention. A saved successful output is not a substitute for this test.",
+              "vi": "Ô 3 phụ thuộc trạng thái tạo muộn ở ô 8 nên thứ tự hiển thị chưa đầy đủ. Đưa khởi tạo trước lần dùng đầu hoặc tách hàm rõ. Chấp nhận: khởi động lại kernel, chạy mọi ô từ trên xuống, kiểm tra điều kiện không can thiệp tay. Đầu ra thành công được lưu sẵn không thay được phép thử này."
+            }
+          }
+        ],
+        "deliverable": {
+          "en": "reproduction-report.md with a clean-start pass/fail record.",
+          "vi": "reproduction-report.md có bản ghi đạt/trượt từ đầu sạch."
+        },
+        "visual": {
+          "kind": "steps",
+          "title": {
+            "en": "Rehearsal and repair loop",
+            "vi": "Vòng diễn tập và sửa"
+          },
+          "steps": [
+            {
+              "en": "Fresh copy → follow README only",
+              "vi": "Bản sao mới → chỉ theo README"
+            },
+            {
+              "en": "Fail: hidden absolute data path",
+              "vi": "Lỗi: đường dẫn dữ liệu tuyệt đối ẩn"
+            },
+            {
+              "en": "Repair path and add fixture command",
+              "vi": "Sửa đường dẫn, thêm lệnh tạo dữ liệu thử"
+            },
+            {
+              "en": "Fresh copy again → verify contract",
+              "vi": "Bản sao mới lần nữa → kiểm tra điều kiện"
+            }
+          ],
+          "caption": {
+            "en": "A second clean start prevents old local files from hiding the repaired dependency.",
+            "vi": "Bắt đầu sạch lần hai tránh tệp cục bộ cũ che phụ thuộc vừa sửa."
+          }
+        }
+      }
+    ],
+    "references": []
+  }
+]

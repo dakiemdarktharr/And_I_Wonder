@@ -7,9 +7,9 @@ import { useLanguage, Text } from './providers';
 import { CalendarArt, QuestArt, ShelfArt, Cutout } from './portal-art';
 
 const portals = [
-  { id: 'daily', en: 'Daily', vi: 'Hằng ngày', subEn: 'A little further. Every day.', subVi: 'Mỗi ngày, tiến thêm một chút.', code: '24 months', Art: CalendarArt },
-  { id: 'projects', en: 'Projects', vi: 'Dự án', subEn: 'Five quests. Real discoveries.', subVi: 'Năm chặng. Những khám phá thật.', code: '5 quest lines', Art: QuestArt },
-  { id: 'resources', en: 'Resources', vi: 'Thư viện', subEn: 'Good questions start here.', subVi: 'Nơi khởi đầu câu hỏi hay.', code: 'Free, always', Art: ShelfArt },
+  { id: 'daily', en: 'Daily', vi: 'Hằng ngày', subEn: 'Open your study calendar.', subVi: 'Mở lịch và bài học của bạn.', code: '24 months', Art: CalendarArt },
+  { id: 'projects', en: 'Projects', vi: 'Dự án', subEn: 'Explore five research projects.', subVi: 'Khám phá năm chặng nghiên cứu.', code: '5 quest lines', Art: QuestArt },
+  { id: 'resources', en: 'Resources', vi: 'Thư viện', subEn: 'Books, papers and lectures.', subVi: 'Sách, bài báo và bài giảng.', code: 'Free, always', Art: ShelfArt },
 ] as const;
 
 type PortalId = (typeof portals)[number]['id'];
@@ -56,10 +56,8 @@ export function HomePortals() {
   return <main className="home-main">
     <section className="home-intro">
       <div>
-        <p className="intro-note"><span className="small-cross">+</span><Text vi="Một không gian cho trí tò mò." en="A place for a curious mind." /></p>
         <h1>AND I <span className="wonder-word">WONDER<svg viewBox="0 0 460 20" aria-hidden="true"><path d="M3 12Q170 0 457 9M5 16Q250 7 440 17" /></svg></span><span className="title-star"><Asterisk /></span></h1>
       </div>
-      <p className="intro-description"><Text vi="Từ câu hỏi đầu tiên đến nghiên cứu của riêng bạn. Hành trình quant bắt đầu bằng một ngày hôm nay." en="From your first question to research of your own. Your quant journey starts with today." /></p>
     </section>
 
     <section className="portal-grid" aria-label={language === 'vi' ? 'Chọn không gian học' : 'Choose your study space'}>
@@ -80,9 +78,7 @@ export function HomePortals() {
     </section>
 
     <footer className="home-footer">
-      <span><i className="status-square" /><Text vi="Thiết kế để học sâu." en="Built for deep work." /></span>
       <div><span>07.10.2026 — 06.10.2028</span><span><Text vi="4 giờ / ngày · 5 ngày / tuần" en="4 hours / day · 5 days / week" /></span></div>
-      <span className="footer-mark"><MoveUpRight size={16} /><Text vi="Cứ tiếp tục tò mò" en="Stay curious" /></span>
     </footer>
 
     <div className="particle-layer" aria-hidden="true">{particles.map((particle) => <div className="flying-cutout" key={particle.id} style={{ left: particle.x, top: particle.y, '--dx': `${particle.dx}px`, '--dy': `${particle.dy}px`, '--spin': `${particle.rotate}deg` } as CSSProperties}>

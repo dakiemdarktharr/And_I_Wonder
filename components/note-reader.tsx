@@ -277,7 +277,7 @@ export function NoteReader({ note, notes = EMPTY_NOTES, lesson, dayIndex, dailyN
     </header>
     {dailyNavigation && <nav className="daily-reader-nav" aria-label={languageIsVi?'Chuyển ngày':'Day navigation'}>
       {dailyNavigation.previous?<Link href={dailyNavigation.previous.href}>← {dailyNavigation.previous.date}</Link>:<span/>}
-      <Link href="/daily">{languageIsVi?'Lịch học':'Calendar'}</Link>
+      <Link href="/daily?curriculum=v1">{languageIsVi?'Lịch v1':'Legacy calendar'}</Link>
       {dailyNavigation.next?<Link href={dailyNavigation.next.href}>{dailyNavigation.next.date} →</Link>:<span/>}
     </nav>}
 

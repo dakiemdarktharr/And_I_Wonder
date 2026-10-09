@@ -1,0 +1,146 @@
+{
+  "version": "curriculum-v1",
+  "baseline": "47e38bf5f510b92c9987b4be2e88c37e6ad5e3f8",
+  "entries": [
+    {
+      "file": "data/curriculum-vi.json",
+      "sha256": "20ad8929ca60fee6eee1e025bbe6d96dac3ea811fa69cd31afd1b5c37308c1b2",
+      "bytes": 66543
+    },
+    {
+      "file": "data/exercise-checkpoints.json",
+      "sha256": "35e6c77ae6c14d47bbc805909f68d307ffdb71bdf86f2151af2d57135882ebb1",
+      "bytes": 586566
+    },
+    {
+      "file": "data/import-summary.json",
+      "sha256": "2259579059993875842e1f6ab28cbaaf5155746b078391565faaff781cc4d1d5",
+      "bytes": 477
+    },
+    {
+      "file": "data/lesson-visuals-01-13.json",
+      "sha256": "1adf67072fd960a84e0d7b5e1f592941f5afd6839f6a06dda903e0f24fc1f6c9",
+      "bytes": 225625
+    },
+    {
+      "file": "data/lessons-01-35.json",
+      "sha256": "51a98233f9e69bd8431296448849f972e89ca418a4bcb16fbeebee9c8df799cb",
+      "bytes": 1152829
+    },
+    {
+      "file": "data/lessons-100-105.json",
+      "sha256": "f081bcff1113d3d7c8ab1fe92ae8a314f2cff0b510033951cb31bfc10af4a59c",
+      "bytes": 189965
+    },
+    {
+      "file": "data/lessons-36-70.json",
+      "sha256": "d12386b433af90bb424ede25f3eb4c792d5e71b1c4a96adb8d296c1a6605e90c",
+      "bytes": 1099435
+    },
+    {
+      "file": "data/lessons-71-86.json",
+      "sha256": "fd03c4b0a63ad1d2eabd2c03ff26592a2783fb11342866199917e7a66235fa2d",
+      "bytes": 547699
+    },
+    {
+      "file": "data/lessons-87-93.json",
+      "sha256": "2f2f1b0c371b73aabc68e9998eb8189067d3123942655689daa826955c50c7b0",
+      "bytes": 215482
+    },
+    {
+      "file": "data/lessons-94-99.json",
+      "sha256": "8c1b4645fd1a9090fac4fb2f2a3b862bc74b1d6dbedde5b85046fff65ce04c5b",
+      "bytes": 175155
+    },
+    {
+      "file": "data/notes.json",
+      "sha256": "4203cb37cad1e02d9489456889f74f73d6f061c9f2b3522b6a9f1c129a4dae40",
+      "bytes": 3737143
+    },
+    {
+      "file": "data/project-guides.json",
+      "sha256": "3f316d108a7199d00484bc7a62f6afe1a491bcdc036bf716235bd898fec17b6e",
+      "bytes": 64166
+    },
+    {
+      "file": "data/resource-covers.json",
+      "sha256": "ac991ecbb3de40df80c1a9fd42884dc84ae4e3b55eab7cff84cde50737bcb19a",
+      "bytes": 10136
+    },
+    {
+      "file": "data/resources.json",
+      "sha256": "14339a657bf6d2445e3d83a4e3b2cfb81f499069105dd14a9eeff6cf7cce5afe",
+      "bytes": 8881
+    },
+    {
+      "file": "data/translation-map.json",
+      "sha256": "946caff735bb47e5354e7dcd8710fcaf04cc17eb6e836983625ce449c86fdc78",
+      "bytes": 67945
+    },
+    {
+      "file": "lib/lab-catalog.ts",
+      "sha256": "e9f08e0008946c0cd0e7790a187e147087dc59c9887ba1b7b4fd12044742af34",
+      "bytes": 8883
+    },
+    {
+      "file": "lib/lesson-export.ts",
+      "sha256": "5b7ddd50f7baeeaeae0427900c7cfb3302ca44134acfb70c800a4f6e74581ca3",
+      "bytes": 2804
+    },
+    {
+      "file": "lib/lesson-types.ts",
+      "sha256": "5962e8db7a4542f2c12871dbf461b2d6e9a96a72dc3007f2180373a4fcec4fa7",
+      "bytes": 1781
+    },
+    {
+      "file": "lib/lessons.ts",
+      "sha256": "c35af4a529b95bd920a10510ae8506d440c06ea41c939e0f8960f70015ecdfcf",
+      "bytes": 1666
+    },
+    {
+      "file": "lib/math-labs.ts",
+      "sha256": "869408125d33cdf050b2e5b73ebeb034af315f299574f7ee61189971a1b311f6",
+      "bytes": 21480
+    },
+    {
+      "file": "scripts/author-87-93.mjs",
+      "sha256": "0203b764fa4363a1fd68b13588a0f8142d56aac2dd0f0a58e21f88cef83a8675",
+      "bytes": 151449
+    },
+    {
+      "file": "scripts/author-research-lessons.mjs",
+      "sha256": "e82ef162e2a451ed7626fa774d6c730b1aae38bf4a22d58c703a0ce6d595aacc",
+      "bytes": 116421
+    },
+    {
+      "file": "scripts/author_rewritten_late.py",
+      "sha256": "a65be5c5c5be5bda9186f9e1ec8e13fb4fdb3eccecd7ba5684ecb85e93bdd651",
+      "bytes": 174807
+    },
+    {
+      "file": "scripts/author_w77_93.py",
+      "sha256": "61c4af3899a66feb579f493e212d73e030cc47c2d58065fb62de4efec561dc42",
+      "bytes": 216952
+    },
+    {
+      "file": "scripts/build-exercise-checkpoints.mjs",
+      "sha256": "f9975a9abc99ccc34fbe8e5efe6040a9db706a8b171b5728fb3ff30adf3da503",
+      "bytes": 58705
+    },
+    {
+      "file": "scripts/build-foundation-visuals.mjs",
+      "sha256": "9cd6006023f8286beb7ea8640be2c530a688c117479f4c5d0432b6036a2d42b9",
+      "bytes": 45375
+    },
+    {
+      "file": "scripts/correct-foundation-answers.mjs",
+      "sha256": "375befc780814029b05fbc044cff97d24a8a96747f053f5a7adb7956a24a3b8f",
+      "bytes": 11162
+    },
+    {
+      "file": "scripts/import_obsidian.py",
+      "sha256": "020cca8ccb44eb0deb0e3bdc2b6357569ca0b622ff69067cc8430ab427dfde58",
+      "bytes": 24408
+    }
+  ]
+}

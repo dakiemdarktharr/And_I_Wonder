@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Clock3, Coffee, CalendarDays, Crosshair } from 'lucide-react';
 import { Text, useLanguage } from './providers';
+import './math-curriculum.css';
 
 export type DailySummary = { id: string; date: string; focus: string; focusVi: string; week: number; project: string; minutes: number; total: number; completed: number };
 type Progress = { checked?: Record<string, boolean>; status?: string };
@@ -26,7 +27,7 @@ function clampPlanMonth(date: string) {
   return requested;
 }
 
-export function StudyCalendar({ days }: { days: DailySummary[] }) {
+export function StudyCalendar({ days, version = 'v1', foundation=false }: { days: DailySummary[]; version?:'v1'|'v2';foundation?:boolean }) {
   const { language } = useLanguage();
   const [today, setToday] = useState('');
   const [month, setMonth] = useState(PLAN_START);
@@ -37,14 +38,14 @@ export function StudyCalendar({ days }: { days: DailySummary[] }) {
     const date = dateInHoChiMinh();
     setToday(date);
     setMonth(clampPlanMonth(date));
-    fetch('/api/progress', { cache: 'no-store' })
+    fetch(version==='v2'?'/api/math-progress':'/api/progress', { cache: 'no-store' })
       .then(async (response) => {
         if (!response.ok) throw new Error('Progress unavailable');
         return response.json() as Promise<ProgressResponse>;
       })
       .then((payload) => { setProgress(payload.notes ?? {}); setConnected(true); })
       .catch(() => setConnected(false));
-  }, []);
+  }, [version]);
 
   const [year, monthNumber] = month.split('-').map(Number);
   const current = new Date(year, monthNumber - 1, 1);
@@ -52,7 +53,7 @@ export function StudyCalendar({ days }: { days: DailySummary[] }) {
   const offset = (current.getDay() + 6) % 7;
   const byDate = useMemo(() => new Map(days.map((day) => [day.date, day])), [days]);
 
-  const checkedCount = (day: DailySummary) => Array.from({ length: AGENDA_SIZE }, (_, index) => progress[day.id]?.checked?.[`${day.id}::lesson${index}`] === true).filter(Boolean).length;
+  const checkedCount = (day: DailySummary) => Array.from({ length: AGENDA_SIZE }, (_, index) => progress[day.id]?.checked?.[`${day.id}::${version==='v2'?'block':'lesson'}${index}`] === true).filter(Boolean).length;
   const isDone = (day: DailySummary) => day.minutes > 0 && (progress[day.id]?.status === 'done' || checkedCount(day) === AGENDA_SIZE);
   const hasStarted = (day: DailySummary) => progress[day.id]?.status === 'in-progress' || progress[day.id]?.status === 'blocked' || checkedCount(day) > 0;
 
@@ -79,12 +80,12 @@ export function StudyCalendar({ days }: { days: DailySummary[] }) {
   }
 
   return <main className="workspace calendar-workspace">
-    <div className="page-heading">
+    <nav className="math-version-bar"><strong>{version==='v2'?(foundation?'Mathematics v2 · foundation route':'Mathematics v2 · main route'):'Legacy v1'}</strong><Link href={`/daily?curriculum=${version==='v2'?'v1':'v2'}`}><Text vi={version==='v2'?'Xem lịch cũ và tiến độ v1':'Mở chương trình toán v2'} en={version==='v2'?'View legacy calendar and progress':'Open mathematics v2'}/></Link><Link href="/mathematics"><Text vi="Đề cương, prerequisite và kỳ thi" en="Syllabus, prerequisites and gates"/></Link></nav>
+    <p className="math-version-bar"><Link href={foundation?"/daily?curriculum=v2":"/daily?curriculum=v2&route=foundation"}><Text vi={foundation?"Chuyển sang nhánh chính":"Chuyển sang nhánh sửa nền tảng"} en={foundation?"Switch to the main route":"Switch to foundation repair route"}/></Link>{foundation&&<Text vi="Nhánh này dành 12 tuần sửa trước graduate; learning/bandit depth và đề B cuối kỳ chuyển sang sau năm hai." en="This route reserves 12 repair weeks before graduate work; learning/bandit depth and final B move beyond year two."/>}</p><div className="page-heading">
       <div>
         <div className="breadcrumb"><Link href="/">And I Wonder</Link><span>/</span><Text vi="Hằng ngày" en="Daily" /></div>
-        <h1><Text vi="Mỗi ngày.\nMột bước." en="One day.\nOne step." /></h1>
+        <h1><Text vi="Lịch học" en="Study calendar" /></h1>
       </div>
-      <p><Text vi="Không cần biết hết mọi thứ hôm nay. Chỉ cần bắt đầu với một điều." en="You don't need to know everything today. Just start with one thing." /></p>
     </div>
 
     <div className="calendar-layout">
@@ -106,7 +107,7 @@ export function StudyCalendar({ days }: { days: DailySummary[] }) {
           const rest = day?.minutes === 0;
           const complete = Boolean(day && connected && isDone(day));
           const ariaLabel = day ? `${date}, ${language === 'vi' ? day.focusVi : day.focus}${complete ? `, ${language === 'vi' ? 'đã hoàn thành' : 'completed'}` : ''}` : date;
-          return day ? <Link prefetch={false} key={date} href={`/daily/${date}`} className={`day-cell ${rest ? 'rest' : ''} ${date === today ? 'is-today' : ''} ${complete ? 'completed' : ''}`} aria-label={ariaLabel} aria-current={date === today ? 'date' : undefined}>
+          return day ? <Link prefetch={false} key={date} href={`/daily/${date}?curriculum=${version}${foundation?"&route=foundation":""}`} className={`day-cell ${rest ? 'rest' : ''} ${date === today ? 'is-today' : ''} ${complete ? 'completed' : ''}`} aria-label={ariaLabel} aria-current={date === today ? 'date' : undefined}>
             <div className="day-cell-top"><span>{dayNumber}</span>{complete ? <Check size={15} aria-label={language === 'vi' ? 'Đã hoàn thành' : 'Completed'} /> : date === today ? <span className="today-dot" aria-hidden="true" /> : null}</div>
             <div className="day-cell-bottom">{rest ? <><Coffee size={14} /><span><Text vi="Nghỉ ngơi" en="Rest day" /></span></> : <><span className="day-project">{day.project}</span><span>4h</span></>}</div>
             <span className="day-tooltip">{rest ? (language === 'vi' ? 'Nạp lại năng lượng.' : 'Recharge.') : language === 'vi' ? day.focusVi : day.focus}</span>
@@ -126,17 +127,15 @@ export function StudyCalendar({ days }: { days: DailySummary[] }) {
             <div className="today-progress-track" aria-hidden="true">{Array.from({ length: AGENDA_SIZE }, (_, index) => <i key={index} className={connected && index < (featuredChecked ?? 0) ? 'is-checked' : ''} />)}</div>
             <span>{connected === null ? <Text vi="Đang tải tiến độ đã lưu…" en="Checking saved progress…" /> : connected === false ? <Text vi="Tiến độ hiện chưa khả dụng." en="Progress is currently unavailable." /> : isDone(featured) ? <Text vi="Đã đánh dấu hoàn thành." en="Marked complete." /> : <Text vi={`${featuredChecked} / ${AGENDA_SIZE} việc đã đánh dấu`} en={`${featuredChecked} of ${AGENDA_SIZE} tasks checked`} />}</span>
           </div>}
-          {featured && <Link className="bold-button" href={`/daily/${featured.date}`}><Text vi={featuredMode === 'resume' ? 'Tiếp tục học' : featuredMode === 'review' ? 'Xem lại bài học' : 'Mở bài học'} en={featuredMode === 'resume' ? 'Resume learning' : featuredMode === 'review' ? 'Review today’s lesson' : 'Open daily lesson'} /><ArrowUpRight size={20} /></Link>}
+          {featured && <Link className="bold-button" href={`/daily/${featured.date}?curriculum=${version}${foundation?"&route=foundation":""}`}><Text vi={featuredMode === 'resume' ? 'Tiếp tục học' : featuredMode === 'review' ? 'Xem lại bài học' : 'Mở bài học'} en={featuredMode === 'resume' ? 'Resume learning' : featuredMode === 'review' ? 'Review today’s lesson' : 'Open daily lesson'} /><ArrowUpRight size={20} /></Link>}
         </div>
 
         <div className="month-progress">
           <div><span><Text vi="Tiến độ tháng này" en="This month's progress" /></span><b>{finished === null ? '—' : finished}<small> / {planned.length}</small></b></div>
           <div className={`progress-track ${connected ? 'is-known' : 'is-unknown'}`} role="img" aria-label={connected ? (language === 'vi' ? `${finished} trong ${planned.length} buổi học hoàn thành` : `${finished} of ${planned.length} study sessions completed`) : connected === null ? (language === 'vi' ? 'Đang tải tiến độ' : 'Progress is loading') : (language === 'vi' ? 'Tiến độ hiện chưa khả dụng' : 'Progress is currently unavailable')}><i style={{ width: `${finished === null || planned.length === 0 ? 0 : finished / planned.length * 100}%` }} /></div>
-          <p>{connected === null ? <Text vi="Đang kiểm tra các buổi học đã hoàn thành." en="Checking completed study sessions." /> : connected === false ? <Text vi="Chưa tải được tiến độ đã lưu; lịch học vẫn sẵn sàng." en="Saved progress could not be loaded; your calendar is ready." /> : <Text vi="Đếm các buổi đã đánh dấu xong hoặc đủ bốn việc học." en="Counts sessions marked complete or with all four tasks checked." />}</p>
+          <p>{connected === null ? <Text vi="Đang kiểm tra các buổi học đã hoàn thành." en="Checking completed study sessions." /> : connected === false ? <Text vi="Chưa tải được tiến độ đã lưu; lịch học vẫn sẵn sàng." en="Saved progress could not be loaded; your calendar is ready." /> : null}</p>
         </div>
-        <div className="sidebar-note"><span aria-hidden="true">↳</span><p><Text vi="Cuối tuần là để nghỉ. Học sâu cần cả những khoảng dừng." en="Weekends are for resting. Deep work needs room to breathe." /></p></div>
       </aside>
     </div>
-    <div className="page-footnote"><Text vi="731 ngày · 523 buổi học · 5 dự án · một hành trình của riêng bạn" en="731 days · 523 study sessions · 5 projects · a journey of your own" /></div>
   </main>;
 }

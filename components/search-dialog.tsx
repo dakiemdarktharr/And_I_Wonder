@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent }
 import { useLanguage } from "@/components/providers";
 import { routeForNote } from "@/lib/markdown";
 import type { Note } from "@/lib/types";
+import { useRouter } from "next/navigation";
 
 type SearchDialogProps = {
   open: boolean;
@@ -11,6 +12,12 @@ type SearchDialogProps = {
   /** Pass a compact index for instant local search. With no index, search uses /api/search. */
   notes?: readonly Note[];
 };
+
+// Only accept internal links emitted by the curriculum search index.
+function searchHref(note: Note) {
+ const href=note.meta.href;
+ return typeof href==='string'&&/^\/(daily|projects)\/[A-Za-z0-9/-]+\?curriculum=v[12]$/.test(href)?href:routeForNote(note);
+}
 
 function noteDescription(note: Note, language: "vi" | "en"): string {
   const preferred = language === "vi" ? note.meta.descriptionVi ?? note.meta.summaryVi : note.meta.description ?? note.meta.summary;
@@ -32,6 +39,7 @@ function noteDescription(note: Note, language: "vi" | "en"): string {
 }
 
 export function SearchDialog({ open, onClose, notes }: SearchDialogProps) {
+  const router = useRouter();
   const { language } = useLanguage();
   const [query, setQuery] = useState("");
   const [remoteNotes, setRemoteNotes] = useState<Note[]>([]);
@@ -121,7 +129,8 @@ export function SearchDialog({ open, onClose, notes }: SearchDialogProps) {
       event.preventDefault();
       setActiveIndex((index) => Math.max(0, index - 1));
     } else if (event.key === "Enter" && results[activeIndex]) {
-      window.location.assign(routeForNote(results[activeIndex]));
+      router.push(searchHref(results[activeIndex]));
+      close();
     }
   };
 
@@ -138,11 +147,16 @@ export function SearchDialog({ open, onClose, notes }: SearchDialogProps) {
         {results.map((note, index) => <a
           key={note.id}
           className={`search-result${index === activeIndex ? " search-result--active" : ""}`}
-          href={routeForNote(note)}
+          href={searchHref(note)}
           role="option"
           aria-selected={index === activeIndex}
           onMouseEnter={() => setActiveIndex(index)}
-          onClick={close}
+          onClick={(event) => {
+            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            router.push(searchHref(note));
+            close();
+          }}
         >
           <span className="search-result__kind">{note.kind}</span>
           <span className="search-result__text"><strong>{language === "vi" ? (note.titleVi || note.title) : note.title}</strong><small>{noteDescription(note, language)}</small></span>

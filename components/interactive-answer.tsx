@@ -77,15 +77,17 @@ export type InteractiveAnswerProps = {
   exercise: Exercise;
   language: Language;
   exerciseKey: string;
+  /** Omit for the immutable legacy key format. */
+  storageNamespace?: string;
   checkpoint?: ExerciseCheckpoint;
   children?: ReactNode;
 };
 
 /** A private-to-this-browser solution workspace; it never writes owner progress. */
-export function InteractiveAnswer({ exercise, language, exerciseKey, checkpoint, children }: InteractiveAnswerProps) {
+export function InteractiveAnswer({ exercise, language, exerciseKey, storageNamespace = 'v1', checkpoint, children }: InteractiveAnswerProps) {
   const lang = language;
   const stages = useMemo<Stage[]>(() => checkpoint?.stages?.length ? checkpoint.stages : [exercise.answer], [checkpoint, exercise.answer]);
-  const storageKey = `road-to-qr:answer-workbench:v1:${encodeURIComponent(exerciseKey)}`;
+  const storageKey = `road-to-qr:answer-workbench:${storageNamespace}:${encodeURIComponent(exerciseKey)}`;
   const [draft, setDraft] = useState<WorkbenchDraft>(emptyDraft);
   const [loadedKey, setLoadedKey] = useState<string | null>(null);
   const [storageAvailable, setStorageAvailable] = useState<boolean | null>(null);

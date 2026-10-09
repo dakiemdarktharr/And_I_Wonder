@@ -15,8 +15,8 @@ const note = (overrides: Partial<Note> = {}): Note => ({
 });
 
 test("note routes point daily and project notes to their app screens", () => {
-  assert.equal(routeForNote(note()), "/daily/2026-10-08");
-  assert.equal(routeForNote(note({ id: "Projects/P03", kind: "project", meta: {} })), "/projects/P03");
+  assert.equal(routeForNote(note()), "/daily/2026-10-08?curriculum=v1");
+  assert.equal(routeForNote(note({ id: "Projects/P03", kind: "project", meta: {} })), "/projects/P03?curriculum=v1");
   assert.equal(routeForNote(note({ id: "Weeks/W001", kind: "week", meta: {} })), "/notes/Weeks/W001");
   assert.equal(routeForNote(note({ id: "Resources/ANALYSIS", kind: "resource", meta: {} })), "/notes/Resources/ANALYSIS");
   assert.equal(normalizeNoteId("Road to Quant\\Daily\\2026-10-08.md"), "Daily/2026-10-08");
@@ -35,9 +35,9 @@ test("wiki and relative links resolve through the supplied note index", () => {
   const project = note({ id: "Projects/P01", title: "Foundations", titleVi: "Nền tảng", kind: "project", meta: {} });
   const daily = note();
   const notes = [project, daily];
-  assert.equal(resolveWikiTarget("P01#Weekly plan", "Daily/2026-10-08", notes), "/projects/P01#weekly-plan");
-  assert.equal(resolveWikiTarget("#Today", "Daily/2026-10-08", notes), "/daily/2026-10-08#today");
-  assert.equal(resolveMarkdownHref("../Projects/P01.md", "Daily/2026-10-08", notes), "/projects/P01");
+  assert.equal(resolveWikiTarget("P01#Weekly plan", "Daily/2026-10-08", notes), "/projects/P01?curriculum=v1#weekly-plan");
+  assert.equal(resolveWikiTarget("#Today", "Daily/2026-10-08", notes), "/daily/2026-10-08?curriculum=v1#today");
+  assert.equal(resolveMarkdownHref("../Projects/P01.md", "Daily/2026-10-08", notes), "/projects/P01?curriculum=v1");
 });
 
 test("external links remain safe and executable URL schemes are rejected", () => {

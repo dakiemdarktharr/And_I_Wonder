@@ -45,10 +45,10 @@ export function routeForNote(noteOrId: Note | string): string {
 
   if (kind === "daily" || /(?:^|\/)Daily\//i.test(id) || /^\d{4}-\d{2}-\d{2}$/.test(id)) {
     const date = metadataDate(note ?? ({ id, meta: {} } as Note));
-    if (date) return `/daily/${date}`;
+    if (date) return `/daily/${date}?curriculum=v1`;
   }
   if (kind === "project" || /^Projects\//i.test(id)) {
-    return `/projects/${encodeURIComponent(id.split("/").pop() ?? id)}`;
+    return `/projects/${encodeURIComponent(id.split("/").pop() ?? id)}?curriculum=v1`;
   }
   if (kind === "week" || kind === "month" || /^Weeks\//i.test(id) || /^Months\//i.test(id)) {
     return `/notes/${encodeNotePath(id)}`;
