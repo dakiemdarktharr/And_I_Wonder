@@ -1,0 +1,55 @@
+# ML alpha and derivatives: standards, scope and evidence limits
+
+This is an honest self-study program, not a PhD equivalence claim. Its design borrows practices from free primary and university sources; the curriculum and UI are not endorsed, validated or accredited by those organizations.
+
+## Evidence used for design
+
+- [Princeton ORFE Ph.D. handbook](https://orfe.princeton.edu/graduate/handbook): the stated route includes six graded graduate core courses, qualifying requirements, supervised directed research, written reports, an oral examination by an approved committee and later a dissertation. This is why course coverage and accumulated study hours cannot stand in for a doctorate.
+- [Citadel, Quantitative Researcher — PhD Graduate](https://www.citadel.com/careers/details/quantitative-researcher-phd-graduate-us/): the employer describes work in models, research/statistical analysis, translating algorithms into code and backtesting/implementation, and lists independent research experience. The five projects therefore ask for code, data provenance, cost-aware experiments and a defensible report. A lab using aggregate monthly factors is still narrower than the role.
+- [Carnegie Mellon, constructive alignment](https://www.cmu.edu/teaching/assessment/basics/alignment.html): outcomes, activities and assessment should address the same capabilities. The project rubrics now point to concrete files and tests; checking attendance is not presented as evidence of those outcomes.
+- [Center for Open Science, preregistration](https://www.cos.io/initiatives/prereg): record an analysis plan before examining confirmatory results and distinguish planned from exploratory work. The app saves a learner-written frozen plan locally and labels a revealed holdout as exposed. This is **not** formal OSF registration, and client storage is not a secure registry.
+- [ACM SIGSIM-PADS artifact-evaluation description](https://sigsim.acm.org/conf/pads/2024/blog/artifact-evaluation/): reproducibility involves runnable artifacts, documentation, scripts and evaluation by someone other than the author. Projects use these useful packaging ideas; the site awards no ACM badge and performs no external review.
+- [MIT OCW 18.S096 lecture notes](https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/pages/lecture-notes/): a freely accessible map of financial mathematics including stochastic processes, Itō calculus, Black–Scholes/risk-neutral valuation, stochastic differential equations, portfolio theory and time series. The new course narrows this material to self-contained single-asset European options. MIT's broader catalog is a reference, not a claim that this curriculum covers the whole course.
+- [Kenneth French Data Library](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html): public factor files and a provider notice that CRSP data changed from legacy FIZ to CIZ starting with the January 2025 release, including a different monthly-dividend-reinvestment convention. The lab keeps a file digest and labels data as revised aggregate factors, not point-in-time stock data.
+- [Bailey et al., The Probability of Backtest Overfitting](https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf): motivates explicit trial logs, a limited tuning grid and disclosure that repeated selection can make a held-out result optimistic.
+- [The Carpentries lesson collection](https://carpentries.org/lessons/): free, hands-on programming and reproducibility instruction motivates runnable project work rather than treating a list of readings as the artifact.
+- [Khan Academy Mastery](https://support.khanacademy.org/hc/en-us/articles/360007253831-Using-self-paced-practice-and-Mastery-in-the-classroom): learner-paced skill practice, separate skill states, and a course challenge inform the entry map and remediation. We intentionally avoid copying its point thresholds: this diagnostic's provisional cutoffs are uncalibrated.
+- [Brilliant, interactive problems](https://brilliant.org/help/features/how-do-i-use-interactives-on-brilliant/) and [guided Learning Paths](https://brilliant.org/help/features/what-are-learning-paths/): interaction, visible manipulation and staged progression inform the pricing/alpha lab and course sequencing. Brilliant limits how much free users may access, so no Brilliant lesson is a required resource.
+- [Coursera Guided Projects pedagogy](https://blog.coursera.org/coursera-white-paper-details-the-pedagogy-underlying-guided-projects-on-coursera/): active work with scaffolding informs the project block that produces an executable artifact. Coursera itself is not a prerequisite; all assigned content and data in this program remain free.
+- [IXL Real-Time Diagnostic](https://www.ixl.com/analytics/live-classroom): strand-level diagnostics and recommended skills inform the choice to display a separate result per domain instead of one misleading average. IXL is a design reference, not a linked or required course.
+
+## Critique-to-change ledger
+
+| Problem | Implemented response | What this still cannot establish |
+|---|---|---|
+| Study hours and advanced topic names appeared to imply PhD/job readiness. | Homepage README/path and projects say that study, numerical fixtures, self-assessed research and independent verification are separate states. The latter remains “unverified”. | No degree, job placement, original publication or PhD equivalence. |
+| “Quant researcher” concealed different specialties. | Primary goal is low-frequency statistical/ML alpha **and** single-asset European pricing/hedging. `/path` names adjacent exclusions. | No equity execution, high-frequency research, alternative data, rates, exotic options or desk production. |
+| “Taught/introduced/assumed/deferred” and proof depth were difficult to interpret. | Syllabus labels have a plain-language legend; every derivatives unit describes its proof boundary. | Existing 105-week math proofs still have varying granularity; see each topic's coverage record. |
+| A fixed calendar could skip session one; weak preparation had no per-domain response. | `/path` chooses a start date and maps five weekdays onto stable lesson URLs; a 16-item, four-domain diagnostic shows its own explanations and alternate form. | Numeric diagnostic is provisional, not externally calibrated, and does not grade proofs. A slower repair route can exceed two years. |
+| Projects were closed mathematical prompts without a research process. | P01–P05 define data/code outputs, source comparison, hypothesis, pilot, frozen plan, negative controls, holdout and limitations. The last question is learner-chosen. | No verified literature-gap assessment, expert feedback or independent replication. |
+| Reading a solution or marking a checkbox could look like an exam pass. | `/assessment` records written reasoning and numeric input before opening the rubric. Project artifacts and an export preserve claimed work. | A browser can be edited or answers can be copied. There is no proctor, external grader or validated pass standard. |
+| Synthetic math examples did not cover market-data leakage, costs or coding. | `/lab` and P02/P03 load a free cited monthly factor source; enforce chronological splits, training-only scaling, entry/liquidation costs, trials and block-bootstrap uncertainty. | Aggregate revised factor series do not test point-in-time constituent selection, delistings, realistic fills, capacity or deployment. |
+| Projects were pages of instructions with weak connection to the daily learning schedule. | The 90-minute project block now has a week topic, a five-day research cycle and a direct path to project criteria, the lab or evidence record. | The Python repository is an external local exercise; browser sliders cannot execute arbitrary project code. |
+| Derivatives/Stochastic finance were listed as missing but out of the work schedule. | W65–88 assign eight modules: Brownian variation, martingales and measures, Itō/GBM, binomial replication, BS/PDE, Monte Carlo, Greeks/discrete hedge, implied volatility. | General Girsanov, stochastic control/HJB, rates, volatility surfaces, American/exotic and execution remain outside mastery claims. |
+
+## What “ready for the next stage” means here
+
+1. **Lesson completed:** the learner says they studied the concept. This does not show unaided recall.
+2. **Numerical fixture checked:** the entered number matches a small known case. This checks that input only.
+3. **Artifact runs:** the code reproduces included tests and tables in the recorded environment.
+4. **Self-assessed:** the learner compares a saved attempt with a written proof/evidence rubric. This is self-report.
+5. **Independently reviewed:** no path in this project provides this state. It remains unverified.
+
+No mean score hides a failed diagnostic domain. The interface asks a learner to revisit a prerequisite and retake an alternate numerical form. A passing number never marks an argument, novelty claim or career outcome as validated. A negative financial result can be a successful project when the method and evidence are sound.
+
+## Research lab calculations and caveats
+
+The alpha demonstration uses a single lagged average market-excess-return feature and ridge shrinkage. It trains on the first 60% of months, selects at most nine fixed lookback/penalty settings on the next 20%, and opens the final 20% only after a learner freezes a plan in browser storage. A long/cash portfolio pays the observed risk-free return in cash, charges turnover in basis points, and pays entry and liquidation costs. The market comparison pays matching trading costs. The implementation reports paired monthly differences with a circular block bootstrap; it does not adjust for trying many models.
+
+The holdout, all data, code and local-storage log are visible and editable by the learner. They provide neither secrecy nor independent preregistration. Once opened, later tuning against that holdout is exploratory. Switching machines or clearing browser data can erase the exposure log. Provider data revisions remain a material limit even when features are lagged.
+
+The derivative lab evaluates European calls/puts under constant-volatility GBM without dividends. It computes the closed form, CRR tree, antithetic Monte Carlo and one self-financing hedge path with cash accrual and transaction costs. The confidence interval is approximate, and antithetic **pair means** are the independent sampling units. One hedge path does not estimate a risk distribution. Boundary cases, parity and a known BS fixture are checked separately.
+
+## No paid requirement
+
+The content, code, data reader, MIT OCW references, open papers and local Python starter can be used without purchase, subscription or certification. The program does not send a learner to a paid course or paid market-data account as a prerequisite. Provider access and URL policy may change; the free-data API reports an error instead of substituting invented returns.

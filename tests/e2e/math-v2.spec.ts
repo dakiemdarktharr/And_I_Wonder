@@ -52,7 +52,7 @@ test('failed v2 owner write preserves saved state and exposes retryable error',a
 test('search and projects expose current mathematical content with legacy access',async({page})=>{
  await page.goto('/');await page.getByRole('button',{name:'EN',exact:true}).click();await page.getByRole('button',{name:'Search notes',exact:true}).click();
  const dialog=page.getByRole('dialog');await dialog.locator('input').fill('uniform integrability');await expect(dialog.locator('a').first()).toHaveAttribute('href',/curriculum=v2/);await dialog.locator('a').first().click();await expect(page.locator('.math-reader')).toBeVisible();
- await page.goto('/projects/P05');await expect(page.locator('.math-syllabus')).toContainText('Sequential-inference mathematical capstone');await expect(page.locator('.math-syllabus')).toContainText('Joseph');
+ await page.goto('/projects/P05');await expect(page.locator('.math-syllabus')).toContainText('Your own research question');await expect(page.locator('.math-syllabus')).toContainText('falsification');
  await page.getByRole('link',{name:'Legacy v1 projects',exact:true}).click();await expect(page).toHaveURL(/curriculum=v1/);await expect(page.locator('.project-guide-shell')).toBeVisible();
 });
 test('new progress API denies guest writes without touching storage',async({request,baseURL})=>{
@@ -77,7 +77,7 @@ test('projects are five illustrated quests and resources open directly on the sh
  await page.goto('/projects');await expect(page.locator('.project-quest')).toHaveCount(5);await expect(page.locator('.project-quest img')).toHaveCount(5);
  const assets=await page.locator('.project-quest img').evaluateAll(imgs=>imgs.map(img=>(img as HTMLImageElement).src));expect(new Set(assets).size).toBe(5);
  for(const lang of ['VI','EN']){await page.getByRole('button',{name:lang,exact:true}).click();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);}
- await page.locator('.project-quest').first().click();await expect(page).toHaveURL(/projects\/P01/);await expect(page.locator('.project-detail')).toContainText('least-squares');
+ await page.locator('.project-quest').first().click();await expect(page).toHaveURL(/projects\/P01/);await expect(page.locator('.project-detail')).toContainText('QR');
  await page.goto('/resources');await expect(page.locator('h1')).toHaveText('Library');await expect(page.locator('.library-item').first()).toBeVisible();await expect(page.locator('.math-syllabus')).toHaveCount(0);
  await page.getByRole('button',{name:'Books & courses',exact:true}).click();expect(await page.locator('.library-item').count()).toBeGreaterThan(20);
 });

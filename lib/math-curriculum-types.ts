@@ -37,7 +37,7 @@ export interface MathExercise {
 export interface MathSessionPlan {
   title: Bilingual; exerciseIds: string[]; theoremIds: string[];
   lesson?: MathDailyLesson;
-  /** Specific actions, in order: 60/100/50/30 minutes. Exams may explicitly override. */
+    /** Current main-route research path: theory/exercises/project/review = 50/90/90/10 minutes. */
   actions: [Bilingual, Bilingual, Bilingual, Bilingual];
   minutes?: [number, number, number, number];
   deliverable: Bilingual;

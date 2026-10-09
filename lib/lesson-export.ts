@@ -6,7 +6,7 @@ export function mathLessonToMarkdown(week:MathWeek,session:MathSession,sources:M
  const t=(v:{en:string;vi:string})=>v[language];const vi=language==='vi';
  const ids=form==='B'&&session.alternativeExerciseIds?.length?session.alternativeExerciseIds:session.exerciseIds;
  const sections=['# '+session.date+' — '+t(session.title),'**math-v2.0 · '+session.id+' · '+session.revision+' · '+form+'**',
-  '## '+(vi?'Kế hoạch · 4 giờ':'Plan · 4 hours')+'\n\n'+session.actions.map((a,i)=>'- ['+(checked[session.taskIds[i]]?'x':' ')+'] '+(session.minutes?.[i]??[60,100,50,30][i])+' min — '+t(a)).join('\n'),
+  '## '+(vi?'Kế hoạch · 4 giờ':'Plan · 4 hours')+'\n\n'+session.actions.map((a,i)=>'- ['+(checked[session.taskIds[i]]?'x':' ')+'] '+(session.minutes?.[i]??[50,90,90,10][i])+' min — '+t(a)).join('\n'),
   '## '+(vi?'Bài giảng':'Lesson')+'\n\n'+(session.lesson?'### '+(vi?'Ứng dụng':'Application')+'\n\n'+t(session.lesson.application)+'\n\n### '+(vi?'Công thức tổng quát':'General formula')+'\n\n'+t(session.lesson.formula)+'\n\n'+session.lesson.steps.map((s,j)=>(j+1)+'. '+t(s)).join('\n\n'):t(week.definitions))];
  for(const [i,id] of ids.entries()){
   const e=week.exercises.find(e=>e.id===id)!;

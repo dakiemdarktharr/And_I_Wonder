@@ -2,6 +2,7 @@ import type {MathWeek,MathExercise,MathTeaching} from './math-curriculum-types';
 import type {Bilingual} from './lesson-types';
 import {dailyExtensions} from '../content/math-v2/daily-extensions';
 import {extensionReading,introductoryReading} from '../content/math-v2/daily-sources';
+import {researchBlock} from './learning-path';
 import {conceptPractice} from '../content/math-v2/daily-practice';
 const b=(en:string,vi:string):Bilingual=>({en,vi});
 const cleanTitle=(value:Bilingual)=>b(
@@ -32,11 +33,11 @@ export function prepareMathPractice(authored:MathWeek[],teaching:Record<string,M
    delete plan.alternativeExerciseIds; // A/B exams remain canonical in the syllabus.
    plan.lesson={id:'lesson-'+week.week+'-'+(dayIndex+1),conceptKey:primary.id,primaryExerciseId:primary.id,
     reading:extension?extensionReading(primary.id):introductoryReading(primary.id)??week.reading,title:primary.title,application:primary.teaching!.application,formula:primary.teaching!.formula,steps:primary.teaching!.steps};
-   plan.title=plan.lesson.title;plan.mode='study';plan.minutes=[60,100,50,30];
+   plan.title=plan.lesson.title;plan.mode='study';plan.minutes=[50,90,90,10];
    plan.actions=[
     b('Learn '+plan.title.en+'.','Học '+plan.title.vi+'.'),
-    b('Exercises 1–3.','Bài tập 1–3.'),
-    b('Exercise 4.','Bài tập 4.'),
+    b('Four problems.','Bốn bài tập.'),
+    b(researchBlock(week.week,dayIndex).stage.id+' · '+researchBlock(week.week,dayIndex).topic.en,researchBlock(week.week,dayIndex).stage.id+' · '+researchBlock(week.week,dayIndex).topic.vi),
     b('Compare solutions.','Đối chiếu lời giải.'),
    ];
   }

@@ -8,10 +8,10 @@ import {mathProjectGuides as guides} from '@/lib/math-project-guides';
 import './math-curriculum.css';
 import './project-path.css';
 const scenes = [
- {asset:'projection',vi:'Dựng phép chiếu. Giải hệ ổn định.',en:'Build projections. Solve stable systems.'},
- {asset:'inference',vi:'Ước lượng tham số. Đo độ bất định.',en:'Estimate parameters. Measure uncertainty.'},
- {asset:'time-series',vi:'Tìm cấu trúc trong chuỗi thời gian.',en:'Find structure in time series.'},
- {asset:'learning',vi:'Học từ phản hồi. Chứng minh cận sai số.',en:'Learn from feedback. Prove error bounds.'},
+ {asset:'projection',vi:'Dữ liệu sạch. Phép tính có thể chạy lại.',en:'Clean data. Reproducible calculations.'},
+ {asset:'inference',vi:'Dữ liệu thị trường. Backtest không nhìn trước.',en:'Market data. Backtests without look-ahead.'},
+ {asset:'time-series',vi:'Tái lập baseline. Kiểm tra giả thuyết của bạn.',en:'Reproduce a baseline. Test your hypothesis.'},
+ {asset:'learning',vi:'Định giá option. Đo sai số hedge.',en:'Price options. Measure hedge error.'},
  {asset:'capstone',vi:'Kết nối toán học thành nghiên cứu của bạn.',en:'Connect the mathematics in your own research.'},
 ];
 export function MathProjects({id}:{id?:string}) {
@@ -24,7 +24,7 @@ export function MathProjects({id}:{id?:string}) {
   {guides[index+1]&&<Link className="project-next" href={`/projects/${guides[index+1].id}`}><Text vi="Chặng tiếp theo" en="Next project"/><ArrowRight size={18}/></Link>}
  </main>;
  return <main className="project-path">
-  <header className="project-path-heading"><h1><Text vi="Hành trình dự án" en="Your project path"/></h1><Link href="/mathematics"><Text vi="Đề cương toán" en="Mathematics syllabus"/></Link></header>
+  <header className="project-path-heading"><h1><Text vi="Hành trình dự án" en="Your project path"/></h1><Link href="/path"><Text vi="Mục tiêu và bằng chứng" en="Outcomes and evidence"/></Link></header>
   <ol className="project-questline">{guides.map((g,i)=><li key={g.id}>
    <span className="project-node" aria-hidden="true">{i+1}</span>
    <Link className={`project-quest project-quest-${i+1}`} href={`/projects/${g.id}`}>

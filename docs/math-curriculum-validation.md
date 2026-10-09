@@ -1,4 +1,6 @@
-# Mathematics v2 validation — local review
+# Mathematics v2 validation — historical local review
+
+This document preserves the earlier 2026-10-09 math-only review. Its baseline checks and counts are historical; they do not cover the 2026-10-10 dual-track research changes below.
 
 Baseline: `47e38bf5f510b92c9987b4be2e88c37e6ad5e3f8`. Branch: `codex/math-curriculum-v2`. The validation below concerns this local change. It is not a production deployment, database migration, independent academic examination or certification of the learner.
 
@@ -85,3 +87,16 @@ The latest source hash is c6d96e1b443b30559cabf524408cb3ef0c5b3ec52346fb02fca1c7
 
 The existing draft/workbench data is preserved rather than migrated or deleted. New practice does not read it. Academic rubrics remain in canonical content and the syllabus, not as daily interface clutter. Retrieval counts do not claim new unseen graduate exercises or academic equivalence.
 
+
+
+## 2026-10-10 dual-track self-study revision
+
+This overlay supersedes historical claims above wherever daily time blocks, current project names, assessment pages or coverage are concerned. It does not rewrite the historical review.
+
+- The path now names low-frequency statistical/ML alpha and European options as bounded goals. It separates lesson progress, numerical fixtures, self-assessment and independent verification, which remains unverified. The 16-item placement threshold is provisional and has no student calibration.
+- Main-route time is now 50 + 90 + 90 + 10 minutes: 1,307.5 planned hours in math/problems/review and 784.5 in software, data and derivatives. The five projects define free data/code artifacts, costs, leakage checks, a frozen self-study plan and the limits on each artifact. Foundation repair uses this same fixed daily budget and may extend the finish date.
+- A browser lab loads the public, revised Kenneth French monthly factor file, records source/checksum and labels its point-in-time limitation. A derivatives lab includes price, tree, Monte Carlo and hedge-ledger controls. A downloadable standard-library Python starter creates manifests and tabular outputs.
+- Five learner-authored checkpoints capture responses before showing rubrics; the derivatives course has eight self-study units with four exercises each and declares what is proved, assumed or deferred. Automated fixtures are numerical spot checks, not proof grades or evidence of independent review.
+- 70/70 unit tests passed, including new research scheduling, numeric placement gating, record validation, KaTeX rendering, BS benchmark/finite-difference Greeks, tree convergence, Monte Carlo consistency, hedge cash accounting, future-data leakage, transaction costs and CSV parsing. `npm run typecheck` passed. `npm run build` completed successfully. No user logins, Mongo writes or production credential changes occurred.
+- End-to-end fetch of the Ken French ZIP was not run from this workstation because outbound DNS was unavailable; its authorized network-download attempt was interrupted. The production data route has a timeout, size bound and explicit unavailable response, and never substitutes synthetic returns. No live production data fetch has been verified.
+- No independent academic review or real-learner outcome study is claimed. Automated tests verify their named fixtures and invariants only.

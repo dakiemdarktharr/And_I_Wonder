@@ -1,5 +1,6 @@
+export {researchProjectGuides as mathProjectGuides} from './research-project-guides';
 /** Original v2 mathematical briefs; canonical shared by pages and public search. */
-export const mathProjectGuides=[
+export const archivedMathProjectGuides=[
  {id:'P01',en:'Projection, conditioning and stable least squares',vi:'Phép chiếu, độ điều kiện và bình phương tối thiểu ổn định',weeks:'W05–16',
  enBody:String.raw`**Question.** When does an exact least-squares identity remain a trustworthy numerical calculation?
 
