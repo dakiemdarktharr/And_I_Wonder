@@ -2,6 +2,9 @@
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 
+import {MathMarkdown} from './math-markdown';
+import {normalizeMathNotation} from '@/lib/math-notation';
+
 type Language = 'vi' | 'en';
 const LanguageContext = createContext<{language: Language; setLanguage:(language:Language)=>void}>({language:'vi',setLanguage:()=>{}});
 type Session = {authenticated:boolean; owner?:{login:string;avatarUrl?:string}; loading:boolean};
@@ -17,4 +20,4 @@ export function Providers({children}:{children:ReactNode}) {
 }
 export const useLanguage=()=>useContext(LanguageContext);
 export const useSession=()=>useContext(SessionContext);
-export function Text({vi,en}:{vi:string;en:string}){return <>{(useLanguage().language==='vi'?vi:en).replace(/\\n/g,'\n')}</>;}
+export function Text({vi,en}:{vi:string;en:string}){const value=(useLanguage().language==='vi'?vi:en).replace(/\\n/g,'\n');return normalizeMathNotation(value)!==value?<MathMarkdown inline>{value}</MathMarkdown>:<>{value}</>;}

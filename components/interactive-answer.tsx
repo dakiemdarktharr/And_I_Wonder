@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import {normalizeMathNotation} from "@/lib/math-notation";
 import rehypeKatex from "rehype-katex";
 import type { LessonSession } from "@/lib/lesson-types";
 import type { ExerciseCheckpoint } from "@/lib/answer-workbench";
@@ -70,7 +71,7 @@ function readDraft(key: string, stageCount: number): WorkbenchDraft {
 }
 
 function AnswerMarkdown({ children }: { children: string }) {
-  return <div className="answer-workbench__markdown"><ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>{children}</ReactMarkdown></div>;
+  return <div className="answer-workbench__markdown"><ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>{normalizeMathNotation(children)}</ReactMarkdown></div>;
 }
 
 export type InteractiveAnswerProps = {

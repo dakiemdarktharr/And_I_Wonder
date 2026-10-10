@@ -1,3 +1,4 @@
+import {normalizeMathNotation} from './math-notation';
 import type {LessonModule,LessonVisual} from './lesson-types';
 import type {MathWeek,MathSession,MathSource} from './math-curriculum-types';
 
@@ -14,7 +15,7 @@ export function mathLessonToMarkdown(week:MathWeek,session:MathSession,sources:M
  }
  sections.push('## '+(vi?'Tài liệu':'Sources')+'\n\n'+(session.lesson?.reading??week.reading).map(r=>{const source=sources.find(s=>s.id===r.sourceId);return '- ['+(source?.title??r.sourceId)+']('+(source?.url??'')+'), '+r.section;}).join('\n'));
  sections.push('<details>\n<summary>'+(vi?'Định nghĩa và chứng minh của chương':'Chapter definitions and proofs')+'</summary>\n\n'+t(week.definitions)+'\n\n'+week.theorems.filter(th=>session.theoremIds.includes(th.id)).map(th=>'### '+t(th.title)+'\n\n'+t(th.statement)+'\n\n**'+th.proofStatus+'**\n\n'+t(th.proof)).join('\n\n')+'\n\n</details>');
- return sections.join('\n\n')+'\n';
+ return normalizeMathNotation(sections.join('\n\n'))+'\n';
 }
 
 
@@ -34,5 +35,5 @@ export function lessonToMarkdown(lesson:LessonModule,dayIndex:number,date:string
  if(s.visual)sections.splice(8,0,figureMarkdown(s.visual,language));
  sections.push(`## ${vi?'Sản phẩm hôm nay':'Today’s deliverable'}\n\n${text(s.deliverable)}`);
  if(lesson.references.length)sections.push(`## ${vi?'Đọc thêm — không bắt buộc':'Further reading — optional'}\n\n${lesson.references.map(r=>`- [${r.title}](${r.url})`).join('\n')}`);
- return sections.join('\n\n')+'\n';
+ return normalizeMathNotation(sections.join('\n\n'))+'\n';
 }

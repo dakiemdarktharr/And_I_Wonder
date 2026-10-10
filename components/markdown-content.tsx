@@ -4,6 +4,7 @@ import { useMemo, useState, useEffect, createContext, useContext, type Component
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import {normalizeMathNotation} from "@/lib/math-notation";
 import rehypeKatex from "rehype-katex";
 import { useLanguage } from "@/components/providers";
 import { normalizeNoteId, resolveMarkdownHref, resolveWikiTarget, rewriteWikiLinks, slugForHeading, remarkCallouts, remarkHashtags, remarkTaskIndexes } from "@/lib/markdown";
@@ -103,7 +104,7 @@ function NoteEmbed({ target, source, notes, checkedTasks, canEdit, onTaskToggle,
 export function MarkdownContent({ note, notes, checkedTasks, canEdit, onTaskToggle, visited = new Set([note.id]), depth = 0 }: MarkdownContentProps) {
   const { language } = useLanguage();
   const body = language === "vi" ? (note.bodyVi || note.body) : note.body;
-  const markdown = useMemo(() => rewriteWikiLinks(body), [body]);
+  const markdown = useMemo(() => normalizeMathNotation(rewriteWikiLinks(body)), [body]);
   const components = useMemo<Components>(() => {
     const toggleTitle = language === "vi" ? "Nhấn để thu gọn hoặc mở rộng" : "Click to collapse or expand";
     const taskLabel = (isChecked: boolean) => language === "vi" ? (isChecked ? "Đánh dấu chưa hoàn thành" : "Đánh dấu hoàn thành") : (isChecked ? "Mark task incomplete" : "Mark task complete");

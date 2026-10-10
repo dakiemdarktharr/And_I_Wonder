@@ -1,3 +1,3 @@
 import {QuantLab} from '@/components/quant-lab';
-export const metadata={title:'Research lab · And I Wonder'};
+export const metadata={title:'Research lab'};
 export default function Page(){return <QuantLab/>;}

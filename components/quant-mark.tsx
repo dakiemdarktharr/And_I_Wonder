@@ -1,0 +1,2 @@
+/** Original mark: a measured distribution inside a lens, with an observed data point. */
+export function QuantMark(){return <svg className="quant-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M47 43 61 57 55 63 41 49" fill="#203e4b"/><circle cx="28" cy="28" r="24" fill="#c9e4dc" stroke="#203e4b" strokeWidth="4"/><path d="M8 41H48M16 14V45" stroke="#203e4b" strokeWidth="2"/><path d="M10 39C17 39 18 19 27 19S37 39 46 39" fill="#f0ce73" stroke="#203e4b" strokeWidth="3"/><circle cx="37" cy="18" r="5" fill="#356b96" stroke="#203e4b" strokeWidth="2"/></svg>;}

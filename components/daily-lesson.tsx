@@ -3,6 +3,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+import {normalizeMathNotation} from "@/lib/math-notation";
 import rehypeKatex from "rehype-katex";
 import type { Bilingual, LessonModule } from "@/lib/lesson-types";
 import { useLanguage } from "@/components/providers";
@@ -28,7 +29,7 @@ function localized(value: Bilingual, language: "vi" | "en"): string {
 }
 
 function LessonMarkdown({ children }: { children: string }) {
-  return <div className="daily-lesson__markdown"><ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>{children}</ReactMarkdown></div>;
+  return <div className="daily-lesson__markdown"><ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>{normalizeMathNotation(children)}</ReactMarkdown></div>;
 }
 
 function Diagram({ lesson, language }: { lesson: LessonModule; language: "vi" | "en" }) {

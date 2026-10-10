@@ -9,12 +9,15 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
+    "math:notation:audit": "tsx scripts/audit-math-notation.ts",
     "curriculum:build": "tsx scripts/build-math-curriculum.ts",
     "curriculum:docs": "tsx scripts/build-math-docs.ts",
     "curriculum:audit": "node scripts/build-math-audit.mjs"
   },
   "dependencies": {
     "@fontsource/be-vietnam-pro": "5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/source-serif-4": "^5.3.0",
     "jose": "6.2.12",
     "katex": "0.19.0",
     "lucide-react": "1.53.0",
