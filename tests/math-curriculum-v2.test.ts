@@ -1,4 +1,5 @@
 import {normalizeMathNotation} from '../lib/math-notation';
+import {solutionParagraphs} from '../lib/solution-paragraphs';
 import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import fs from 'node:fs';
@@ -95,7 +96,7 @@ test('draft keys are per exercise content and exports preserve version, teaching
  const w=c.weeks.find(w=>w.week===97)!,s=c.sessions.find(s=>s.week===97)!;
  const e=w.exercises[0],key=mathExerciseKey(e);assert.match(key,new RegExp('^'+e.id+'@r1-'));assert.notEqual(key,'97-0-'+e.id);
  const en=mathLessonToMarkdown(w,s,c.sources,'en',{[s.taskIds[0]]:true});
- assert.ok(en.includes('math-v2.0'));assert.ok(en.includes(s.revision));assert.ok(en.includes(e.prompt.en));assert.ok(en.includes(e.solution[0].en));assert.ok(en.includes(e.teaching!.application.en));assert.ok(en.includes(e.teaching!.formula.en));assert.ok(!en.includes('<summary>Stepped hints</summary>'));assert.ok(!en.includes('Deliverable and error check'));assert.ok(en.includes('[x] 50 min'));
+ assert.ok(en.includes('math-v2.0'));assert.ok(en.includes(s.revision));assert.ok(en.includes(e.prompt.en));for(const step of e.solution.flatMap(s=>solutionParagraphs(s.en,'en')))assert.ok(en.includes(step));assert.ok(en.includes(e.teaching!.application.en));assert.ok(en.includes(e.teaching!.formula.en));assert.ok(!en.includes('<summary>Stepped hints</summary>'));assert.ok(!en.includes('Deliverable and error check'));assert.ok(en.includes('[x] 50 min'));
  assert.ok(!en.includes('private mathematics feedback'));assert.ok(!en.includes('lesson0'));
  const vi=mathLessonToMarkdown(w,s,c.sources,'vi');assert.ok(vi.includes(e.prompt.vi));assert.ok(vi.includes(w.theorems[0].proof.vi));
  assert.ok(en.includes('<summary>Show solution</summary>'));assert.ok(vi.includes(normalizeMathNotation(e.teaching!.steps[0].vi)));

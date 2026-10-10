@@ -28,7 +28,7 @@ export function unicodeToTex(value:string):string {
 }
 
 // No prose words are admitted into a candidate, so Vietnamese accents stay in prose.
-const token=/(?:_(?=[a-z\u00c0-\u024f\u1e00-\u1eff_]*[\u00c0-\u024f\u1e00-\u1eff])[a-z\u00c0-\u024f\u1e00-\u1eff]+(?:_[a-z\u00c0-\u024f\u1e00-\u1eff]+)*|[_^](?:\{[^{}\n]*\}|[A-Za-z0-9]+|[-+])|\b(?:span|rank|dim|diag|Var|Cov|Corr|argmin|argmax|log|ln|exp|sin|cos|tan|min|max|sup|inf|lim|det|tr|KL|SE|MSE)(?![A-Za-z])|\b(?:xy|xz|dx|dt|df|dW|dB|dP|dQ|Pf|Pg|SD)(?![A-Za-z])|(?:[A-Z]{1,4}[a-z]?|[A-Za-z])(?![A-Za-z\u00c0-\u024f\u1e00-\u1eff])|\d+(?:\.\d+)?|[α-ωΓΔΘΛΣΦΨΩℝℕℤℚℂℙ𝔼ℓ↑↓∼∝∧∨¬⊗]|[\u0302\u0303\u0304₀-₉ₐₑₒₓₕₖₗₘₙₚₛₜᵢⱼᵣᵤᵥ⁰¹²³⁴⁵⁶⁷⁸⁹ⁿⁱᵏᶜʳ⁻⁺ᵀ]|[=+*/^_<>|()[\]{},:!%′'−∈∉≤≥≠≈≡→⇒⇔↦∞∑∏∫∂∇√×·⊥⊂⊆∪∩∅∀∃‖⟨⟩±ϕϵ-])/uy;
+const token=/(?:_(?=[a-z\u00c0-\u024f\u1e00-\u1eff_]*[\u00c0-\u024f\u1e00-\u1eff])[a-z\u00c0-\u024f\u1e00-\u1eff]+(?:_[a-z\u00c0-\u024f\u1e00-\u1eff]+)*|[_^](?:\{[^{}\n]*\}|[A-Za-z0-9]+|[-+])|\b(?:span|rank|dim|diag|Var|Cov|Corr|argmin|argmax|log|ln|exp|sin|cos|tan|min|max|sup|inf|lim|det|tr|KL|SE|MSE)(?![A-Za-z])|\b(?:xy|xz|dx|dt|df|dW|dB|dP|dQ|Pf|Pg|SD)(?![A-Za-z])|(?:[A-Z]{1,4}[a-z]?|[A-Za-z])(?![A-Za-z\u00c0-\u024f\u1e00-\u1eff])|(?:\d+(?:\.\d+)?|\.\d+)|[α-ωΓΔΘΛΣΦΨΩℝℕℤℚℂℙ𝔼ℓ↑↓∼∝∧∨¬⊗]|[\u0302\u0303\u0304₀-₉ₐₑₒₓₕₖₗₘₙₚₛₜᵢⱼᵣᵤᵥ⁰¹²³⁴⁵⁶⁷⁸⁹ⁿⁱᵏᶜʳ⁻⁺ᵀ]|[=+*/^_<>|()[\]{},:!%′'−∈∉≤≥≠≈≡→⇒⇔↦∞∑∏∫∂∇√×·⊥⊂⊆∪∩∅∀∃‖⟨⟩±ϕϵ-])/uy;
 const evidence=/[=+*/^_<>|α-ωΓΔΘΛΣΦΨΩ₀-₉ₐₑₒₓₕₖₗₘₙₚₛₜᵢⱼᵣᵤᵥ⁰¹²³⁴⁵⁶⁷⁸⁹ⁿⁱᵏᶜʳᵀ∈∉≤≥≠≈≡→⇒⇔↦∞∑∏∫∂∇√×⊥⊂⊆∪∩∅∀∃ℝℕℤℚℂℙ𝔼ℓ↑↓∼∝∧∨¬⊗‖⟨⟩]/u;
 function typesetPlain(text:string):string {
  let output='',i=0;
@@ -42,7 +42,7 @@ function typesetPlain(text:string):string {
   const balance=(s:string,a:string,b:string)=>[...s].filter(c=>c===a).length-[...s].filter(c=>c===b).length;
   while(raw.endsWith(')')&&balance(raw,'(',')')<0)raw=raw.slice(0,-1);
   if(raw.startsWith('(')&&balance(raw,'(',')')>0)raw='';
-  if(raw&&(evidence.test(raw)||/^\([-−\d., ]+\)$/.test(raw))&&!/^[-+*/<>]+$/.test(raw)&&parts>0){output+='$'+unicodeToTex(raw)+'$';i+=raw.length;}
+  if(raw&&(evidence.test(raw)||(raw.includes('·')&&!/[A-Za-z]/.test(raw))||/^\([-−\d., ]+\)$/.test(raw))&&!/^[-+*/<>]+$/.test(raw)&&parts>0){output+='$'+unicodeToTex(raw)+'$';i+=raw.length;}
   else{output+=text[i++];}
  }
  return output;

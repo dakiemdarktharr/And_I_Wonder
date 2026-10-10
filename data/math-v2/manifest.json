@@ -1,6 +1,6 @@
 {
   "version": "math-v2.0",
-  "sourceHash": "f96216eb44ff364a565e83bba94aad75e82eff5f105ea67f7e327316c6b64fad",
+  "sourceHash": "a69992d7dc70b5598731e8765bea8f803ec4907b03c5943c37d3e116622716cc",
   "dates": 731,
   "restDays": 208,
   "sessionCount": 523,
@@ -341,7 +341,7 @@
       "id": "f-w001-e1",
       "week": 1,
       "revision": 1,
-      "hash": "57a4896e05d55bc2",
+      "hash": "13dc9d7ee476badc",
       "skills": [
         "computation",
         "derivation"
@@ -441,7 +441,7 @@
       "id": "f-w001-e1-practice-1",
       "week": 1,
       "revision": 1,
-      "hash": "a57fbf990578fd61",
+      "hash": "489a8cb53f211e2e",
       "skills": [
         "derivation"
       ]
@@ -450,7 +450,7 @@
       "id": "f-w001-e1-practice-2",
       "week": 1,
       "revision": 1,
-      "hash": "803736f843746b42",
+      "hash": "9630bd86bf99dfae",
       "skills": [
         "derivation"
       ]
@@ -459,7 +459,7 @@
       "id": "f-w001-e1-practice-4",
       "week": 1,
       "revision": 1,
-      "hash": "dfee48d760012658",
+      "hash": "e89cb30479788089",
       "skills": [
         "transfer"
       ]
@@ -1341,7 +1341,7 @@
       "id": "f-w006-e4",
       "week": 6,
       "revision": 1,
-      "hash": "313fbcade7e9a972",
+      "hash": "7021a48457b6835b",
       "skills": [
         "proof",
         "derivation"
@@ -1442,7 +1442,7 @@
       "id": "f-w006-e4-practice-1",
       "week": 6,
       "revision": 1,
-      "hash": "c63749751076e929",
+      "hash": "ef49df8cfbf7e048",
       "skills": [
         "derivation"
       ]
@@ -1451,7 +1451,7 @@
       "id": "f-w006-e4-practice-2",
       "week": 6,
       "revision": 1,
-      "hash": "5527b7b666c3b2da",
+      "hash": "663be530c4eeb846",
       "skills": [
         "derivation"
       ]
@@ -1460,7 +1460,7 @@
       "id": "f-w006-e4-practice-4",
       "week": 6,
       "revision": 1,
-      "hash": "bd7b0ce29ebca599",
+      "hash": "4b5e1fce38f1c90e",
       "skills": [
         "transfer"
       ]
@@ -1505,7 +1505,7 @@
       "id": "f-w007-e2",
       "week": 7,
       "revision": 1,
-      "hash": "f541be875a7c2401",
+      "hash": "3cda1b458c2ea101",
       "skills": [
         "derivation",
         "application"
@@ -1572,7 +1572,7 @@
       "id": "f-w007-e2-practice-1",
       "week": 7,
       "revision": 1,
-      "hash": "acfa25175c8d1f5c",
+      "hash": "e8097d2589262346",
       "skills": [
         "derivation"
       ]
@@ -1581,7 +1581,7 @@
       "id": "f-w007-e2-practice-2",
       "week": 7,
       "revision": 1,
-      "hash": "d4073dad5b80665b",
+      "hash": "ab62ff942a8e81e3",
       "skills": [
         "derivation"
       ]
@@ -1590,7 +1590,7 @@
       "id": "f-w007-e2-practice-4",
       "week": 7,
       "revision": 1,
-      "hash": "b4cd4683598409da",
+      "hash": "717c64ff3a256a17",
       "skills": [
         "transfer"
       ]
@@ -1885,7 +1885,7 @@
       "id": "f-w009-e3",
       "week": 9,
       "revision": 1,
-      "hash": "5d53b7ada10e68e9",
+      "hash": "44e3faeb8696b69a",
       "skills": [
         "counterexample",
         "proof"
@@ -1969,7 +1969,7 @@
       "id": "f-w009-e3-practice-1",
       "week": 9,
       "revision": 1,
-      "hash": "28bd25cda4368224",
+      "hash": "55d9734f0150a4b7",
       "skills": [
         "derivation"
       ]
@@ -1978,7 +1978,7 @@
       "id": "f-w009-e3-practice-2",
       "week": 9,
       "revision": 1,
-      "hash": "2378035bbacac0de",
+      "hash": "33d5fe180a24ab6b",
       "skills": [
         "derivation"
       ]
@@ -1987,7 +1987,7 @@
       "id": "f-w009-e3-practice-4",
       "week": 9,
       "revision": 1,
-      "hash": "d8d2f745690d7662",
+      "hash": "8ba3e4cb000787ba",
       "skills": [
         "transfer"
       ]
@@ -2090,7 +2090,7 @@
       "id": "f-w010-e5",
       "week": 10,
       "revision": 1,
-      "hash": "905eea0b2653804b",
+      "hash": "3de35d3c60d8dacc",
       "skills": [
         "transfer",
         "counterexample"
@@ -2208,7 +2208,7 @@
       "id": "f-w010-e5-practice-1",
       "week": 10,
       "revision": 1,
-      "hash": "d6cf7b1c1359a4f8",
+      "hash": "1c287885667e44c9",
       "skills": [
         "derivation"
       ]
@@ -2217,7 +2217,7 @@
       "id": "f-w010-e5-practice-2",
       "week": 10,
       "revision": 1,
-      "hash": "4608cd0738e7ee56",
+      "hash": "3237c5b3801b0bcc",
       "skills": [
         "derivation"
       ]
@@ -2226,7 +2226,7 @@
       "id": "f-w010-e5-practice-4",
       "week": 10,
       "revision": 1,
-      "hash": "827c4db8799a78ed",
+      "hash": "b5cbd8a25dfb1b96",
       "skills": [
         "transfer"
       ]
@@ -2420,7 +2420,7 @@
       "id": "f-w012-e1",
       "week": 12,
       "revision": 1,
-      "hash": "48116165db29fc99",
+      "hash": "9f32c84ee0878bf2",
       "skills": [
         "proof"
       ]
@@ -2469,7 +2469,7 @@
       "id": "f-w012-e1-practice-1",
       "week": 12,
       "revision": 1,
-      "hash": "17460d09b5ab5adc",
+      "hash": "f8e6a9fe78a90996",
       "skills": [
         "derivation"
       ]
@@ -2478,7 +2478,7 @@
       "id": "f-w012-e1-practice-2",
       "week": 12,
       "revision": 1,
-      "hash": "b7e16939b37a00d4",
+      "hash": "340effaab264db9f",
       "skills": [
         "derivation"
       ]
@@ -2487,7 +2487,7 @@
       "id": "f-w012-e1-practice-4",
       "week": 12,
       "revision": 1,
-      "hash": "3fb59d36378fa0a1",
+      "hash": "4745edda5b12a77f",
       "skills": [
         "transfer"
       ]
@@ -2798,7 +2798,7 @@
       "id": "f-w014-e2",
       "week": 14,
       "revision": 1,
-      "hash": "bd78c1c353d00f75",
+      "hash": "c48d487746c74f0c",
       "skills": [
         "counterexample",
         "proof"
@@ -2817,7 +2817,7 @@
       "id": "f-w014-e4",
       "week": 14,
       "revision": 1,
-      "hash": "97485923333045e0",
+      "hash": "e4552ecfaf0c3fd9",
       "skills": [
         "derivation",
         "application"
@@ -2864,7 +2864,7 @@
       "id": "f-w014-e2-practice-1",
       "week": 14,
       "revision": 1,
-      "hash": "f656552b3579ba2a",
+      "hash": "5c65b50385917692",
       "skills": [
         "derivation"
       ]
@@ -2873,7 +2873,7 @@
       "id": "f-w014-e2-practice-2",
       "week": 14,
       "revision": 1,
-      "hash": "237b74e57315a70d",
+      "hash": "3c6b056d5e3536ff",
       "skills": [
         "derivation"
       ]
@@ -2882,7 +2882,7 @@
       "id": "f-w014-e2-practice-4",
       "week": 14,
       "revision": 1,
-      "hash": "cbc37a1210dd9080",
+      "hash": "7d4b7b54138e1a93",
       "skills": [
         "transfer"
       ]
@@ -2918,7 +2918,7 @@
       "id": "f-w014-e4-practice-1",
       "week": 14,
       "revision": 1,
-      "hash": "80568c506d7ad6a0",
+      "hash": "c1e907ca9f35a7fe",
       "skills": [
         "derivation"
       ]
@@ -2927,7 +2927,7 @@
       "id": "f-w014-e4-practice-2",
       "week": 14,
       "revision": 1,
-      "hash": "a806f7662aa10a86",
+      "hash": "75329b618c8fcfde",
       "skills": [
         "derivation"
       ]
@@ -2936,7 +2936,7 @@
       "id": "f-w014-e4-practice-4",
       "week": 14,
       "revision": 1,
-      "hash": "09b233c7db9f8dfc",
+      "hash": "2a3b94798cc49015",
       "skills": [
         "transfer"
       ]
@@ -3002,7 +3002,7 @@
       "id": "f-w015-e4",
       "week": 15,
       "revision": 1,
-      "hash": "50c552995933e52a",
+      "hash": "e4fd77fd66a66e10",
       "skills": [
         "counterexample",
         "transfer"
@@ -3103,7 +3103,7 @@
       "id": "f-w015-e4-practice-1",
       "week": 15,
       "revision": 1,
-      "hash": "61f3b040c9a951d7",
+      "hash": "408edb1f57cfd9f6",
       "skills": [
         "derivation"
       ]
@@ -3112,7 +3112,7 @@
       "id": "f-w015-e4-practice-2",
       "week": 15,
       "revision": 1,
-      "hash": "2ecb24fa4a4b8ab3",
+      "hash": "8ec9abdd04793f18",
       "skills": [
         "derivation"
       ]
@@ -3121,7 +3121,7 @@
       "id": "f-w015-e4-practice-4",
       "week": 15,
       "revision": 1,
-      "hash": "096e46e0e9720a00",
+      "hash": "4827ff6feb9268b6",
       "skills": [
         "transfer"
       ]
@@ -3196,7 +3196,7 @@
       "id": "f-w016-e5",
       "week": 16,
       "revision": 1,
-      "hash": "c71d1aa898a5422b",
+      "hash": "107a4eb2e8046404",
       "skills": [
         "proof",
         "counterexample",
@@ -3365,7 +3365,7 @@
       "id": "f-w016-e5-practice-1",
       "week": 16,
       "revision": 1,
-      "hash": "b063350ac4557230",
+      "hash": "85418a60a6cda561",
       "skills": [
         "derivation"
       ]
@@ -3374,7 +3374,7 @@
       "id": "f-w016-e5-practice-2",
       "week": 16,
       "revision": 1,
-      "hash": "a3fbe0c6a8f1d62c",
+      "hash": "9f1f4ec4e49b7de5",
       "skills": [
         "derivation"
       ]
@@ -3383,7 +3383,7 @@
       "id": "f-w016-e5-practice-4",
       "week": 16,
       "revision": 1,
-      "hash": "7d045246ea57e968",
+      "hash": "e7f61fc3c03e0010",
       "skills": [
         "transfer"
       ]
@@ -3596,7 +3596,7 @@
       "id": "f-w018-e3",
       "week": 18,
       "revision": 1,
-      "hash": "649f2a2d538593b4",
+      "hash": "404fba52b2af204c",
       "skills": [
         "derivation",
         "counterexample"
@@ -3679,7 +3679,7 @@
       "id": "f-w018-e3-practice-1",
       "week": 18,
       "revision": 1,
-      "hash": "4b06c4aaa7849470",
+      "hash": "c9a9e29f205b5655",
       "skills": [
         "derivation"
       ]
@@ -3688,7 +3688,7 @@
       "id": "f-w018-e3-practice-2",
       "week": 18,
       "revision": 1,
-      "hash": "60dfab6063d8f056",
+      "hash": "0ff61cb4770373c7",
       "skills": [
         "derivation"
       ]
@@ -3697,7 +3697,7 @@
       "id": "f-w018-e3-practice-4",
       "week": 18,
       "revision": 1,
-      "hash": "849f1bd562698d4d",
+      "hash": "8454a6ea34520c56",
       "skills": [
         "transfer"
       ]
@@ -4864,7 +4864,7 @@
       "id": "f-w025-e1",
       "week": 25,
       "revision": 1,
-      "hash": "5468ade093496c8e",
+      "hash": "8023ea166bddeec3",
       "skills": [
         "derivation",
         "computation"
@@ -4914,7 +4914,7 @@
       "id": "f-w025-e1-practice-1",
       "week": 25,
       "revision": 1,
-      "hash": "98980cd24a5fd873",
+      "hash": "13e39968d2efc258",
       "skills": [
         "derivation"
       ]
@@ -4923,7 +4923,7 @@
       "id": "f-w025-e1-practice-2",
       "week": 25,
       "revision": 1,
-      "hash": "1394b1960214e6e1",
+      "hash": "0a2eead168e8bff4",
       "skills": [
         "derivation"
       ]
@@ -4932,7 +4932,7 @@
       "id": "f-w025-e1-practice-4",
       "week": 25,
       "revision": 1,
-      "hash": "f674c4d8fa7eb5bb",
+      "hash": "01ab04ff6fe5b94f",
       "skills": [
         "transfer"
       ]
@@ -6167,7 +6167,7 @@
       "id": "m2-w032-e3",
       "week": 32,
       "revision": 1,
-      "hash": "e29113078dbcf9bb",
+      "hash": "d4ead09409a75381",
       "skills": [
         "counterexample",
         "transfer"
@@ -6250,7 +6250,7 @@
       "id": "m2-w032-e3-practice-1",
       "week": 32,
       "revision": 1,
-      "hash": "cfbe23fa57dcbc74",
+      "hash": "3a6965854563f2fc",
       "skills": [
         "derivation"
       ]
@@ -6259,7 +6259,7 @@
       "id": "m2-w032-e3-practice-2",
       "week": 32,
       "revision": 1,
-      "hash": "5ad34e340b96f6cd",
+      "hash": "a92d7f005a4206d6",
       "skills": [
         "derivation"
       ]
@@ -6268,7 +6268,7 @@
       "id": "m2-w032-e3-practice-4",
       "week": 32,
       "revision": 1,
-      "hash": "41dd91d0682fcac0",
+      "hash": "33b03bb45ec38b84",
       "skills": [
         "transfer"
       ]
@@ -6723,7 +6723,7 @@
       "id": "m2-w035-e4",
       "week": 35,
       "revision": 1,
-      "hash": "fcf6e6c3aae1eed3",
+      "hash": "0c5b1d55a2902ece",
       "skills": [
         "counterexample"
       ]
@@ -6823,7 +6823,7 @@
       "id": "m2-w035-e4-practice-1",
       "week": 35,
       "revision": 1,
-      "hash": "17b59c4760f80e71",
+      "hash": "72479851758c11f5",
       "skills": [
         "derivation"
       ]
@@ -6832,7 +6832,7 @@
       "id": "m2-w035-e4-practice-2",
       "week": 35,
       "revision": 1,
-      "hash": "5d435e57b8561238",
+      "hash": "6164b29d4ff8e40f",
       "skills": [
         "derivation"
       ]
@@ -6841,7 +6841,7 @@
       "id": "m2-w035-e4-practice-4",
       "week": 35,
       "revision": 1,
-      "hash": "9fb35a0c2817be48",
+      "hash": "e5cf4e6303a00c11",
       "skills": [
         "transfer"
       ]
@@ -8967,7 +8967,7 @@
       "id": "m2-w047-e4",
       "week": 47,
       "revision": 1,
-      "hash": "fa7a996be653bbe2",
+      "hash": "892347c48dca0879",
       "skills": [
         "counterexample"
       ]
@@ -9067,7 +9067,7 @@
       "id": "m2-w047-e4-practice-1",
       "week": 47,
       "revision": 1,
-      "hash": "c52b5485f6e23c64",
+      "hash": "4fcf5ce4b16e92bc",
       "skills": [
         "derivation"
       ]
@@ -9076,7 +9076,7 @@
       "id": "m2-w047-e4-practice-2",
       "week": 47,
       "revision": 1,
-      "hash": "c4a0f62cc12b3d2f",
+      "hash": "67270f825e68aa50",
       "skills": [
         "derivation"
       ]
@@ -9085,7 +9085,7 @@
       "id": "m2-w047-e4-practice-4",
       "week": 47,
       "revision": 1,
-      "hash": "1e5500884a3f3a3d",
+      "hash": "1941627f244c2967",
       "skills": [
         "transfer"
       ]
@@ -9149,7 +9149,7 @@
       "id": "m2-w048-e4",
       "week": 48,
       "revision": 1,
-      "hash": "ed38f7abcf468ede",
+      "hash": "be59afa824955c13",
       "skills": [
         "counterexample"
       ]
@@ -9249,7 +9249,7 @@
       "id": "m2-w048-e4-practice-1",
       "week": 48,
       "revision": 1,
-      "hash": "599374aef2909695",
+      "hash": "e5baaca6610a27ef",
       "skills": [
         "derivation"
       ]
@@ -9258,7 +9258,7 @@
       "id": "m2-w048-e4-practice-2",
       "week": 48,
       "revision": 1,
-      "hash": "6a72eb71ad364b77",
+      "hash": "bc29b6f1ebcb6401",
       "skills": [
         "derivation"
       ]
@@ -9267,7 +9267,7 @@
       "id": "m2-w048-e4-practice-4",
       "week": 48,
       "revision": 1,
-      "hash": "353b86e0ff5c9c06",
+      "hash": "b3733427916cd6a2",
       "skills": [
         "transfer"
       ]
@@ -9312,7 +9312,7 @@
       "id": "m2-w049-e2",
       "week": 49,
       "revision": 1,
-      "hash": "6784bcc7d8e25bd4",
+      "hash": "5c6ff7496a02ca98",
       "skills": [
         "derivation",
         "application"
@@ -9342,7 +9342,7 @@
       "id": "m2-w049-e5",
       "week": 49,
       "revision": 1,
-      "hash": "52fdc132b2f46542",
+      "hash": "570afe59704f9100",
       "skills": [
         "transfer",
         "derivation"
@@ -9379,7 +9379,7 @@
       "id": "m2-w049-e2-practice-1",
       "week": 49,
       "revision": 1,
-      "hash": "a4009957031b0f2d",
+      "hash": "ff2a1a242811139f",
       "skills": [
         "derivation"
       ]
@@ -9388,7 +9388,7 @@
       "id": "m2-w049-e2-practice-2",
       "week": 49,
       "revision": 1,
-      "hash": "0c9d80f901b35bba",
+      "hash": "7cc3d73d42423338",
       "skills": [
         "derivation"
       ]
@@ -9397,7 +9397,7 @@
       "id": "m2-w049-e2-practice-4",
       "week": 49,
       "revision": 1,
-      "hash": "297ea5640c2a92e4",
+      "hash": "7be56c03d9cb742b",
       "skills": [
         "transfer"
       ]
@@ -9460,7 +9460,7 @@
       "id": "m2-w049-e5-practice-1",
       "week": 49,
       "revision": 1,
-      "hash": "c6739079168039f8",
+      "hash": "75869f66c8824a33",
       "skills": [
         "derivation"
       ]
@@ -9469,7 +9469,7 @@
       "id": "m2-w049-e5-practice-2",
       "week": 49,
       "revision": 1,
-      "hash": "40f9ea8320bde5ab",
+      "hash": "90c6cdde47226402",
       "skills": [
         "derivation"
       ]
@@ -9478,7 +9478,7 @@
       "id": "m2-w049-e5-practice-4",
       "week": 49,
       "revision": 1,
-      "hash": "fa7c8964b8b19e68",
+      "hash": "47815d403c374ba9",
       "skills": [
         "transfer"
       ]
@@ -9681,7 +9681,7 @@
       "id": "m2-w051-e2",
       "week": 51,
       "revision": 1,
-      "hash": "e59fdb44a4a2329a",
+      "hash": "a3386105ad03bde9",
       "skills": [
         "computation",
         "application"
@@ -9747,7 +9747,7 @@
       "id": "m2-w051-e2-practice-1",
       "week": 51,
       "revision": 1,
-      "hash": "2d53c1d3ed424031",
+      "hash": "731d99c245a3d889",
       "skills": [
         "derivation"
       ]
@@ -9756,7 +9756,7 @@
       "id": "m2-w051-e2-practice-2",
       "week": 51,
       "revision": 1,
-      "hash": "57961751af066f17",
+      "hash": "808efe70c619c756",
       "skills": [
         "derivation"
       ]
@@ -9765,7 +9765,7 @@
       "id": "m2-w051-e2-practice-4",
       "week": 51,
       "revision": 1,
-      "hash": "96ad2e8fb7304928",
+      "hash": "6dccb58308e95bca",
       "skills": [
         "transfer"
       ]
@@ -11172,7 +11172,7 @@
       "id": "m2-w059-e4",
       "week": 59,
       "revision": 1,
-      "hash": "bbbe094619f03a89",
+      "hash": "ca8d445248f07c3a",
       "skills": [
         "counterexample",
         "computation"
@@ -11273,7 +11273,7 @@
       "id": "m2-w059-e4-practice-1",
       "week": 59,
       "revision": 1,
-      "hash": "e3473a53a74f5ad7",
+      "hash": "07239b18aa847814",
       "skills": [
         "derivation"
       ]
@@ -11282,7 +11282,7 @@
       "id": "m2-w059-e4-practice-2",
       "week": 59,
       "revision": 1,
-      "hash": "2c50dd329e70a107",
+      "hash": "daa70a518da51aaf",
       "skills": [
         "derivation"
       ]
@@ -11291,7 +11291,7 @@
       "id": "m2-w059-e4-practice-4",
       "week": 59,
       "revision": 1,
-      "hash": "fc44f879f73bdc55",
+      "hash": "8edf4c687e3b547a",
       "skills": [
         "transfer"
       ]
@@ -14184,7 +14184,7 @@
       "id": "m2-w075-e5",
       "week": 75,
       "revision": 1,
-      "hash": "e15eab5b28e8210b",
+      "hash": "1c230eacbafc8f1e",
       "skills": [
         "counterexample",
         "transfer"
@@ -14302,7 +14302,7 @@
       "id": "m2-w075-e5-practice-1",
       "week": 75,
       "revision": 1,
-      "hash": "905508bfe8802529",
+      "hash": "10b050771554711f",
       "skills": [
         "derivation"
       ]
@@ -14311,7 +14311,7 @@
       "id": "m2-w075-e5-practice-2",
       "week": 75,
       "revision": 1,
-      "hash": "fce48a8c2caf548c",
+      "hash": "3506824167106b1c",
       "skills": [
         "derivation"
       ]
@@ -14320,7 +14320,7 @@
       "id": "m2-w075-e5-practice-4",
       "week": 75,
       "revision": 1,
-      "hash": "67160fde7db305a6",
+      "hash": "aeb713f526ec35d2",
       "skills": [
         "transfer"
       ]
@@ -14520,7 +14520,7 @@
       "id": "m2-w077-e2",
       "week": 77,
       "revision": 1,
-      "hash": "78af57e225a22dc3",
+      "hash": "f37c66149e2f2191",
       "skills": [
         "proof"
       ]
@@ -14586,7 +14586,7 @@
       "id": "m2-w077-e2-practice-1",
       "week": 77,
       "revision": 1,
-      "hash": "8853855e11f4ef9c",
+      "hash": "824bd6b34c374a76",
       "skills": [
         "derivation"
       ]
@@ -14595,7 +14595,7 @@
       "id": "m2-w077-e2-practice-2",
       "week": 77,
       "revision": 1,
-      "hash": "de1f0bc5d525bd09",
+      "hash": "c4ae133470893394",
       "skills": [
         "derivation"
       ]
@@ -14604,7 +14604,7 @@
       "id": "m2-w077-e2-practice-4",
       "week": 77,
       "revision": 1,
-      "hash": "c6a7eef3d0173755",
+      "hash": "2d2fb8d54ca1271a",
       "skills": [
         "transfer"
       ]
@@ -16375,7 +16375,7 @@
       "id": "m2-w087-e3",
       "week": 87,
       "revision": 1,
-      "hash": "4f2323b88a7245c1",
+      "hash": "80ed382e5b364ac0",
       "skills": [
         "derivation"
       ]
@@ -16458,7 +16458,7 @@
       "id": "m2-w087-e3-practice-1",
       "week": 87,
       "revision": 1,
-      "hash": "a7e034f6c68133f8",
+      "hash": "c22e762708831f87",
       "skills": [
         "derivation"
       ]
@@ -16467,7 +16467,7 @@
       "id": "m2-w087-e3-practice-2",
       "week": 87,
       "revision": 1,
-      "hash": "d381aa1d099c8869",
+      "hash": "0b032bd8e5767ce2",
       "skills": [
         "derivation"
       ]
@@ -16476,7 +16476,7 @@
       "id": "m2-w087-e3-practice-4",
       "week": 87,
       "revision": 1,
-      "hash": "b0afeb4ec4165965",
+      "hash": "956f9d461e629063",
       "skills": [
         "transfer"
       ]
@@ -16557,7 +16557,7 @@
       "id": "m2-w088-e3",
       "week": 88,
       "revision": 1,
-      "hash": "3b747e67732c8561",
+      "hash": "84f66bd39aa6c37a",
       "skills": [
         "derivation"
       ]
@@ -16640,7 +16640,7 @@
       "id": "m2-w088-e3-practice-1",
       "week": 88,
       "revision": 1,
-      "hash": "65de6df46688d9ea",
+      "hash": "76077eacb101dc5f",
       "skills": [
         "derivation"
       ]
@@ -16649,7 +16649,7 @@
       "id": "m2-w088-e3-practice-2",
       "week": 88,
       "revision": 1,
-      "hash": "50ac19b1a36f6a08",
+      "hash": "0cfb4ea9842b445e",
       "skills": [
         "derivation"
       ]
@@ -16658,7 +16658,7 @@
       "id": "m2-w088-e3-practice-4",
       "week": 88,
       "revision": 1,
-      "hash": "9a27deaca8fa857e",
+      "hash": "a75fc1eebcec5c03",
       "skills": [
         "transfer"
       ]
@@ -16739,7 +16739,7 @@
       "id": "m2-w089-e3",
       "week": 89,
       "revision": 1,
-      "hash": "1d47b4bfe62970fe",
+      "hash": "ac537478cdae3bce",
       "skills": [
         "proof",
         "derivation"
@@ -16823,7 +16823,7 @@
       "id": "m2-w089-e3-practice-1",
       "week": 89,
       "revision": 1,
-      "hash": "89b06090c9a508dd",
+      "hash": "a61e0dfd31f23a56",
       "skills": [
         "derivation"
       ]
@@ -16832,7 +16832,7 @@
       "id": "m2-w089-e3-practice-2",
       "week": 89,
       "revision": 1,
-      "hash": "5b7f57d88fd7c0bf",
+      "hash": "6a49f699b397318d",
       "skills": [
         "derivation"
       ]
@@ -16841,7 +16841,7 @@
       "id": "m2-w089-e3-practice-4",
       "week": 89,
       "revision": 1,
-      "hash": "fc0883d80d846241",
+      "hash": "cc7fb0b190b40987",
       "skills": [
         "transfer"
       ]
@@ -20738,7 +20738,7 @@
       "id": "m2-w001-d1",
       "date": "2026-10-07",
       "week": 1,
-      "revision": "2af05e28cab947ca",
+      "revision": "5cde82bcb8bd24a3",
       "minutes": [
         50,
         90,
@@ -20759,7 +20759,7 @@
       "id": "m2-w001-d2",
       "date": "2026-10-08",
       "week": 1,
-      "revision": "771bf10002b0d111",
+      "revision": "904b1151bb370dde",
       "minutes": [
         50,
         90,
@@ -20780,7 +20780,7 @@
       "id": "m2-w001-d3",
       "date": "2026-10-09",
       "week": 1,
-      "revision": "5e7a6d31318db0d4",
+      "revision": "f08c88f7db590576",
       "minutes": [
         50,
         90,
@@ -20801,7 +20801,7 @@
       "id": "m2-w001-d4",
       "date": "2026-10-12",
       "week": 1,
-      "revision": "6b5400d83650c4cf",
+      "revision": "fbd369fb5f28242f",
       "minutes": [
         50,
         90,
@@ -20822,7 +20822,7 @@
       "id": "m2-w001-d5",
       "date": "2026-10-13",
       "week": 1,
-      "revision": "05c6d17bb411a445",
+      "revision": "8cc48dbf193a4535",
       "minutes": [
         50,
         90,
@@ -21263,7 +21263,7 @@
       "id": "m2-w006-d1",
       "date": "2026-11-11",
       "week": 6,
-      "revision": "e6a91955ac9ff74e",
+      "revision": "b30bfce3257ed07f",
       "minutes": [
         50,
         90,
@@ -21284,7 +21284,7 @@
       "id": "m2-w006-d2",
       "date": "2026-11-12",
       "week": 6,
-      "revision": "c2555bcc4c45fab1",
+      "revision": "f2c944add687b6a4",
       "minutes": [
         50,
         90,
@@ -21305,7 +21305,7 @@
       "id": "m2-w006-d3",
       "date": "2026-11-13",
       "week": 6,
-      "revision": "091aad60173119ce",
+      "revision": "a18102e16237432c",
       "minutes": [
         50,
         90,
@@ -21326,7 +21326,7 @@
       "id": "m2-w006-d4",
       "date": "2026-11-16",
       "week": 6,
-      "revision": "5aa3290fbf30d75e",
+      "revision": "dd02b4a8fec00f90",
       "minutes": [
         50,
         90,
@@ -21347,7 +21347,7 @@
       "id": "m2-w006-d5",
       "date": "2026-11-17",
       "week": 6,
-      "revision": "be0b49bb6741e205",
+      "revision": "38ddb329257c1ebc",
       "minutes": [
         50,
         90,
@@ -21368,7 +21368,7 @@
       "id": "m2-w007-d1",
       "date": "2026-11-18",
       "week": 7,
-      "revision": "9190ceeb25b2dce5",
+      "revision": "1ef3e4a4dac00011",
       "minutes": [
         50,
         90,
@@ -21389,7 +21389,7 @@
       "id": "m2-w007-d2",
       "date": "2026-11-19",
       "week": 7,
-      "revision": "9ec6e841d25a26f6",
+      "revision": "c60b6a826423e3be",
       "minutes": [
         50,
         90,
@@ -21410,7 +21410,7 @@
       "id": "m2-w007-d3",
       "date": "2026-11-20",
       "week": 7,
-      "revision": "ea1bb1108d2213df",
+      "revision": "cf07ffd1e3b25815",
       "minutes": [
         50,
         90,
@@ -21431,7 +21431,7 @@
       "id": "m2-w007-d4",
       "date": "2026-11-23",
       "week": 7,
-      "revision": "5019c47dca2145ba",
+      "revision": "292db3ceae9d5373",
       "minutes": [
         50,
         90,
@@ -21452,7 +21452,7 @@
       "id": "m2-w007-d5",
       "date": "2026-11-24",
       "week": 7,
-      "revision": "8d9a3bfdcc8b8e66",
+      "revision": "3dfc3d74496886cf",
       "minutes": [
         50,
         90,
@@ -21578,7 +21578,7 @@
       "id": "m2-w009-d1",
       "date": "2026-12-02",
       "week": 9,
-      "revision": "81282bd3b3b0ad29",
+      "revision": "28d09339892fb52d",
       "minutes": [
         50,
         90,
@@ -21599,7 +21599,7 @@
       "id": "m2-w009-d2",
       "date": "2026-12-03",
       "week": 9,
-      "revision": "092b5baec878632c",
+      "revision": "4aeafb6b688116ba",
       "minutes": [
         50,
         90,
@@ -21620,7 +21620,7 @@
       "id": "m2-w009-d3",
       "date": "2026-12-04",
       "week": 9,
-      "revision": "c883b8f32fb4d804",
+      "revision": "4bc0efb417fb9666",
       "minutes": [
         50,
         90,
@@ -21641,7 +21641,7 @@
       "id": "m2-w009-d4",
       "date": "2026-12-07",
       "week": 9,
-      "revision": "e52b16cdd76728d6",
+      "revision": "616dc412039ad036",
       "minutes": [
         50,
         90,
@@ -21662,7 +21662,7 @@
       "id": "m2-w009-d5",
       "date": "2026-12-08",
       "week": 9,
-      "revision": "8ce06e9b574da727",
+      "revision": "f281a62dc769a2df",
       "minutes": [
         50,
         90,
@@ -21683,7 +21683,7 @@
       "id": "m2-w010-d1",
       "date": "2026-12-09",
       "week": 10,
-      "revision": "785dcfb191fd124c",
+      "revision": "0dcec4c6347aaee8",
       "minutes": [
         50,
         90,
@@ -21704,7 +21704,7 @@
       "id": "m2-w010-d2",
       "date": "2026-12-10",
       "week": 10,
-      "revision": "84b557aee1d213f3",
+      "revision": "313f92e0fde9b684",
       "minutes": [
         50,
         90,
@@ -21725,7 +21725,7 @@
       "id": "m2-w010-d3",
       "date": "2026-12-11",
       "week": 10,
-      "revision": "4d420e3a36035653",
+      "revision": "f1fd05b9b4666131",
       "minutes": [
         50,
         90,
@@ -21746,7 +21746,7 @@
       "id": "m2-w010-d4",
       "date": "2026-12-14",
       "week": 10,
-      "revision": "8555410f12ce3a5f",
+      "revision": "8c5c5c8de7e5fe97",
       "minutes": [
         50,
         90,
@@ -21767,7 +21767,7 @@
       "id": "m2-w010-d5",
       "date": "2026-12-15",
       "week": 10,
-      "revision": "c205c9c05823ecab",
+      "revision": "5850db60ee96a32f",
       "minutes": [
         50,
         90,
@@ -21893,7 +21893,7 @@
       "id": "m2-w012-d1",
       "date": "2026-12-23",
       "week": 12,
-      "revision": "aa715cce9648616f",
+      "revision": "08f48dba0beb78c2",
       "minutes": [
         50,
         90,
@@ -21914,7 +21914,7 @@
       "id": "m2-w012-d2",
       "date": "2026-12-24",
       "week": 12,
-      "revision": "d13e9b3803dd9b69",
+      "revision": "d666b25a82b3047f",
       "minutes": [
         50,
         90,
@@ -21935,7 +21935,7 @@
       "id": "m2-w012-d3",
       "date": "2026-12-25",
       "week": 12,
-      "revision": "975385699dbd5a3d",
+      "revision": "4db7fa5642d24aa6",
       "minutes": [
         50,
         90,
@@ -21956,7 +21956,7 @@
       "id": "m2-w012-d4",
       "date": "2026-12-28",
       "week": 12,
-      "revision": "9b7b674d32737867",
+      "revision": "b60aec0ea2a6c7c9",
       "minutes": [
         50,
         90,
@@ -21977,7 +21977,7 @@
       "id": "m2-w012-d5",
       "date": "2026-12-29",
       "week": 12,
-      "revision": "100e54582999688d",
+      "revision": "5fd6d416950959bd",
       "minutes": [
         50,
         90,
@@ -22103,7 +22103,7 @@
       "id": "m2-w014-d1",
       "date": "2027-01-06",
       "week": 14,
-      "revision": "a5f73c1d5b15458d",
+      "revision": "a989f868c2e2c661",
       "minutes": [
         50,
         90,
@@ -22124,7 +22124,7 @@
       "id": "m2-w014-d2",
       "date": "2027-01-07",
       "week": 14,
-      "revision": "bfcd88ee0317a8e5",
+      "revision": "cb5a144a43779eb5",
       "minutes": [
         50,
         90,
@@ -22145,7 +22145,7 @@
       "id": "m2-w014-d3",
       "date": "2027-01-08",
       "week": 14,
-      "revision": "22b4ce38ab4ddf02",
+      "revision": "7be1fd4bb8b1aa80",
       "minutes": [
         50,
         90,
@@ -22166,7 +22166,7 @@
       "id": "m2-w014-d4",
       "date": "2027-01-11",
       "week": 14,
-      "revision": "3b7c797bc0b40114",
+      "revision": "ec72baa7436c11aa",
       "minutes": [
         50,
         90,
@@ -22187,7 +22187,7 @@
       "id": "m2-w014-d5",
       "date": "2027-01-12",
       "week": 14,
-      "revision": "d078ed4b9a367d10",
+      "revision": "a8e1f083dd01d6f4",
       "minutes": [
         50,
         90,
@@ -22208,7 +22208,7 @@
       "id": "m2-w015-d1",
       "date": "2027-01-13",
       "week": 15,
-      "revision": "fdc817ed736edae0",
+      "revision": "47110949f8cc3f40",
       "minutes": [
         50,
         90,
@@ -22229,7 +22229,7 @@
       "id": "m2-w015-d2",
       "date": "2027-01-14",
       "week": 15,
-      "revision": "78bc6dc60b53ac8f",
+      "revision": "0eaabb01a3958c69",
       "minutes": [
         50,
         90,
@@ -22250,7 +22250,7 @@
       "id": "m2-w015-d3",
       "date": "2027-01-15",
       "week": 15,
-      "revision": "817aa8cefb7eabfd",
+      "revision": "5f658f219d9dce55",
       "minutes": [
         50,
         90,
@@ -22271,7 +22271,7 @@
       "id": "m2-w015-d4",
       "date": "2027-01-18",
       "week": 15,
-      "revision": "8015d362b35dc752",
+      "revision": "82a1d4ca223e8bb7",
       "minutes": [
         50,
         90,
@@ -22292,7 +22292,7 @@
       "id": "m2-w015-d5",
       "date": "2027-01-19",
       "week": 15,
-      "revision": "822150ab01087888",
+      "revision": "eeebd71c2a7af1b9",
       "minutes": [
         50,
         90,
@@ -22313,7 +22313,7 @@
       "id": "m2-w016-d1",
       "date": "2027-01-20",
       "week": 16,
-      "revision": "53df3db9b02bbaf5",
+      "revision": "d41381203b5dcdb6",
       "minutes": [
         50,
         90,
@@ -22334,7 +22334,7 @@
       "id": "m2-w016-d2",
       "date": "2027-01-21",
       "week": 16,
-      "revision": "d98992ee8358c781",
+      "revision": "7f57b0b9ac3c1602",
       "minutes": [
         50,
         90,
@@ -22355,7 +22355,7 @@
       "id": "m2-w016-d3",
       "date": "2027-01-22",
       "week": 16,
-      "revision": "1c442b499e635d2f",
+      "revision": "994c13c650116453",
       "minutes": [
         50,
         90,
@@ -22376,7 +22376,7 @@
       "id": "m2-w016-d4",
       "date": "2027-01-25",
       "week": 16,
-      "revision": "059326ecbee99316",
+      "revision": "eb128004b1dfa2e5",
       "minutes": [
         50,
         90,
@@ -22397,7 +22397,7 @@
       "id": "m2-w016-d5",
       "date": "2027-01-26",
       "week": 16,
-      "revision": "e238b9efe33206a7",
+      "revision": "b3027cb0a62f03d1",
       "minutes": [
         50,
         90,
@@ -22523,7 +22523,7 @@
       "id": "m2-w018-d1",
       "date": "2027-02-03",
       "week": 18,
-      "revision": "df0f6c62a738a7fc",
+      "revision": "a4f82e8b289c3756",
       "minutes": [
         50,
         90,
@@ -22544,7 +22544,7 @@
       "id": "m2-w018-d2",
       "date": "2027-02-04",
       "week": 18,
-      "revision": "da46807a7367d966",
+      "revision": "d89f51d8fb4f5ee1",
       "minutes": [
         50,
         90,
@@ -22565,7 +22565,7 @@
       "id": "m2-w018-d3",
       "date": "2027-02-05",
       "week": 18,
-      "revision": "014e4c6bf0a16082",
+      "revision": "1631a8141d99eaa0",
       "minutes": [
         50,
         90,
@@ -22586,7 +22586,7 @@
       "id": "m2-w018-d4",
       "date": "2027-02-08",
       "week": 18,
-      "revision": "73994d89d7e36b3f",
+      "revision": "2b8ea13c2ed66d96",
       "minutes": [
         50,
         90,
@@ -22607,7 +22607,7 @@
       "id": "m2-w018-d5",
       "date": "2027-02-09",
       "week": 18,
-      "revision": "7096305040af6194",
+      "revision": "23135f6b363364b8",
       "minutes": [
         50,
         90,
@@ -23258,7 +23258,7 @@
       "id": "m2-w025-d1",
       "date": "2027-03-24",
       "week": 25,
-      "revision": "e6f9edb6c1b200ca",
+      "revision": "f0ab74cb10a1f43f",
       "minutes": [
         50,
         90,
@@ -23279,7 +23279,7 @@
       "id": "m2-w025-d2",
       "date": "2027-03-25",
       "week": 25,
-      "revision": "ccc08900dba45981",
+      "revision": "cc870a66f62c5cf9",
       "minutes": [
         50,
         90,
@@ -23300,7 +23300,7 @@
       "id": "m2-w025-d3",
       "date": "2027-03-26",
       "week": 25,
-      "revision": "017e176e1e7d56dc",
+      "revision": "998d91ce8a1c1db2",
       "minutes": [
         50,
         90,
@@ -23321,7 +23321,7 @@
       "id": "m2-w025-d4",
       "date": "2027-03-29",
       "week": 25,
-      "revision": "013b1f71ba573d86",
+      "revision": "a4198bcb04ca185b",
       "minutes": [
         50,
         90,
@@ -23342,7 +23342,7 @@
       "id": "m2-w025-d5",
       "date": "2027-03-30",
       "week": 25,
-      "revision": "c075f80fdab143ce",
+      "revision": "8d91942c07ffc699",
       "minutes": [
         50,
         90,
@@ -23993,7 +23993,7 @@
       "id": "m2-w032-d1",
       "date": "2027-05-12",
       "week": 32,
-      "revision": "86685947180f4ba1",
+      "revision": "b8dbd0f57952b32a",
       "minutes": [
         50,
         90,
@@ -24014,7 +24014,7 @@
       "id": "m2-w032-d2",
       "date": "2027-05-13",
       "week": 32,
-      "revision": "26274147a87e947b",
+      "revision": "e7f5afc6d46bd674",
       "minutes": [
         50,
         90,
@@ -24035,7 +24035,7 @@
       "id": "m2-w032-d3",
       "date": "2027-05-14",
       "week": 32,
-      "revision": "9120220a6c70beaa",
+      "revision": "36ba2e2b1848b3a9",
       "minutes": [
         50,
         90,
@@ -24056,7 +24056,7 @@
       "id": "m2-w032-d4",
       "date": "2027-05-17",
       "week": 32,
-      "revision": "43dc4f29b2103287",
+      "revision": "174fe9f965c4a55c",
       "minutes": [
         50,
         90,
@@ -24077,7 +24077,7 @@
       "id": "m2-w032-d5",
       "date": "2027-05-18",
       "week": 32,
-      "revision": "9404c808e7ddf7da",
+      "revision": "038da9e8d4e01fb3",
       "minutes": [
         50,
         90,
@@ -24308,7 +24308,7 @@
       "id": "m2-w035-d1",
       "date": "2027-06-02",
       "week": 35,
-      "revision": "a34f95c2ef0a6575",
+      "revision": "2f3fa2d6e1e12013",
       "minutes": [
         50,
         90,
@@ -24329,7 +24329,7 @@
       "id": "m2-w035-d2",
       "date": "2027-06-03",
       "week": 35,
-      "revision": "525240c27c309854",
+      "revision": "39f8e043a3ff022d",
       "minutes": [
         50,
         90,
@@ -24350,7 +24350,7 @@
       "id": "m2-w035-d3",
       "date": "2027-06-04",
       "week": 35,
-      "revision": "26c33b28db3e0dc3",
+      "revision": "9425e585ba6f8c2a",
       "minutes": [
         50,
         90,
@@ -24371,7 +24371,7 @@
       "id": "m2-w035-d4",
       "date": "2027-06-07",
       "week": 35,
-      "revision": "44759f01caab6698",
+      "revision": "b637ab9d9d3b643a",
       "minutes": [
         50,
         90,
@@ -24392,7 +24392,7 @@
       "id": "m2-w035-d5",
       "date": "2027-06-08",
       "week": 35,
-      "revision": "371ca000595f6120",
+      "revision": "b41c13b12b6bda14",
       "minutes": [
         50,
         90,
@@ -25568,7 +25568,7 @@
       "id": "m2-w047-d1",
       "date": "2027-08-25",
       "week": 47,
-      "revision": "710a3e5a0d8f2adb",
+      "revision": "ee7e20858b06b18e",
       "minutes": [
         50,
         90,
@@ -25589,7 +25589,7 @@
       "id": "m2-w047-d2",
       "date": "2027-08-26",
       "week": 47,
-      "revision": "556c16fde6c25066",
+      "revision": "2ae95aea312cdad3",
       "minutes": [
         50,
         90,
@@ -25610,7 +25610,7 @@
       "id": "m2-w047-d3",
       "date": "2027-08-27",
       "week": 47,
-      "revision": "0f4c9530346a55b1",
+      "revision": "1ead0e4ec1d0c811",
       "minutes": [
         50,
         90,
@@ -25631,7 +25631,7 @@
       "id": "m2-w047-d4",
       "date": "2027-08-30",
       "week": 47,
-      "revision": "6b572b39938a6d57",
+      "revision": "84074dd8b7292b22",
       "minutes": [
         50,
         90,
@@ -25652,7 +25652,7 @@
       "id": "m2-w047-d5",
       "date": "2027-08-31",
       "week": 47,
-      "revision": "45d43c79189328e0",
+      "revision": "2a29e865335f849b",
       "minutes": [
         50,
         90,
@@ -25673,7 +25673,7 @@
       "id": "m2-w048-d1",
       "date": "2027-09-01",
       "week": 48,
-      "revision": "aef764c3377047dd",
+      "revision": "e33c96ba4d4723f3",
       "minutes": [
         50,
         90,
@@ -25694,7 +25694,7 @@
       "id": "m2-w048-d2",
       "date": "2027-09-02",
       "week": 48,
-      "revision": "345da2ffc7c0572d",
+      "revision": "a78d5e4c01d3f577",
       "minutes": [
         50,
         90,
@@ -25715,7 +25715,7 @@
       "id": "m2-w048-d3",
       "date": "2027-09-03",
       "week": 48,
-      "revision": "e49b8418705cc5b9",
+      "revision": "637f16da111d7cb1",
       "minutes": [
         50,
         90,
@@ -25736,7 +25736,7 @@
       "id": "m2-w048-d4",
       "date": "2027-09-06",
       "week": 48,
-      "revision": "0ba77a038431349f",
+      "revision": "d8f15ba839466654",
       "minutes": [
         50,
         90,
@@ -25757,7 +25757,7 @@
       "id": "m2-w048-d5",
       "date": "2027-09-07",
       "week": 48,
-      "revision": "f7ea0143af89f358",
+      "revision": "98d0f147353e14f8",
       "minutes": [
         50,
         90,
@@ -25778,7 +25778,7 @@
       "id": "m2-w049-d1",
       "date": "2027-09-08",
       "week": 49,
-      "revision": "aaa9d4c0e52c07e3",
+      "revision": "42b97d6a25169663",
       "minutes": [
         50,
         90,
@@ -25799,7 +25799,7 @@
       "id": "m2-w049-d2",
       "date": "2027-09-09",
       "week": 49,
-      "revision": "e8b684b1f001179d",
+      "revision": "e9e882e40ccf3e53",
       "minutes": [
         50,
         90,
@@ -25820,7 +25820,7 @@
       "id": "m2-w049-d3",
       "date": "2027-09-10",
       "week": 49,
-      "revision": "a9b2ad9f5693f1e7",
+      "revision": "7c33adbe5a903c36",
       "minutes": [
         50,
         90,
@@ -25841,7 +25841,7 @@
       "id": "m2-w049-d4",
       "date": "2027-09-13",
       "week": 49,
-      "revision": "ccf987368c974b98",
+      "revision": "3ec11e0d1d51f98c",
       "minutes": [
         50,
         90,
@@ -25862,7 +25862,7 @@
       "id": "m2-w049-d5",
       "date": "2027-09-14",
       "week": 49,
-      "revision": "79e6f42ad578a303",
+      "revision": "89804e0aa6cc5388",
       "minutes": [
         50,
         90,
@@ -25988,7 +25988,7 @@
       "id": "m2-w051-d1",
       "date": "2027-09-22",
       "week": 51,
-      "revision": "ff9348562398437a",
+      "revision": "c7264f6d60a099bb",
       "minutes": [
         50,
         90,
@@ -26009,7 +26009,7 @@
       "id": "m2-w051-d2",
       "date": "2027-09-23",
       "week": 51,
-      "revision": "9c5e242b58c576b8",
+      "revision": "c31cbdb69b0b9e16",
       "minutes": [
         50,
         90,
@@ -26030,7 +26030,7 @@
       "id": "m2-w051-d3",
       "date": "2027-09-24",
       "week": 51,
-      "revision": "a738a811198b9521",
+      "revision": "3026c0b1ca77425a",
       "minutes": [
         50,
         90,
@@ -26051,7 +26051,7 @@
       "id": "m2-w051-d4",
       "date": "2027-09-27",
       "week": 51,
-      "revision": "9c6ef84971956317",
+      "revision": "45977dfb5a1eec43",
       "minutes": [
         50,
         90,
@@ -26072,7 +26072,7 @@
       "id": "m2-w051-d5",
       "date": "2027-09-28",
       "week": 51,
-      "revision": "27060fca7999b5da",
+      "revision": "7884b70a0ff269cc",
       "minutes": [
         50,
         90,
@@ -26828,7 +26828,7 @@
       "id": "m2-w059-d1",
       "date": "2027-11-17",
       "week": 59,
-      "revision": "b8b0ad0dc86b2791",
+      "revision": "ed4b8eaab98ae6ed",
       "minutes": [
         50,
         90,
@@ -26849,7 +26849,7 @@
       "id": "m2-w059-d2",
       "date": "2027-11-18",
       "week": 59,
-      "revision": "3e51f62425dbe70a",
+      "revision": "a6cff6a46caac0f6",
       "minutes": [
         50,
         90,
@@ -26870,7 +26870,7 @@
       "id": "m2-w059-d3",
       "date": "2027-11-19",
       "week": 59,
-      "revision": "022ba3600becc2e3",
+      "revision": "258ee4d98ebe1043",
       "minutes": [
         50,
         90,
@@ -26891,7 +26891,7 @@
       "id": "m2-w059-d4",
       "date": "2027-11-22",
       "week": 59,
-      "revision": "e76628700946e776",
+      "revision": "70058d90b6a74205",
       "minutes": [
         50,
         90,
@@ -26912,7 +26912,7 @@
       "id": "m2-w059-d5",
       "date": "2027-11-23",
       "week": 59,
-      "revision": "385f408dba6a8664",
+      "revision": "4ee4b09a69836a45",
       "minutes": [
         50,
         90,
@@ -28508,7 +28508,7 @@
       "id": "m2-w075-d1",
       "date": "2028-03-08",
       "week": 75,
-      "revision": "1397a7aa6b821fea",
+      "revision": "cd6efde01bd1d181",
       "minutes": [
         50,
         90,
@@ -28529,7 +28529,7 @@
       "id": "m2-w075-d2",
       "date": "2028-03-09",
       "week": 75,
-      "revision": "f8a089473a39cbb7",
+      "revision": "50fe8f55c3219a0d",
       "minutes": [
         50,
         90,
@@ -28550,7 +28550,7 @@
       "id": "m2-w075-d3",
       "date": "2028-03-10",
       "week": 75,
-      "revision": "b1db31c0a1da7ab8",
+      "revision": "62b1432fd219251e",
       "minutes": [
         50,
         90,
@@ -28571,7 +28571,7 @@
       "id": "m2-w075-d4",
       "date": "2028-03-13",
       "week": 75,
-      "revision": "2762086e55feb112",
+      "revision": "876ed5f0fae1f158",
       "minutes": [
         50,
         90,
@@ -28592,7 +28592,7 @@
       "id": "m2-w075-d5",
       "date": "2028-03-14",
       "week": 75,
-      "revision": "b5f11ba3b2ee5674",
+      "revision": "4e648f726fff8394",
       "minutes": [
         50,
         90,
@@ -28718,7 +28718,7 @@
       "id": "m2-w077-d1",
       "date": "2028-03-22",
       "week": 77,
-      "revision": "6b64cc03c91405ce",
+      "revision": "1b9612f84ed984b0",
       "minutes": [
         50,
         90,
@@ -28739,7 +28739,7 @@
       "id": "m2-w077-d2",
       "date": "2028-03-23",
       "week": 77,
-      "revision": "ebe25119db8ac1f4",
+      "revision": "6ded08b4f34d8d74",
       "minutes": [
         50,
         90,
@@ -28760,7 +28760,7 @@
       "id": "m2-w077-d3",
       "date": "2028-03-24",
       "week": 77,
-      "revision": "9b18d283126bb126",
+      "revision": "f454b7e528df5d1c",
       "minutes": [
         50,
         90,
@@ -28781,7 +28781,7 @@
       "id": "m2-w077-d4",
       "date": "2028-03-27",
       "week": 77,
-      "revision": "8e32806e0fd7b019",
+      "revision": "b83dbc034852726d",
       "minutes": [
         50,
         90,
@@ -28802,7 +28802,7 @@
       "id": "m2-w077-d5",
       "date": "2028-03-28",
       "week": 77,
-      "revision": "2b60c0f69ccf84a7",
+      "revision": "4d0e9b25dc40f58a",
       "minutes": [
         50,
         90,
@@ -29768,7 +29768,7 @@
       "id": "m2-w087-d1",
       "date": "2028-05-31",
       "week": 87,
-      "revision": "0aef32d045717f77",
+      "revision": "8a93595fdef959db",
       "minutes": [
         50,
         90,
@@ -29789,7 +29789,7 @@
       "id": "m2-w087-d2",
       "date": "2028-06-01",
       "week": 87,
-      "revision": "71e57b67cae7acef",
+      "revision": "bb58a67b2d048a2a",
       "minutes": [
         50,
         90,
@@ -29810,7 +29810,7 @@
       "id": "m2-w087-d3",
       "date": "2028-06-02",
       "week": 87,
-      "revision": "862268873100947b",
+      "revision": "e86a8b02927171a5",
       "minutes": [
         50,
         90,
@@ -29831,7 +29831,7 @@
       "id": "m2-w087-d4",
       "date": "2028-06-05",
       "week": 87,
-      "revision": "92f4b5b820ff84e1",
+      "revision": "cabfca2942e19588",
       "minutes": [
         50,
         90,
@@ -29852,7 +29852,7 @@
       "id": "m2-w087-d5",
       "date": "2028-06-06",
       "week": 87,
-      "revision": "645fa44b254f3144",
+      "revision": "395f6c1d152b51db",
       "minutes": [
         50,
         90,
@@ -29873,7 +29873,7 @@
       "id": "m2-w088-d1",
       "date": "2028-06-07",
       "week": 88,
-      "revision": "53f7cad78c0816ee",
+      "revision": "9c9c7f9194f4a614",
       "minutes": [
         50,
         90,
@@ -29894,7 +29894,7 @@
       "id": "m2-w088-d2",
       "date": "2028-06-08",
       "week": 88,
-      "revision": "c144320cd0f230a0",
+      "revision": "cb4f2750074e0668",
       "minutes": [
         50,
         90,
@@ -29915,7 +29915,7 @@
       "id": "m2-w088-d3",
       "date": "2028-06-09",
       "week": 88,
-      "revision": "53d9414d68eaa177",
+      "revision": "419c340675fb9141",
       "minutes": [
         50,
         90,
@@ -29936,7 +29936,7 @@
       "id": "m2-w088-d4",
       "date": "2028-06-12",
       "week": 88,
-      "revision": "635df9b7be4287eb",
+      "revision": "bba8248ee6d5b457",
       "minutes": [
         50,
         90,
@@ -29957,7 +29957,7 @@
       "id": "m2-w088-d5",
       "date": "2028-06-13",
       "week": 88,
-      "revision": "2a7a25963e991e41",
+      "revision": "22e7d996bca90958",
       "minutes": [
         50,
         90,
@@ -29978,7 +29978,7 @@
       "id": "m2-w089-d1",
       "date": "2028-06-14",
       "week": 89,
-      "revision": "30bcc95ce94728f6",
+      "revision": "0c96cb18e79b4f43",
       "minutes": [
         50,
         90,
@@ -29999,7 +29999,7 @@
       "id": "m2-w089-d2",
       "date": "2028-06-15",
       "week": 89,
-      "revision": "ad6771d60dbab48c",
+      "revision": "2f65a0f3a08792f8",
       "minutes": [
         50,
         90,
@@ -30020,7 +30020,7 @@
       "id": "m2-w089-d3",
       "date": "2028-06-16",
       "week": 89,
-      "revision": "39a931a7e11a1c0c",
+      "revision": "0316631992487cfc",
       "minutes": [
         50,
         90,
@@ -30041,7 +30041,7 @@
       "id": "m2-w089-d4",
       "date": "2028-06-19",
       "week": 89,
-      "revision": "4acdbd873abb2d74",
+      "revision": "96a6e24821b384b7",
       "minutes": [
         50,
         90,
@@ -30062,7 +30062,7 @@
       "id": "m2-w089-d5",
       "date": "2028-06-20",
       "week": 89,
-      "revision": "77d03b2eb14e4496",
+      "revision": "e632bc807f2cdb97",
       "minutes": [
         50,
         90,
@@ -31724,7 +31724,7 @@
       "date": "2026-10-07",
       "calendarWeek": 1,
       "sourceWeek": 1,
-      "revision": "6554b8a6a008c6b6",
+      "revision": "5709ca8e5522e63d",
       "minutes": [
         50,
         90,
@@ -31743,7 +31743,7 @@
       "date": "2026-10-08",
       "calendarWeek": 1,
       "sourceWeek": 1,
-      "revision": "8d0e509bc1b66031",
+      "revision": "d2e43da84744cbdc",
       "minutes": [
         50,
         90,
@@ -31762,7 +31762,7 @@
       "date": "2026-10-09",
       "calendarWeek": 1,
       "sourceWeek": 1,
-      "revision": "63b70d2e28386218",
+      "revision": "1aefad01dbe10bad",
       "minutes": [
         50,
         90,
@@ -31781,7 +31781,7 @@
       "date": "2026-10-12",
       "calendarWeek": 1,
       "sourceWeek": 1,
-      "revision": "6bfa8bb4d8080b54",
+      "revision": "67151c1b71d55e8b",
       "minutes": [
         50,
         90,
@@ -31800,7 +31800,7 @@
       "date": "2026-10-13",
       "calendarWeek": 1,
       "sourceWeek": 1,
-      "revision": "5a626344555d3194",
+      "revision": "ad6dbf45c42b1b09",
       "minutes": [
         50,
         90,
@@ -32199,7 +32199,7 @@
       "date": "2026-11-11",
       "calendarWeek": 6,
       "sourceWeek": 6,
-      "revision": "78d4d0a4dd91ba05",
+      "revision": "369cc217f6205a45",
       "minutes": [
         50,
         90,
@@ -32218,7 +32218,7 @@
       "date": "2026-11-12",
       "calendarWeek": 6,
       "sourceWeek": 6,
-      "revision": "2b3f102c587f0610",
+      "revision": "03c8af86640d1bfd",
       "minutes": [
         50,
         90,
@@ -32237,7 +32237,7 @@
       "date": "2026-11-13",
       "calendarWeek": 6,
       "sourceWeek": 6,
-      "revision": "2d130abf5073bbd2",
+      "revision": "7c915f6ba4049eaf",
       "minutes": [
         50,
         90,
@@ -32256,7 +32256,7 @@
       "date": "2026-11-16",
       "calendarWeek": 6,
       "sourceWeek": 6,
-      "revision": "99189553fe4eb198",
+      "revision": "5a2f960535eb1cdc",
       "minutes": [
         50,
         90,
@@ -32275,7 +32275,7 @@
       "date": "2026-11-17",
       "calendarWeek": 6,
       "sourceWeek": 6,
-      "revision": "a88082513891da1a",
+      "revision": "2f9a408a86993703",
       "minutes": [
         50,
         90,
@@ -32294,7 +32294,7 @@
       "date": "2026-11-18",
       "calendarWeek": 7,
       "sourceWeek": 7,
-      "revision": "07bcd730be22fb0a",
+      "revision": "5e7deedf5e2c25f9",
       "minutes": [
         50,
         90,
@@ -32313,7 +32313,7 @@
       "date": "2026-11-19",
       "calendarWeek": 7,
       "sourceWeek": 7,
-      "revision": "1217dbb80ae2edd2",
+      "revision": "d4a5cee24bd0f154",
       "minutes": [
         50,
         90,
@@ -32332,7 +32332,7 @@
       "date": "2026-11-20",
       "calendarWeek": 7,
       "sourceWeek": 7,
-      "revision": "593ff2614d536a35",
+      "revision": "2c3eff9da035e561",
       "minutes": [
         50,
         90,
@@ -32351,7 +32351,7 @@
       "date": "2026-11-23",
       "calendarWeek": 7,
       "sourceWeek": 7,
-      "revision": "a30dfdb1d460cfbb",
+      "revision": "6f15a93b7b2795b0",
       "minutes": [
         50,
         90,
@@ -32370,7 +32370,7 @@
       "date": "2026-11-24",
       "calendarWeek": 7,
       "sourceWeek": 7,
-      "revision": "c7040861cc3eba59",
+      "revision": "6ac228c3cf50fe00",
       "minutes": [
         50,
         90,
@@ -32484,7 +32484,7 @@
       "date": "2026-12-02",
       "calendarWeek": 9,
       "sourceWeek": 9,
-      "revision": "063571e4ff6b394c",
+      "revision": "f0951dc7f7a6e60a",
       "minutes": [
         50,
         90,
@@ -32503,7 +32503,7 @@
       "date": "2026-12-03",
       "calendarWeek": 9,
       "sourceWeek": 9,
-      "revision": "a48e028f92145534",
+      "revision": "acb4faf284c4ef87",
       "minutes": [
         50,
         90,
@@ -32522,7 +32522,7 @@
       "date": "2026-12-04",
       "calendarWeek": 9,
       "sourceWeek": 9,
-      "revision": "b1f1fec19251a2c1",
+      "revision": "eb40107616c11b18",
       "minutes": [
         50,
         90,
@@ -32541,7 +32541,7 @@
       "date": "2026-12-07",
       "calendarWeek": 9,
       "sourceWeek": 9,
-      "revision": "a08e96cea410c05c",
+      "revision": "1991d9408af5de9a",
       "minutes": [
         50,
         90,
@@ -32560,7 +32560,7 @@
       "date": "2026-12-08",
       "calendarWeek": 9,
       "sourceWeek": 9,
-      "revision": "ceeb92ece9fe448e",
+      "revision": "8ac7cdf031820d27",
       "minutes": [
         50,
         90,
@@ -32579,7 +32579,7 @@
       "date": "2026-12-09",
       "calendarWeek": 10,
       "sourceWeek": 10,
-      "revision": "ebebf0ff50047c6b",
+      "revision": "c271b98424025ff6",
       "minutes": [
         50,
         90,
@@ -32598,7 +32598,7 @@
       "date": "2026-12-10",
       "calendarWeek": 10,
       "sourceWeek": 10,
-      "revision": "2e972138c27abedb",
+      "revision": "e5eb4b61c23068c0",
       "minutes": [
         50,
         90,
@@ -32617,7 +32617,7 @@
       "date": "2026-12-11",
       "calendarWeek": 10,
       "sourceWeek": 10,
-      "revision": "95c4898f6ce17749",
+      "revision": "42da029edf112c5f",
       "minutes": [
         50,
         90,
@@ -32636,7 +32636,7 @@
       "date": "2026-12-14",
       "calendarWeek": 10,
       "sourceWeek": 10,
-      "revision": "9e8268c633dfb6b4",
+      "revision": "3960aad7d1200890",
       "minutes": [
         50,
         90,
@@ -32655,7 +32655,7 @@
       "date": "2026-12-15",
       "calendarWeek": 10,
       "sourceWeek": 10,
-      "revision": "95387e220b0944d4",
+      "revision": "61e678f84541fd9b",
       "minutes": [
         50,
         90,
@@ -32769,7 +32769,7 @@
       "date": "2026-12-23",
       "calendarWeek": 12,
       "sourceWeek": 12,
-      "revision": "9cadbed63b7ac71d",
+      "revision": "776b30fe20e73732",
       "minutes": [
         50,
         90,
@@ -32788,7 +32788,7 @@
       "date": "2026-12-24",
       "calendarWeek": 12,
       "sourceWeek": 12,
-      "revision": "dedbe5cc7acdeb97",
+      "revision": "e0e9a84395be14c6",
       "minutes": [
         50,
         90,
@@ -32807,7 +32807,7 @@
       "date": "2026-12-25",
       "calendarWeek": 12,
       "sourceWeek": 12,
-      "revision": "4eb00a69fdd4f015",
+      "revision": "9205e03fe198df2e",
       "minutes": [
         50,
         90,
@@ -32826,7 +32826,7 @@
       "date": "2026-12-28",
       "calendarWeek": 12,
       "sourceWeek": 12,
-      "revision": "10b497f2bfeddc5f",
+      "revision": "b380c4d91fbd885a",
       "minutes": [
         50,
         90,
@@ -32845,7 +32845,7 @@
       "date": "2026-12-29",
       "calendarWeek": 12,
       "sourceWeek": 12,
-      "revision": "e69de6c796f08b51",
+      "revision": "91a721de193632ff",
       "minutes": [
         50,
         90,
@@ -32959,7 +32959,7 @@
       "date": "2027-01-06",
       "calendarWeek": 14,
       "sourceWeek": 14,
-      "revision": "4ab215205391432f",
+      "revision": "cce7086e305569b6",
       "minutes": [
         50,
         90,
@@ -32978,7 +32978,7 @@
       "date": "2027-01-07",
       "calendarWeek": 14,
       "sourceWeek": 14,
-      "revision": "8e30713da86974ed",
+      "revision": "ce5eb7a9ee6cdaa9",
       "minutes": [
         50,
         90,
@@ -32997,7 +32997,7 @@
       "date": "2027-01-08",
       "calendarWeek": 14,
       "sourceWeek": 14,
-      "revision": "579d0654212c3efa",
+      "revision": "1c5474e6796c7a9b",
       "minutes": [
         50,
         90,
@@ -33016,7 +33016,7 @@
       "date": "2027-01-11",
       "calendarWeek": 14,
       "sourceWeek": 14,
-      "revision": "0546ccee915f6856",
+      "revision": "f8df2e20535f071b",
       "minutes": [
         50,
         90,
@@ -33035,7 +33035,7 @@
       "date": "2027-01-12",
       "calendarWeek": 14,
       "sourceWeek": 14,
-      "revision": "bf6632eae4844852",
+      "revision": "6f042fe67c1ff094",
       "minutes": [
         50,
         90,
@@ -33054,7 +33054,7 @@
       "date": "2027-01-13",
       "calendarWeek": 15,
       "sourceWeek": 15,
-      "revision": "3bfd2852d960c61e",
+      "revision": "892aab778cb1e813",
       "minutes": [
         50,
         90,
@@ -33073,7 +33073,7 @@
       "date": "2027-01-14",
       "calendarWeek": 15,
       "sourceWeek": 15,
-      "revision": "9d4447b49207d721",
+      "revision": "098b6668e979e63c",
       "minutes": [
         50,
         90,
@@ -33092,7 +33092,7 @@
       "date": "2027-01-15",
       "calendarWeek": 15,
       "sourceWeek": 15,
-      "revision": "4159fb2d77c7702b",
+      "revision": "342638bf9621ae79",
       "minutes": [
         50,
         90,
@@ -33111,7 +33111,7 @@
       "date": "2027-01-18",
       "calendarWeek": 15,
       "sourceWeek": 15,
-      "revision": "ff356d1529f0f6f6",
+      "revision": "4159114143acb71a",
       "minutes": [
         50,
         90,
@@ -33130,7 +33130,7 @@
       "date": "2027-01-19",
       "calendarWeek": 15,
       "sourceWeek": 15,
-      "revision": "06dfa847dd77ad08",
+      "revision": "35b844128b5b567d",
       "minutes": [
         50,
         90,
@@ -33149,7 +33149,7 @@
       "date": "2027-01-20",
       "calendarWeek": 16,
       "sourceWeek": 16,
-      "revision": "5f200baa47b96f0b",
+      "revision": "0346b6f1b1359741",
       "minutes": [
         50,
         90,
@@ -33168,7 +33168,7 @@
       "date": "2027-01-21",
       "calendarWeek": 16,
       "sourceWeek": 16,
-      "revision": "7d057c17cddbe7f8",
+      "revision": "5ab612be93269067",
       "minutes": [
         50,
         90,
@@ -33187,7 +33187,7 @@
       "date": "2027-01-22",
       "calendarWeek": 16,
       "sourceWeek": 16,
-      "revision": "b704be37497c59e6",
+      "revision": "538af9d8de26a375",
       "minutes": [
         50,
         90,
@@ -33206,7 +33206,7 @@
       "date": "2027-01-25",
       "calendarWeek": 16,
       "sourceWeek": 16,
-      "revision": "e544b258da833088",
+      "revision": "9da418df65f9042b",
       "minutes": [
         50,
         90,
@@ -33225,7 +33225,7 @@
       "date": "2027-01-26",
       "calendarWeek": 16,
       "sourceWeek": 16,
-      "revision": "879afd1eb903c5a9",
+      "revision": "8b73ec4c2fe76aa9",
       "minutes": [
         50,
         90,
@@ -33339,7 +33339,7 @@
       "date": "2027-02-03",
       "calendarWeek": 18,
       "sourceWeek": 6,
-      "revision": "245aa7017e174bf2",
+      "revision": "abb8368ac0951f5d",
       "minutes": [
         50,
         90,
@@ -33358,7 +33358,7 @@
       "date": "2027-02-04",
       "calendarWeek": 18,
       "sourceWeek": 6,
-      "revision": "3835091a4e6f6849",
+      "revision": "d230606a0ee1f76e",
       "minutes": [
         50,
         90,
@@ -33377,7 +33377,7 @@
       "date": "2027-02-05",
       "calendarWeek": 18,
       "sourceWeek": 6,
-      "revision": "f686d6902e212573",
+      "revision": "0b306e5fba38f847",
       "minutes": [
         50,
         90,
@@ -33396,7 +33396,7 @@
       "date": "2027-02-08",
       "calendarWeek": 18,
       "sourceWeek": 6,
-      "revision": "7881347fedb78463",
+      "revision": "14e7eb995286f9c5",
       "minutes": [
         50,
         90,
@@ -33415,7 +33415,7 @@
       "date": "2027-02-09",
       "calendarWeek": 18,
       "sourceWeek": 6,
-      "revision": "4c9e8950d86e2b2e",
+      "revision": "f159703f05030a49",
       "minutes": [
         50,
         90,
@@ -33434,7 +33434,7 @@
       "date": "2027-02-10",
       "calendarWeek": 19,
       "sourceWeek": 7,
-      "revision": "f0978c3febf020a4",
+      "revision": "19b1da393fc510bf",
       "minutes": [
         50,
         90,
@@ -33453,7 +33453,7 @@
       "date": "2027-02-11",
       "calendarWeek": 19,
       "sourceWeek": 7,
-      "revision": "08ff6e4fc5ef0dba",
+      "revision": "a133fcd80d86a203",
       "minutes": [
         50,
         90,
@@ -33472,7 +33472,7 @@
       "date": "2027-02-12",
       "calendarWeek": 19,
       "sourceWeek": 7,
-      "revision": "056b9cc3f2a6e536",
+      "revision": "3d0e6559ef33cdcd",
       "minutes": [
         50,
         90,
@@ -33491,7 +33491,7 @@
       "date": "2027-02-15",
       "calendarWeek": 19,
       "sourceWeek": 7,
-      "revision": "c3e94b472364be4b",
+      "revision": "e261baa9d39821f2",
       "minutes": [
         50,
         90,
@@ -33510,7 +33510,7 @@
       "date": "2027-02-16",
       "calendarWeek": 19,
       "sourceWeek": 7,
-      "revision": "d29fe75990774da1",
+      "revision": "e43399ee592bbe37",
       "minutes": [
         50,
         90,
@@ -33624,7 +33624,7 @@
       "date": "2027-02-24",
       "calendarWeek": 21,
       "sourceWeek": 9,
-      "revision": "2004040e680afe6e",
+      "revision": "d43e993b2a2edaef",
       "minutes": [
         50,
         90,
@@ -33643,7 +33643,7 @@
       "date": "2027-02-25",
       "calendarWeek": 21,
       "sourceWeek": 9,
-      "revision": "c0f1efe96315f1d7",
+      "revision": "3291ed7220f35d29",
       "minutes": [
         50,
         90,
@@ -33662,7 +33662,7 @@
       "date": "2027-02-26",
       "calendarWeek": 21,
       "sourceWeek": 9,
-      "revision": "8f8f86bfae47496a",
+      "revision": "7854272dad8b5882",
       "minutes": [
         50,
         90,
@@ -33681,7 +33681,7 @@
       "date": "2027-03-01",
       "calendarWeek": 21,
       "sourceWeek": 9,
-      "revision": "c29c86719be182db",
+      "revision": "72d34a2d25357391",
       "minutes": [
         50,
         90,
@@ -33700,7 +33700,7 @@
       "date": "2027-03-02",
       "calendarWeek": 21,
       "sourceWeek": 9,
-      "revision": "561cc45eac6933ef",
+      "revision": "20d70b32d0fce39c",
       "minutes": [
         50,
         90,
@@ -33719,7 +33719,7 @@
       "date": "2027-03-03",
       "calendarWeek": 22,
       "sourceWeek": 10,
-      "revision": "f1d4542af95f743d",
+      "revision": "39d750330d2334d9",
       "minutes": [
         50,
         90,
@@ -33738,7 +33738,7 @@
       "date": "2027-03-04",
       "calendarWeek": 22,
       "sourceWeek": 10,
-      "revision": "106f731f2f112523",
+      "revision": "917575bdf3986766",
       "minutes": [
         50,
         90,
@@ -33757,7 +33757,7 @@
       "date": "2027-03-05",
       "calendarWeek": 22,
       "sourceWeek": 10,
-      "revision": "c0d3446be7ed8b86",
+      "revision": "0ebac54f7bc8ab4b",
       "minutes": [
         50,
         90,
@@ -33776,7 +33776,7 @@
       "date": "2027-03-08",
       "calendarWeek": 22,
       "sourceWeek": 10,
-      "revision": "b726f46d22626487",
+      "revision": "fb486cbcadc1f3a2",
       "minutes": [
         50,
         90,
@@ -33795,7 +33795,7 @@
       "date": "2027-03-09",
       "calendarWeek": 22,
       "sourceWeek": 10,
-      "revision": "a757f2b5323571bd",
+      "revision": "5a0fedd4d3e486bc",
       "minutes": [
         50,
         90,
@@ -33909,7 +33909,7 @@
       "date": "2027-03-17",
       "calendarWeek": 24,
       "sourceWeek": 12,
-      "revision": "9d2eb9a4e5f2ee5e",
+      "revision": "3f4013b6372096dc",
       "minutes": [
         50,
         90,
@@ -33928,7 +33928,7 @@
       "date": "2027-03-18",
       "calendarWeek": 24,
       "sourceWeek": 12,
-      "revision": "d0cd1de956f75c76",
+      "revision": "b88418a399fc2693",
       "minutes": [
         50,
         90,
@@ -33947,7 +33947,7 @@
       "date": "2027-03-19",
       "calendarWeek": 24,
       "sourceWeek": 12,
-      "revision": "2a740c1cb7d1c721",
+      "revision": "3b8b2d8c3869a03e",
       "minutes": [
         50,
         90,
@@ -33966,7 +33966,7 @@
       "date": "2027-03-22",
       "calendarWeek": 24,
       "sourceWeek": 12,
-      "revision": "99270be0e62b5d2c",
+      "revision": "66b5dfe1fe21c847",
       "minutes": [
         50,
         90,
@@ -33985,7 +33985,7 @@
       "date": "2027-03-23",
       "calendarWeek": 24,
       "sourceWeek": 12,
-      "revision": "8ebe4c7601112606",
+      "revision": "c986f6cc10fb0361",
       "minutes": [
         50,
         90,
@@ -34099,7 +34099,7 @@
       "date": "2027-03-31",
       "calendarWeek": 26,
       "sourceWeek": 14,
-      "revision": "8265a014e9db4663",
+      "revision": "1ed32acfb9371b0a",
       "minutes": [
         50,
         90,
@@ -34118,7 +34118,7 @@
       "date": "2027-04-01",
       "calendarWeek": 26,
       "sourceWeek": 14,
-      "revision": "dee611b8ab595969",
+      "revision": "a246dc1c8d449221",
       "minutes": [
         50,
         90,
@@ -34137,7 +34137,7 @@
       "date": "2027-04-02",
       "calendarWeek": 26,
       "sourceWeek": 14,
-      "revision": "f37a63886ce8087c",
+      "revision": "e65a5eb5f5f23292",
       "minutes": [
         50,
         90,
@@ -34156,7 +34156,7 @@
       "date": "2027-04-05",
       "calendarWeek": 26,
       "sourceWeek": 14,
-      "revision": "0536d465f5222903",
+      "revision": "b414391184e71bd9",
       "minutes": [
         50,
         90,
@@ -34175,7 +34175,7 @@
       "date": "2027-04-06",
       "calendarWeek": 26,
       "sourceWeek": 14,
-      "revision": "85940bea4aae19e6",
+      "revision": "37d65bc92d0ed7ff",
       "minutes": [
         50,
         90,
@@ -34194,7 +34194,7 @@
       "date": "2027-04-07",
       "calendarWeek": 27,
       "sourceWeek": 15,
-      "revision": "7436a08d7f3efb1c",
+      "revision": "6221c04f00938788",
       "minutes": [
         50,
         90,
@@ -34213,7 +34213,7 @@
       "date": "2027-04-08",
       "calendarWeek": 27,
       "sourceWeek": 15,
-      "revision": "c573fbb491a2372f",
+      "revision": "0cd333bb827e8d82",
       "minutes": [
         50,
         90,
@@ -34232,7 +34232,7 @@
       "date": "2027-04-09",
       "calendarWeek": 27,
       "sourceWeek": 15,
-      "revision": "fd49e8311e4929e2",
+      "revision": "0f01c8467f6cd19d",
       "minutes": [
         50,
         90,
@@ -34251,7 +34251,7 @@
       "date": "2027-04-12",
       "calendarWeek": 27,
       "sourceWeek": 15,
-      "revision": "b850efc3541d354c",
+      "revision": "49d1143df78d0c1e",
       "minutes": [
         50,
         90,
@@ -34270,7 +34270,7 @@
       "date": "2027-04-13",
       "calendarWeek": 27,
       "sourceWeek": 15,
-      "revision": "9d589ad217857b14",
+      "revision": "41971500a6e0fe2a",
       "minutes": [
         50,
         90,
@@ -34289,7 +34289,7 @@
       "date": "2027-04-14",
       "calendarWeek": 28,
       "sourceWeek": 16,
-      "revision": "a5675187e9de95ec",
+      "revision": "cbb41e6c832b86fc",
       "minutes": [
         50,
         90,
@@ -34308,7 +34308,7 @@
       "date": "2027-04-15",
       "calendarWeek": 28,
       "sourceWeek": 16,
-      "revision": "605308bee7fae65a",
+      "revision": "cd72f34a63250e4a",
       "minutes": [
         50,
         90,
@@ -34327,7 +34327,7 @@
       "date": "2027-04-16",
       "calendarWeek": 28,
       "sourceWeek": 16,
-      "revision": "5d46a8cfd52ce24c",
+      "revision": "6470cd3bc6954a0d",
       "minutes": [
         50,
         90,
@@ -34346,7 +34346,7 @@
       "date": "2027-04-19",
       "calendarWeek": 28,
       "sourceWeek": 16,
-      "revision": "9c29e0142185317f",
+      "revision": "8bcdf970476529d4",
       "minutes": [
         50,
         90,
@@ -34365,7 +34365,7 @@
       "date": "2027-04-20",
       "calendarWeek": 28,
       "sourceWeek": 16,
-      "revision": "b33cb14454aa8a12",
+      "revision": "fb527d5591b7c184",
       "minutes": [
         50,
         90,
@@ -34479,7 +34479,7 @@
       "date": "2027-04-28",
       "calendarWeek": 30,
       "sourceWeek": 18,
-      "revision": "636f4db4a5e5e7b5",
+      "revision": "4667fa110721bab9",
       "minutes": [
         50,
         90,
@@ -34498,7 +34498,7 @@
       "date": "2027-04-29",
       "calendarWeek": 30,
       "sourceWeek": 18,
-      "revision": "e1bdd6136483704c",
+      "revision": "5f100194c46b6a51",
       "minutes": [
         50,
         90,
@@ -34517,7 +34517,7 @@
       "date": "2027-04-30",
       "calendarWeek": 30,
       "sourceWeek": 18,
-      "revision": "86db7d30329d2121",
+      "revision": "1a57ba0ee27d4859",
       "minutes": [
         50,
         90,
@@ -34536,7 +34536,7 @@
       "date": "2027-05-03",
       "calendarWeek": 30,
       "sourceWeek": 18,
-      "revision": "0dd7e91b55330dc1",
+      "revision": "b9a9a4daff402218",
       "minutes": [
         50,
         90,
@@ -34555,7 +34555,7 @@
       "date": "2027-05-04",
       "calendarWeek": 30,
       "sourceWeek": 18,
-      "revision": "c6798840896c032f",
+      "revision": "ba62242c6d281037",
       "minutes": [
         50,
         90,
@@ -35144,7 +35144,7 @@
       "date": "2027-06-16",
       "calendarWeek": 37,
       "sourceWeek": 25,
-      "revision": "1b350db75c1f007c",
+      "revision": "408aa11111f1d19b",
       "minutes": [
         50,
         90,
@@ -35163,7 +35163,7 @@
       "date": "2027-06-17",
       "calendarWeek": 37,
       "sourceWeek": 25,
-      "revision": "c8b946e8d3e0d668",
+      "revision": "f14f93c4b0ab55ea",
       "minutes": [
         50,
         90,
@@ -35182,7 +35182,7 @@
       "date": "2027-06-18",
       "calendarWeek": 37,
       "sourceWeek": 25,
-      "revision": "8c17b7dcd75b75c7",
+      "revision": "aa9e59c2576dc1c8",
       "minutes": [
         50,
         90,
@@ -35201,7 +35201,7 @@
       "date": "2027-06-21",
       "calendarWeek": 37,
       "sourceWeek": 25,
-      "revision": "a8108b474445f7ad",
+      "revision": "b8f5bb6babf7fda0",
       "minutes": [
         50,
         90,
@@ -35220,7 +35220,7 @@
       "date": "2027-06-22",
       "calendarWeek": 37,
       "sourceWeek": 25,
-      "revision": "e7b82ff3e4a0ad0d",
+      "revision": "f2ecdbde286c6706",
       "minutes": [
         50,
         90,
@@ -35809,7 +35809,7 @@
       "date": "2027-08-04",
       "calendarWeek": 44,
       "sourceWeek": 32,
-      "revision": "bcf09f0b686030d7",
+      "revision": "c084058018efa05d",
       "minutes": [
         50,
         90,
@@ -35828,7 +35828,7 @@
       "date": "2027-08-05",
       "calendarWeek": 44,
       "sourceWeek": 32,
-      "revision": "b47f9c6f5a2f673b",
+      "revision": "9e9c346b4a0e74b7",
       "minutes": [
         50,
         90,
@@ -35847,7 +35847,7 @@
       "date": "2027-08-06",
       "calendarWeek": 44,
       "sourceWeek": 32,
-      "revision": "fc25fd87d48afbbd",
+      "revision": "878f828a8b929793",
       "minutes": [
         50,
         90,
@@ -35866,7 +35866,7 @@
       "date": "2027-08-09",
       "calendarWeek": 44,
       "sourceWeek": 32,
-      "revision": "df3b247a8bcb384b",
+      "revision": "f1a7c642be171fe2",
       "minutes": [
         50,
         90,
@@ -35885,7 +35885,7 @@
       "date": "2027-08-10",
       "calendarWeek": 44,
       "sourceWeek": 32,
-      "revision": "cd8413feba9cdb94",
+      "revision": "b906a90d6e2489cb",
       "minutes": [
         50,
         90,
@@ -36094,7 +36094,7 @@
       "date": "2027-08-25",
       "calendarWeek": 47,
       "sourceWeek": 35,
-      "revision": "97c974fbe011ab67",
+      "revision": "b3f21952fa29ea26",
       "minutes": [
         50,
         90,
@@ -36113,7 +36113,7 @@
       "date": "2027-08-26",
       "calendarWeek": 47,
       "sourceWeek": 35,
-      "revision": "33bfc48596791aee",
+      "revision": "9e1974c1a416bab3",
       "minutes": [
         50,
         90,
@@ -36132,7 +36132,7 @@
       "date": "2027-08-27",
       "calendarWeek": 47,
       "sourceWeek": 35,
-      "revision": "9dc4d19d29571127",
+      "revision": "a24b895e27eda776",
       "minutes": [
         50,
         90,
@@ -36151,7 +36151,7 @@
       "date": "2027-08-30",
       "calendarWeek": 47,
       "sourceWeek": 35,
-      "revision": "71bf5a3444088cca",
+      "revision": "22254d9ac3ef5b0a",
       "minutes": [
         50,
         90,
@@ -36170,7 +36170,7 @@
       "date": "2027-08-31",
       "calendarWeek": 47,
       "sourceWeek": 35,
-      "revision": "2fe0e5c362194cbc",
+      "revision": "f76436056ee252f3",
       "minutes": [
         50,
         90,
@@ -37234,7 +37234,7 @@
       "date": "2027-11-17",
       "calendarWeek": 59,
       "sourceWeek": 47,
-      "revision": "da825b39f996f589",
+      "revision": "061e3fcf0c6862c7",
       "minutes": [
         50,
         90,
@@ -37253,7 +37253,7 @@
       "date": "2027-11-18",
       "calendarWeek": 59,
       "sourceWeek": 47,
-      "revision": "a71dc629de72de6d",
+      "revision": "8c37f1254c1d3521",
       "minutes": [
         50,
         90,
@@ -37272,7 +37272,7 @@
       "date": "2027-11-19",
       "calendarWeek": 59,
       "sourceWeek": 47,
-      "revision": "e592c071199c4563",
+      "revision": "8b3a2f83decc849d",
       "minutes": [
         50,
         90,
@@ -37291,7 +37291,7 @@
       "date": "2027-11-22",
       "calendarWeek": 59,
       "sourceWeek": 47,
-      "revision": "93e12bddedc24384",
+      "revision": "4865e7ffe58f6cdc",
       "minutes": [
         50,
         90,
@@ -37310,7 +37310,7 @@
       "date": "2027-11-23",
       "calendarWeek": 59,
       "sourceWeek": 47,
-      "revision": "ab5b09f301594666",
+      "revision": "0a452302cb664b64",
       "minutes": [
         50,
         90,
@@ -37329,7 +37329,7 @@
       "date": "2027-11-24",
       "calendarWeek": 60,
       "sourceWeek": 48,
-      "revision": "c6709ce2aed1ac5b",
+      "revision": "b693d967c2ed9655",
       "minutes": [
         50,
         90,
@@ -37348,7 +37348,7 @@
       "date": "2027-11-25",
       "calendarWeek": 60,
       "sourceWeek": 48,
-      "revision": "56ad71ef7075d845",
+      "revision": "ab2168b9b670e399",
       "minutes": [
         50,
         90,
@@ -37367,7 +37367,7 @@
       "date": "2027-11-26",
       "calendarWeek": 60,
       "sourceWeek": 48,
-      "revision": "76354b6c38261ff7",
+      "revision": "36f8f8c89638529e",
       "minutes": [
         50,
         90,
@@ -37386,7 +37386,7 @@
       "date": "2027-11-29",
       "calendarWeek": 60,
       "sourceWeek": 48,
-      "revision": "8134d9c7eb5236cd",
+      "revision": "497f6e816d961b74",
       "minutes": [
         50,
         90,
@@ -37405,7 +37405,7 @@
       "date": "2027-11-30",
       "calendarWeek": 60,
       "sourceWeek": 48,
-      "revision": "4d049295789721e1",
+      "revision": "fb534fb49ca9a22f",
       "minutes": [
         50,
         90,
@@ -37424,7 +37424,7 @@
       "date": "2027-12-01",
       "calendarWeek": 61,
       "sourceWeek": 49,
-      "revision": "714efd983218e0d2",
+      "revision": "43b522443798cf7f",
       "minutes": [
         50,
         90,
@@ -37443,7 +37443,7 @@
       "date": "2027-12-02",
       "calendarWeek": 61,
       "sourceWeek": 49,
-      "revision": "23ecc530edb7cfd0",
+      "revision": "afa517236218bcd9",
       "minutes": [
         50,
         90,
@@ -37462,7 +37462,7 @@
       "date": "2027-12-03",
       "calendarWeek": 61,
       "sourceWeek": 49,
-      "revision": "6874c145a2595985",
+      "revision": "6cb1d2852790a688",
       "minutes": [
         50,
         90,
@@ -37481,7 +37481,7 @@
       "date": "2027-12-06",
       "calendarWeek": 61,
       "sourceWeek": 49,
-      "revision": "9d29f5bbd126ec30",
+      "revision": "7e518a198407a1e7",
       "minutes": [
         50,
         90,
@@ -37500,7 +37500,7 @@
       "date": "2027-12-07",
       "calendarWeek": 61,
       "sourceWeek": 49,
-      "revision": "66e786174b35e456",
+      "revision": "a4c93b90e7fde287",
       "minutes": [
         50,
         90,
@@ -37614,7 +37614,7 @@
       "date": "2027-12-15",
       "calendarWeek": 63,
       "sourceWeek": 51,
-      "revision": "4fc728e98fe4fa2a",
+      "revision": "7359731800b915ed",
       "minutes": [
         50,
         90,
@@ -37633,7 +37633,7 @@
       "date": "2027-12-16",
       "calendarWeek": 63,
       "sourceWeek": 51,
-      "revision": "4113ab8bae9672a8",
+      "revision": "85c60ce7b7b7c549",
       "minutes": [
         50,
         90,
@@ -37652,7 +37652,7 @@
       "date": "2027-12-17",
       "calendarWeek": 63,
       "sourceWeek": 51,
-      "revision": "0fb8d108c000a0c7",
+      "revision": "1c691a02a2940cd3",
       "minutes": [
         50,
         90,
@@ -37671,7 +37671,7 @@
       "date": "2027-12-20",
       "calendarWeek": 63,
       "sourceWeek": 51,
-      "revision": "bee8aa6ea61413a8",
+      "revision": "a56858e36f815195",
       "minutes": [
         50,
         90,
@@ -37690,7 +37690,7 @@
       "date": "2027-12-21",
       "calendarWeek": 63,
       "sourceWeek": 51,
-      "revision": "7830324c42846e46",
+      "revision": "4639a87a7233fc78",
       "minutes": [
         50,
         90,
@@ -38374,7 +38374,7 @@
       "date": "2028-02-09",
       "calendarWeek": 71,
       "sourceWeek": 59,
-      "revision": "c86383fe2749bf7d",
+      "revision": "373c77566eb002d6",
       "minutes": [
         50,
         90,
@@ -38393,7 +38393,7 @@
       "date": "2028-02-10",
       "calendarWeek": 71,
       "sourceWeek": 59,
-      "revision": "8208164a8130e13d",
+      "revision": "156a99c3e0b8fddf",
       "minutes": [
         50,
         90,
@@ -38412,7 +38412,7 @@
       "date": "2028-02-11",
       "calendarWeek": 71,
       "sourceWeek": 59,
-      "revision": "a1b333efbba5f5ce",
+      "revision": "82c10b7c9a728774",
       "minutes": [
         50,
         90,
@@ -38431,7 +38431,7 @@
       "date": "2028-02-14",
       "calendarWeek": 71,
       "sourceWeek": 59,
-      "revision": "f343c9c386fb80de",
+      "revision": "8560e04d745624c4",
       "minutes": [
         50,
         90,
@@ -38450,7 +38450,7 @@
       "date": "2028-02-15",
       "calendarWeek": 71,
       "sourceWeek": 59,
-      "revision": "579cc6d62b824061",
+      "revision": "247b2716eb85162d",
       "minutes": [
         50,
         90,
@@ -39894,7 +39894,7 @@
       "date": "2028-05-31",
       "calendarWeek": 87,
       "sourceWeek": 75,
-      "revision": "8c2f979df1c9c614",
+      "revision": "fc2175b79dc04258",
       "minutes": [
         50,
         90,
@@ -39913,7 +39913,7 @@
       "date": "2028-06-01",
       "calendarWeek": 87,
       "sourceWeek": 75,
-      "revision": "8cfc9c7028532ae2",
+      "revision": "bcd79174e6fad9a9",
       "minutes": [
         50,
         90,
@@ -39932,7 +39932,7 @@
       "date": "2028-06-02",
       "calendarWeek": 87,
       "sourceWeek": 75,
-      "revision": "d309bc69c4d451df",
+      "revision": "27d968c1d82c823a",
       "minutes": [
         50,
         90,
@@ -39951,7 +39951,7 @@
       "date": "2028-06-05",
       "calendarWeek": 87,
       "sourceWeek": 75,
-      "revision": "46d37702e843a642",
+      "revision": "f0483a0f0ba84ef8",
       "minutes": [
         50,
         90,
@@ -39970,7 +39970,7 @@
       "date": "2028-06-06",
       "calendarWeek": 87,
       "sourceWeek": 75,
-      "revision": "caad755d19b0b334",
+      "revision": "e5d16c7b90f35f93",
       "minutes": [
         50,
         90,
@@ -40084,7 +40084,7 @@
       "date": "2028-06-14",
       "calendarWeek": 89,
       "sourceWeek": 77,
-      "revision": "ceda0f028923cea3",
+      "revision": "e8ecbd4861083f4f",
       "minutes": [
         50,
         90,
@@ -40103,7 +40103,7 @@
       "date": "2028-06-15",
       "calendarWeek": 89,
       "sourceWeek": 77,
-      "revision": "df9d38c3c0263d48",
+      "revision": "44eeef1c75ec9c1d",
       "minutes": [
         50,
         90,
@@ -40122,7 +40122,7 @@
       "date": "2028-06-16",
       "calendarWeek": 89,
       "sourceWeek": 77,
-      "revision": "6dc0210e5c7b77bb",
+      "revision": "2eead24304266cce",
       "minutes": [
         50,
         90,
@@ -40141,7 +40141,7 @@
       "date": "2028-06-19",
       "calendarWeek": 89,
       "sourceWeek": 77,
-      "revision": "45bc71a2e7016374",
+      "revision": "d1a78eac2d51a2e3",
       "minutes": [
         50,
         90,
@@ -40160,7 +40160,7 @@
       "date": "2028-06-20",
       "calendarWeek": 89,
       "sourceWeek": 77,
-      "revision": "569dc29c69a54c0f",
+      "revision": "cfcb23701dd0d2bf",
       "minutes": [
         50,
         90,
@@ -42513,6 +42513,8 @@
   ],
   "ownership": {
     "canonical": [
+      "content/math-v2/review-amendments.ts",
+      "content/math-v2/concept-figures.ts",
       "content/math-v2/daily-extensions.ts",
       "content/math-v2/daily-practice.ts",
       "content/math-v2/daily-sources.ts",
@@ -42526,6 +42528,8 @@
       "content/math-v2/assessment-teaching.ts"
     ],
     "supportingCanonical": [
+      "lib/concept-scenes.ts",
+      "lib/solution-paragraphs.ts",
       "lib/open-resource-links.ts",
       "data/open-resource-access.json",
       "lib/math-curriculum-types.ts",
@@ -42534,6 +42538,7 @@
       "lib/math-practice-plan.ts"
     ],
     "derived": [
+      "docs/lesson-review-ledger.json",
       "data/math-v2/curriculum.json",
       "data/math-v2/manifest.json",
       "docs/math-curriculum-schedule.md",

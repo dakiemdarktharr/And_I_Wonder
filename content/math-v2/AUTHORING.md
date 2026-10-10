@@ -13,3 +13,15 @@ Derived files under `data/math-v2` come exclusively from `scripts/build-math-cur
 ## Daily practice refinement — 10 October 2026
 
 Four canonical *-teaching.ts maps cover every original ID with bilingual application/formula and at least three specific method steps. The builder merges them before hashing. lib/math-practice-plan.ts schedules three distinct prompts per session, including A/B and foundation alternatives, in existing blocks. There are 543 original records and 1,087 retrieval copies (1,630 total), giving 1,569 main-route assignments. Copies are not unseen graduate problems. Practice shows only prompt and a solution disclosure; canonical rubrics and gate rules remain in the syllabus. Previous local drafts remain untouched.
+
+## Current contract — lesson review, 10 October 2026
+
+The preceding refinement describes an earlier snapshot. The current builder schedules four tasks for each of 523 primary daily concepts (2,092 assignments; 2,132 stored exercise records). Only the first five days currently have individually authored companion fixtures; do not describe the remaining shared-scaffold tasks as independently authored problems.
+
+Canonical editorial corrections live in review-amendments.ts. They override original exercise/teaching records in prepareMathPractice before companion generation and hashing. When fixing a result, check the prompt, formula, application, steps, solution, common errors and rubric for conflicting statements. Rebuild generated files; never patch only the generated JSON.
+
+concept-figures.ts explicitly binds a primary concept ID to the analytic model in lib/concept-scenes.ts. New figures need bilingual captions, domains, axes, boundary cases and independently calculated fixtures. Never assign a graph to v2 content from a legacy week index. A plotted example does not certify a general theorem.
+
+lib/solution-paragraphs.ts handles presentation-only paragraph separation and duplicate/filler removal. Such formatting must not invalidate semantic progress across unchanged weeks.
+
+Regenerate with npm run curriculum:build, npm run curriculum:docs, and npm run math:lesson:audit; run relevant tests and the notation audit. See docs/lesson-review-2026-10-10.md and the generated per-day ledger for actual review coverage and outstanding work.

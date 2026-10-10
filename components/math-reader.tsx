@@ -5,6 +5,8 @@ import {useLanguage,useSession,Text} from './providers';
 import {MathMarkdown} from './math-markdown';
 import {LessonNavigation} from './lesson-navigation';
 import {NullspaceExplorer} from './nullspace-explorer';
+import {ConceptExplorer} from './concept-explorer';
+import {solutionParagraphs,exerciseSolutionParagraphs} from '@/lib/solution-paragraphs';
 import {BookOpen, PenLine, Clock3, Sigma, Download, Maximize2, Minimize2, ChevronDown, ChevronUp, Flag, Library} from 'lucide-react';
 import type {MathWeek,MathSession,MathSource,MathAssessment,MathExercise} from '@/lib/math-curriculum-types';
 import {mathLessonToMarkdown} from '@/lib/lesson-export';
@@ -18,7 +20,7 @@ function MathProblem({exercise,index,language}:{exercise:MathExercise;index:numb
   {exercise.practiceRole==='application'&&exercise.teaching&&<div className="math-application"><strong>{vi?'Ứng dụng':'Application'}</strong><MathMarkdown>{t(exercise.teaching.application)}</MathMarkdown></div>}
   <MathMarkdown>{t(exercise.prompt)}</MathMarkdown>
   <button className="math-answer-toggle" aria-expanded={open} aria-controls={solutionId} onClick={()=>setOpen(!open)}>{open?<ChevronUp size={16} aria-hidden="true"/>:<ChevronDown size={16} aria-hidden="true"/>}{open?(vi?'Ẩn lời giải':'Hide solution'):(vi?'Hiện lời giải':'Show solution')}</button>
-  {open&&<div id={solutionId} className="math-solution"><ol>{exercise.solution.map((step,i)=><li key={i}><MathMarkdown>{t(step)}</MathMarkdown></li>)}</ol></div>}</section>;
+  {open&&<div id={solutionId} className="math-solution"><ol>{exerciseSolutionParagraphs(exercise,language).map((step,i)=><li key={i}><MathMarkdown>{step}</MathMarkdown></li>)}</ol><ConceptExplorer conceptId={exercise.id}/></div>}</section>;
 }
 export function MathReader({week,session,sources,exerciseKeys,prerequisites,plannedDate}:{week:MathWeek;session:MathSession;sources:MathSource[];exerciseKeys:Record<string,string>;prerequisites:{week:number;date:string;title:{en:string;vi:string}}[];plannedDate?:string;assessments:MathAssessment[]}){
  const {language}=useLanguage();const owner=useSession();const t=(v:{en:string;vi:string})=>v[language];const vi=language==='vi';
@@ -41,7 +43,7 @@ export function MathReader({week,session,sources,exerciseKeys,prerequisites,plan
    {session.alternativeExerciseIds?.length&&<label className="math-form"><Text vi="Đề" en="Form"/><select value={form} onChange={e=>setForm(e.target.value as 'A'|'B')}><option>A</option><option>B</option></select></label>}
    <section id="math-theory" data-concept={lesson.conceptKey}><h2><BookOpen/><Text vi="Bài giảng" en="Lesson"/></h2><details open><summary><Text vi="Lý thuyết và cách giải" en="Theory and methods"/></summary>
     <div className="math-lesson-application"><h3><Text vi="Ứng dụng" en="Application"/></h3><MathMarkdown>{t(lesson.application)}</MathMarkdown></div>
-    <section className="math-method"><div className="math-general-formula"><h3><Text vi="Công thức tổng quát" en="General formula"/></h3><MathMarkdown>{t(lesson.formula)}</MathMarkdown></div><h3><Text vi="Cách làm từng bước" en="Step-by-step method"/></h3><ol>{lesson.steps.map((s,j)=><li key={j}><MathMarkdown>{t(s)}</MathMarkdown></li>)}</ol>{lesson.conceptKey==='f-w003-e3'&&<NullspaceExplorer/>}</section>
+    <section className="math-method"><div className="math-general-formula"><h3><Text vi="Công thức tổng quát" en="General formula"/></h3><MathMarkdown>{t(lesson.formula)}</MathMarkdown></div><h3><Text vi="Cách làm từng bước" en="Step-by-step method"/></h3><ol>{lesson.steps.map((s,j)=><li key={j}><div className="solution-paragraphs">{solutionParagraphs(t(s),language).map((p,k)=><MathMarkdown key={k}>{p}</MathMarkdown>)}</div></li>)}</ol><ConceptExplorer conceptId={lesson.conceptKey}/>{lesson.conceptKey==='f-w003-e3'&&<NullspaceExplorer/>}</section>
    </details><details className="math-background"><summary><Text vi="Định nghĩa và chứng minh của chương" en="Chapter definitions and proofs"/></summary><MathMarkdown>{t(week.definitions)}</MathMarkdown>
     {week.theorems.filter(th=>session.theoremIds.includes(th.id)).map(th=><section className="math-theorem" key={th.id}><h3><MathMarkdown inline>{t(th.title)}</MathMarkdown></h3><MathMarkdown>{t(th.statement)}</MathMarkdown><details><summary>{th.proofStatus==='proved'?(vi?'Chứng minh':'Proof'):th.proofStatus==='assumed'?(vi?'Định lý dùng làm giả thiết':'Assumed theorem'):(vi?'Phác thảo chứng minh':'Proof sketch')}</summary><MathMarkdown>{t(th.proof)}</MathMarkdown></details></section>)}
    </details></section>

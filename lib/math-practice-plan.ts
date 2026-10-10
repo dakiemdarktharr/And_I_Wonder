@@ -4,6 +4,7 @@ import {dailyExtensions} from '../content/math-v2/daily-extensions';
 import {extensionReading,introductoryReading} from '../content/math-v2/daily-sources';
 import {researchBlock} from './learning-path';
 import {conceptPractice} from '../content/math-v2/daily-practice';
+import {amendExercise} from '../content/math-v2/review-amendments';
 const b=(en:string,vi:string):Bilingual=>({en,vi});
 const cleanTitle=(value:Bilingual)=>b(
  value.en.replace(/^(?:Form [AB]:|Final [AB]\d?\s*[—–-]|[A-Z]\d?:|Diagnostic:)\s*/,'').replace(/diagnostic/gi,'').trim(),
@@ -17,6 +18,7 @@ export function prepareMathPractice(authored:MathWeek[],teaching:Record<string,M
   for(const e of originals.values()){
    e.teaching=teaching[e.id];if(!e.teaching||e.teaching.steps.length<3)throw Error('Missing teaching '+e.id);
    if(e.teaching.solution)e.solution=e.teaching.solution;
+   amendExercise(e);
   }
   for(const [dayIndex,plan] of week.sessions.entries()){
    let primary:MathExercise=originals.get(plan.exerciseIds[0])!;

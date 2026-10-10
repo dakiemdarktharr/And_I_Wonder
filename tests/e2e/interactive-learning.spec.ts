@@ -1,4 +1,8 @@
 import {test,expect} from '@playwright/test';
+import {getResources} from '../../lib/content';
+import {libraryResources} from '../../lib/library-resources';
+import {mathCurriculum} from '../../lib/math-curriculum';
+import coverData from '../../data/resource-covers.json';
 
 test('a numeric answer gives feedback and a private draft survives reload and language changes',async({page})=>{
  await page.goto('/daily/2026-10-08?curriculum=v1');
@@ -72,8 +76,15 @@ test('project briefs supply inputs, acceptance criteria and repository structure
 test('real local cover images load and rolled scrolls remain accessible links',async({page})=>{
  await page.goto('/resources');
  const covers=page.locator('.book-cover-image');
- await expect(covers).toHaveCount(12);
- for(const cover of await covers.all())await expect.poll(()=>cover.evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBe(true);
+ const activeIds=new Set(libraryResources(getResources(),mathCurriculum.sources).filter(r=>r.kind==='book').map(r=>r.id));
+ const assets=coverData.filter(c=>c.asset&&activeIds.has(c.resourceId)).map(c=>c.asset!).sort();
+ expect(assets.length).toBeGreaterThan(0);
+ await expect(covers).toHaveCount(assets.length);
+ expect((await covers.evaluateAll(nodes=>nodes.map(n=>n.getAttribute('src')))).sort()).toEqual(assets);
+ for(const cover of await covers.all()){
+  await cover.scrollIntoViewIfNeeded();
+  await expect.poll(()=>cover.evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBe(true);
+ }
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
 

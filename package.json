@@ -10,6 +10,7 @@
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
     "math:notation:audit": "tsx scripts/audit-math-notation.ts",
+    "math:lesson:audit": "tsx scripts/audit-lesson-review.ts",
     "curriculum:build": "tsx scripts/build-math-curriculum.ts",
     "curriculum:docs": "tsx scripts/build-math-docs.ts",
     "curriculum:audit": "node scripts/build-math-audit.mjs"
