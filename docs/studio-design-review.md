@@ -36,6 +36,8 @@ Lab / path     Research block and sources
 
 The first rebuilt screen was insufficient. Visual inspection found resource captions still using legacy tiny type, more raw symbols inside derivatives answers, unframed secondary research links, and duplicate site names in page metadata. These were corrected. The library now uses more of the desktop and larger object captions; source-cover artwork is preserved.
 
+The final illustration review also caught an inverted screen-space slope in the null-space guide line. The guide and the vector now use one coordinate transform, and an independent matrix/collinearity test covers every slider position.
+
 The notation audit found issues that a clean screenshot would miss: a null-space operator was initially liable to become the set of natural numbers, set braces could disappear, subscripts could attach to the wrong term, and Markdown tables/emphasis could be interpreted as equations. The converter now has regression fixtures for these cases and preserves authored TeX, code, links, tables and emphasis. The runtime does not evaluate mathematical input or enable trusted HTML in KaTeX. This is presentation normalization, not a proof of every source statement.
 
 ## Inspiration and boundaries
